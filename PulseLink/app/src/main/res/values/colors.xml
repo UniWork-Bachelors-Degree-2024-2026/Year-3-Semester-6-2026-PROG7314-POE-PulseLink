@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Refined Clinical Brand Tokens -->
+    <color name="pulse_primary">#0F172A</color>
+    <color name="pulse_primary_dark">#020617</color>
+    <color name="pulse_primary_light">#1E293B</color>
+    <color name="pulse_accent_teal">#0D9488</color>
+    <color name="pulse_action_cyan">#0EA5E9</color>
+    <color name="pulse_teal_bg">#CCFBF1</color>
+    <color name="pulse_blue_bg">#E0F2FE</color>
+
+    <!-- Filled brand surfaces (buttons, chips, hero cards, progress). Same navy as pulse_primary in
+         light mode; in dark mode pulse_primary becomes a light text/icon blue, so fills need their own token. -->
+    <color name="pulse_primary_fill">#0F172A</color>
+    <color name="pulse_primary_fill_light">#1E293B</color>
+
+    <!-- Date picker accent + the text colour that sits on it -->
+    <color name="pulse_picker_accent">#0369A1</color>
+    <color name="pulse_picker_on_accent">#FFFFFF</color>
+
+    <!-- Medical Backgrounds & Neutrals -->
+    <color name="pulse_bg">#F8FAFC</color>
+    <color name="pulse_card">#FFFFFF</color>
+    <color name="pulse_text_primary">#0F172A</color>
+    <color name="pulse_text_secondary">#475569</color>
+    <color name="pulse_text_hint">#64748B</color>
+    <color name="pulse_border">#E2E8F0</color>
+    <color name="pulse_border_strong">#94A3B8</color>
+    <color name="pulse_divider">#E2E8F0</color>
+    <color name="pulse_input_bg">#F1F5F9</color>
+    <color name="pulse_avatar_bg">#E2E8F0</color>
+
+    <!-- Clinical Status & Diagnostic Colors -->
+    <color name="pulse_success">#10B981</color>
+    <color name="pulse_success_bg">#D1FAE5</color>
+    <color name="pulse_danger">#DC2626</color>
+    <color name="pulse_danger_bg">#FEE2E2</color>
+    <color name="pulse_warning">#D97706</color>
+    <color name="pulse_warning_bg">#FEF3C7</color>
+    <color name="pulse_ecg_red">#DC2626</color>
+    <color name="pulse_track_bg">#E2E8F0</color>
+    <color name="pulse_nav_inactive">#64748B</color>
+    <color name="pulse_navy_dark">#0F172A</color>
+    <color name="pulse_slate_surface">#1E293B</color>
+
+    <!-- Authentic Hospital Paper ECG Grid Tokens (25 mm/s, 10 mm/mV) -->
+    <color name="ecg_paper_bg">#FFF8F8</color>
+    <color name="ecg_grid_minor">#FCE7E7</color>
+    <color name="ecg_grid_major">#FCA5A5</color>
+    <color name="ecg_trace_red">#DC2626</color>
+    <color name="ecg_trace_dark">#0F172A</color>
+    <color name="ecg_monitor_bg">#0B1120</color>
+    <color name="ecg_monitor_trace">#10B981</color>
+
+    <!-- Task 20: connectivity state + interaction feedback -->
+    <color name="pulse_status_offline">#94A3B8</color>
+    <color name="pulse_ripple_on_filled">#33FFFFFF</color>
+    <color name="pulse_ripple_on_light">#1F0EA5E9</color>
+
+    <!-- ============ Material3 design tokens ============ -->
+    <color name="clinical_blue">#0F172A</color>
+    <color name="vitality_teal">#0D9488</color>
+    <color name="normal_green">#10B981</color>
+    <color name="warning_amber">#D97706</color>
+    <color name="alert_red">#DC2626</color>
+    <color name="surface_bg">#F8FAFC</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_body">#334155</color>
+
+    <!-- Shimmer skeleton loading tokens -->
+    <color name="pulse_shimmer_base">#E2E8F0</color>
+    <color name="pulse_shimmer_highlight">#F8FAFC</color>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="live_lead_disconnected_title">ECG lead disconnected</string>
+    <string name="live_lead_disconnected_message">Recording is paused. Check the ECG cable and electrodes. Resume or restart becomes available when the monitor confirms the leads are connected.</string>
+    <string name="live_lead_reconnected_message">The monitor confirms the leads are connected. Resume this recording, restart with a new 90-second session, or discard it.</string>
+    <string name="live_resume_recording">Resume</string>
+    <string name="live_restart_recording">Restart</string>
+    <string name="live_discard_recording">Discard</string>
+    <string name="live_discard_failed">Unable to discard this recording. It remains paused. Check your connection and retry.</string>
+    <string name="live_session_starting">Please wait until the recording session is ready.</string>
+    <string name="live_recording_paused">Paused</string>
+    <string name="live_state_sync_failed">Unable to update the recording on the server. The session is paused locally. Check your connection and retry.</string>
+</resources>

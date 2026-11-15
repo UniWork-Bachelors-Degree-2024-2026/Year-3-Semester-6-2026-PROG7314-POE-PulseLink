@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Verpleegkundige goedkeuring en status (Maxine Task 2). Vertalings moet nog nagegaan word. -->
+    <string name="nurse_section_site">Toegewysde terrein</string>
+    <string name="nurse_site_none">Nog geen terrein toegewys nie. Vra jou administrateur om jou aan \'n terrein toe te wys en verfris dan.</string>
+    <string name="nurse_section_authorise">Magtig \'n raakskerm</string>
+    <string name="nurse_pairing_note">Dit is nie die Bluetooth-koppelkode nie. Gebruik die sessyferkode vir goedkeuring wat op die raakskerm wys.</string>
+    <string name="nurse_device_name">Toestelnaam</string>
+    <string name="nurse_device_name_invalid">Gebruik slegs letters, syfers, koppeltekens en onderstrepe, tot 64 karakters.</string>
+    <string name="nurse_approve_button">Keur goed</string>
+    <string name="nurse_loading">Kontroleer tans die kode by PulseLink...</string>
+    <string name="nurse_feedback_success">Goedgekeur. Toestel %1$s kan jou verpleegkundige-toestemmings gebruik tot %2$s.</string>
+    <string name="nurse_feedback_wrong_code">Verkeerde kode. Kontroleer die ses syfers op die raakskerm en voer hulle weer in. As die skerm nou \'n ander kode wys, gebruik die nuwe een.</string>
+    <string name="nurse_feedback_expired">Kode verval. Vra \'n nuwe goedkeuringskode op die raakskerm aan en voer dit dan hier in.</string>
+    <string name="nurse_feedback_denied">Goedkeuring geweier. \'n Verpleegkundige kan slegs \'n skerm by sy of haar eie toegewysde terrein goedkeur, en die rekening moet goedgekeur wees. Kontak jou terreinadministrateur.</string>
+    <string name="nurse_feedback_device_not_found">Geen toestel met daardie naam is gevind nie. Kontroleer die toestelnaam op die raakskerm.</string>
+    <string name="nurse_feedback_sign_in">Jou aanmelding het verval. Meld weer aan en probeer dan weer.</string>
+    <string name="nurse_feedback_too_many">Te veel pogings. Wag \'n paar minute en probeer dan weer.</string>
+    <string name="nurse_feedback_offline">Geen verbinding nie. Koppel aan die internet en druk dan weer Keur goed. Jou invoer is behou.</string>
+    <string name="nurse_feedback_unavailable">Goedkeuring kon nie voltooi word nie. Probeer oombliklik weer.</string>
+    <string name="nurse_status_heading">Skermstatus</string>
+    <string name="nurse_auth_none">Magtiging: geen in hierdie sessie nie. Keur hierbo \'n raakskerm goed.</string>
+    <string name="nurse_auth_active">Magtiging: aktief tot %1$s (%2$s oor)</string>
+    <string name="nurse_auth_expired">Magtiging: verval om %1$s. Keur die skerm weer goed om voort te gaan.</string>
+    <string name="nurse_auth_device">Toestel: %1$s</string>
+    <string name="nurse_auth_site">Terrein: %1$s</string>
+    <string name="nurse_upload_window">Oplaaie vanaf hierdie skerm word aanvaar tot %1$s</string>
+    <string name="nurse_remaining_hm">%1$d uur %2$d min</string>
+    <string name="nurse_remaining_m">%1$d min</string>
+    <string name="nurse_sync_heading">Opnames op hierdie skerm</string>
+    <string name="nurse_sync_unavailable">Opname- en oplaaistatus is nog nie verskaf nie. Niks word as opgelaai gewys totdat die toestel-diens dit rapporteer nie.</string>
+    <string name="nurse_sync_local">Slegs op skerm gestoor: %1$d</string>
+    <string name="nurse_sync_synchronising">Sinchroniseer: %1$d</string>
+    <string name="nurse_sync_uploaded">Opgelaai: %1$d</string>
+    <string name="nurse_last_update">Laaste opdatering: %1$s</string>
+    <string name="nurse_last_update_none">Laaste opdatering: nog nie beskikbaar nie</string>
+    <string name="nurse_touchscreen_note">Pasiëntkeuse en opname word op die raakskerm gedoen.</string>
+    <!-- Branded nurse view: shift access card and code-only-when-needed form (Maxine Task 2) -->
+    <string name="nurse_section_access">Jou skoftoegang</string>
+    <string name="nurse_label_device">Goedgekeurde toestel</string>
+    <string name="nurse_label_expiry">Skof verval</string>
+    <string name="nurse_site_unassigned">Nog nie toegewys nie</string>
+    <string name="nurse_device_none">Nog geen goedgekeur nie</string>
+    <string name="nurse_expiry_none">Nog nie goedgekeur nie</string>
+    <string name="nurse_expiry_active">%1$s (%2$s oor)</string>
+    <string name="nurse_expiry_expired">Verval om %1$s</string>
+    <string name="nurse_pill_active">Goedgekeur</string>
+    <string name="nurse_pill_expired">Verval</string>
+    <string name="nurse_pill_none">Nie goedgekeur nie</string>
+    <string name="nurse_code_needed_expired">Jou goedkeuring het verval. Voer die nuwe sessyferkode in wat op die raakskerm wys.</string>
+    <string name="nurse_no_code_needed">Geen kode nodig nie. Dit is outomaties nagegaan en jou goedkeuring is aktief tot die skof verval.</string>
+    <string name="nurse_approve_another">Keur \'n ander skerm goed</string>
+</resources>

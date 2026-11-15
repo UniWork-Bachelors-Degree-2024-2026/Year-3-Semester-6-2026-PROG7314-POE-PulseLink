@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Triage badge - 'Tachycardia'
+    Pill shape, #FEF3C7 fill, 1dp #D97706 stroke.
+    The radius is larger than half of any realistic chip height, so the shape
+    always resolves to a full pill. Pair with roughly 10dp horizontal / 3dp
+    vertical padding on the TextView.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/pulse_warning_bg" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/pulse_warning" />
+    <corners android:radius="100dp" />
+</shape>

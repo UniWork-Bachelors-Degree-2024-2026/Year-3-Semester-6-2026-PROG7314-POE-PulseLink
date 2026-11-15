@@ -1,0 +1,13 @@
+{
+  "name": "pulselink-access-rules-tests",
+  "private": true,
+  "scripts": {
+    "test": "firebase emulators:exec --only database --project demo-pulselink-access --config ../../firebase.json \"node --test rules.test.cjs\"",
+    "test:api": "firebase emulators:exec --only database --project demo-pulselink-access --config ../../firebase.json \"dotnet test ../PulseLinkAPI.Tests.csproj --no-restore\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "5.0.0",
+    "firebase": "12.4.0",
+    "firebase-tools": "15.34.2"
+  }
+}

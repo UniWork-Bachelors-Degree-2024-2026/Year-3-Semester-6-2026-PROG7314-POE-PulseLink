@@ -1,0 +1,1377 @@
+<resources>
+    <string name="app_name" translatable="false">PulseLink</string>
+
+    <!-- Common -->
+    <string name="app_title" translatable="false">PulseLink RPM</string>
+
+    <!-- Splash -->
+    <string name="splash_app_name" translatable="false">PulseLink</string>
+    <string name="splash_tagline">Monitoring your heart, anywhere.</string>
+
+    <!-- Login -->
+    <string name="login_welcome">Welcome back. Please sign in to your account.</string>
+    <string name="label_email">Email Address</string>
+    <string name="hint_email" translatable="false">provider@PulseLink.com</string>
+    <string name="label_password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="hint_password" translatable="false">********</string>
+    <string name="sign_in">Sign In</string>
+    <string name="biometric_login">Biometric Login</string>
+    <string name="or_continue_with">OR CONTINUE WITH</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="request_access">Request Access</string>
+
+    <!-- Registration -->
+    <string name="registration_subtitle">Create your account to start monitoring your health.</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="hint_full_name" translatable="false">Jane Doe</string>
+    <string name="hint_email_registration" translatable="false">jane@example.com</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="hint_confirm_password" translatable="false">********</string>
+    <string name="error_passwords_do_not_match">Passwords do not match. Please re-enter.</string>
+    <string name="create_account">Create Account</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="log_in_here">Log in here</string>
+
+    <!-- Biometric Setup -->
+    <string name="biometric_setup_title">Secure &amp; Fast Login</string>
+    <string name="biometric_setup_subtitle">Enable biometrics to securely access your clinical dashboard in seconds without typing a password.</string>
+    <string name="instant_access_title">Instant Access</string>
+    <string name="instant_access_desc">Skip the manual login process.</string>
+    <string name="clinical_security_title">Clinical Grade Security</string>
+    <string name="clinical_security_desc">Keeps your personal health data safe.</string>
+    <string name="set_up_biometrics">Set Up Biometrics</string>
+    <string name="skip_for_now">Skip for now</string>
+
+    <!-- Biometric Login -->
+    <string name="sign_in_securely">Sign in securely</string>
+    <string name="face_id" translatable="false">Face ID</string>
+    <string name="position_face">Position your face within the frame</string>
+    <string name="use_password_instead">Use Password Instead</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Biometric challenge and enrolment -->
+    <string name="biometric_login_title">Verify it\'s you</string>
+    <string name="biometric_login_hint">Confirm your identity to open PulseLink</string>
+    <string name="biometric_prompt_title">Sign in to PulseLink</string>
+    <string name="biometric_prompt_subtitle">Confirm your identity to continue</string>
+    <string name="biometric_enroll_prompt_title">Enable biometric login</string>
+    <string name="biometric_enroll_prompt_subtitle">Confirm to securely save your sign-in on this device</string>
+    <string name="biometric_signing_in">Signing you in...</string>
+    <string name="biometric_try_again">Try Again</string>
+    <string name="biometric_enabled_toast">Biometric login enabled</string>
+    <string name="biometric_login_not_set_up">Sign in with your password first, then choose Set Up Biometrics.</string>
+    <string name="biometric_err_unavailable">Biometric login isn\'t available on this device right now. Please sign in with your password.</string>
+    <string name="biometric_err_none_enrolled">Add a fingerprint or face in your device settings, then come back to finish setup.</string>
+    <string name="biometric_err_key_invalidated">Your device\'s biometrics changed. Sign in with your password to set up biometric login again.</string>
+    <string name="biometric_err_credentials_invalid">Your saved sign-in is no longer valid. Please sign in with your password.</string>
+    <string name="biometric_err_offline">No connection. Check your internet and try again, or use your password.</string>
+    <string name="biometric_err_generic">We couldn\'t verify you. Try again or use your password.</string>
+    <string name="biometric_err_setup_failed">Couldn\'t enable biometric login. Please try again.</string>
+
+    <!-- RecyclerView adapter strings -->
+    <string name="session_bpm_format">%d BPM</string>
+    <string name="session_duration_format" translatable="false">%1$02d:%2$02d</string>
+    <string name="status_normal_rhythm">Normal Rhythm</string>
+    <string name="status_irregular_rhythm">Irregular Rhythm</string>
+
+    <string name="patient_last_session_format">Last session: %s</string>
+    <string name="patient_status_stable">STABLE</string>
+    <string name="patient_status_review_needed">REVIEW NEEDED</string>
+    <string name="patient_status_critical">CRITICAL</string>
+
+    <string name="severity_critical">CRITICAL</string>
+    <string name="severity_warning">WARNING</string>
+    <string name="severity_system">SYSTEM</string>
+
+    <string name="note_follow_up_required">FOLLOW-UP REQUIRED</string>
+
+    <string name="report_duration_format">Session duration: %s</string>
+    <string name="report_status_pending">PENDING</string>
+    <string name="report_status_flagged">FLAGGED</string>
+    <string name="report_status_signed_off">SIGNED OFF</string>
+
+    <!-- ============ Layout string extraction ============ -->
+
+    <!-- Screen: activity_main -->
+    <string name="activity_main_text_hello_world">Hello World!</string>
+
+    <!-- Screen: doctor_alert_details -->
+    <string name="doctor_alert_details_text_alert_details">Alert Details</string>
+    <string name="doctor_alert_details_text_critical">CRITICAL</string>
+    <string name="doctor_alert_details_text_oct_24_2023_10" translatable="false">Oct 24, 2023 - 10:42 AM</string>
+    <string name="doctor_alert_details_text_tachycardia_detected">Tachycardia Detected</string>
+    <string name="doctor_alert_details_text_sustained_heart_rate_145">Sustained heart rate of 145 bpm for over 5 minutes was recorded. The patient has a documented history of Atrial Fibrillation, which increases the clinical significance of this reading. Immediate review is recommended.</string>
+    <string name="doctor_alert_details_text_eleanor_rigby">Patient</string>
+    <string name="doctor_alert_details_text_id_mrn_88421">ID: Pending</string>
+    <string name="doctor_alert_details_text_heart_rate_time_alert">Heart Rate at Time of Alert</string>
+    <string name="doctor_alert_details_text_145" translatable="false">145</string>
+    <string name="doctor_alert_details_text_bpm">bpm</string>
+    <string name="doctor_alert_details_text_baseline_78_bpm">Baseline: 78 bpm</string>
+    <string name="doctor_alert_details_text_recommended_actions">Recommended Actions</string>
+    <string name="doctor_alert_details_text_contact_patient_confirm_symptoms">Contact patient to confirm symptoms</string>
+    <string name="doctor_alert_details_text_review_full_ecg_session">Review full ECG session recording</string>
+    <string name="doctor_alert_details_text_dismiss">Dismiss</string>
+    <string name="doctor_alert_details_text_escalate_now">Escalate Now</string>
+
+    <!-- Screen: doctor_alerts -->
+    <string name="doctor_alerts_text_clinical_alerts">Clinical Alerts</string>
+    <string name="doctor_alerts_hint_search_by_patient_name">Search by patient name, ID, or condition...</string>
+    <string name="doctor_alerts_text_all_alerts_12">All Alerts (12)</string>
+    <string name="doctor_alerts_text_critical_3">Critical (3)</string>
+    <string name="doctor_alerts_text_warning_5">Warning (5)</string>
+    <string name="doctor_alerts_text_system_4">System (4)</string>
+    <string name="doctor_alerts_text_mark_all_read">Mark All Read</string>
+
+    <!-- Screen: doctor_dashboard -->
+    <string name="doctor_dashboard_text_pulselink" translatable="false">PulseLink</string>
+    <string name="doctor_dashboard_text_overview">Overview</string>
+    <string name="doctor_dashboard_text_today_s_clinical_summary">Today\'s clinical summary</string>
+    <string name="doctor_dashboard_text_active_patients">Active Patients</string>
+    <string name="doctor_dashboard_text_12" translatable="false">--</string>
+    <string name="doctor_dashboard_text_critical_alerts">Critical Alerts</string>
+    <string name="doctor_dashboard_text_2" translatable="false">--</string>
+    <string name="doctor_dashboard_text_pending_reports">Pending Reports</string>
+    <string name="doctor_dashboard_text_5" translatable="false">--</string>
+    <string name="doctor_dashboard_text_priority_patients">Priority Patients</string>
+    <string name="doctor_dashboard_text_view_all">View All</string>
+    <string name="doctor_dashboard_text_marcus_reed">No priority patients yet</string>
+    <string name="doctor_dashboard_text_hr_115_bpm_high"></string>
+    <string name="doctor_dashboard_text_tachycardia_alert"></string>
+    <string name="doctor_dashboard_text_10m_ago"></string>
+    <string name="doctor_dashboard_text_elena_weaver" translatable="false"></string>
+    <string name="doctor_dashboard_text_bp_145_92_mmhg" translatable="false"></string>
+    <string name="doctor_dashboard_text_elevated_bp"></string>
+    <string name="doctor_dashboard_text_45m_ago"></string>
+    <string name="doctor_dashboard_text_thomas_hale" translatable="false"></string>
+    <string name="doctor_dashboard_text_daily_ecg_received"></string>
+    <string name="doctor_dashboard_text_pending_review"></string>
+    <string name="doctor_dashboard_text_2h_ago"></string>
+    <string name="doctor_dashboard_text_recent_activity">Recent Activity</string>
+    <string name="doctor_dashboard_text_john_doe_s_ecg">No recent activity to show</string>
+    <string name="doctor_dashboard_text_automated_rhythm_analysis_normal"></string>
+    <string name="doctor_dashboard_text_10_45_am" translatable="false"></string>
+    <string name="doctor_dashboard_text_new_report_sarah_smith"></string>
+    <string name="doctor_dashboard_text_weekly_summary_generated_review"></string>
+    <string name="doctor_dashboard_text_09_30_am" translatable="false"></string>
+    <string name="doctor_dashboard_text_system_maintenance"></string>
+    <string name="doctor_dashboard_text_server_sync_successful">Server sync successful.</string>
+    <string name="doctor_dashboard_text_02_00_am" translatable="false">02:00 AM</string>
+
+    <!-- Screen: doctor_ecg_session_details -->
+    <string name="doctor_ecg_session_details_text_ecg_session_details">ECG Session Details</string>
+    <string name="doctor_ecg_session_details_text_marcus_thorne">Patient</string>
+    <string name="doctor_ecg_session_details_text_id_p_948271_oct">ID: Pending</string>
+    <string name="doctor_ecg_session_details_text_normal_rhythm">Normal Rhythm</string>
+    <string name="doctor_ecg_session_details_text_avg_hr">Avg HR</string>
+    <string name="doctor_ecg_session_details_text_72_bpm" translatable="false">72 BPM</string>
+    <string name="doctor_ecg_session_details_text_duration">Duration</string>
+    <string name="doctor_ecg_session_details_text_05_42" translatable="false">05:42</string>
+    <string name="doctor_ecg_session_details_text_quality">Quality</string>
+    <string name="doctor_ecg_session_details_text_excellent">Excellent</string>
+    <string name="doctor_ecg_session_details_text_ecg_waveform_lead_i">ECG Waveform (Lead I)</string>
+    <string name="doctor_ecg_session_details_text_25mm_s_10mm_mv" translatable="false">25mm/s, 10mm/mV</string>
+    <string name="doctor_ecg_session_details_text_scroll_view_full_duration">Scroll to view full duration</string>
+    <string name="doctor_ecg_session_details_text_session_details">Session Details</string>
+    <string name="doctor_ecg_session_details_text_device_info">Device Info</string>
+    <string name="doctor_ecg_session_details_text_ad8232_monitor" translatable="false">AD8232 Monitor</string>
+    <string name="doctor_ecg_session_details_text_lead_configuration">Lead Configuration</string>
+    <string name="doctor_ecg_session_details_text_lead_i">Lead I</string>
+    <string name="doctor_ecg_session_details_text_sampling_rate">Sampling Rate</string>
+    <string name="doctor_ecg_session_details_text_250hz" translatable="false">250Hz</string>
+    <string name="doctor_ecg_session_details_text_reviewed_by">Reviewed By</string>
+    <string name="doctor_ecg_session_details_text_not_yet_reviewed">Not yet reviewed</string>
+    <string name="doctor_ecg_session_details_text_automated_interpretation">Automated Interpretation</string>
+    <string name="doctor_ecg_session_details_text_normal_sinus_rhythm_detected">Normal sinus rhythm detected. No significant ST-segment deviation, ectopic beats, or arrhythmia patterns identified during the recording period.</string>
+    <string name="doctor_ecg_session_details_text_flag_review">Flag for Review</string>
+    <string name="doctor_ecg_session_details_text_download_pdf">Download PDF</string>
+    <string name="doctor_ecg_session_details_text_mark_as_reviewed">Mark as Reviewed</string>
+
+    <!-- Screen: doctor_live_ecg -->
+    <string name="doctor_live_ecg_text_live_ecg">Live ECG</string>
+    <string name="doctor_live_ecg_text_marcus_thorne">Patient</string>
+    <string name="doctor_live_ecg_text_id_p_948271_ad8232">ID: Pending - AD8232 Sensor</string>
+    <string name="doctor_live_ecg_text_live">Live</string>
+    <string name="doctor_live_ecg_text_electrocardiogram_lead_i">Electrocardiogram (Lead I)</string>
+    <string name="doctor_live_ecg_text_112_bpm" translatable="false">112 BPM</string>
+    <string name="doctor_live_ecg_text_25mm_s_10mm_mv" translatable="false">25mm/s, 10mm/mV</string>
+    <string name="doctor_live_ecg_text_streaming">Streaming</string>
+    <string name="doctor_live_ecg_text_session_time">Session Time</string>
+    <string name="doctor_live_ecg_text_06_18" translatable="false">06:18</string>
+    <string name="doctor_live_ecg_text_lead_config">Lead Config</string>
+    <string name="doctor_live_ecg_text_lead_i">Lead I</string>
+    <string name="doctor_live_ecg_text_signal">Signal</string>
+    <string name="doctor_live_ecg_text_strong">Strong</string>
+    <string name="doctor_live_ecg_text_heart_rate_has_been">Heart rate has been elevated above 110 bpm for over 3 minutes.</string>
+    <string name="doctor_live_ecg_text_add_note">Add Note</string>
+    <string name="doctor_live_ecg_text_call_patient">Call Patient</string>
+    <string name="doctor_live_ecg_text_escalate_emergency">Escalate to Emergency</string>
+
+
+    <!-- Screen: doctor_new_patient_report -->
+    <string name="doctor_new_patient_report_text_clinician_portal">Clinician Portal</string>
+    <string name="doctor_new_patient_report_text_alex_mercer">New Patient</string>
+    <string name="doctor_new_patient_report_text_new_patient">New Patient</string>
+    <string name="doctor_new_patient_report_text_dob_10_12_1985">DOB: 10/12/1985 (38y) - Male - MRN: #PENDING</string>
+    <string name="doctor_new_patient_report_text_edit_profile">Edit Profile</string>
+    <string name="doctor_new_patient_report_text_recent_vitals">Recent Vitals</string>
+    <string name="doctor_new_patient_report_text_no_baseline_vitals_recorded">No baseline vitals recorded.</string>
+    <string name="doctor_new_patient_report_text_log_vitals">+ Log Vitals</string>
+    <string name="doctor_new_patient_report_text_clinical_history">Clinical History</string>
+    <string name="doctor_new_patient_report_text_allergies">Allergies</string>
+    <string name="doctor_new_patient_report_text_not_assessed">Not assessed</string>
+    <string name="doctor_new_patient_report_text_active_medications">Active Medications</string>
+    <string name="doctor_new_patient_report_text_previous_conditions">Previous Conditions</string>
+    <string name="doctor_new_patient_report_text_pending_patient_intake">Pending patient intake</string>
+    <string name="doctor_new_patient_report_text_ecg_history_amp_assessment">ECG History &amp; Assessment</string>
+    <string name="doctor_new_patient_report_text_no_ecg_history_yet">No ECG History Yet</string>
+    <string name="doctor_new_patient_report_text_this_patient_s_cardiac">This patient\'s cardiac record is currently empty. Connect a monitoring device or upload previous assessments to begin building their clinical profile.</string>
+    <string name="doctor_new_patient_report_text_start_monitoring">Start Monitoring</string>
+    <string name="doctor_new_patient_report_text_add_initial_assessment">Add Initial Assessment</string>
+
+    <!-- Screen: doctor_patient_ecg_history -->
+    <string name="doctor_patient_ecg_history_text_pulselink" translatable="false">PulseLink</string>
+    <string name="doctor_patient_ecg_history_text_back_patient_chart">Back to Patient Chart</string>
+    <string name="doctor_patient_ecg_history_text_jd" translatable="false">JD</string>
+    <string name="doctor_patient_ecg_history_text_john_doe">Patient</string>
+    <string name="doctor_patient_ecg_history_text_id_pt_84729_x">ID: Pending - DOB: Not provided</string>
+    <string name="doctor_patient_ecg_history_text_view_profile">View Profile</string>
+    <string name="doctor_patient_ecg_history_text_ecg_history">ECG History</string>
+    <string name="doctor_patient_ecg_history_hint_search_by_clinical_notes">Search by clinical notes or interpreting physician...</string>
+    <string name="doctor_patient_ecg_history_text_last_30_days">Last 30 Days</string>
+
+    <!-- Screen: doctor_patient_list -->
+    <string name="doctor_patient_list_text_pulselink" translatable="false">PulseLink</string>
+    <string name="doctor_patient_list_text_patient_roster">Patient Roster</string>
+    <string name="doctor_patient_list_hint_search_by_name_or">Search by name or ID...</string>
+    <string name="doctor_patient_list_text_all_patients">All Patients</string>
+    <string name="doctor_patient_list_text_critical_alerts">Critical Alerts</string>
+    <string name="doctor_patient_list_text_low_adherence">Low Adherence</string>
+
+    <!-- Screen: doctor_patient_profile -->
+    <string name="doctor_patient_profile_text_patient_profile">Patient Profile</string>
+    <string name="doctor_patient_profile_text_marcus_thorne" translatable="false">Marcus Thorne</string>
+    <string name="doctor_patient_profile_text_id_p_948271_45">ID: P-948271 - 45 yrs</string>
+    <string name="doctor_patient_profile_text_high_adherence">High Adherence</string>
+    <string name="doctor_patient_profile_text_stable">Stable</string>
+    <string name="doctor_patient_profile_text_clinical_summary">Clinical Summary</string>
+    <string name="doctor_patient_profile_text_primary_condition">Primary Condition</string>
+    <string name="doctor_patient_profile_text_chronic_hypertension">Chronic Hypertension</string>
+    <string name="doctor_patient_profile_text_secondary_status">Secondary Status</string>
+    <string name="doctor_patient_profile_text_post_op_recovery_appendectomy">Post-Op Recovery (Appendectomy)</string>
+    <string name="doctor_patient_profile_text_primary_physician">Primary Physician</string>
+    <string name="doctor_patient_profile_text_dr_sarah_jenkins_cardiology">Dr. Sarah Jenkins, Cardiology</string>
+    <string name="doctor_patient_profile_text_7_day_vitals_trend">7-Day Vitals Trend</string>
+    <string name="doctor_patient_profile_text_view_all">View All</string>
+    <string name="doctor_patient_profile_text_heart_rate">Heart Rate</string>
+    <string name="doctor_patient_profile_text_68" translatable="false">68</string>
+    <string name="doctor_patient_profile_text_bpm">bpm</string>
+    <string name="doctor_patient_profile_text_recent_ecg">Recent ECG</string>
+    <string name="doctor_patient_profile_text_oct_24_09_30" translatable="false">Oct 24, 09:30 AM</string>
+    <string name="doctor_patient_profile_text_normal_rhythm">Normal Rhythm</string>
+    <string name="doctor_patient_profile_text_oct_22_14_15" translatable="false">Oct 22, 14:15 PM</string>
+    <string name="doctor_patient_profile_text_tachycardia_detected">Tachycardia detected</string>
+    <string name="doctor_patient_profile_text_oct_18_10_00" translatable="false">Oct 18, 10:00 AM</string>
+    <string name="doctor_patient_profile_text_medications">Medications</string>
+    <string name="doctor_patient_profile_text_lisinopril" translatable="false">Lisinopril</string>
+    <string name="doctor_patient_profile_text_10mg_once_daily_morning">10mg - Once daily (Morning)</string>
+    <string name="doctor_patient_profile_text_amlodipine" translatable="false">Amlodipine</string>
+    <string name="doctor_patient_profile_text_5mg_once_daily_evening">5mg - Once daily (Evening)</string>
+    <string name="doctor_patient_profile_text_update_care_plan">Update Care Plan</string>
+    <string name="doctor_patient_profile_text_contact_patient">Contact Patient</string>
+
+    <!-- Screen: doctor_profile -->
+    <string name="doctor_profile_text_doctor_profile">Doctor Profile</string>
+    <string name="doctor_profile_text_dr_sarah_jenkins" translatable="false">Dr. Sarah Jenkins</string>
+    <string name="doctor_profile_text_cardiology_license_za_44821">Cardiology - License #ZA-44821</string>
+    <string name="doctor_profile_text_verified_clinician">Verified Clinician</string>
+    <string name="doctor_profile_text_42" translatable="false">42</string>
+    <string name="doctor_profile_text_patients">Patients</string>
+    <string name="doctor_profile_text_8" translatable="false">8</string>
+    <string name="doctor_profile_text_yrs_practice">Yrs Practice</string>
+    <string name="doctor_profile_text_4_9" translatable="false">4.9</string>
+    <string name="doctor_profile_text_rating">Rating</string>
+    <string name="doctor_profile_text_professional_details">Professional Details</string>
+    <string name="doctor_profile_text_specialty">Speciality</string>
+    <string name="doctor_profile_text_cardiology_electrophysiology">Cardiology - Electrophysiology</string>
+    <string name="doctor_profile_text_affiliated_hospital">Affiliated Hospital</string>
+    <string name="doctor_profile_text_livingstone_hospital_gqeberha" translatable="false">Livingstone Hospital, Gqeberha</string>
+    <string name="doctor_profile_text_email">Email</string>
+    <string name="doctor_profile_text_s_jenkins_pulselink_clinic" translatable="false">s.jenkins@pulselink-clinic.com</string>
+    <string name="doctor_profile_text_phone">Phone</string>
+    <string name="doctor_profile_text_27_41_555_0173" translatable="false">+27 41 555 0173</string>
+    <string name="doctor_profile_text_availability">Availability</string>
+    <string name="doctor_profile_text_available_consultations">Available for Consultations</string>
+    <string name="doctor_profile_text_mon_fri_08_00">Mon - Fri, 08:00 - 17:00 SAST</string>
+    <string name="doctor_profile_text_sign_out">Sign Out</string>
+
+    <!-- Screen: doctor_report_details -->
+    <string name="doctor_report_details_text_report_details">Report Details</string>
+    <string name="doctor_report_details_text_pulselink_rpm" translatable="false">PulseLink RPM</string>
+    <string name="doctor_report_details_text_weekly_clinical_summary">Weekly Clinical Summary</string>
+    <string name="doctor_report_details_text_report_id">Report ID</string>
+    <string name="doctor_report_details_text_rpt_2023_4471" translatable="false">RPT-2023-4471</string>
+    <string name="doctor_report_details_text_marcus_thorne" translatable="false">Marcus Thorne</string>
+    <string name="doctor_report_details_text_id_p_948271_45">ID: P-948271 - 45 yrs</string>
+    <string name="doctor_report_details_text_pending_sign_off">Pending Sign-off</string>
+    <string name="doctor_report_details_text_avg_hr">Avg HR</string>
+    <string name="doctor_report_details_text_88_bpm" translatable="false">88 BPM</string>
+    <string name="doctor_report_details_text_sessions">Sessions</string>
+    <string name="doctor_report_details_text_6" translatable="false">6</string>
+    <string name="doctor_report_details_text_alerts">Alerts</string>
+    <string name="doctor_report_details_text_2" translatable="false">2</string>
+    <string name="doctor_report_details_text_clinical_findings">Clinical Findings</string>
+    <string name="doctor_report_details_text_two_tachycardia_episodes_were">Two tachycardia episodes were recorded during the monitoring period, both exceeding 140 bpm sustained for more than 5 minutes. Baseline heart rate has trended upward compared to the previous reporting period. Recommend clinical correlation with patient\'s Atrial Fibrillation history.</string>
+    <string name="doctor_report_details_text_representative_waveform">Representative Waveform</string>
+    <string name="doctor_report_details_text_included_sessions_6">Included Sessions (6)</string>
+    <string name="doctor_report_details_text_oct_24_09_30" translatable="false">Oct 24, 09:30 AM</string>
+    <string name="doctor_report_details_text_tachycardia">Tachycardia</string>
+    <string name="doctor_report_details_text_oct_22_14_15" translatable="false">Oct 22, 14:15 PM</string>
+    <string name="doctor_report_details_text_normal_rhythm">Normal Rhythm</string>
+    <string name="doctor_report_details_text_oct_18_10_00" translatable="false">Oct 18, 10:00 AM</string>
+    <string name="doctor_report_details_text_sign_off_note">Sign-off Note</string>
+    <string name="doctor_report_details_hint_add_clinical_note_before">Add a clinical note before signing off on this report...</string>
+    <string name="doctor_report_details_text_flag_report">Flag Report</string>
+    <string name="doctor_report_details_text_download_pdf">Download PDF</string>
+    <string name="doctor_report_details_text_sign_off_report">Sign Off Report</string>
+
+    <!-- Screen: doctor_reports -->
+    <string name="doctor_reports_text_pulselink" translatable="false">PulseLink</string>
+    <string name="doctor_reports_text_reports">Reports</string>
+    <string name="doctor_reports_text_clinical_reports_generated_across">Clinical reports generated across your patients</string>
+    <string name="doctor_reports_hint_search_by_patient_name">Search by patient name or report ID...</string>
+    <string name="doctor_reports_text_all_reports">All Reports</string>
+    <string name="doctor_reports_text_pending_sign_off">Pending Sign-off</string>
+    <string name="doctor_reports_text_flagged">Flagged</string>
+    <string name="doctor_reports_text_signed_off">Signed Off</string>
+
+    <!-- Screen: doctor_session_notes -->
+    <string name="doctor_session_notes_text_pulselink" translatable="false">PulseLink</string>
+    <string name="doctor_session_notes_text_robert_robertson" translatable="false">Robert Robertson</string>
+    <string name="doctor_session_notes_text_id_mrn_84729_dob">ID: MRN-84729 - DOB: 05/12/1945, 78 yrs</string>
+    <string name="doctor_session_notes_text_heart_rate">Heart Rate</string>
+    <string name="doctor_session_notes_text_72_bpm" translatable="false">72 bpm</string>
+    <string name="doctor_session_notes_text_lead_config">Lead Config</string>
+    <string name="doctor_session_notes_text_lead_i">Lead I</string>
+    <string name="doctor_session_notes_text_sampling">Sampling</string>
+    <string name="doctor_session_notes_text_250_hz" translatable="false">250 Hz</string>
+    <string name="doctor_session_notes_text_lead_i_snapshot">Lead I Snapshot</string>
+    <string name="doctor_session_notes_hint_e_g_normal_sinus">E.g., Normal sinus rhythm with stable ST segments. No ectopy noted during the monitoring period. Patient reported no symptoms...</string>
+    <string name="doctor_session_notes_text_recommendations">Recommendations</string>
+    <string name="doctor_session_notes_text_continue_remote_monitoring">Continue remote monitoring</string>
+    <string name="doctor_session_notes_text_maintain_current_rpm_schedule">Maintain current RPM schedule</string>
+    <string name="doctor_session_notes_text_schedule_person_follow_up">Schedule in-person follow-up</string>
+    <string name="doctor_session_notes_text_require_clinic_visit_further">Require clinic visit for further evaluation</string>
+    <string name="doctor_session_notes_text_adjust_medication">Adjust medication</string>
+    <string name="doctor_session_notes_text_review_modify_current_prescriptions">Review and modify current prescriptions</string>
+    <string name="doctor_session_notes_text_immediate_intervention_required">Immediate intervention required</string>
+    <string name="doctor_session_notes_text_flag_urgent_clinical_action">Flag for urgent clinical action</string>
+    <string name="doctor_session_notes_text_save_clinical_note">Save Clinical Note</string>
+    <string name="doctor_session_notes_text_previous_notes">Previous Notes</string>
+    <string name="doctor_session_notes_text_see_more">See more</string>
+
+    <!-- Screen: doctor_settings -->
+    <string name="doctor_settings_text_pulselink" translatable="false">PulseLink</string>
+    <string name="doctor_settings_text_settings">Settings</string>
+    <string name="doctor_settings_text_manage_account_preferences_device">Manage your account preferences and device configuration.</string>
+    <string name="doctor_settings_text_account">Account</string>
+    <string name="doctor_settings_text_personal_information">Personal Information</string>
+    <string name="doctor_settings_text_update_name_email_contact">Update your name, email, and contact details.</string>
+    <string name="doctor_settings_text_security_amp_password">Security &amp; Password</string>
+    <string name="doctor_settings_text_change_password_set_up">Change password and set up 2FA.</string>
+    <string name="doctor_settings_text_preferences">Preferences</string>
+    <string name="doctor_settings_text_notifications">Notifications</string>
+    <string name="doctor_settings_text_manage_alerts_messages_vitals">Manage alerts for messages and vitals.</string>
+    <string name="doctor_settings_text_appearance">Appearance</string>
+    <string name="doctor_settings_text_theme_accessibility_settings">Theme and accessibility settings.</string>
+    <string name="doctor_settings_text_privacy_amp_support">Privacy &amp; Support</string>
+    <string name="doctor_settings_text_privacy_policy">Privacy Policy</string>
+    <string name="doctor_settings_text_help_center">Help Center</string>
+    <string name="doctor_settings_text_app_version_2_4">App Version 3.0.0</string>
+
+    <!-- Screen: item_report_card -->
+    <string name="item_report_card_text_download">Download</string>
+
+    <!-- Screen: nav_doctor -->
+    <string name="nav_doctor_dashboard_label">Dashboard</string>
+    <string name="nav_doctor_patients_label">Patients</string>
+    <string name="nav_doctor_reports_label">Reports</string>
+    <string name="nav_doctor_profile_label">Profile</string>
+
+    <!-- Screen: nav_patient -->
+    <string name="nav_patient_text_dashboard">Dashboard</string>
+    <string name="nav_patient_text_monitoring">Monitoring</string>
+    <string name="nav_patient_text_reports">Reports</string>
+    <string name="nav_patient_text_sos">SOS</string>
+
+    <!-- Screen: patient_dashboard -->
+    <string name="patient_dashboard_text_pulselink_rpm" translatable="false">PulseLink RPM</string>
+    <string name="patient_dashboard_text_good_morning_alex">Good Morning</string>
+    <string name="patient_dashboard_greeting_format">Hello, %1$s</string>
+    <string name="greeting_loading">Loading...</string>
+    <string name="greeting_empty">Welcome</string>
+    <string name="greeting_error">Unable to load name. Tap to retry.</string>
+    <string name="greeting_error_toast">Couldn\'t load your profile. Tap your name to retry.</string>
+    <string name="profile_loading">Loading profile...</string>
+    <string name="profile_empty_name">Name not set</string>
+    <string name="profile_empty_email">Email not set</string>
+    <string name="profile_error">Unable to load profile</string>
+    <string name="profile_error_retry">Unable to load profile. Tap to retry.</string>
+    <string name="profile_error_toast">Couldn\'t load your profile. Tap to retry.</string>
+    <string name="patient_dashboard_text_vitals_look_steady_today">Your vitals look steady today. Here is your daily health overview.</string>
+    <string name="patient_dashboard_text_hardware_status">Hardware Status</string>
+    <string name="patient_dashboard_text_online">Online</string>
+    <string name="patient_dashboard_text_sensor_device">Sensor Device</string>
+    <string name="patient_dashboard_text_start_ecg_recording">Start ECG Recording</string>
+    <string name="patient_dashboard_text_ensure_device_properly_attached">Ensure your device is properly attached to your chest.</string>
+    <string name="patient_dashboard_text_begin_session">Begin Session</string>
+    <string name="patient_dashboard_text_latest_reading">Latest Reading</string>
+    <string name="patient_dashboard_text_normal_rhythm">Normal Rhythm</string>
+    <string name="patient_dashboard_text_avg_heart_rate">Avg Heart Rate</string>
+    <string name="patient_dashboard_text_recent_updates">Recent Updates</string>
+    <string name="patient_dashboard_text_mark_all_read">Mark all read</string>
+    <string name="patient_dashboard_text_weekly_report_available">Weekly Report Available</string>
+    <string name="patient_dashboard_text_2_hours_ago">2 hours ago</string>
+    <string name="patient_dashboard_text_cardiovascular_summary_oct_15">Your cardiovascular summary for Oct 15 - Oct 21 is ready to view. All metrics are within normal ranges.</string>
+    <string name="patient_dashboard_text_device_firmware_update">Device Firmware Update</string>
+    <string name="patient_dashboard_text_1_day_ago">1 day ago</string>
+    <string name="patient_dashboard_text_new_update_esp8266_scheduled">A new firmware update for your ESP32-C3 monitor is scheduled for tonight at 2:00 AM. Keep the device connected to 5V USB power.</string>
+    <string name="patient_dashboard_text_dr_s_naidoo_appointment">Dr. S. Naidoo Appointment</string>
+    <string name="patient_dashboard_text_reminder_follow_up_consultation">Reminder: your follow-up consultation is scheduled for Oct 25 at 09:00 AM.</string>
+
+    <!-- Screen: patient_device_management -->
+    <string name="patient_device_management_text_pulselink_rpm" translatable="false">PulseLink RPM</string>
+    <string name="patient_device_management_text_device_management">Device Management</string>
+    <string name="patient_device_management_text_configure_monitor_connected_rpm">Configure and monitor your connected RPM sensors.</string>
+    <string name="patient_device_management_text_pulselink_pro_monitor" translatable="false">PulseLink ESP32-C3 Monitor</string>
+    <string name="patient_device_management_text_primary_ad8232_sensor_array">ESP32-C3 + AD8232 Sensor Front-End</string>
+    <string name="patient_device_management_text_connected">Connected</string>
+    <string name="patient_device_management_text_battery">Power Source</string>
+    <string name="patient_device_management_text_84" translatable="false">5V USB</string>
+    <string name="patient_device_management_text_signal_strength">Signal Strength</string>
+    <string name="patient_device_management_text_excellent">Excellent</string>
+    <string name="patient_device_management_text_last_sync">Last Sync</string>
+    <string name="patient_device_management_text_just_now">Just now</string>
+    <string name="patient_device_management_text_mac_address">MAC Address</string>
+    <string name="patient_device_management_text_80_1a_2b_3c" translatable="false">80:65:99:1A:2B:3C</string>
+    <string name="patient_device_management_text_firmware">Firmware</string>
+    <string name="patient_device_management_text_esp8266_v2_4_1" translatable="false">ESP32-C3 (v1.0.0-poe)</string>
+    <string name="patient_device_management_text_force_sync">Force Sync</string>
+    <string name="patient_device_management_text_configure">Configure</string>
+    <string name="patient_device_management_text_pair_new_device">Pair New Device</string>
+    <string name="patient_device_management_text_connect_new_sensor_or">Connect a new sensor or hub</string>
+    <string name="patient_device_management_text_device_support">Device Support</string>
+    <string name="patient_device_management_text_user_manual">User Manual</string>
+    <string name="patient_device_management_text_troubleshooting">Troubleshooting</string>
+
+    <!-- Screen: patient_device_pairing -->
+    <string name="patient_device_pairing_text_device_pairing">Device Pairing</string>
+    <string name="patient_device_pairing_text_scanning_devices">Scanning for Devices</string>
+    <string name="patient_device_pairing_text_make_sure_pulselink_monitor">Ensure your ESP32-C3 monitor is plugged into 5V USB power and connected to 2.4 GHz Wi-Fi.</string>
+    <string name="patient_device_pairing_text_pulselink_pro_monitor" translatable="false">PulseLink ESP32-C3 Monitor</string>
+    <string name="patient_device_pairing_text_80_1a_2b_3c" translatable="false">80:65:99:1A:2B:3C</string>
+    <string name="patient_device_pairing_text_pair">Pair</string>
+    <string name="patient_device_pairing_text_esp8266_ec0_backup" translatable="false">PulseLink ESP32-C3 Backup</string>
+    <string name="patient_device_pairing_text_9c_2b_1a_4d" translatable="false">9C:2B:1A:4D:7E:5F</string>
+    <string name="patient_device_pairing_text_signal">Signal</string>
+    <string name="patient_device_pairing_text_excellent">Excellent</string>
+    <string name="patient_device_pairing_text_ready_to_connect">Ready to connect</string>
+    <string name="patient_device_pairing_text_mac">MAC: </string>
+    <string name="patient_device_pairing_text_scan_again">Scan Again</string>
+    <string name="patient_device_pairing_text_having_trouble_pairing">Having trouble pairing? Ensure your Wi-Fi is 2.4 GHz and ESP32-C3 is powered on.</string>
+
+    <!-- Screen: patient_ecg_device_monitor -->
+    <string name="patient_ecg_device_monitor_text_ecg_device_monitor">ECG Device / Monitor</string>
+    <string name="patient_ecg_device_monitor_text_pulselink_pro_monitor" translatable="false">PulseLink ESP32-C3 Monitor</string>
+    <string name="patient_ecg_device_monitor_text_ad8232_sensor_array">AD8232 Single-Lead Front-End</string>
+    <string name="patient_ecg_device_monitor_text_connected">Connected</string>
+    <string name="patient_ecg_device_monitor_text_84" translatable="false">5V USB</string>
+    <string name="patient_ecg_device_monitor_text_battery">Power Source</string>
+    <string name="patient_ecg_device_monitor_text_excellent">Excellent</string>
+    <string name="patient_ecg_device_monitor_text_signal">Signal</string>
+    <string name="patient_ecg_device_monitor_text_lead_i">Lead I</string>
+    <string name="patient_ecg_device_monitor_text_lead_config">Lead Config</string>
+    <string name="patient_ecg_device_monitor_text_live_preview">Live Preview</string>
+    <string name="patient_ecg_device_monitor_text_waveform_monitor">Waveform Monitor</string>
+    <string name="patient_ecg_device_monitor_text_72_bpm" translatable="false">72 BPM</string>
+    <string name="patient_ecg_device_monitor_text_device_information">Device Information</string>
+    <string name="patient_ecg_device_monitor_text_mac_address">MAC Address</string>
+    <string name="patient_ecg_device_monitor_text_80_1a_2b_3c" translatable="false">80:65:99:1A:2B:3C</string>
+    <string name="patient_ecg_device_monitor_text_firmware">Firmware</string>
+    <string name="patient_ecg_device_monitor_text_esp8266_v2_4_1" translatable="false">ESP32-C3 (v1.0.0-poe)</string>
+    <string name="patient_ecg_device_monitor_text_sampling_rate">Sampling Rate</string>
+    <string name="patient_ecg_device_monitor_text_250hz" translatable="false">250 Hz (12-bit ADC)</string>
+    <string name="patient_ecg_device_monitor_text_last_sync">Last Sync</string>
+    <string name="patient_ecg_device_monitor_text_just_now">Just now</string>
+    <string name="patient_ecg_device_monitor_text_force_sync">Force Sync</string>
+    <string name="patient_ecg_device_monitor_text_calibrate">Calibrate</string>
+    <string name="patient_ecg_device_monitor_text_forget_device">Forget Device</string>
+
+    <!-- Screen: patient_ecg_history -->
+    <string name="patient_ecg_history_text_report_history">Report History</string>
+    <string name="patient_ecg_history_hint_search_reports">Search Reports...</string>
+    <string name="patient_ecg_history_text_all">All</string>
+    <string name="patient_ecg_history_text_normal">Normal</string>
+    <string name="patient_ecg_history_text_irregular">Irregular</string>
+    <string name="patient_ecg_history_text_flagged">Flagged</string>
+
+    <!-- Screen: patient_ecg_live_monitoring -->
+    <string name="patient_ecg_live_monitoring_text_pulselink_rpm" translatable="false">PulseLink RPM</string>
+    <string name="patient_ecg_live_monitoring_text_live_ecg_monitoring">Live ECG Monitoring</string>
+    <string name="patient_ecg_live_monitoring_text_ad8232_sensor_connected">AD8232 Sensor - Connected</string>
+    <string name="patient_ecg_live_monitoring_text_strong_signal">Strong Signal</string>
+    <string name="patient_ecg_live_monitoring_text_electrocardiogram_lead_i">Electrocardiogram (Lead I)</string>
+    <string name="patient_ecg_live_monitoring_text_session_duration">Session Duration</string>
+    <string name="patient_ecg_live_monitoring_text_pause_session">Pause Session</string>
+    <string name="patient_ecg_live_monitoring_text_end_session">End Session</string>
+    <string name="patient_ecg_live_monitoring_text_call_emergency">Call Emergency</string>
+    <string name="patient_ecg_live_monitoring_text_pre_check">Pre-Check</string>
+
+    <!-- Screen: patient_ecg_pre_session_check -->
+    <string name="patient_ecg_pre_session_check_text_pre_session_check">Pre-Session Check</string>
+    <string name="patient_ecg_pre_session_check_text_let_s_get_ready">Let\'s get you ready</string>
+    <string name="patient_ecg_pre_session_check_text_complete_checklist_below_before">Complete the checklist below before starting your ECG recording.</string>
+    <string name="patient_ecg_pre_session_check_text_device_charged_paired">Device is powered and paired</string>
+    <string name="patient_ecg_pre_session_check_text_battery_84_bluetooth_connected">5V USB Powered, Wi-Fi connected</string>
+    <string name="patient_ecg_pre_session_check_text_skin_clean_dry">Skin is clean and dry</string>
+    <string name="patient_ecg_pre_session_check_text_remove_lotion_or_sweat">Remove lotion or sweat from the chest area</string>
+    <string name="patient_ecg_pre_session_check_text_electrodes_are_attached_correctly">Electrodes are attached correctly</string>
+    <string name="patient_ecg_pre_session_check_text_electrode_placement_guide">Electrode Placement Guide</string>
+    <string name="patient_ecg_pre_session_check_text_sit_still_breathe_normally">Sit still and breathe normally once the recording begins for the most accurate reading.</string>
+    <string name="patient_ecg_pre_session_check_text_start_ecg_recording">Start ECG Recording</string>
+
+    <!-- Screen: patient_ecg_session_details -->
+    <string name="patient_ecg_session_details_text_session_report_oct_24">Session Report: Oct 24, 2023</string>
+    <string name="patient_ecg_session_details_text_overall_rhythm">OVERALL RHYTHM</string>
+    <string name="patient_ecg_session_details_text_normal_rhythm">Normal Rhythm</string>
+    <string name="patient_ecg_session_details_text_average_hr">Average HR</string>
+    <string name="patient_ecg_session_details_text_72_bpm" translatable="false">72 BPM</string>
+    <string name="patient_ecg_session_details_text_duration">Duration</string>
+    <string name="patient_ecg_session_details_text_05_42_min">05:42 min</string>
+    <string name="patient_ecg_session_details_text_ecg_waveform_lead_i">ECG Waveform (Lead I)</string>
+    <string name="patient_ecg_session_details_text_25mm_s_10mm_mv" translatable="false">25mm/s, 10mm/mV</string>
+    <string name="patient_ecg_session_details_text_scroll_view_full_duration">Scroll to view full duration</string>
+    <string name="patient_ecg_session_details_text_doctors_notes">Doctors Notes</string>
+    <string name="patient_ecg_session_details_text_no_arrhythmias_detected_during">No arrhythmias detected during the recording period. The rhythm is stable and consistent with a normal sinus rhythm. Baseline wander is minimal, and signal quality remained high throughout the session.</string>
+    <string name="patient_ecg_session_details_text_session_details">Session Details</string>
+    <string name="patient_ecg_session_details_text_signal_quality">Signal Quality</string>
+    <string name="patient_ecg_session_details_text_excellent">Excellent</string>
+    <string name="patient_ecg_session_details_text_device_info">Device Info</string>
+    <string name="patient_ecg_session_details_text_lead_configuration">Lead Configuration</string>
+    <string name="patient_ecg_session_details_text_lead_i">Lead I</string>
+    <string name="patient_ecg_session_details_text_sampling_rate">Sampling Rate</string>
+    <string name="patient_ecg_session_details_text_250hz" translatable="false">250Hz</string>
+    <string name="patient_ecg_session_details_text_download_pdf_report">Download PDF Report</string>
+
+    <!-- Screen: patient_emergency_sos -->
+    <string name="patient_emergency_sos_text_pulselink_rpm" translatable="false">PulseLink RPM</string>
+    <string name="patient_emergency_sos_text_breathe_calmly">Breathe calmly.</string>
+    <string name="patient_emergency_sos_text_help_being_notified_location">Help is being notified of your location and vitals.</string>
+    <string name="patient_emergency_sos_text_sos">SOS</string>
+    <string name="patient_emergency_sos_text_call_hospital">Call Hospital</string>
+    <string name="patient_emergency_sos_text_connect_nearest_er">Connect to nearest ER</string>
+    <string name="patient_emergency_sos_text_call_ambulance">Call Ambulance</string>
+    <string name="patient_emergency_sos_text_dispatch_emergency_services">Dispatch emergency services</string>
+    <string name="patient_emergency_sos_text_alert_emergency_contacts">Alert Emergency Contacts</string>
+    <string name="patient_emergency_sos_text_notify_family_friends">Notify family and friends</string>
+
+    <!-- Screen: patient_notification_details -->
+    <string name="patient_notification_details_text_notification">Notification</string>
+    <string name="patient_notification_details_text_health_alert">Health Alert</string>
+    <string name="patient_notification_details_text_oct_24_2023_11" translatable="false">Oct 24, 2023 - 11:32 AM</string>
+    <string name="patient_notification_details_text_irregular_rhythm_detected">Irregular Rhythm Detected</string>
+    <string name="patient_notification_details_text_last_ecg_session_recorded">Your last ECG session, recorded at 09:15 AM, flagged an irregular rhythm for clinical review. This does not necessarily indicate an emergency, but we recommend discussing the results with your doctor at your earliest convenience.</string>
+    <string name="patient_notification_details_text_oct_24_2023_09" translatable="false">Oct 24, 2023 - 09:15 AM</string>
+    <string name="patient_notification_details_text_115_bpm" translatable="false">115 BPM</string>
+    <string name="patient_notification_details_text_irregular_rhythm">Irregular Rhythm</string>
+    <string name="patient_notification_details_text_view_full_session_report">View Full Session Report</string>
+    <string name="patient_notification_details_text_send_my_doctor">Send to My Doctor</string>
+
+    <!-- Screen: patient_notifications -->
+    <string name="patient_notifications_text_notifications">Notifications</string>
+    <string name="patient_notifications_text_mark_all_read">Mark all read</string>
+
+    <!-- Screen: patient_offline_sync_status -->
+    <string name="patient_offline_sync_status_text_sync_status">Sync Status</string>
+    <string name="patient_offline_sync_status_text_re_offline">You\'re Offline</string>
+    <string name="patient_offline_sync_status_text_data_being_saved_locally">Your data is being saved locally and will sync automatically once you\'re back online.</string>
+    <string name="patient_offline_sync_status_text_last_synced">Last Synced</string>
+    <string name="patient_offline_sync_status_text_today_08_45_am">Today, 08:45 AM</string>
+    <string name="patient_offline_sync_status_text_pending_upload_3">Pending Upload (3)</string>
+    <string name="patient_offline_sync_status_text_retry_sync_now">Retry Sync Now</string>
+
+    <!-- Screen: patient_profile -->
+    <string name="patient_profile_text_patient_profile">Patient Profile</string>
+    <string name="patient_profile_text_alex_johnson" translatable="false"></string>
+    <string name="patient_profile_text_patient_id_pt_55210"></string>
+    <string name="patient_profile_text_personal_details">Personal Details</string>
+    <string name="patient_profile_text_date_birth">Date of Birth</string>
+    <string name="patient_profile_text_12_05_1958">Not provided</string>
+    <string name="patient_profile_text_gender">Gender</string>
+    <string name="patient_profile_text_male">Not provided</string>
+    <string name="patient_profile_text_phone_number">Phone Number</string>
+    <string name="patient_profile_text_27_82_555_0142">Not provided</string>
+    <string name="patient_profile_text_email">Email</string>
+    <string name="patient_profile_text_alex_johnson_mail_com" translatable="false"></string>
+    <string name="patient_profile_text_clinical_care_team">Clinical Care Team</string>
+    <string name="patient_profile_text_dr_s_naidoo">Not yet assigned</string>
+    <string name="patient_profile_text_primary_cardiologist">Primary Cardiologist</string>
+    <string name="patient_profile_text_emergency_contact">Emergency Contact</string>
+    <string name="patient_profile_text_maria_johnson">Not provided</string>
+    <string name="patient_profile_text_spouse_27_83_444"></string>
+    <string name="patient_profile_text_sign_out">Sign Out</string>
+
+    <!-- Screen: patient_session_report_preview -->
+    <string name="patient_session_report_preview_text_session_report_preview">Session Report Preview</string>
+    <string name="patient_session_report_preview_text_pulselink_rpm" translatable="false">PulseLink RPM</string>
+    <string name="patient_session_report_preview_text_clinical_ecg_report">Clinical ECG Report</string>
+    <string name="patient_session_report_preview_text_report_id">Report ID</string>
+    <string name="patient_session_report_preview_text_ml_2023_8942a" translatable="false">ML-2023-8942A</string>
+    <string name="patient_session_report_preview_text_robert_robertson" translatable="false">Robert Robertson</string>
+    <string name="patient_session_report_preview_text_id_mrn_84729_dob">ID: MRN-84729 - DOB: 05/12/1948, 78 yrs</string>
+    <string name="patient_session_report_preview_text_heart_rate">Heart Rate</string>
+    <string name="patient_session_report_preview_text_72_bpm" translatable="false">72 bpm</string>
+    <string name="patient_session_report_preview_text_clinical_summary">Clinical Summary</string>
+    <string name="patient_session_report_preview_text_analysis">Analysis</string>
+    <string name="patient_session_report_preview_text_normal_rhythm">Normal Rhythm</string>
+    <string name="patient_session_report_preview_text_avg_hr">Avg HR</string>
+    <string name="patient_session_report_preview_text_72_bpm_2" translatable="false">72 BPM</string>
+    <string name="patient_session_report_preview_text_duration">Duration</string>
+    <string name="patient_session_report_preview_text_05_42" translatable="false">05:42</string>
+    <string name="patient_session_report_preview_text_lead_i_waveform">Lead I Waveform</string>
+    <string name="patient_session_report_preview_text_page_1_1">Page 1 of 1</string>
+    <string name="patient_session_report_preview_text_clinical_review_only">For clinical review only</string>
+    <string name="patient_session_report_preview_text_send_doctor">Send to Doctor</string>
+    <string name="patient_session_report_preview_text_download_pdf">Download PDF</string>
+
+    <!-- Screen: patient_setting_language_selection -->
+    <string name="patient_setting_language_selection_text_language">Language</string>
+    <string name="patient_setting_language_selection_text_select_app_language">Select App Language</string>
+    <string name="patient_setting_language_selection_text_choose_language_d_like">Choose the language you\'d like to use across the app.</string>
+    <string name="patient_setting_language_selection_text_english">English</string>
+    <string name="patient_setting_language_selection_text_afrikaans">Afrikaans</string>
+    <string name="patient_setting_language_selection_text_isizulu">isiZulu</string>
+    <string name="patient_setting_language_selection_text_save_changes">Save Changes</string>
+
+    <!-- Screen: patient_settings -->
+    <string name="patient_settings_text_pulselink" translatable="false">PulseLink</string>
+    <string name="patient_settings_text_settings">Settings</string>
+    <string name="patient_settings_text_manage_account_preferences_device">Manage your account preferences and device configuration.</string>
+    <string name="patient_settings_text_account">Account</string>
+    <string name="patient_settings_text_personal_information">Personal Information</string>
+    <string name="patient_settings_text_update_name_email_contact">Update your name, email, and contact details.</string>
+    <string name="patient_settings_text_security_amp_password">Security &amp; Password</string>
+    <string name="patient_settings_text_change_password_set_up">Change password and set up 2FA.</string>
+    <string name="patient_settings_text_preferences">Preferences</string>
+    <string name="patient_settings_text_notifications">Notifications</string>
+    <string name="patient_settings_text_manage_alerts_messages_vitals">Manage alerts for messages and vitals.</string>
+    <string name="patient_settings_text_device_management">Device Management</string>
+    <string name="patient_settings_text_connected_monitors_wearables">Connected monitors and wearables.</string>
+    <string name="patient_settings_text_appearance">Appearance</string>
+    <string name="patient_settings_text_theme_accessibility_settings">Theme and accessibility settings.</string>
+    <string name="patient_settings_text_privacy_amp_support">Privacy &amp; Support</string>
+    <string name="patient_settings_text_privacy_policy">Privacy Policy</string>
+    <string name="patient_settings_text_help_center">Help Center</string>
+    <string name="patient_settings_text_app_version_2_4">App Version 3.0.0</string>
+
+    <!-- Screen: patient_settings_help_support -->
+    <string name="patient_settings_help_support_text_help_amp_support">Help &amp; Support</string>
+    <string name="patient_settings_help_support_text_how_can_we_help">How can we help?</string>
+    <string name="patient_settings_help_support_hint_search_help_articles">Search help articles...</string>
+    <string name="patient_settings_help_support_text_live_chat">Live Chat</string>
+    <string name="patient_settings_help_support_text_call_us">Call Us</string>
+    <string name="patient_settings_help_support_text_email">Email</string>
+    <string name="patient_settings_help_support_text_frequently_asked_questions">Frequently Asked Questions</string>
+
+    <!-- FAQ: electrode placement -->
+    <string name="patient_settings_help_support_text_electrode_placement">Where do the ECG electrodes go?</string>
+    <string name="patient_settings_help_support_text_electrode_placement_answer">PulseLink uses the AD8232 single-lead ECG sensor with 3 pads: RA/R (red, right arm/chest), LA/L (yellow, left arm/chest), and RL/COM (green, right leg/lower abdomen - the reference electrode). For the cleanest signal, place them on the chest: red just below the right collarbone, yellow just below the left collarbone, and green on the lower-left ribcage or lower-right abdomen, away from major muscle. Clean and dry the skin first, and keep still during recording to reduce noise.</string>
+    <string name="patient_settings_help_support_text_view_placement_guide">View the full step-by-step guide</string>
+
+    <!-- FAQ: pairing -->
+    <string name="patient_settings_help_support_text_how_do_i_pair">How do I pair my ECG device?</string>
+    <string name="patient_settings_help_support_text_how_do_i_pair_answer">Open Device Management from the dashboard and tap \"Add Device\". Turn on your PulseLink AD8232 monitor, keep it within 1-2 metres, and select it once it appears in the scan list. Once paired, the status badge on the dashboard will switch to \"Connected\".</string>
+
+    <!-- FAQ: irregular rhythm -->
+    <string name="patient_settings_help_support_text_what_does_irregular_rhythm">What does an irregular rhythm mean?</string>
+    <string name="patient_settings_help_support_text_what_does_irregular_rhythm_answer">An \"irregular rhythm\" flag means the beat-to-beat interval detected during your session fell outside the expected range. This is a screening indicator only, not a diagnosis - share the flagged session with your doctor through the app so they can review the recording.</string>
+
+    <!-- FAQ: syncing -->
+    <string name="patient_settings_help_support_text_why_isn_t_my">Why isn\'t my data syncing?</string>
+    <string name="patient_settings_help_support_text_why_isn_t_my_answer">Sessions recorded offline are queued and sync automatically once you have a stable Wi-Fi or mobile data connection. You can check queued sessions any time from Settings &gt; Offline Sync Status, and tap \"Retry Sync\" if a session has been waiting for a while.</string>
+
+    <!-- FAQ: battery -->
+    <string name="patient_settings_help_support_text_battery_life">How is my PulseLink ECG monitor powered?</string>
+    <string name="patient_settings_help_support_text_battery_life_answer">The ESP32-C3 AD8232 ECG monitor is continuously powered via a 5V USB Type-C cable connected to a power adapter or USB port. It does not use internal batteries, ensuring consistent telemetry transmission without degradation over a 2.4 GHz Wi-Fi home network.</string>
+
+    <!-- FAQ: connectivity -->
+    <string name="patient_settings_help_support_text_connectivity">My device won\'t connect - what should I check?</string>
+    <string name="patient_settings_help_support_text_connectivity_answer">Confirm Bluetooth and Wi-Fi are enabled on your phone, that the monitor is powered on (LED lit), and that it isn\'t already connected to another phone. Move within 1-2 metres of the device and try again from Device Management. If it still won\'t connect, restart the monitor by unplugging it for 10 seconds.</string>
+
+    <!-- FAQ: data privacy -->
+    <string name="patient_settings_help_support_text_how_my_health_data">How is my health data protected?</string>
+    <string name="patient_settings_help_support_text_how_my_health_data_answer">Your ECG recordings and profile data are transmitted over an encrypted connection and stored under your account only. Doctors can only view sessions you\'ve been paired with them for. You can review or request removal of your data at any time from Profile &gt; Privacy.</string>
+
+    <string name="patient_settings_help_support_text_this_help_center_not">This help center is not for medical emergencies. If you\'re experiencing one, use the SOS button.</string>
+
+    <!-- Contact support: diagnostic email -->
+    <string name="patient_settings_help_support_email_subject">PulseLink support request</string>
+    <string name="patient_settings_help_support_email_chooser_title">Send support email via</string>
+    <string name="patient_settings_help_support_email_no_client">No email app found on this device.</string>
+
+    <!-- Screen: patient_electrode_placement_guide -->
+    <string name="patient_electrode_placement_guide_title">Electrode Placement Guide</string>
+    <string name="patient_electrode_placement_guide_intro">PulseLink\'s ECG monitor uses the AD8232 sensor, a 3-lead (single-channel) front end. Its three pads are commonly labelled RA / LA / RL, or simply R / L / COM on some monitor housings. Follow the steps below for a clean, low-noise recording.</string>
+    <string name="patient_electrode_placement_guide_legend_r">R (RA) - Red</string>
+    <string name="patient_electrode_placement_guide_legend_l">L (LA) - Yellow</string>
+    <string name="patient_electrode_placement_guide_legend_com">COM (RL) - Green</string>
+    <string name="patient_electrode_placement_guide_legend_r_desc">Right arm / right chest, below the collarbone</string>
+    <string name="patient_electrode_placement_guide_legend_l_desc">Left arm / left chest, below the collarbone</string>
+    <string name="patient_electrode_placement_guide_legend_com_desc">Right leg / lower abdomen - reference (ground) electrode</string>
+    <string name="patient_electrode_placement_guide_step1_title">Prepare the skin</string>
+    <string name="patient_electrode_placement_guide_step1_desc">Clean the placement areas with a dry cloth or alcohol wipe. Avoid lotion or oily skin - it weakens the pad\'s adhesive and increases signal noise. Shave the area first if there is heavy hair.</string>
+    <string name="patient_electrode_placement_guide_step2_title">Snap the pads onto the lead cable</string>
+    <string name="patient_electrode_placement_guide_step2_desc">Attach each button-snap electrode pad to its lead clip (R/red, L/yellow, COM or RL/green) before sticking it to the skin - pressing the snap on afterward is uncomfortable and can loosen the pad.</string>
+    <string name="patient_electrode_placement_guide_step3_title">Place the R (RA) red pad</string>
+    <string name="patient_electrode_placement_guide_step3_desc">Position it on the right side of the chest, just below the collarbone (or on the right forearm for a quick check).</string>
+    <string name="patient_electrode_placement_guide_step4_title">Place the L (LA) yellow pad</string>
+    <string name="patient_electrode_placement_guide_step4_desc">Position it on the left side of the chest, just below the collarbone, mirroring the red pad (or on the left forearm for a quick check).</string>
+    <string name="patient_electrode_placement_guide_step5_title">Place the COM (RL) green pad</string>
+    <string name="patient_electrode_placement_guide_step5_desc">Position it on the lower-left ribcage or lower-right abdomen, away from the heart\'s axis. This is the reference/ground electrode and doesn\'t need to sit near the other two.</string>
+    <string name="patient_electrode_placement_guide_step6_title">Confirm the connection</string>
+    <string name="patient_electrode_placement_guide_step6_desc">Open a pre-session check from the dashboard. If a pad is loose, the app will flag \"Leads Disconnected\" - press each pad firmly and check the check screen updates to \"Attached\".</string>
+    <string name="patient_electrode_placement_guide_note">Chest placement produces a cleaner, taller QRS signal than the arms/leg placement and is recommended for hospital-style monitoring. Sit still and breathe normally while recording to minimise motion artefacts.</string>
+    <string name="patient_electrode_placement_guide_disclaimer">This guide is for using your PulseLink hobbyist ECG monitor and is not a substitute for clinical electrode placement or medical advice.</string>
+
+    <!-- Kotlin Toast literal extraction -->
+
+    <!-- Screen: login (toasts) -->
+    <string name="login_toast_missing_fields">Please enter your email and password</string>
+    <string name="login_toast_google_signing_in">Signing in with Google...</string>
+    <string name="login_toast_password_reset_sent">Password reset link sent</string>
+
+    <!-- Screen: registration (toasts) -->
+    <string name="registration_toast_missing_fields">Please fill in all fields</string>
+
+    <!-- InputValidator error messages-->
+    <string name="validator_email_required">Email address is required</string>
+    <string name="validator_email_invalid">Enter a valid email address</string>
+    <string name="validator_password_required">Password is required</string>
+    <string name="validator_password_too_short">Password must be at least 8 characters</string>
+    <string name="validator_password_missing_uppercase">Password must contain at least 1 uppercase letter</string>
+    <string name="validator_password_missing_digit">Password must contain at least 1 number</string>
+    <string name="validator_name_required">Name is required</string>
+    <string name="validator_name_too_short">Name must be at least 2 characters</string>
+    <string name="validator_name_invalid_chars">Name may only contain letters</string>
+    <string name="validator_device_id_required">Device ID is required</string>
+    <string name="validator_device_id_invalid">Enter a valid device ID, e.g. ESP32C3-PLA1B</string>
+    <string name="validator_phone_required">Phone number is required</string>
+    <string name="validator_phone_invalid">Enter a valid South African phone number, e.g. 082 123 4567</string>
+
+    <!-- DateTimeFormatter static strings -->
+    <string name="time_ago_just_now">Just now</string>
+    <string name="time_ago_yesterday">Yesterday</string>
+
+    <!-- Empty state placeholders -->
+    <string name="empty_state_sessions_message">No ECG sessions recorded yet. Start your first recording!</string>
+    <string name="empty_state_sessions_btn_start_recording">Start Recording</string>
+    <string name="empty_state_alerts_message">No active alerts. All patient parameters normal.</string>
+    <string name="empty_state_patients_message">No patients assigned to your directory yet.</string>
+    <string name="empty_state_notes_message">No clinical notes recorded for this session.</string>
+    <string name="empty_state_reports_message">No diagnostic reports generated yet.</string>
+    <string name="empty_state_notifications_message">You\'re all caught up! No unread notifications.</string>
+
+    <!-- Live recording indicator -->
+    <string name="live_ecg_status_recording">REC</string>
+
+    <!-- About, Legal & Medical Privacy Portal -->
+    <string name="about_title">About &amp; Legal</string>
+    <string name="about_back_desc">Back</string>
+    <string name="about_emblem_desc">PulseLink emblem</string>
+    <string name="about_version_format" translatable="false">v%1$s</string>
+    <string name="about_version_format_default" translatable="false">v3.0.0</string>
+    <string name="about_purpose">PulseLink connects patients and clinicians through remote ECG monitoring: capturing heart-rhythm data from a paired device, syncing it securely, and giving doctors timely insight into their patients\' cardiac health.</string>
+
+    <string name="about_section_authorship">AUTHORSHIP &amp; INSTITUTION</string>
+    <string name="about_author_cameron" translatable="false">Cameron van Heerden</string>
+    <string name="about_author_maxine" translatable="false">Maxine Palm</string>
+    <string name="about_author_role">Developer &amp; Co-author</string>
+    <!-- TODO: confirm institution and module names before submission -->
+    <string name="about_institution">The Independent Institute of Education (IIE)</string>
+    <string name="about_module">PROG7314 - Portfolio of Evidence</string>
+
+    <string name="about_section_disclaimer">MEDICAL DISCLAIMER</string>
+    <string name="about_medical_disclaimer">This application is developed strictly for academic evaluation and clinical prototype assessment; it does not constitute a certified medical diagnostic device.</string>
+
+    <string name="about_section_legal">LEGAL</string>
+    <string name="about_privacy_title">Privacy Policy (POPIA)</string>
+    <string name="about_terms_title">Terms of Service</string>
+
+    <string name="about_privacy_body">Responsible party: the PulseLink student development team (Cameron van Heerden and Maxine Palm).\n\nCompliance: PulseLink processes personal information in line with the Protection of Personal Information Act 4 of 2013 (POPIA).\n\n1. Information we process\nAccount details (name, email, role) and health information, including ECG recordings, heart-rate readings, session notes and device status. Health information is \"special personal information\" under POPIA and is handled with additional care.\n\n2. Purpose and lawful basis\nData is processed only to provide remote ECG monitoring, clinician review and alerts, and for academic assessment. Processing is based on your consent and is limited to these purposes (purpose specification and minimality).\n\n3. Security safeguards\nData is transmitted over encrypted connections and stored with Firebase services. Access is restricted by authentication and role (patient or doctor), with optional biometric sign-in on your device.\n\n4. Sharing and cross-border transfer\nPatient data is visible only to the patient and their treating doctor. It is not sold or used for marketing. Firebase infrastructure may process data outside South Africa; equivalent protection is required in line with POPIA section 72.\n\n5. Retention\nData is retained only while your account is active or as required for assessment, and is deleted on request where the law allows.\n\n6. Your rights\nYou may request access to, correction of, or deletion of your personal information, withdraw consent, and object to processing. Contact the development team through the GitHub repository.\n\n7. Complaints\nYou may lodge a complaint with the Information Regulator (South Africa) at inforegulator.org.za.</string>
+
+    <string name="about_terms_body">1. Acceptance\nBy using PulseLink you agree to these terms.\n\n2. Academic prototype\nPulseLink is a student project built for academic evaluation and clinical prototype assessment. It is not a certified medical device and must not be used to diagnose, treat or monitor any medical condition.\n\n3. Emergencies\nIn a medical emergency, contact your local emergency services immediately (South Africa: 112 or 10177). Do not rely on this app for emergency response.\n\n4. Your responsibilities\nProvide accurate information, keep your credentials confidential, and use the app only for lawful purposes. Doctors remain fully responsible for their own clinical judgement.\n\n5. No warranty\nThe app is provided \"as is\" without warranties of any kind. Readings, alerts and reports may be delayed, incomplete or inaccurate.\n\n6. Limitation of liability\nTo the extent permitted by South African law, the authors and their institution are not liable for any loss or harm arising from use of the app.\n\n7. Intellectual property\nThe PulseLink name, emblem and source code are the work of the authors and are shared through the project GitHub repository under its stated licence.\n\n8. Changes and governing law\nThese terms may be updated as the project evolves. They are governed by the laws of the Republic of South Africa.</string>
+
+    <string name="about_github_repo_url" translatable="false">https://github.com/EMECPE/prog7314-2026-poe-pulselink</string>
+    <string name="about_github_privacy_url" translatable="false">https://github.com/EMECPE/prog7314-2026-poe-pulselink/blob/main/PRIVACY_POLICY.md</string>
+    <string name="about_github_terms_url" translatable="false">https://github.com/EMECPE/prog7314-2026-poe-pulselink/blob/main/TERMS_OF_SERVICE.md</string>
+    <string name="about_github_repo_link">View project on GitHub</string>
+    <string name="about_github_privacy_link">Read full Privacy Policy on GitHub</string>
+    <string name="about_github_terms_link">Read full Terms on GitHub</string>
+    <string name="about_no_browser">No web browser available to open this link.</string>
+    <string name="about_copyright">© 2026 Cameron van Heerden &amp; Maxine Palm. All rights reserved.</string>
+
+    <!-- Settings entry -->
+    <string name="settings_about_legal_title">About &amp; Legal</string>
+    <string name="settings_about_legal_subtitle">Version, credits, privacy policy and terms.</string>
+
+    <!-- Multi-Language Support (Localisation)  -->
+    <!-- Language endonyms stay identical in every locale, so they are not translated. -->
+    <string name="language_english_subtitle" translatable="false">English (South Africa)</string>
+    <string name="language_zulu_subtitle" translatable="false">isiZulu (iNingizimu Afrika)</string>
+    <string name="language_afrikaans_subtitle" translatable="false">Afrikaans (Suid-Afrika)</string>
+
+    <string name="language_saved">Language updated</string>
+    <string name="language_already_active">That language is already selected</string>
+    <string name="language_restart_note">The app restarts so every screen uses your new language.</string>
+    <string name="language_option_desc">%1$s, not selected</string>
+    <string name="language_option_selected_desc">%1$s, selected</string>
+
+    <!-- Settings entry point -->
+    <string name="settings_language_title">Language</string>
+    <string name="settings_language_subtitle">English</string>
+    <!-- Content descriptions for icon controls -->
+    <string name="cd_back">Back</string>
+    <string name="cd_close">Close</string>
+    <string name="cd_share">Share</string>
+    <string name="cd_settings">Settings</string>
+    <string name="cd_profile">Profile</string>
+    <string name="cd_toggle_password_visibility">Show or hide password</string>
+    <string name="cd_change_photo">Change profile photo</string>
+    <string name="cd_call">Call</string>
+    <string name="cd_notifications">Notifications</string>
+    <string name="cd_delete">Delete</string>
+
+    <!-- Action feedback -->
+    <string name="action_not_available_yet">This part of PulseLink is not available yet.</string>
+    <string name="action_signed_out">Signed out</string>
+    <string name="action_alert_dismissed">Alert dismissed</string>
+    <string name="action_alert_escalated">Alert escalated to the on-call team</string>
+    <string name="action_flagged_for_review">Flagged for review</string>
+    <string name="action_marked_reviewed">Session marked as reviewed</string>
+    <string name="action_report_flagged">Report flagged</string>
+    <string name="action_report_signed_off">Report signed off</string>
+    <string name="action_download_started">Preparing the PDF...</string>
+    <string name="action_note_saved">Clinical note saved</string>
+    <string name="action_sync_started">Syncing with the server...</string>
+    <string name="action_calibration_started">Calibrating the sensor...</string>
+    <string name="action_device_forgotten">Device removed</string>
+    <string name="action_pairing_started">Pairing with the device...</string>
+    <string name="action_scanning">Scanning for devices...</string>
+    <string name="action_marked_all_read">All notifications marked as read</string>
+    <string name="action_calling_patient">Calling the patient...</string>
+    <string name="status_offline_saving_locally">Offline Mode Active: Telemetry is securely saved locally</string>
+    <string name="patient_dashboard_offline_mode_active">Offline Mode Active</string>
+    <string name="patient_dashboard_offline_mode_subtitle">Local storage active. Tap to view sync queue.</string>
+
+    <string name="patient_dashboard_text_no_device_paired">No device paired</string>
+    <string name="patient_dashboard_text_power_source">Power Source</string>
+    <string name="patient_dashboard_text_emergency_sos">Emergency SOS (112 / 10177)</string>
+    <string name="patient_dashboard_text_emergency_sos_dispatch">Immediate dispatch to South African medical emergency services</string>
+    <string name="patient_dashboard_text_no_sessions_yet">No sessions yet</string>
+    <string name="patient_dashboard_text_no_new_updates">No new updates</string>
+    <string name="patient_dashboard_text_clinical_reports_synced">All clinical reports and telemetry synced.</string>
+    <string name="patient_device_management_text_offline">Device cloud status is offline. Check clinic network connectivity.</string>
+    <string name="patient_device_management_text_no_ecg_monitor_paired">No ECG Monitor Paired</string>
+    <string name="patient_device_management_text_pair_with_account">Connect your ESP32-C3 monitor to 5V USB-C power to pair with your patient account.</string>
+    <string name="patient_ecg_pre_session_check_text_hardware_checking">Checking hardware telemetry…</string>
+    <string name="patient_ecg_pre_session_check_text_tap_skin">Tap to confirm skin is clean and dry</string>
+    <string name="patient_ecg_pre_session_check_text_lead_checking">Checking AD8232 lead attachment…</string>
+    <string name="patient_ecg_pre_session_check_text_placement_tap">Tap to inspect full 3-electrode anatomical placement guide</string>
+    <string name="patient_ecg_pre_session_check_text_complete_all">Complete All Checks to Begin</string>
+    <string name="patient_profile_text_edit_details">Edit Details ✎</string>
+    <string name="patient_profile_text_edit_contact">Edit Contact ✎</string>
+    <string name="patient_settings_help_support_text_need_more_help">Need more help?</string>
+    <string name="patient_settings_help_support_text_contact_support">Contact Support</string>
+    <string name="patient_settings_help_support_text_get_help">Get help from our support team</string>
+    <string name="patient_settings_help_support_text_user_guide">User Guide</string>
+    <string name="patient_settings_help_support_text_learn_pulselink">Learn how to use PulseLink</string>
+    <string name="patient_settings_help_support_text_report_problem">Report a Problem</string>
+    <string name="patient_settings_help_support_text_issue_app_device">Tell us about an issue with the app or device</string>
+    <string name="doctor_profile_text_registered">Registered</string>
+    <string name="doctor_profile_text_rpm_status">RPM Status</string>
+    <string name="security_password_text_security_password">Security &amp; Password</string>
+    <string name="security_password_text_account_verification">Account Verification</string>
+    <string name="security_password_text_email_status_checking">Email Status: Checking...</string>
+    <string name="security_password_text_verify">Verify</string>
+    <string name="security_password_text_biometric_authentication">Biometric Authentication</string>
+    <string name="security_password_text_biometric_face_unlock">Biometric / Face Unlock</string>
+    <string name="security_password_text_biometric_description">Secure instant login with Keystore</string>
+    <string name="security_password_text_test_biometric">Test Biometric Recognition</string>
+    <string name="security_password_text_change_biometrics">Change Biometrics</string>
+    <string name="security_password_text_password_management">Password Management</string>
+    <string name="security_password_text_send_reset">Send Password Reset Link</string>
+    <string name="security_password_text_reset_description">Dispatches an official Firebase password reset link to your registered email address.</string>
+    <string name="security_password_text_email_reset">Email Password Reset Link</string>
+    <string name="security_password_text_change_in_app">Change Password In-App</string>
+    <string name="security_password_hint_new_password">New Password (min 6 chars)</string>
+    <string name="security_password_hint_confirm_password">Confirm New Password</string>
+    <string name="security_password_text_update_password">Update Password</string>
+    <string name="doctor_ecg_text_no_data_available">No ECG Data Available</string>
+    <string name="patient_ecg_pre_session_check_text_no_device_paired">No device paired | Please pair your ESP32-C3 first</string>
+    <string name="patient_profile_gender_male">Male</string>
+    <string name="patient_profile_gender_female">Female</string>
+    <string name="patient_profile_gender_other">Other</string>
+    <string name="patient_profile_gender_prefer_not_to_say">Prefer not to say</string>
+    <string name="security_password_text_email_verified">Email Status: Verified ✓</string>
+    <string name="security_password_text_email_unverified">Email Status: Unverified</string>
+    <string name="security_password_text_biometrics_active">Biometrics active for instant login</string>
+    <string name="security_password_text_fingerprint_face_ready">Fingerprint/Face hardware ready</string>
+    <string name="security_password_text_biometrics_unavailable">Biometrics unavailable on this device</string>
+    <string name="patient_dashboard_text_no_recordings">No recordings</string>
+    <string name="patient_dashboard_text_pair_device_status">Pair a device to see status</string>
+    <string name="patient_dashboard_text_emergency_dispatch_title">Call emergency services</string>
+    <string name="patient_dashboard_text_emergency_dispatch_message">Select an emergency medical service to dial immediately. For acute cardiac distress or loss of consciousness, contact 112 without delay.</string>
+    <string name="patient_dashboard_text_dial_112_national">Dial 112 (National Emergency)</string>
+    <string name="patient_dashboard_text_dial_10177_ambulance">Dial 10177 (Ambulance)</string>
+    <string name="patient_ecg_pre_session_check_text_skin_cleansed">Skin is cleansed and prepared</string>
+    <string name="patient_ecg_pre_session_check_text_pair_device_lead1">Pair a device to check Lead I electrodes</string>
+    <string name="patient_ecg_pre_session_check_text_complete_all_dynamic">Complete All Checks to Begin (%1$d remaining)</string>
+
+    <!-- ===== Added: text that was previously hard-coded or untranslated ===== -->
+
+    <!-- common -->
+    <string name="l10n_bpm_value">%1$d BPM</string>
+    <string name="l10n_bpm_none">-- BPM</string>
+    <string name="l10n_not_provided">Not provided</string>
+    <string name="l10n_unavailable">Unavailable</string>
+    <string name="l10n_unknown">Unknown</string>
+    <string name="l10n_today">Today</string>
+    <string name="l10n_recent">Recent</string>
+    <string name="l10n_recent_session">Recent Session</string>
+    <string name="l10n_attending">Attending</string>
+    <string name="l10n_dr_name_format">Dr. %1$s</string>
+    <string name="l10n_unknown_doctor">Unknown Doctor</string>
+    <string name="l10n_unknown_patient">Unknown Patient</string>
+    <string name="l10n_patient_short_format">Patient %1$s</string>
+    <string name="l10n_patient_id_format">Patient ID: PT-%1$s</string>
+    <string name="l10n_id_and_date_format">ID: %1$s | %2$s</string>
+    <string name="l10n_error_format">Error: %1$s</string>
+    <string name="l10n_continue">Continue</string>
+    <string name="l10n_active">Active</string>
+    <string name="l10n_continuous">Continuous</string>
+
+    <!-- quality / status / rhythm -->
+    <string name="l10n_quality_excellent">Excellent</string>
+    <string name="l10n_quality_good">Good</string>
+    <string name="l10n_quality_fair">Fair</string>
+    <string name="l10n_quality_poor">Poor</string>
+    <string name="l10n_status_completed">Completed</string>
+    <string name="l10n_status_flagged">Flagged</string>
+    <string name="l10n_status_active">Active</string>
+    <string name="l10n_status_irregular">Irregular</string>
+    <string name="l10n_status_normal">Normal</string>
+    <string name="l10n_rhythm_tachycardia">Tachycardia</string>
+    <string name="l10n_rhythm_bradycardia">Bradycardia</string>
+    <string name="l10n_rhythm_normal_sinus">Normal Sinus Rhythm</string>
+    <string name="l10n_rhythm_normal_sinus_short">Normal Sinus</string>
+    <string name="l10n_interp_tachy">Sinus tachycardia detected (resting heart rate exceeds 100 BPM). Clinical correlation advised.</string>
+    <string name="l10n_interp_brady">Sinus bradycardia observed (below 50 BPM). Evaluate symptomatic history and cardiac status.</string>
+    <string name="l10n_interp_irregular">Arrhythmia or degraded signal quality detected during Lead I monitoring. Review full strip.</string>
+    <string name="l10n_interp_normal">Normal sinus rhythm observed with regular P-QRS-T morphology on Lead I. No acute diagnostic alarms triggered.</string>
+    <string name="l10n_alert_elevated_hr">Elevated Heart Rate</string>
+    <string name="l10n_alert_tachycardia">Tachycardia</string>
+    <string name="l10n_alert_bradycardia">Bradycardia</string>
+    <string name="l10n_alert_lead_detached">Electrode Lead Detached</string>
+    <string name="l10n_alert_asystole">No Pulse Detected (Asystole)</string>
+
+    <!-- BPM anomaly detector -->
+    <string name="l10n_anomaly_lead_msg">Electrode Lead Disconnected (LO+/LO-)</string>
+    <string name="l10n_anomaly_lead_action">Check AD8232 Lead I electrode placement on chest or limbs.</string>
+    <string name="l10n_anomaly_asystole_action">Verify sensor connection immediately or initiate emergency protocol.</string>
+    <string name="l10n_anomaly_brady_crit_msg">Critical Bradycardia (%1$d BPM)</string>
+    <string name="l10n_anomaly_brady_crit_action">Severe low heart rate. Seek emergency medical attention.</string>
+    <string name="l10n_anomaly_brady_warn_msg">Mild Bradycardia (%1$d BPM)</string>
+    <string name="l10n_anomaly_brady_warn_action">Heart rate below 50 BPM. Ensure patient is resting comfortably.</string>
+    <string name="l10n_anomaly_tachy_crit_msg">Critical Tachycardia (%1$d BPM)</string>
+    <string name="l10n_anomaly_tachy_crit_action">Severe elevated heart rate. Seek immediate clinical assessment.</string>
+    <string name="l10n_anomaly_tachy_warn_msg">Elevated Heart Rate (%1$d BPM)</string>
+    <string name="l10n_anomaly_tachy_warn_action">Heart rate above 100 BPM. Keep patient calm and stationary.</string>
+    <string name="l10n_anomaly_normal_msg">Normal Sinus Rhythm (%1$d BPM)</string>
+    <string name="l10n_anomaly_normal_action">Heart rate is within normal resting physiological range (50-100 BPM).</string>
+
+    <!-- device / hardware -->
+    <string name="l10n_not_registered">Not Registered</string>
+    <string name="l10n_no_device_paired_title">No Device Paired</string>
+    <string name="l10n_not_paired">Not Paired</string>
+    <string name="l10n_device_subtitle">ESP32-C3 + AD8232 Sensor Front-End</string>
+    <string name="l10n_usb_powered">USB Powered (5V)</string>
+    <string name="l10n_usb_disconnected_offline">Cloud Status Offline</string>
+    <string name="l10n_status_unavailable">Status unavailable</string>
+    <string name="l10n_unable_to_load">Unable to load</string>
+    <string name="l10n_connected">Connected</string>
+    <string name="l10n_offline">Offline</string>
+    <string name="l10n_no_signal">No Signal</string>
+    <string name="l10n_lead_normal">Lead I (Normal)</string>
+    <string name="l10n_lead_detached">Lead Detached</string>
+    <string name="l10n_lead_disconnected">Disconnected</string>
+    <string name="l10n_lead_attached">Lead I Attached</string>
+    <string name="l10n_lead_active">Lead I Active</string>
+    <string name="l10n_sensor_status_usb">ESP32-C3 (USB 5V Powered)</string>
+    <string name="l10n_syncing">Syncing…</string>
+    <string name="l10n_just_now_time_format">Just now (%1$s)</string>
+    <string name="l10n_no_device_yet">No device paired yet.</string>
+    <string name="l10n_esp_synced">ESP32 telemetry synchronised. Device is online.</string>
+    <string name="l10n_esp_offline_usb_wifi">Device cloud status is offline. Check Wi-Fi and API connection.</string>
+    <string name="l10n_esp_unreachable">Unable to reach ESP32. Device is offline.</string>
+    <string name="l10n_calibrating">Calibrating…</string>
+    <string name="l10n_calibration_done">AD8232 baseline calibration completed. 12-bit ADC aligned (0 to 4095).</string>
+    <string name="l10n_unpair_title">Unpair Hardware Monitor?</string>
+    <string name="l10n_unpair_message">Are you sure you want to disconnect this ESP32-C3 ECG monitor from your PulseLink account?</string>
+    <string name="l10n_unpair">Unpair</string>
+    <string name="l10n_unpaired_toast">ESP32 monitor unpaired from account.</string>
+    <string name="l10n_scanning_network">Scanning Network…</string>
+    <string name="l10n_scanning_title">Scanning for ESP32-C3 Monitors…</string>
+    <string name="l10n_scanning_subtitle">Listening for 2.4 GHz Wi-Fi beacon packets from nearby AD8232 ECG hardware.</string>
+    <string name="l10n_no_device_found">No Device Found</string>
+    <string name="l10n_no_device_found_unpaired">No ESP32-C3 monitor has been paired yet. Plug in your hardware and connect it to 2.4 GHz Wi-Fi, then tap \'Scan Again\'.</string>
+    <string name="l10n_no_device_found_account">We couldn\'t find a real ESP32-C3 monitor for this account. Check that it is powered on and connected.</string>
+    <string name="l10n_mac_format">MAC: %1$s | AD8232 Lead I</string>
+    <string name="l10n_ping_online_ready">Online (USB 5V) | Ready to Pair</string>
+    <string name="l10n_ping_offline_power">Offline | Power on ESP32 &amp; connect Wi-Fi</string>
+    <string name="l10n_device_unreachable">Device Unreachable</string>
+    <string name="l10n_device_unreachable_msg">Unable to reach the paired ESP32-C3 monitor. Check that it is powered on and connected to Wi-Fi.</string>
+    <string name="l10n_pinging">Pinging…</string>
+    <string name="l10n_pinging_device_format">Pinging %1$s…</string>
+    <string name="l10n_ping_esp32">Ping ESP32</string>
+    <string name="l10n_ping_result_format">Ping: %1$dms OK | Signal: %2$s | %3$s</string>
+    <string name="l10n_ping_toast_format">ESP32 ping response in %1$dms. Device is online.</string>
+    <string name="l10n_esp_offline_no_heartbeat">ESP32 Offline (No heartbeat detected)</string>
+    <string name="l10n_esp_offline_check_5v">Device cloud status is offline. Check Wi-Fi and API connection.</string>
+    <string name="l10n_unable_reach_offline">Unable to reach device (Offline)</string>
+    <string name="l10n_unable_reach_named_format">Unable to reach %1$s. Check that it is powered on.</string>
+    <string name="l10n_pairing">Pairing…</string>
+    <string name="l10n_pair_device">Pair Device</string>
+    <string name="l10n_must_sign_in_pair">You must be signed in to pair a device.</string>
+    <string name="l10n_paired_success_format">%1$s (%2$s) paired successfully.</string>
+    <string name="l10n_pair_failed_format">Unable to pair %1$s. Please try again.</string>
+    <string name="l10n_no_device_to_ping">No device found to ping.</string>
+    <string name="l10n_no_device_to_pair">No device found to pair.</string>
+    <string name="l10n_pairing_guide_title">Hardware Provisioning Guide</string>
+    <string name="l10n_pairing_guide_steps">1. Plug ESP32-C3 Super Mini into 5V USB-C continuous power.\n2. Ensure home or hospital router broadcasts a 2.4 GHz Wi-Fi network (5 GHz not supported).\n3. Tap \'Ping ESP32\' to verify live latency, signal quality, and AD8232 lead connectivity before pairing.</string>
+    <string name="l10n_ready_to_scan">Ready to Scan for ESP32-C3</string>
+    <string name="l10n_ready_to_scan_desc">Ensure your ESP32-C3 monitor is plugged into 5V USB-C continuous power and connected to 2.4 GHz Wi-Fi.</string>
+    <string name="l10n_default_monitor_name">PulseLink ESP32-C3 Monitor</string>
+    <string name="l10n_monitor_spec">AD8232 ECG | 5V USB Powered</string>
+    <string name="l10n_ready_to_connect">Ready to connect</string>
+    <string name="l10n_esp_online_wifi">ESP32-C3 Online (5V USB Powered) | Wi-Fi Connected</string>
+    <string name="l10n_esp_offline_retry">ESP32-C3 Offline | Connect 5V USB-C Power (Tap to Retry)</string>
+    <string name="l10n_electrodes_attached">Lead I Electrodes Attached (AD8232 Active)</string>
+    <string name="l10n_electrodes_detached">Electrodes Detached (Attach RA, LA, RL Pads - Tap to Retry)</string>
+
+    <!-- dashboard / notifications -->
+    <string name="l10n_unable_load_data">Unable to load data</string>
+    <string name="l10n_tap_to_retry">Tap to retry</string>
+    <string name="l10n_items_pending_format">Items pending synchronisation: %1$d. Tap to view queue.</string>
+    <string name="l10n_cat_health_alert">HEALTH ALERT</string>
+    <string name="l10n_cat_report">REPORT</string>
+    <string name="l10n_cat_clinical_note">CLINICAL NOTE</string>
+    <string name="l10n_notification_deleted">Notification deleted.</string>
+    <string name="l10n_no_session_report_attached">No session report is attached to this notification.</string>
+    <string name="l10n_report_forwarded">Telemetry report forwarded to assigned clinician.</string>
+    <string name="l10n_notification_default_title">PulseLink Notification</string>
+    <string name="l10n_notification_default_body">You have a new clinical update from PulseLink.</string>
+    <string name="l10n_today_time_format">Today, %1$s</string>
+    <string name="l10n_channel_critical_name">Critical ECG Alerts</string>
+    <string name="l10n_channel_critical_desc">Urgent notifications regarding abnormal heart rhythms and lead detachment.</string>
+    <string name="l10n_channel_updates_name">Clinical Updates &amp; Reports</string>
+    <string name="l10n_channel_updates_desc">Updates regarding doctor notes, session sign-offs, and PDF reports.</string>
+
+    <!-- doctor screens -->
+    <string name="l10n_unable_load_session">Unable to load session details.</string>
+    <string name="l10n_btn_update_notes">Update Clinical Notes</string>
+    <string name="l10n_share_clinical_subject_format">PulseLink Clinical ECG Review - Session %1$s</string>
+    <string name="l10n_share_clinical_body_format">PulseLink RPM Clinical Telemetry Review\nPatient: %1$s\nSession: %2$s\nAverage Heart Rate: %3$s BPM\nDuration: %4$s\nSignal Quality: %5$s\nRhythm: %6$s</string>
+    <string name="l10n_share_clinical_chooser">Share Clinical Telemetry</string>
+    <string name="l10n_downloading_pdf_clinical">Downloading PDF clinical report...</string>
+    <string name="l10n_opening_preview">Opening report preview...</string>
+    <string name="l10n_session_flagged_followup">Session flagged for priority clinical follow-up.</string>
+    <string name="l10n_session_info_incomplete">Session information incomplete.</string>
+    <string name="l10n_no_patient_selected">No patient selected.</string>
+    <string name="l10n_unable_load_ecg_data">Unable to load ECG data.</string>
+    <string name="l10n_unable_load_alerts">Unable to load alerts.</string>
+    <string name="l10n_unable_load_alert_details">Unable to load alert details.</string>
+    <string name="l10n_no_session_linked_alert">No ECG session linked to this alert.</string>
+    <string name="l10n_picture_updated">Profile picture updated.</string>
+    <string name="l10n_picture_failed">Unable to update profile picture.</string>
+    <string name="l10n_doctor_license_line">Cardiology | HPCSA Reg: MP 0744821</string>
+    <string name="l10n_doctor_network">PulseLink Clinician Network</string>
+    <string name="l10n_verified_clinician_line">Verified Clinician Line</string>
+    <string name="l10n_downloading_pdf_for_format">Downloading PDF report for %1$s...</string>
+    <string name="l10n_unable_load_notes_screen">Unable to load session notes.</string>
+    <string name="l10n_unable_load_notes">Unable to load notes.</string>
+    <string name="l10n_enter_observation">Please enter a clinical observation first.</string>
+    <string name="l10n_signed_in_to_save_note">You must be signed in to save a note.</string>
+    <string name="l10n_note_recommendation_default">Continue remote monitoring with daily ECG checks.</string>
+    <string name="l10n_note_saved_ok">Clinical note saved successfully.</string>
+    <string name="l10n_unable_save_note">Unable to save note.</string>
+
+    <!-- emergency / help -->
+    <string name="l10n_sos_cancelled">Emergency dispatch cancelled.</string>
+    <string name="l10n_sos_connecting">Connecting to South African Emergency Services (112)...</string>
+    <string name="l10n_sos_subject">URGENT: PulseLink Cardiac Emergency Alert</string>
+    <string name="l10n_sos_message_format">EMERGENCY ALERT from PulseLink RPM:\nPatient: %1$s\nMedical Status: Cardiac Emergency Triggered via AD8232 ECG Monitor.\nLocation: Emergency services notified.\nPlease check in immediately.</string>
+    <string name="l10n_sos_chooser">Alert Emergency Contacts</string>
+    <string name="l10n_live_chat_soon">Live Chat support channel launching soon.</string>
+    <string name="l10n_diag_intro">Please describe your issue above this line.</string>
+    <string name="l10n_diag_header">---- Device diagnostics (auto-generated, no health data) ----</string>
+    <string name="l10n_diag_app_version">App version: %1$s</string>
+    <string name="l10n_diag_android_version">Android version: %1$s (SDK %2$d)</string>
+    <string name="l10n_diag_device">Device: %1$s</string>
+    <string name="l10n_diag_role">Account role: %1$s</string>
+    <string name="l10n_diag_network">Network: %1$s</string>
+    <string name="l10n_diag_timestamp">Timestamp: %1$s</string>
+    <string name="l10n_diag_unknown">unknown</string>
+    <string name="l10n_diag_offline">offline</string>
+    <string name="l10n_diag_mobile_data">Mobile data</string>
+    <string name="l10n_diag_connected">Connected</string>
+    <string name="l10n_diag_no_internet_format">%1$s (no internet)</string>
+
+    <!-- login / registration -->
+    <string name="l10n_google_token_failed">Unable to retrieve Google security token.</string>
+    <string name="l10n_google_signin_error_format">Google sign-in error: %1$s</string>
+    <string name="l10n_google_code_format">Code %1$d</string>
+    <string name="l10n_valid_email_required">Please enter a valid email address.</string>
+    <string name="l10n_sending">Sending…</string>
+    <string name="l10n_send_link">Send Link</string>
+    <string name="l10n_reset_email_sent_format">Password reset email sent to %1$s. Please check your inbox.</string>
+    <string name="l10n_reset_email_failed">Failed to send reset email.</string>
+    <string name="l10n_auth_success">Authentication successful.</string>
+    <string name="l10n_auth_failed">Authentication failed.</string>
+    <string name="l10n_label_account_type">Select Account Type</string>
+    <string name="l10n_role_patient">Patient</string>
+    <string name="l10n_role_doctor">Doctor / Clinician</string>
+    <string name="l10n_label_phone">Phone Number</string>
+    <string name="l10n_label_dob">Date of Birth</string>
+    <string name="l10n_label_gender">Gender</string>
+    <string name="l10n_label_emergency_name">Emergency Contact Name</string>
+    <string name="l10n_label_emergency_phone">Emergency Contact Phone</string>
+    <string name="l10n_label_speciality">Medical Speciality</string>
+    <string name="l10n_label_license">Medical Practice / License Number</string>
+    <string name="l10n_label_hospital">Hospital / Clinical Centre</string>
+    <string name="l10n_hint_dob">YYYY-MM-DD (e.g. 1995-06-15)</string>
+    <string name="l10n_hint_dob_dialog">YYYY-MM-DD (e.g. 1998-05-12)</string>
+    <string name="l10n_hint_contact_name">Full Name of Contact</string>
+    <string name="l10n_hint_speciality">Primary Cardiologist</string>
+    <string name="l10n_hint_hospital">PulseLink Heart Institute</string>
+    <string name="l10n_forgot_title">Reset Password</string>
+    <string name="l10n_forgot_desc">Enter your registered PulseLink email address. We will send you secure password reset instructions.</string>
+    <string name="l10n_profile_registered">Profile successfully registered.</string>
+    <string name="l10n_registration_failed">Registration failed.</string>
+
+    <!-- profile -->
+    <string name="l10n_no_emergency_number">No emergency contact number on file.</string>
+    <string name="l10n_edit_details_title">Update Personal Details</string>
+    <string name="l10n_save_details">Save Details</string>
+    <string name="l10n_profile_updated">Profile details updated successfully.</string>
+    <string name="l10n_profile_update_failed">Failed to update profile.</string>
+    <string name="l10n_call_failed">Unable to initiate telephone call</string>
+
+    <!-- live monitoring / sync -->
+    <string name="l10n_pair_before_recording">Pair a device before starting a recording.</string>
+    <string name="l10n_unable_save_recording">Unable to save this recording session.</string>
+    <string name="l10n_unable_start_recording">Unable to start recording session.</string>
+    <string name="l10n_recording_complete">90-second ECG recording complete.</string>
+    <string name="l10n_resume_session">Resume Session</string>
+    <string name="l10n_mode_monitor">Monitor</string>
+    <string name="l10n_mode_paper">Hospital Paper</string>
+    <string name="l10n_no_internet_saved_locally">No internet connection. Data remains securely saved locally.</string>
+    <string name="l10n_syncing_cloud">Synchronising with Cloud...</string>
+    <string name="l10n_sync_starting">Starting offline ECG synchronisation...</string>
+    <string name="l10n_synchronising">Synchronising...</string>
+    <string name="l10n_sync_failed_retry">Synchronisation failed. Will retry automatically.</string>
+    <string name="l10n_pending_upload_format">Pending Upload (%1$d)</string>
+    <string name="l10n_cloud_connected">Cloud Connected</string>
+    <string name="l10n_cloud_connected_sub">Real-time telemetry and ECG sessions syncing with Azure REST API.</string>
+    <string name="l10n_never_initial">Never (Initial setup)</string>
+    <string name="l10n_ecg_session_title_format">ECG Recording Session (%1$ds)</string>
+    <string name="l10n_recorded_at_format">Recorded at %1$s • Avg: %2$s BPM</string>
+    <string name="l10n_waveform_batch_title">250 Hz Waveform Telemetry Batch</string>
+    <string name="l10n_captured_at_format">Captured at %1$s • %2$s BPM</string>
+    <string name="l10n_waiting">Waiting</string>
+    <string name="l10n_all_synced_msg">All local ECG sessions and samples are fully synchronised with the cloud.</string>
+    <string name="l10n_cd_einthoven">Einthoven Lead I Anatomical Placement Guide</string>
+    <string name="l10n_cd_torso">Lead I Anatomical Torso Electrode Placement Guide</string>
+
+    <!-- session details / report -->
+    <string name="l10n_session_report">Session Report</string>
+    <string name="l10n_session_report_dated_format">Session Report - %1$s</string>
+    <string name="l10n_loading_notes">Loading clinical notes…</string>
+    <string name="l10n_unable_load_clinical_notes">Unable to load clinical notes.</string>
+    <string name="l10n_no_clinical_notes_yet">No clinical notes recorded for this session yet.</string>
+    <string name="l10n_duration_min_format">%1$02d:%2$02d min</string>
+    <string name="l10n_report_unable_load">Unable to load session report.</string>
+    <string name="l10n_patient_details_mrn_format">MRN: PL-%1$s | Lead: Lead I</string>
+    <string name="l10n_lead_only">Lead: Lead I</string>
+    <string name="l10n_already_visible_care_team">This session is already visible to your care team.</string>
+    <string name="l10n_downloading_pdf">Downloading PDF report...</string>
+    <string name="l10n_unable_open_pdf">Unable to open PDF report.</string>
+    <string name="l10n_share_report_subject_format">PulseLink Clinical ECG Report - %1$s</string>
+    <string name="l10n_share_report_body_format">PulseLink Clinical ECG Report\nSession ID: %1$s\nAverage BPM: %2$s\nDuration: %3$ds\nQuality: %4$s</string>
+    <string name="l10n_share_report_chooser">Share Clinical ECG Report</string>
+
+    <!-- canvas -->
+    <string name="l10n_lead_fault_banner">LEAD FAULT: ELECTRODES DISCONNECTED (LO+ / LO-)</string>
+    <string name="l10n_legend_paper">Standard Hospital Paper: 25 mm/s | 10 mm/mV | Lead I</string>
+    <string name="l10n_legend_monitor">Clinical Monitor: 25 mm/s | 10 mm/mV | Lead I</string>
+    <string name="l10n_paper_zoom_in">50 mm/s (Zoomed In)</string>
+    <string name="l10n_paper_zoom_out">12.5 mm/s (Zoomed Out)</string>
+
+    <!-- security & password -->
+    <string name="l10n_reenable_bio_title">Re-enable Biometric Login</string>
+    <string name="l10n_reenable_bio_msg">If you changed your fingerprint or face in Android Settings, you can now enable PulseLink biometric login again.</string>
+    <string name="l10n_not_now">Not now</string>
+    <string name="l10n_enable">Enable</string>
+    <string name="l10n_no_email_associated">No email associated</string>
+    <string name="l10n_verification_sent_format">Verification email sent to %1$s.</string>
+    <string name="l10n_verification_failed_format">Unable to send verification email: %1$s</string>
+    <string name="l10n_no_registered_email">No registered email found for this session.</string>
+    <string name="l10n_reset_link_sent_format">Password reset link sent to %1$s.</string>
+    <string name="l10n_password_min_6">Password must be at least 6 characters.</string>
+    <string name="l10n_passwords_mismatch">Passwords do not match.</string>
+    <string name="l10n_session_expired">User session expired. Please sign in again.</string>
+    <string name="l10n_password_updated">Password successfully updated.</string>
+    <string name="l10n_password_update_failed_format">Failed to update password. You may need to sign out and log in again: %1$s</string>
+    <string name="l10n_bio_disabled">Biometric login disabled.</string>
+    <string name="l10n_bio_check_title">PulseLink Security Check</string>
+    <string name="l10n_bio_check_subtitle">Confirm your fingerprint or face to test sensor</string>
+    <string name="l10n_bio_verified">Biometric authentication verified ✓</string>
+    <string name="l10n_bio_check_error_format">Biometric check: %1$s</string>
+    <string name="l10n_bio_mismatch">Biometric signature did not match.</string>
+    <string name="l10n_bio_settings_hint">Change your fingerprint or face in Android Settings, then return to PulseLink.</string>
+    <string name="l10n_bio_settings_failed">Android biometric settings could not be opened. You can change biometrics from your device Settings.</string>
+    <string name="l10n_current_password_hint">Current password</string>
+    <string name="l10n_confirm_password_title">Confirm Your Password</string>
+    <string name="l10n_confirm_password_msg">Enter your PulseLink password to enable biometric login on this device.</string>
+    <string name="l10n_password_blank">Password cannot be blank.</string>
+    <string name="l10n_incorrect_password_bio">Incorrect password. Biometric login was not enabled.</string>
+    <string name="l10n_bio_setup_unavailable">Unable to set up biometrics on this device.</string>
+    <string name="l10n_enable_bio_title">Enable Biometric Login</string>
+    <string name="l10n_enable_bio_subtitle">Confirm your fingerprint or face to finish setup</string>
+    <string name="l10n_bio_enabled">Biometric login enabled.</string>
+    <string name="l10n_bio_save_failed">Unable to save biometric enrollment.</string>
+    <string name="l10n_bio_setup_error_format">Biometric setup: %1$s</string>
+
+    <!-- repository / view-model messages -->
+    <string name="l10n_err_start_session">Failed to initialise ECG session.</string>
+    <string name="l10n_err_net_start">Network error initialising session.</string>
+    <string name="l10n_err_stop_session">Failed to conclude ECG session.</string>
+    <string name="l10n_err_net_stop">Network error concluding session.</string>
+    <string name="l10n_err_history">Failed to retrieve session history.</string>
+    <string name="l10n_err_net_history">Network error retrieving history.</string>
+    <string name="l10n_err_samples">Failed to retrieve waveform samples.</string>
+    <string name="l10n_err_net_samples">Network error retrieving samples.</string>
+    <string name="l10n_err_device_status">Hardware monitor status unavailable.</string>
+    <string name="l10n_err_net_device_status">Network error retrieving device status.</string>
+    <string name="l10n_err_register_device">Failed to register hardware monitor.</string>
+    <string name="l10n_err_net_register_device">Network error registering device.</string>
+    <string name="l10n_err_alerts">Failed to fetch active alerts.</string>
+    <string name="l10n_err_net_alerts">Network error fetching alerts.</string>
+    <string name="l10n_err_ingest">Failed to ingest telemetry payload.</string>
+    <string name="l10n_err_net_ingest">Network error ingesting telemetry.</string>
+    <string name="l10n_err_notes">Failed to retrieve doctor notes.</string>
+    <string name="l10n_err_net_notes">Network error retrieving doctor notes.</string>
+    <string name="l10n_err_submit_note">Failed to submit clinical note.</string>
+    <string name="l10n_err_net_submit_note">Network error submitting clinical note.</string>
+    <string name="l10n_err_pdf">Failed to download PDF report.</string>
+    <string name="l10n_err_net_pdf">Network error downloading PDF report.</string>
+    <string name="l10n_err_auth_no_user">Authentication succeeded but no user session was found.</string>
+    <string name="l10n_err_sign_in">Failed to sign in. Please verify your credentials.</string>
+    <string name="l10n_err_google_null">Google authentication succeeded but user was null.</string>
+    <string name="l10n_err_google_signin">Failed to sign in with Google.</string>
+    <string name="l10n_err_account_null">Account creation succeeded but user object was null.</string>
+    <string name="l10n_err_register">Failed to register account.</string>
+    <string name="l10n_err_load_profile">Unable to load profile. Please try again.</string>
+    <string name="l10n_err_update_profile">Failed to update profile details.</string>
+    <string name="l10n_err_latest_session">Unable to fetch latest session.</string>
+    <string name="l10n_err_query_alerts">Failed to query alerts.</string>
+    <string name="l10n_err_email_password_required">Please enter your email and password.</string>
+    <string name="l10n_err_required_fields">All required fields must be completed.</string>
+    <string name="l10n_err_no_device_paired">No device paired. Pair a device before starting a recording.</string>
+
+    <!-- layout-only -->
+    <string name="l10n_power_source">Power Source</string>
+    <string name="l10n_clinical_network">PulseLink Clinical Network</string>
+    <string name="l10n_verified_practitioner_line">Verified Practitioner Line</string>
+    <string name="l10n_power_5v_usb">5V USB</string>
+    <string name="l10n_id_format">ID: %1$s</string>
+
+    <!-- appearance -->
+    <string name="l10n_theme_system">System default</string>
+    <string name="l10n_theme_light">Light</string>
+    <string name="l10n_theme_dark">Dark</string>
+
+
+    <!-- Profile photo options + history sort -->
+    <string name="profile_photo_take">Take photo</string>
+    <string name="profile_photo_choose">Choose from gallery</string>
+    <string name="profile_photo_camera_unavailable">Camera is not available on this device</string>
+    <string name="history_sort_newest">Most recent first</string>
+    <string name="history_sort_oldest">Oldest first</string>
+
+    <!-- Technical values, example formats and fallbacks moved out of layouts / code -->
+    <string name="example_email_provider" translatable="false">provider@PulseLink.com</string>
+    <string name="example_email_doctor" translatable="false">doctor@pulselink.co.za</string>
+    <string name="example_email_user" translatable="false">user@pulselink.com</string>
+    <string name="example_phone_patient" translatable="false">+27 82 555 0142</string>
+    <string name="example_phone_emergency" translatable="false">+27 83 444 8921</string>
+    <string name="example_practice_number" translatable="false">MP-849204</string>
+    <string name="label_hpcsa" translatable="false">HPCSA</string>
+    <string name="device_model_esp32_ad8232" translatable="false">ESP32-C3 AD8232</string>
+    <string name="ecg_paper_speed_gain" translatable="false">25 mm/s | 10 mm/mV</string>
+    <string name="report_id_format" translatable="false">PL-2026-%1$s</string>
+
+    <!-- Real-data states and live counts -->
+    <string name="live_waiting_for_device">Waiting for ECG data from the device</string>
+    <string name="doctor_live_no_session">No live ECG session is available</string>
+    <string name="profile_no_doctor_number">No phone number on file for your doctor</string>
+    <string name="alerts_chip_all_format">All Alerts (%1$d)</string>
+    <string name="alerts_chip_critical_format">Critical (%1$d)</string>
+    <string name="alerts_chip_warning_format">Warning (%1$d)</string>
+    <string name="alerts_chip_system_format">System (%1$d)</string>
+
+    <!-- Real-time arrhythmia alerts, SOS redirect and patient flow -->
+    <string name="emergency_number_general" translatable="false">112</string>
+    <string name="emergency_number_ambulance" translatable="false">10177</string>
+    <string name="value_placeholder" translatable="false">--</string>
+    <string name="l10n_anomaly_irregular_msg">Irregular Rhythm Detected (%1$d BPM)</string>
+    <string name="l10n_anomaly_irregular_action">Beat-to-beat timing is uneven. Sit down, stay still and keep the electrodes in place.</string>
+    <string name="l10n_arrhythmia_title_warning">Heart Rhythm Warning</string>
+    <string name="l10n_arrhythmia_title_critical">Critical Heart Rhythm Alert</string>
+    <string name="l10n_arrhythmia_body_format">%1$s\n\n%2$s</string>
+    <string name="l10n_arrhythmia_action_sos">Open SOS</string>
+    <string name="l10n_arrhythmia_action_sos_now">Go to SOS now</string>
+    <string name="l10n_arrhythmia_action_dismiss">Dismiss</string>
+    <string name="l10n_arrhythmia_action_im_ok">I am OK</string>
+    <string name="l10n_arrhythmia_action_call_now">Call emergency services</string>
+    <string name="l10n_arrhythmia_action_start_sos">Start SOS countdown</string>
+    <string name="l10n_arrhythmia_sos_banner_format">Detected during your ECG recording: %1$s\n\n%2$s</string>
+    <string name="l10n_pair_first_title">Pair your monitor first</string>
+    <string name="l10n_pair_first_message">No PulseLink monitor is paired to this account yet. Pair your device to start an ECG recording.</string>
+    <string name="l10n_pair_first_action">Pair device</string>
+    <string name="appearance_option_theme">Theme</string>
+    <string name="appearance_option_text_size">Text size</string>
+    <string name="text_size_small">Small</string>
+    <string name="text_size_default">Default</string>
+    <string name="text_size_large">Large</string>
+    <string name="text_size_extra_large">Extra large</string>
+    <string name="appearance_option_high_contrast">High contrast</string>
+    <string name="high_contrast_off">Off</string>
+    <string name="high_contrast_on">On</string>
+    <string name="appearance_theme_desc">Choose how PulseLink looks: follow your phone, light or dark.</string>
+    <string name="appearance_text_size_desc">Drag the slider to make text smaller or larger across the whole app.</string>
+    <string name="appearance_high_contrast_desc">Stronger colours and borders for easier reading.</string>
+    <string name="appearance_option_color_blind">Colour-blind friendly</string>
+    <string name="appearance_color_blind_desc">Replaces red and green with blue, amber and magenta, and adds shapes to status dots.</string>
+    <string name="text_size_preview_sample">Your heart rate is steady at 72 BPM.</string>
+</resources>

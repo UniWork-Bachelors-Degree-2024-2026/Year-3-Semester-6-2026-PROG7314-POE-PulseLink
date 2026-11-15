@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PROG7314_POEPart23" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Material3 colour role mapping onto the PulseLink design tokens -->
+        <item name="colorPrimary">@color/clinical_blue</item>
+        <item name="colorSecondary">@color/vitality_teal</item>
+        <item name="colorError">@color/alert_red</item>
+        <item name="colorSurface">@color/surface_bg</item>
+        <item name="android:windowBackground">@color/pulse_bg</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Every card in the app: flat (no shadow) with one uniform 1dp border -->
+        <item name="materialCardViewStyle">@style/Widget.PulseLink.Card</item>
+    </style>
+
+    <style name="Theme.PROG7314_POEPart23" parent="Base.Theme.PROG7314_POEPart23" />
+</resources>

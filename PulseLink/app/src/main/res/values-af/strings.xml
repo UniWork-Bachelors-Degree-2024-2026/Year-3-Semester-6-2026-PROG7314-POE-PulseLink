@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Afrikaans (af) - South Africa -->
+<resources>
+
+    <!-- Splash -->
+    <string name="splash_tagline">Ons monitor jou hart, oral.</string>
+
+    <!-- Login -->
+    <string name="login_welcome">Welkom terug. Meld asseblief by jou rekening aan.</string>
+    <string name="label_email">E-posadres</string>
+    <string name="label_password">Wagwoord</string>
+    <string name="forgot_password">Wagwoord vergeet?</string>
+    <string name="sign_in">Meld aan</string>
+    <string name="biometric_login">Biometriese aanmelding</string>
+    <string name="or_continue_with">OF GAAN VOORT MET</string>
+    <string name="sign_in_google">Meld aan met Google</string>
+    <string name="no_account">Het jy nie ’n rekening nie?</string>
+    <string name="request_access">Versoek toegang</string>
+
+    <!-- Registration -->
+    <string name="registration_subtitle">Skep jou rekening om jou gesondheid te begin monitor.</string>
+    <string name="label_full_name">Volle naam</string>
+    <string name="label_confirm_password">Bevestig wagwoord</string>
+    <string name="error_passwords_do_not_match">Wagwoorde stem nie ooreen nie. Voer asseblief weer in.</string>
+    <string name="create_account">Skep rekening</string>
+    <string name="have_account">Het jy reeds ’n rekening?</string>
+    <string name="log_in_here">Meld hier aan</string>
+
+    <!-- Biometric Setup -->
+    <string name="biometric_setup_title">Veilige en vinnige aanmelding</string>
+    <string name="biometric_setup_subtitle">Skakel biometrie aan om binne sekondes veilig by jou kliniese paneelbord uit te kom sonder om ’n wagwoord te tik.</string>
+    <string name="instant_access_title">Onmiddellike toegang</string>
+    <string name="instant_access_desc">Slaan die handmatige aanmeldproses oor.</string>
+    <string name="clinical_security_title">Kliniese-graad sekuriteit</string>
+    <string name="clinical_security_desc">Hou jou persoonlike gesondheidsdata veilig.</string>
+    <string name="set_up_biometrics">Stel biometrie op</string>
+    <string name="skip_for_now">Slaan vir eers oor</string>
+
+    <!-- Biometric Login -->
+    <string name="sign_in_securely">Meld veilig aan</string>
+    <string name="position_face">Plaas jou gesig binne die raam</string>
+    <string name="use_password_instead">Gebruik eerder ’n wagwoord</string>
+    <string name="cancel">Kanselleer</string>
+
+    <!-- Biometriese uitdaging en registrasie -->
+    <string name="biometric_login_title">Verifieer dat dit jy is</string>
+    <string name="biometric_login_hint">Bevestig jou identiteit om PulseLink oop te maak</string>
+    <string name="biometric_prompt_title">Meld by PulseLink aan</string>
+    <string name="biometric_prompt_subtitle">Bevestig jou identiteit om voort te gaan</string>
+    <string name="biometric_enroll_prompt_title">Skakel biometriese aanmelding aan</string>
+    <string name="biometric_enroll_prompt_subtitle">Bevestig om jou aanmelding veilig op hierdie toestel te stoor</string>
+    <string name="biometric_signing_in">Meld tans aan.</string>
+    <string name="biometric_try_again">Probeer weer</string>
+    <string name="biometric_enabled_toast">Biometriese aanmelding is aangeskakel</string>
+    <string name="biometric_login_not_set_up">Meld eers met jou wagwoord aan en kies dan Stel biometrie op.</string>
+    <string name="biometric_err_unavailable">Biometriese aanmelding is tans nie op hierdie toestel beskikbaar nie. Meld asseblief met jou wagwoord aan.</string>
+    <string name="biometric_err_none_enrolled">Voeg ’n vingerafdruk of gesig in jou toestelinstellings by en kom dan terug om die opstelling te voltooi.</string>
+    <string name="biometric_err_key_invalidated">Jou toestel se biometrie het verander. Meld met jou wagwoord aan om biometriese aanmelding weer op te stel.</string>
+    <string name="biometric_err_credentials_invalid">Jou gestoorde aanmelding is nie meer geldig nie. Meld asseblief met jou wagwoord aan.</string>
+    <string name="biometric_err_offline">Geen verbinding nie. Kontroleer jou internet en probeer weer, of gebruik jou wagwoord.</string>
+    <string name="biometric_err_generic">Ons kon jou nie verifieer nie. Probeer weer of gebruik jou wagwoord.</string>
+    <string name="biometric_err_setup_failed">Kon nie biometriese aanmelding aanskakel nie. Probeer asseblief weer.</string>
+
+    <!-- RecyclerView adapter strings -->
+    <string name="status_normal_rhythm">Normale ritme</string>
+    <string name="status_irregular_rhythm">Onreëlmatige ritme</string>
+
+    <string name="patient_last_session_format">Laaste sessie: %s</string>
+    <string name="patient_status_stable">STABIEL</string>
+    <string name="patient_status_review_needed">HERSIENING NODIG</string>
+    <string name="patient_status_critical">KRITIEK</string>
+
+    <string name="severity_critical">KRITIEK</string>
+    <string name="severity_warning">WAARSKUWING</string>
+    <string name="severity_system">STELSEL</string>
+
+    <string name="note_follow_up_required">OPVOLG NODIG</string>
+
+    <string name="report_duration_format">Sessieduur: %s</string>
+    <string name="report_status_pending">HANGEND</string>
+    <string name="report_status_flagged">GEMERK</string>
+    <string name="report_status_signed_off">GOEDGEKEUR</string>
+
+    <!-- Screen: doctor_alert_details -->
+    <string name="doctor_alert_details_text_alert_details">Waarskuwingsbesonderhede</string>
+    <string name="doctor_alert_details_text_critical">KRITIEK</string>
+    <string name="doctor_alert_details_text_tachycardia_detected">Tagikardie bespeur</string>
+    <string name="doctor_alert_details_text_sustained_heart_rate_145">’n Volgehoue harttempo van 145 bpm is vir meer as 5 minute aangeteken. Die pasiënt het ’n gedokumenteerde geskiedenis van atriale fibrillasie, wat die kliniese belang van hierdie lesing verhoog. Onmiddellike hersiening word aanbeveel.</string>
+    <string name="doctor_alert_details_text_heart_rate_time_alert">Harttempo ten tyde van die waarskuwing</string>
+    <string name="doctor_alert_details_text_baseline_78_bpm">Basislyn: 78 bpm</string>
+    <string name="doctor_alert_details_text_recommended_actions">Aanbevole stappe</string>
+    <string name="doctor_alert_details_text_contact_patient_confirm_symptoms">Kontak die pasiënt om simptome te bevestig</string>
+    <string name="doctor_alert_details_text_review_full_ecg_session">Hersien die volledige EKG-sessieopname</string>
+    <string name="doctor_alert_details_text_dismiss">Verwerp</string>
+    <string name="doctor_alert_details_text_escalate_now">Eskaleer nou</string>
+
+    <!-- Screen: doctor_alerts -->
+    <string name="doctor_alerts_text_clinical_alerts">Kliniese waarskuwings</string>
+    <string name="doctor_alerts_hint_search_by_patient_name">Soek op pasiëntnaam, ID of toestand.</string>
+    <string name="doctor_alerts_text_all_alerts_12">Alle waarskuwings (12)</string>
+    <string name="doctor_alerts_text_critical_3">Krities (3)</string>
+    <string name="doctor_alerts_text_warning_5">Waarskuwing (5)</string>
+    <string name="doctor_alerts_text_system_4">Stelsel (4)</string>
+    <string name="doctor_alerts_text_mark_all_read">Merk alles as gelees</string>
+
+    <!-- Screen: doctor_dashboard -->
+    <string name="doctor_dashboard_text_overview">Oorsig</string>
+    <string name="doctor_dashboard_text_today_s_clinical_summary">Vandag se kliniese opsomming</string>
+    <string name="doctor_dashboard_text_active_patients">Aktiewe pasiënte</string>
+    <string name="doctor_dashboard_text_critical_alerts">Kritieke waarskuwings</string>
+    <string name="doctor_dashboard_text_pending_reports">Hangende verslae</string>
+    <string name="doctor_dashboard_text_priority_patients">Prioriteitspasiënte</string>
+    <string name="doctor_dashboard_text_view_all">Bekyk alles</string>
+    <string name="doctor_dashboard_text_hr_115_bpm_high">Harttempo is hoër as 115 bpm</string>
+    <string name="doctor_dashboard_text_tachycardia_alert">Tagikardie-waarskuwing</string>
+    <string name="doctor_dashboard_text_10m_ago">10 minute gelede</string>
+    <string name="doctor_dashboard_text_elevated_bp">Verhoogde bloeddruk</string>
+    <string name="doctor_dashboard_text_45m_ago">45 minute gelede</string>
+    <string name="doctor_dashboard_text_daily_ecg_received">Daaglikse EKG ontvang</string>
+    <string name="doctor_dashboard_text_pending_review">Hersiening hangend</string>
+    <string name="doctor_dashboard_text_2h_ago">2 uur gelede</string>
+    <string name="doctor_dashboard_text_recent_activity">Onlangse aktiwiteit</string>
+    <string name="doctor_dashboard_text_john_doe_s_ecg">Geen onlangse aktiwiteit nie</string>
+    <string name="doctor_dashboard_text_automated_rhythm_analysis_normal">Outomatiese ritme-ontleding: normaal</string>
+    <string name="doctor_dashboard_text_new_report_sarah_smith">Nuwe verslag</string>
+    <string name="doctor_dashboard_text_weekly_summary_generated_review">Weeklikse opsomming gegenereer</string>
+    <string name="doctor_dashboard_text_system_maintenance">Stelselonderhoud</string>
+    <string name="doctor_dashboard_text_server_sync_successful">Bediener-sinchronisasie suksesvol.</string>
+
+    <!-- Screen: doctor_ecg_session_details -->
+    <string name="doctor_ecg_session_details_text_ecg_session_details">EKG-sessiebesonderhede</string>
+    <string name="doctor_ecg_session_details_text_normal_rhythm">Normale ritme</string>
+    <string name="doctor_ecg_session_details_text_avg_hr">Gem. HT</string>
+    <string name="doctor_ecg_session_details_text_duration">Duur</string>
+    <string name="doctor_ecg_session_details_text_quality">Kwaliteit</string>
+    <string name="doctor_ecg_session_details_text_excellent">Uitstekend</string>
+    <string name="doctor_ecg_session_details_text_ecg_waveform_lead_i">EKG-golfvorm (Afleiding I)</string>
+    <string name="doctor_ecg_session_details_text_scroll_view_full_duration">Rol om die volle duur te sien</string>
+    <string name="doctor_ecg_session_details_text_session_details">Sessiebesonderhede</string>
+    <string name="doctor_ecg_session_details_text_device_info">Toestelinligting</string>
+    <string name="doctor_ecg_session_details_text_lead_configuration">Afleidingkonfigurasie</string>
+    <string name="doctor_ecg_session_details_text_sampling_rate">Monstertempo</string>
+    <string name="doctor_ecg_session_details_text_reviewed_by">Hersien deur</string>
+    <string name="doctor_ecg_session_details_text_not_yet_reviewed">Nog nie hersien nie</string>
+    <string name="doctor_ecg_session_details_text_automated_interpretation">Outomatiese interpretasie</string>
+    <string name="doctor_ecg_session_details_text_normal_sinus_rhythm_detected">Normale sinusritme bespeur. Geen beduidende ST-segmentafwyking, ektopiese slae of aritmiepatrone is gedurende die opnametydperk geïdentifiseer nie.</string>
+    <string name="doctor_ecg_session_details_text_flag_review">Merk vir hersiening</string>
+    <string name="doctor_ecg_session_details_text_download_pdf">Laai PDF af</string>
+    <string name="doctor_ecg_session_details_text_mark_as_reviewed">Merk as hersien</string>
+
+    <!-- Screen: doctor_live_ecg -->
+    <string name="doctor_live_ecg_text_live_ecg">Lewendige EKG</string>
+    <string name="doctor_live_ecg_text_live">Lewendig</string>
+    <string name="doctor_live_ecg_text_electrocardiogram_lead_i">Elektrokardiogram (Afleiding I)</string>
+    <string name="doctor_live_ecg_text_streaming">Stroom tans</string>
+    <string name="doctor_live_ecg_text_session_time">Sessietyd</string>
+    <string name="doctor_live_ecg_text_lead_config">Afleidingskonfigurasie</string>
+    <string name="doctor_live_ecg_text_signal">Sein</string>
+    <string name="doctor_live_ecg_text_strong">Sterk</string>
+    <string name="doctor_live_ecg_text_heart_rate_has_been">Die harttempo is al meer as 3 minute lank bo 110 bpm.</string>
+    <string name="doctor_live_ecg_text_add_note">Voeg nota by</string>
+    <string name="doctor_live_ecg_text_call_patient">Bel pasiënt</string>
+    <string name="doctor_live_ecg_text_escalate_emergency">Eskaleer na noodgeval</string>
+
+    <!-- Screen: doctor_new_patient_report -->
+    <string name="doctor_new_patient_report_text_clinician_portal">Klinikusportaal</string>
+    <string name="doctor_new_patient_report_text_new_patient">Nuwe pasiënt</string>
+    <string name="doctor_new_patient_report_text_dob_10_12_1985">Geboortedatum: Hangend - Manlik - MRN: #HANGEND</string>
+    <string name="doctor_new_patient_report_text_edit_profile">Wysig profiel</string>
+    <string name="doctor_new_patient_report_text_recent_vitals">Onlangse lewenstekens</string>
+    <string name="doctor_new_patient_report_text_no_baseline_vitals_recorded">Geen basislyn-lewenstekens aangeteken nie.</string>
+    <string name="doctor_new_patient_report_text_log_vitals">+ Teken lewenstekens aan</string>
+    <string name="doctor_new_patient_report_text_clinical_history">Kliniese geskiedenis</string>
+    <string name="doctor_new_patient_report_text_allergies">Allergieë</string>
+    <string name="doctor_new_patient_report_text_not_assessed">Nie geassesseer nie</string>
+    <string name="doctor_new_patient_report_text_active_medications">Aktiewe medikasie</string>
+    <string name="doctor_new_patient_report_text_previous_conditions">Vorige toestande</string>
+    <string name="doctor_new_patient_report_text_pending_patient_intake">Pasiëntinname hangend</string>
+    <string name="doctor_new_patient_report_text_ecg_history_amp_assessment">EKG-geskiedenis &amp; assessering</string>
+    <string name="doctor_new_patient_report_text_no_ecg_history_yet">Nog geen EKG-geskiedenis nie</string>
+    <string name="doctor_new_patient_report_text_this_patient_s_cardiac">Hierdie pasiënt se kardiale rekord is tans leeg. Koppel ’n moniteringstoestel of laai vorige assesserings op om hul kliniese profiel te begin opbou.</string>
+    <string name="doctor_new_patient_report_text_start_monitoring">Begin monitor</string>
+    <string name="doctor_new_patient_report_text_add_initial_assessment">Voeg aanvanklike assessering by</string>
+
+    <!-- Screen: doctor_patient_ecg_history -->
+    <string name="doctor_patient_ecg_history_text_back_patient_chart">Terug na pasiëntkaart</string>
+    <string name="doctor_patient_ecg_history_text_view_profile">Bekyk profiel</string>
+    <string name="doctor_patient_ecg_history_text_ecg_history">EKG-geskiedenis</string>
+    <string name="doctor_patient_ecg_history_hint_search_by_clinical_notes">Soek op kliniese notas of interpreterende geneesheer.</string>
+    <string name="doctor_patient_ecg_history_text_last_30_days">Laaste 30 dae</string>
+
+    <!-- Screen: doctor_patient_list -->
+    <string name="doctor_patient_list_text_patient_roster">Pasiëntlys</string>
+    <string name="doctor_patient_list_hint_search_by_name_or">Soek op naam of ID.</string>
+    <string name="doctor_patient_list_text_all_patients">Alle pasiënte</string>
+    <string name="doctor_patient_list_text_critical_alerts">Kritieke waarskuwings</string>
+    <string name="doctor_patient_list_text_low_adherence">Lae nakoming</string>
+
+    <!-- Screen: doctor_patient_profile -->
+    <string name="doctor_patient_profile_text_patient_profile">Pasiëntprofiel</string>
+    <string name="doctor_patient_profile_text_id_p_948271_45">ID: Hangend</string>
+    <string name="doctor_patient_profile_text_high_adherence">Hoe nakoming</string>
+    <string name="doctor_patient_profile_text_stable">Stabiel</string>
+    <string name="doctor_patient_profile_text_clinical_summary">Kliniese opsomming</string>
+    <string name="doctor_patient_profile_text_primary_condition">Primêre toestand</string>
+    <string name="doctor_patient_profile_text_chronic_hypertension">Chroniese hipertensie</string>
+    <string name="doctor_patient_profile_text_secondary_status">Sekondêre status</string>
+    <string name="doctor_patient_profile_text_post_op_recovery_appendectomy">Post-operatiewe herstel (appendektomie)</string>
+    <string name="doctor_patient_profile_text_primary_physician">Primêre geneesheer</string>
+    <string name="doctor_patient_profile_text_dr_sarah_jenkins_cardiology">Dr. Sarah Jenkins, Kardiologie</string>
+    <string name="doctor_patient_profile_text_7_day_vitals_trend">7-dae lewenstekentendens</string>
+    <string name="doctor_patient_profile_text_view_all">Bekyk alles</string>
+    <string name="doctor_patient_profile_text_heart_rate">Harttempo</string>
+    <string name="doctor_patient_profile_text_recent_ecg">Onlangse EKG</string>
+    <string name="doctor_patient_profile_text_normal_rhythm">Normale ritme</string>
+    <string name="doctor_patient_profile_text_tachycardia_detected">Tagikardie bespeur</string>
+    <string name="doctor_patient_profile_text_medications">Medikasie</string>
+    <string name="doctor_patient_profile_text_10mg_once_daily_morning">10mg - Een keer daagliks (oggend)</string>
+    <string name="doctor_patient_profile_text_5mg_once_daily_evening">5mg - Een keer daagliks (aand)</string>
+    <string name="doctor_patient_profile_text_update_care_plan">Werk sorgplan by</string>
+    <string name="doctor_patient_profile_text_contact_patient">Kontak pasiënt</string>
+
+    <!-- Screen: doctor_profile -->
+    <string name="doctor_profile_text_doctor_profile">Dokterprofiel</string>
+    <string name="doctor_profile_text_cardiology_license_za_44821">Kardiologie - Lisensie #ZA-44821</string>
+    <string name="doctor_profile_text_verified_clinician">Geverifieerde klinikus</string>
+    <string name="doctor_profile_text_patients">Pasiënte</string>
+    <string name="doctor_profile_text_yrs_practice">Jare praktyk</string>
+    <string name="doctor_profile_text_rating">Gradering</string>
+    <string name="doctor_profile_text_professional_details">Professionele besonderhede</string>
+    <string name="doctor_profile_text_specialty">Spesialiteit</string>
+    <string name="doctor_profile_text_cardiology_electrophysiology">Kardiologie - Elektrofisiologie</string>
+    <string name="doctor_profile_text_affiliated_hospital">Geaffilieerde hospitaal</string>
+    <string name="doctor_profile_text_email">E-pos</string>
+    <string name="doctor_profile_text_phone">Telefoon</string>
+    <string name="doctor_profile_text_availability">Beskikbaarheid</string>
+    <string name="doctor_profile_text_available_consultations">Beskikbaar vir konsultasies</string>
+    <string name="doctor_profile_text_mon_fri_08_00">Ma - Vr, 08:00 - 17:00 SAST</string>
+    <string name="doctor_profile_text_sign_out">Meld af</string>
+
+    <!-- Screen: doctor_report_details -->
+    <string name="doctor_report_details_text_report_details">Verslagbesonderhede</string>
+    <string name="doctor_report_details_text_weekly_clinical_summary">Weeklikse kliniese opsomming</string>
+    <string name="doctor_report_details_text_report_id">Verslag-ID</string>
+    <string name="doctor_report_details_text_id_p_948271_45">ID: Hangend</string>
+    <string name="doctor_report_details_text_pending_sign_off">Goedkeuring hangend</string>
+    <string name="doctor_report_details_text_avg_hr">Gem. HT</string>
+    <string name="doctor_report_details_text_sessions">Sessies</string>
+    <string name="doctor_report_details_text_alerts">Waarskuwings</string>
+    <string name="doctor_report_details_text_clinical_findings">Kliniese bevindinge</string>
+    <string name="doctor_report_details_text_two_tachycardia_episodes_were">Twee tagikardie-episodes is gedurende die moniteringstydperk aangeteken, albei bo 140 bpm en langer as 5 minute volgehou. Die basislyn-harttempo het teenoor die vorige verslagtydperk opwaarts geneig. Kliniese korrelasie met die pasiënt se geskiedenis van atriale fibrillasie word aanbeveel.</string>
+    <string name="doctor_report_details_text_representative_waveform">Verteenwoordigende golfvorm</string>
+    <string name="doctor_report_details_text_included_sessions_6">Ingeslote sessies (6)</string>
+    <string name="doctor_report_details_text_tachycardia">Tagikardie</string>
+    <string name="doctor_report_details_text_normal_rhythm">Normale ritme</string>
+    <string name="doctor_report_details_text_sign_off_note">Goedkeuringsnota</string>
+    <string name="doctor_report_details_hint_add_clinical_note_before">Voeg ’n kliniese nota by voordat jy hierdie verslag goedkeur.</string>
+    <string name="doctor_report_details_text_flag_report">Merk verslag</string>
+    <string name="doctor_report_details_text_download_pdf">Laai PDF af</string>
+    <string name="doctor_report_details_text_sign_off_report">Keur verslag goed</string>
+
+    <!-- Screen: doctor_reports -->
+    <string name="doctor_reports_text_reports">Verslae</string>
+    <string name="doctor_reports_text_clinical_reports_generated_across">Kliniese verslae wat oor al jou pasiënte gegenereer is</string>
+    <string name="doctor_reports_hint_search_by_patient_name">Soek op pasiëntnaam of verslag-ID.</string>
+    <string name="doctor_reports_text_all_reports">Alle verslae</string>
+    <string name="doctor_reports_text_pending_sign_off">Goedkeuring hangend</string>
+    <string name="doctor_reports_text_flagged">Gemerk</string>
+    <string name="doctor_reports_text_signed_off">Goedgekeur</string>
+
+    <!-- Screen: doctor_session_notes -->
+    <string name="doctor_session_notes_text_id_mrn_84729_dob">ID: Hangend - Geboortedatum: Nie verskaf nie</string>
+    <string name="doctor_session_notes_text_heart_rate">Harttempo</string>
+    <string name="doctor_session_notes_text_lead_config">Afleidingskonfigurasie</string>
+    <string name="doctor_session_notes_text_sampling">Monsterneming</string>
+    <string name="doctor_session_notes_text_lead_i_snapshot">Afleiding I-kiekie</string>
+    <string name="doctor_session_notes_hint_e_g_normal_sinus">Bv. Normale sinusritme met stabiele ST-segmente. Geen ektopie gedurende die moniteringstydperk opgemerk nie. Pasiënt het geen simptome gerapporteer nie.</string>
+    <string name="doctor_session_notes_text_recommendations">Aanbevelings</string>
+    <string name="doctor_session_notes_text_continue_remote_monitoring">Gaan voort met afstandmonitering</string>
+    <string name="doctor_session_notes_text_maintain_current_rpm_schedule">Handhaaf die huidige RPM-skedule</string>
+    <string name="doctor_session_notes_text_schedule_person_follow_up">Skeduleer ’n persoonlike opvolgbesoek</string>
+    <string name="doctor_session_notes_text_require_clinic_visit_further">Vereis ’n kliniekbesoek vir verdere evaluering</string>
+    <string name="doctor_session_notes_text_adjust_medication">Pas medikasie aan</string>
+    <string name="doctor_session_notes_text_review_modify_current_prescriptions">Hersien en wysig huidige voorskrifte</string>
+    <string name="doctor_session_notes_text_immediate_intervention_required">Onmiddellike ingryping vereis</string>
+    <string name="doctor_session_notes_text_flag_urgent_clinical_action">Merk vir dringende kliniese optrede</string>
+    <string name="doctor_session_notes_text_save_clinical_note">Stoor kliniese nota</string>
+    <string name="doctor_session_notes_text_previous_notes">Vorige notas</string>
+    <string name="doctor_session_notes_text_see_more">Sien meer</string>
+
+    <!-- Screen: doctor_settings -->
+    <string name="doctor_settings_text_settings">Instellings</string>
+    <string name="doctor_settings_text_manage_account_preferences_device">Bestuur jou rekeningvoorkeure en toestelkonfigurasie.</string>
+    <string name="doctor_settings_text_account">Rekening</string>
+    <string name="doctor_settings_text_personal_information">Persoonlike inligting</string>
+    <string name="doctor_settings_text_update_name_email_contact">Werk jou naam, e-pos en kontakbesonderhede by.</string>
+    <string name="doctor_settings_text_security_amp_password">Sekuriteit &amp; wagwoord</string>
+    <string name="doctor_settings_text_change_password_set_up">Verander wagwoord en stel 2FA op.</string>
+    <string name="doctor_settings_text_preferences">Voorkeure</string>
+    <string name="doctor_settings_text_notifications">Kennisgewings</string>
+    <string name="doctor_settings_text_manage_alerts_messages_vitals">Bestuur waarskuwings vir boodskappe en lewenstekens.</string>
+    <string name="doctor_settings_text_appearance">Voorkoms</string>
+    <string name="doctor_settings_text_theme_accessibility_settings">Tema- en toeganklikheidsinstellings.</string>
+    <string name="doctor_settings_text_privacy_amp_support">Privaatheid &amp; ondersteuning</string>
+    <string name="doctor_settings_text_privacy_policy">Privaatheidsbeleid</string>
+    <string name="doctor_settings_text_help_center">Hulpsentrum</string>
+    <string name="doctor_settings_text_app_version_2_4">Toepassingweergawe 3.0.0</string>
+
+    <!-- Screen: item_report_card -->
+    <string name="item_report_card_text_download">Laai af</string>
+
+    <!-- Screen: nav_doctor -->
+    <string name="nav_doctor_dashboard_label">Paneelbord</string>
+    <string name="nav_doctor_patients_label">Pasiënte</string>
+    <string name="nav_doctor_reports_label">Verslae</string>
+    <string name="nav_doctor_profile_label">Profiel</string>
+
+    <!-- Screen: nav_patient -->
+    <string name="nav_patient_text_dashboard">Paneelbord</string>
+    <string name="nav_patient_text_monitoring">Monitering</string>
+    <string name="nav_patient_text_reports">Verslae</string>
+
+    <!-- Screen: patient_dashboard -->
+    <string name="patient_dashboard_greeting_format">Hallo, %1$s</string>
+    <string name="greeting_loading">Laai tans.</string>
+    <string name="greeting_empty">Welkom</string>
+    <string name="greeting_error">Kon nie naam laai nie. Tik om weer te probeer.</string>
+    <string name="greeting_error_toast">Kon nie jou profiel laai nie. Tik op jou naam om weer te probeer.</string>
+    <string name="profile_loading">Laai tans profiel.</string>
+    <string name="profile_empty_name">Naam nie gestel nie</string>
+    <string name="profile_empty_email">E-pos nie gestel nie</string>
+    <string name="profile_error">Kon nie profiel laai nie</string>
+    <string name="profile_error_retry">Kon nie profiel laai nie. Tik om weer te probeer.</string>
+    <string name="profile_error_toast">Kon nie jou profiel laai nie. Tik om weer te probeer.</string>
+    <string name="patient_dashboard_text_vitals_look_steady_today">Jou lewenstekens lyk vandag bestendig. Hier is jou daaglikse gesondheidsoorsig.</string>
+    <string name="patient_dashboard_text_hardware_status">Toestelstatus</string>
+    <string name="patient_dashboard_text_online">Aanlyn</string>
+    <string name="patient_dashboard_text_sensor_device">Sensortoestel</string>
+    <string name="patient_dashboard_text_start_ecg_recording">Begin EKG-opname</string>
+    <string name="patient_dashboard_text_ensure_device_properly_attached">Maak seker jou toestel is behoorlik aan jou bors geheg.</string>
+    <string name="patient_dashboard_text_begin_session">Begin sessie</string>
+    <string name="patient_dashboard_text_latest_reading">Jongste lesing</string>
+    <string name="patient_dashboard_text_normal_rhythm">Normale ritme</string>
+    <string name="patient_dashboard_text_avg_heart_rate">Gem. harttempo</string>
+    <string name="patient_dashboard_text_recent_updates">Onlangse opdaterings</string>
+    <string name="patient_dashboard_text_mark_all_read">Merk alles as gelees</string>
+    <string name="patient_dashboard_text_weekly_report_available">Weeklikse verslag beskikbaar</string>
+    <string name="patient_dashboard_text_2_hours_ago">2 uur gelede</string>
+    <string name="patient_dashboard_text_cardiovascular_summary_oct_15">Jou kardiovaskulêre opsomming vir 15 Okt - 21 Okt is gereed om te bekyk. Alle metings is binne normale grense.</string>
+    <string name="patient_dashboard_text_device_firmware_update">Toestel-fermware-opdatering</string>
+    <string name="patient_dashboard_text_1_day_ago">1 dag gelede</string>
+    <string name="patient_dashboard_text_new_update_esp8266_scheduled">’n Nuwe opdatering vir jou ESP32-C3 is vanaand om 02:00 geskeduleer. Hou die toestel ingeprop by 5V USB-krag.</string>
+    <string name="patient_dashboard_text_dr_s_naidoo_appointment">Afspraak met dr. S. Naidoo</string>
+    <string name="patient_dashboard_text_reminder_follow_up_consultation">Herinnering: jou opvolgkonsultasie is vir 25 Okt om 09:00 geskeduleer.</string>
+
+    <!-- Offline mode dashboard -->
+    <string name="patient_dashboard_offline_mode_active">Vanlynmodus aktief</string>
+    <string name="patient_dashboard_offline_mode_subtitle">Plaaslike berging aktief. Tik om die sinchronisasiewaglys te sien.</string>
+
+    <!-- Screen: patient_device_management -->
+    <string name="patient_device_management_text_device_management">Toestelbestuur</string>
+    <string name="patient_device_management_text_configure_monitor_connected_rpm">Konfigureer en monitor jou gekoppelde RPM-sensors.</string>
+    <string name="patient_device_management_text_primary_ad8232_sensor_array">ESP32-C3 + AD8232-sensorkant</string>
+    <string name="patient_device_management_text_connected">Gekoppel</string>
+    <string name="patient_device_management_text_battery">Kragbron</string>
+    <string name="patient_device_management_text_signal_strength">Seinsterkte</string>
+    <string name="patient_device_management_text_excellent">Uitstekend</string>
+    <string name="patient_device_management_text_last_sync">Laaste sinchronisasie</string>
+    <string name="patient_device_management_text_just_now">Sopas</string>
+    <string name="patient_device_management_text_mac_address">MAC-adres</string>
+    <string name="patient_device_management_text_firmware">Fermware</string>
+    <string name="patient_device_management_text_force_sync">Dwing sinchronisasie</string>
+    <string name="patient_device_management_text_configure">Konfigureer</string>
+    <string name="patient_device_management_text_pair_new_device">Koppel nuwe toestel</string>
+    <string name="patient_device_management_text_connect_new_sensor_or">Koppel ’n nuwe sensor of hub</string>
+    <string name="patient_device_management_text_device_support">Toestelondersteuning</string>
+    <string name="patient_device_management_text_user_manual">Gebruikershandleiding</string>
+    <string name="patient_device_management_text_troubleshooting">Probleemoplossing</string>
+
+    <!-- Screen: patient_device_pairing -->
+    <string name="patient_device_pairing_text_device_pairing">Toestelkoppeling</string>
+    <string name="patient_device_pairing_text_scanning_devices">Soek tans na toestelle</string>
+    <string name="patient_device_pairing_text_make_sure_pulselink_monitor">Maak seker jou ESP32-C3-monitor is ingeprop by 5V USB-krag en gekoppel aan 2.4 GHz Wi-Fi.</string>
+    <string name="patient_device_pairing_text_pair">Koppel</string>
+    <string name="patient_device_pairing_text_signal">Sein</string>
+    <string name="patient_device_pairing_text_excellent">Uitstekend</string>
+    <string name="patient_device_pairing_text_ready_to_connect">Gereed om te koppel</string>
+    <string name="patient_device_pairing_text_mac">MAC: </string>
+    <string name="patient_device_pairing_text_scan_again">Soek weer</string>
+    <string name="patient_device_pairing_text_having_trouble_pairing">Sukkel jy om te koppel? Maak seker jou Wi-Fi is 2.4 GHz en die ESP32-C3 is aangeskakel.</string>
+
+    <!-- Screen: patient_ecg_device_monitor -->
+    <string name="patient_ecg_device_monitor_text_ecg_device_monitor">EKG-toestel / monitor</string>
+    <string name="patient_ecg_device_monitor_text_ad8232_sensor_array">AD8232 enkelafleiding-voorkant</string>
+    <string name="patient_ecg_device_monitor_text_connected">Gekoppel</string>
+    <string name="patient_ecg_device_monitor_text_battery">Kragbron</string>
+    <string name="patient_ecg_device_monitor_text_excellent">Uitstekend</string>
+    <string name="patient_ecg_device_monitor_text_signal">Sein</string>
+    <string name="patient_ecg_device_monitor_text_lead_config">Afleidingkonfigurasie</string>
+    <string name="patient_ecg_device_monitor_text_live_preview">Lewendige voorskou</string>
+    <string name="patient_ecg_device_monitor_text_waveform_monitor">Golfvormmonitor</string>
+    <string name="patient_ecg_device_monitor_text_device_information">Toestelinligting</string>
+    <string name="patient_ecg_device_monitor_text_mac_address">MAC-adres</string>
+    <string name="patient_ecg_device_monitor_text_firmware">Fermware</string>
+    <string name="patient_ecg_device_monitor_text_sampling_rate">Monstertempo</string>
+    <string name="patient_ecg_device_monitor_text_last_sync">Laaste sinchronisasie</string>
+    <string name="patient_ecg_device_monitor_text_just_now">Sopas</string>
+    <string name="patient_ecg_device_monitor_text_force_sync">Dwing sinchronisasie</string>
+    <string name="patient_ecg_device_monitor_text_calibrate">Kalibreer</string>
+    <string name="patient_ecg_device_monitor_text_forget_device">Vergeet toestel</string>
+
+    <!-- Screen: patient_ecg_history -->
+    <string name="patient_ecg_history_text_report_history">Verslaggeskiedenis</string>
+    <string name="patient_ecg_history_hint_search_reports">Soek verslae.</string>
+    <string name="patient_ecg_history_text_all">Alles</string>
+    <string name="patient_ecg_history_text_normal">Normaal</string>
+    <string name="patient_ecg_history_text_irregular">Onreëlmatig</string>
+    <string name="patient_ecg_history_text_flagged">Gemerk</string>
+
+    <!-- Screen: patient_ecg_live_monitoring -->
+    <string name="patient_ecg_live_monitoring_text_live_ecg_monitoring">Lewendige EKG-monitering</string>
+    <string name="patient_ecg_live_monitoring_text_ad8232_sensor_connected">AD8232-sensor - Gekoppel</string>
+    <string name="patient_ecg_live_monitoring_text_strong_signal">Sterk sein</string>
+    <string name="patient_ecg_live_monitoring_text_electrocardiogram_lead_i">Elektrokardiogram (Afleiding I)</string>
+    <string name="patient_ecg_live_monitoring_text_session_duration">Sessieduur</string>
+    <string name="patient_ecg_live_monitoring_text_pause_session">Laat sessie wag</string>
+    <string name="patient_ecg_live_monitoring_text_end_session">Beëindig sessie</string>
+    <string name="patient_ecg_live_monitoring_text_call_emergency">Bel noodhulp</string>
+    <string name="patient_ecg_live_monitoring_text_pre_check">Voorafkontrole</string>
+
+    <!-- Screen: patient_ecg_pre_session_check -->
+    <string name="patient_ecg_pre_session_check_text_pre_session_check">Voorafkontrole</string>
+    <string name="patient_ecg_pre_session_check_text_let_s_get_ready">Kom ons kry jou gereed</string>
+    <string name="patient_ecg_pre_session_check_text_complete_checklist_below_before">Voltooi die kontrolelys hieronder voordat jy jou EKG-opname begin.</string>
+    <string name="patient_ecg_pre_session_check_text_device_charged_paired">Toestel is aangeskakel en gekoppel</string>
+    <string name="patient_ecg_pre_session_check_text_battery_84_bluetooth_connected">5V USB-krag, Wi-Fi gekoppel</string>
+    <string name="patient_ecg_pre_session_check_text_skin_clean_dry">Vel is skoon en droog</string>
+    <string name="patient_ecg_pre_session_check_text_remove_lotion_or_sweat">Verwyder liggaamsroom of sweet van die borsarea</string>
+    <string name="patient_ecg_pre_session_check_text_electrodes_are_attached_correctly">Elektrodes is korrek geheg</string>
+    <string name="patient_ecg_pre_session_check_text_electrode_placement_guide">Gids vir elektrodeplasing</string>
+    <string name="patient_ecg_pre_session_check_text_sit_still_breathe_normally">Sit stil en asem normaal sodra die opname begin, vir die akkuraatste lesing.</string>
+    <string name="patient_ecg_pre_session_check_text_start_ecg_recording">Begin EKG-opname</string>
+
+    <!-- Screen: patient_ecg_session_details -->
+    <string name="patient_ecg_session_details_text_session_report_oct_24">Sessieverslag: 24 Okt 2023</string>
+    <string name="patient_ecg_session_details_text_overall_rhythm">ALGEHELE RITME</string>
+    <string name="patient_ecg_session_details_text_normal_rhythm">Normale ritme</string>
+    <string name="patient_ecg_session_details_text_average_hr">Gemiddelde HT</string>
+    <string name="patient_ecg_session_details_text_duration">Duur</string>
+    <string name="patient_ecg_session_details_text_ecg_waveform_lead_i">EKG-golfvorm (Afleiding I)</string>
+    <string name="patient_ecg_session_details_text_scroll_view_full_duration">Rol om die volle duur te sien</string>
+    <string name="patient_ecg_session_details_text_doctors_notes">Dokter se notas</string>
+    <string name="patient_ecg_session_details_text_no_arrhythmias_detected_during">Geen aritmieë is gedurende die opnametydperk bespeur nie. Die ritme is stabiel en strook met ’n normale sinusritme. Basislyndrywing is minimaal en die seinkwaliteit het deurgaans hoog gebly.</string>
+    <string name="patient_ecg_session_details_text_session_details">Sessiebesonderhede</string>
+    <string name="patient_ecg_session_details_text_signal_quality">Seinkwaliteit</string>
+    <string name="patient_ecg_session_details_text_excellent">Uitstekend</string>
+    <string name="patient_ecg_session_details_text_device_info">Toestelinligting</string>
+    <string name="patient_ecg_session_details_text_lead_configuration">Afleidingkonfigurasie</string>
+    <string name="patient_ecg_session_details_text_sampling_rate">Monstertempo</string>
+    <string name="patient_ecg_session_details_text_download_pdf_report">Laai PDF-verslag af</string>
+
+    <!-- Screen: patient_emergency_sos -->
+    <string name="patient_emergency_sos_text_breathe_calmly">Asem rustig.</string>
+    <string name="patient_emergency_sos_text_help_being_notified_location">Hulp word van jou ligging en lewenstekens in kennis gestel.</string>
+    <string name="patient_emergency_sos_text_call_hospital">Bel hospitaal</string>
+    <string name="patient_emergency_sos_text_connect_nearest_er">Verbind met die naaste noodeenheid</string>
+    <string name="patient_emergency_sos_text_call_ambulance">Bel ambulans</string>
+    <string name="patient_emergency_sos_text_dispatch_emergency_services">Stuur nooddienste uit</string>
+    <string name="patient_emergency_sos_text_alert_emergency_contacts">Waarsku noodkontakte</string>
+    <string name="patient_emergency_sos_text_notify_family_friends">Stel familie en vriende in kennis</string>
+
+    <!-- Screen: patient_notification_details -->
+    <string name="patient_notification_details_text_notification">Kennisgewing</string>
+    <string name="patient_notification_details_text_health_alert">Gesondheidswaarskuwing</string>
+    <string name="patient_notification_details_text_irregular_rhythm_detected">Onreëlmatige ritme bespeur</string>
+    <string name="patient_notification_details_text_last_ecg_session_recorded">Jou laaste EKG-sessie, om 09:15 opgeneem, het ’n onreëlmatige ritme vir kliniese hersiening gemerk. Dit dui nie noodwendig op ’n noodgeval nie, maar ons beveel aan dat jy die resultate so gou moontlik met jou dokter bespreek.</string>
+    <string name="patient_notification_details_text_irregular_rhythm">Onreëlmatige ritme</string>
+    <string name="patient_notification_details_text_view_full_session_report">Bekyk volledige sessieverslag</string>
+    <string name="patient_notification_details_text_send_my_doctor">Stuur aan my dokter</string>
+
+    <!-- Screen: patient_notifications -->
+    <string name="patient_notifications_text_notifications">Kennisgewings</string>
+    <string name="patient_notifications_text_mark_all_read">Merk alles as gelees</string>
+
+    <!-- Screen: patient_offline_sync_status -->
+    <string name="patient_offline_sync_status_text_sync_status">Sinchronisasiestatus</string>
+    <string name="patient_offline_sync_status_text_re_offline">Jy is vanlyn</string>
+    <string name="patient_offline_sync_status_text_data_being_saved_locally">Jou data word plaaslik gestoor en sal outomaties sinchroniseer sodra jy weer aanlyn is.</string>
+    <string name="patient_offline_sync_status_text_last_synced">Laas gesinchroniseer</string>
+    <string name="patient_offline_sync_status_text_today_08_45_am">Vandag, 08:45</string>
+    <string name="patient_offline_sync_status_text_pending_upload_3">Hangende oplaai (3)</string>
+    <string name="patient_offline_sync_status_text_retry_sync_now">Probeer nou weer sinchroniseer</string>
+
+    <!-- Screen: patient_profile -->
+    <string name="patient_profile_text_patient_profile">Pasiëntprofiel</string>
+    <string name="patient_profile_text_patient_id_pt_55210"></string>
+    <string name="patient_profile_text_personal_details">Persoonlike besonderhede</string>
+    <string name="patient_profile_text_date_birth">Geboortedatum</string>
+    <string name="patient_profile_text_gender">Geslag</string>
+    <string name="patient_profile_text_male">Nie verskaf nie</string>
+    <string name="patient_profile_text_phone_number">Telefoonnommer</string>
+    <string name="patient_profile_text_email">E-pos</string>
+    <string name="patient_profile_text_clinical_care_team">Kliniese sorgspan</string>
+    <string name="patient_profile_text_primary_cardiologist">Primêre kardioloog</string>
+    <string name="patient_profile_text_emergency_contact">Noodkontak</string>
+    <string name="patient_profile_text_spouse_27_83_444"></string>
+    <string name="patient_profile_text_sign_out">Meld af</string>
+
+    <!-- Screen: patient_session_report_preview -->
+    <string name="patient_session_report_preview_text_session_report_preview">Voorskou van sessieverslag</string>
+    <string name="patient_session_report_preview_text_clinical_ecg_report">Kliniese EKG-verslag</string>
+    <string name="patient_session_report_preview_text_report_id">Verslag-ID</string>
+    <string name="patient_session_report_preview_text_id_mrn_84729_dob">ID: Hangend - Geboortedatum: Nie verskaf nie</string>
+    <string name="patient_session_report_preview_text_heart_rate">Harttempo</string>
+    <string name="patient_session_report_preview_text_clinical_summary">Kliniese opsomming</string>
+    <string name="patient_session_report_preview_text_analysis">Ontleding</string>
+    <string name="patient_session_report_preview_text_normal_rhythm">Normale ritme</string>
+    <string name="patient_session_report_preview_text_avg_hr">Gem. HT</string>
+    <string name="patient_session_report_preview_text_duration">Duur</string>
+    <string name="patient_session_report_preview_text_lead_i_waveform">Afleiding I-golfvorm</string>
+    <string name="patient_session_report_preview_text_page_1_1">Bladsy 1 van 1</string>
+    <string name="patient_session_report_preview_text_clinical_review_only">Slegs vir kliniese hersiening</string>
+    <string name="patient_session_report_preview_text_send_doctor">Stuur aan dokter</string>
+    <string name="patient_session_report_preview_text_download_pdf">Laai PDF af</string>
+
+    <!-- Screen: patient_setting_language_selection -->
+    <string name="patient_setting_language_selection_text_language">Taal</string>
+    <string name="patient_setting_language_selection_text_select_app_language">Kies toepassingstaal</string>
+    <string name="patient_setting_language_selection_text_choose_language_d_like">Kies die taal wat jy regdeur die toepassing wil gebruik.</string>
+    <string name="patient_setting_language_selection_text_english">Engels</string>
+    <string name="patient_setting_language_selection_text_afrikaans">Afrikaans</string>
+    <string name="patient_setting_language_selection_text_isizulu">isiZulu</string>
+    <string name="patient_setting_language_selection_text_save_changes">Stoor veranderinge</string>
+
+    <!-- Screen: patient_settings -->
+    <string name="patient_settings_text_settings">Instellings</string>
+    <string name="patient_settings_text_manage_account_preferences_device">Bestuur jou rekeningvoorkeure en toestelkonfigurasie.</string>
+    <string name="patient_settings_text_account">Rekening</string>
+    <string name="patient_settings_text_personal_information">Persoonlike inligting</string>
+    <string name="patient_settings_text_update_name_email_contact">Werk jou naam, e-pos en kontakbesonderhede by.</string>
+    <string name="patient_settings_text_security_amp_password">Sekuriteit &amp; wagwoord</string>
+    <string name="patient_settings_text_change_password_set_up">Verander wagwoord en stel 2FA op.</string>
+    <string name="patient_settings_text_preferences">Voorkeure</string>
+    <string name="patient_settings_text_notifications">Kennisgewings</string>
+    <string name="patient_settings_text_manage_alerts_messages_vitals">Bestuur waarskuwings vir boodskappe en lewenstekens.</string>
+    <string name="patient_settings_text_device_management">Toestelbestuur</string>
+    <string name="patient_settings_text_connected_monitors_wearables">Gekoppelde monitors en draagbare toestelle.</string>
+    <string name="patient_settings_text_appearance">Voorkoms</string>
+    <string name="patient_settings_text_theme_accessibility_settings">Tema- en toeganklikheidsinstellings.</string>
+    <string name="patient_settings_text_privacy_amp_support">Privaatheid &amp; ondersteuning</string>
+    <string name="patient_settings_text_privacy_policy">Privaatheidsbeleid</string>
+    <string name="patient_settings_text_help_center">Hulpsentrum</string>
+    <string name="patient_settings_text_app_version_2_4">Toepassingweergawe 3.0.0</string>
+
+    <!-- Screen: patient_settings_help_support -->
+    <string name="patient_settings_help_support_text_help_amp_support">Hulp &amp; ondersteuning</string>
+    <string name="patient_settings_help_support_text_how_can_we_help">Hoe kan ons help?</string>
+    <string name="patient_settings_help_support_hint_search_help_articles">Soek hulpartikels.</string>
+    <string name="patient_settings_help_support_text_live_chat">Lewendige klets</string>
+    <string name="patient_settings_help_support_text_call_us">Bel ons</string>
+    <string name="patient_settings_help_support_text_email">E-pos</string>
+    <string name="patient_settings_help_support_text_frequently_asked_questions">Gereelde vrae</string>
+    <string name="patient_settings_help_support_text_how_do_i_pair">Hoe koppel ek my EKG-toestel?</string>
+    <string name="patient_settings_help_support_text_what_does_irregular_rhythm">Wat beteken ’n onreëlmatige ritme?</string>
+    <string name="patient_settings_help_support_text_why_isn_t_my">Hoekom sinchroniseer my data nie?</string>
+    <string name="patient_settings_help_support_text_battery_life">Hoe word my PulseLink EKG-monitor van krag voorsien?</string>
+    <string name="patient_settings_help_support_text_connectivity">My toestel sal nie koppel nie - wat moet ek nagaan?</string>
+    <string name="patient_settings_help_support_text_how_my_health_data">Hoe word my gesondheidsdata beskerm?</string>
+    <string name="patient_settings_help_support_text_this_help_center_not">Hierdie hulpsentrum is nie vir mediese noodgevalle nie. As jy een beleef, gebruik die SOS-knoppie.</string>
+
+    <!-- FAQ answers -->
+    <string name="patient_settings_help_support_text_electrode_placement">Waar gaan die EKG-elektrodes?</string>
+    <string name="patient_settings_help_support_text_electrode_placement_answer">PulseLink gebruik die AD8232 enkelafleiding-EKG-sensor met 3 kussings: RA/R (rooi, regterarm/bors), LA/L (geel, linkerarm/bors) en RL/COM (groen, regterbeen/onderbuik - die verwysingselektrode). Vir die skoonste sein, plaas hulle op die bors: rooi net onder die regtersleutelbeen, geel net onder die linkersleutelbeen, en groen op die onderste linkerribbekas of onderste regterbuik, weg van groot spiere. Maak die vel eers skoon en droog, en bly stil tydens opname om geraas te verminder.</string>
+    <string name="patient_settings_help_support_text_view_placement_guide">Sien die volledige stap-vir-stap-gids</string>
+    <string name="patient_settings_help_support_text_how_do_i_pair_answer">Maak Toestelbestuur oop vanaf die paneelbord en tik op "Voeg toestel by". Skakel jou PulseLink AD8232-monitor aan, hou dit binne 1-2 meter, en kies dit sodra dit in die soeklys verskyn. Sodra dit gekoppel is, sal die statuskenteken op die paneelbord na "Gekoppel" verander.</string>
+    <string name="patient_settings_help_support_text_what_does_irregular_rhythm_answer">’n "Onreëlmatige ritme"-vlag beteken dat die interval tussen hartslae wat tydens jou sessie bespeur is, buite die verwagte reeks geval het. Dit is slegs ’n siftingsaanduiding, nie ’n diagnose nie - deel die gemerkte sessie deur die toepassing met jou dokter sodat hulle die opname kan hersien.</string>
+    <string name="patient_settings_help_support_text_why_isn_t_my_answer">Sessies wat vanlyn opgeneem is, word in ’n tou geplaas en sinchroniseer outomaties sodra jy ’n stabiele Wi-Fi- of mobieledata-verbinding het. Jy kan enige tyd gewagte sessies nagaan by Instellings &gt; Sinchronisasiestatus, en tik op "Probeer weer sinchroniseer" as ’n sessie al ’n rukkie wag.</string>
+    <string name="patient_settings_help_support_text_battery_life_answer">Die ESP32-C3 AD8232 EKG-monitor word deurlopend van krag voorsien via ’n 5V USB Type-C-kabel wat aan ’n kragadapter of USB-poort gekoppel is. Dit gebruik nie interne batterye nie, wat konsekwente telemetrie-uitsending verseker sonder agteruitgang oor ’n 2.4 GHz Wi-Fi-tuisdatanetwerk.</string>
+    <string name="patient_settings_help_support_text_connectivity_answer">Bevestig dat Bluetooth en Wi-Fi op jou foon aangeskakel is, dat die monitor aan is (LED brand), en dat dit nie reeds aan ’n ander foon gekoppel is nie. Beweeg binne 1-2 meter van die toestel en probeer weer vanaf Toestelbestuur. As dit steeds nie wil koppel nie, herbegin die monitor deur dit vir 10 sekondes uit te trek.</string>
+    <string name="patient_settings_help_support_text_how_my_health_data_answer">Jou EKG-opnames en profieldata word oor ’n geënkripteerde verbinding gestuur en slegs onder jou rekening gestoor. Dokters kan slegs sessies sien waarvoor jy aan hulle gekoppel is. Jy kan te eniger tyd jou data hersien of die verwydering daarvan versoek vanaf Profiel &gt; Privaatheid.</string>
+    <string name="patient_settings_help_support_email_subject">PulseLink-ondersteuningsversoek</string>
+    <string name="patient_settings_help_support_email_chooser_title">Stuur ondersteuningse-pos via</string>
+    <string name="patient_settings_help_support_email_no_client">Geen e-pos-toepassing op hierdie toestel gevind nie.</string>
+
+    <!-- Electrode placement guide -->
+    <string name="patient_electrode_placement_guide_title">Gids vir elektrodeplasing</string>
+    <string name="patient_electrode_placement_guide_intro">PulseLink se EKG-monitor gebruik die AD8232-sensor, ’n 3-afleiding- (enkelkanaal-) voorkant. Die drie kussings word gewoonlik RA / LA / RL genoem, of bloot R / L / COM op sommige monitorbehuisings. Volg die stappe hieronder vir ’n skoon opname met min geraas.</string>
+    <string name="patient_electrode_placement_guide_legend_r">R (RA) - Rooi</string>
+    <string name="patient_electrode_placement_guide_legend_l">L (LA) - Geel</string>
+    <string name="patient_electrode_placement_guide_legend_com">COM (RL) - Groen</string>
+    <string name="patient_electrode_placement_guide_legend_r_desc">Regterarm / regterbors, onder die sleutelbeen</string>
+    <string name="patient_electrode_placement_guide_legend_l_desc">Linkerarm / linkerbors, onder die sleutelbeen</string>
+    <string name="patient_electrode_placement_guide_legend_com_desc">Regterbeen / onderbuik - verwysings- (aardings-) elektrode</string>
+    <string name="patient_electrode_placement_guide_step1_title">Berei die vel voor</string>
+    <string name="patient_electrode_placement_guide_step1_desc">Maak die plasingsareas skoon met ’n droë doek of alkoholdoekie. Vermy liggaamsroom of olierige vel - dit verswak die kussing se kleefmiddel en verhoog seingeraas. Skeer die area eers as daar baie hare is.</string>
+    <string name="patient_electrode_placement_guide_step2_title">Klik die kussings op die afleidingskabel</string>
+    <string name="patient_electrode_placement_guide_step2_desc">Heg elke drukknoop-elektrodekussing aan sy afleidingsklem (R/rooi, L/geel, COM of RL/groen) voordat jy dit op die vel plak - om die knoop daarna vas te druk is ongemaklik en kan die kussing losmaak.</string>
+    <string name="patient_electrode_placement_guide_step3_title">Plaas die R (RA) rooi kussing</string>
+    <string name="patient_electrode_placement_guide_step3_desc">Plaas dit aan die regterkant van die bors, net onder die sleutelbeen (of op die regtervoorarm vir ’n vinnige toets).</string>
+    <string name="patient_electrode_placement_guide_step4_title">Plaas die L (LA) geel kussing</string>
+    <string name="patient_electrode_placement_guide_step4_desc">Plaas dit aan die linkerkant van die bors, net onder die sleutelbeen, soos ’n spieëlbeeld van die rooi kussing (of op die linkervoorarm vir ’n vinnige toets).</string>
+    <string name="patient_electrode_placement_guide_step5_title">Plaas die COM (RL) groen kussing</string>
+    <string name="patient_electrode_placement_guide_step5_desc">Plaas dit op die onderste linkerribbekas of onderste regterbuik, weg van die hart se as. Dit is die verwysings-/aardingselektrode en hoef nie naby die ander twee te sit nie.</string>
+    <string name="patient_electrode_placement_guide_step6_title">Bevestig die verbinding</string>
+    <string name="patient_electrode_placement_guide_step6_desc">Maak ’n voor-sessie-kontrole oop vanaf die paneelbord. As ’n kussing los is, sal die toepassing "Afleidings ontkoppel" aandui - druk elke kussing stewig vas en kyk dat die kontrole-skerm na "Geheg" opdateer.</string>
+    <string name="patient_electrode_placement_guide_note">Borsplasing gee ’n skoner, hoër QRS-sein as arm-/beenplasing en word vir hospitaalstyl-monitering aanbeveel. Sit stil en asem normaal tydens opname om bewegingsartefakte te minimaliseer.</string>
+    <string name="patient_electrode_placement_guide_disclaimer">Hierdie gids is vir die gebruik van jou PulseLink-stokperdjie-EKG-monitor en is nie ’n plaasvervanger vir kliniese elektrodeplasing of mediese advies nie.</string>
+
+    <!-- Toasts -->
+    <string name="login_toast_missing_fields">Voer asseblief jou e-pos en wagwoord in</string>
+    <string name="login_toast_google_signing_in">Meld tans met Google aan.</string>
+    <string name="login_toast_password_reset_sent">Skakel om wagwoord terug te stel is gestuur</string>
+    <string name="registration_toast_missing_fields">Vul asseblief al die velde in</string>
+
+    <!-- InputValidator error messages -->
+    <string name="validator_email_required">E-posadres word vereis</string>
+    <string name="validator_email_invalid">Voer ’n geldige e-posadres in</string>
+    <string name="validator_password_required">Wagwoord word vereis</string>
+    <string name="validator_password_too_short">Wagwoord moet ten minste 8 karakters wees</string>
+    <string name="validator_password_missing_uppercase">Wagwoord moet ten minste 1 hoofletter bevat</string>
+    <string name="validator_password_missing_digit">Wagwoord moet ten minste 1 syfer bevat</string>
+    <string name="validator_name_required">Naam word vereis</string>
+    <string name="validator_name_too_short">Naam moet ten minste 2 karakters wees</string>
+    <string name="validator_name_invalid_chars">Naam mag slegs letters bevat</string>
+    <string name="validator_device_id_required">Toestel-ID word vereis</string>
+    <string name="validator_device_id_invalid">Voer ’n geldige toestel-ID in, bv. ESP32C3-PLA1B</string>
+    <string name="validator_phone_required">Telefoonnommer word vereis</string>
+    <string name="validator_phone_invalid">Voer ’n geldige Suid-Afrikaanse telefoonnommer in, bv. 082 123 4567</string>
+
+    <!-- DateTimeFormatter -->
+    <string name="time_ago_just_now">Sopas</string>
+    <string name="time_ago_yesterday">Gister</string>
+
+    <!-- Empty states -->
+    <string name="empty_state_sessions_message">Nog geen EKG-sessies aangeteken nie. Begin jou eerste opname!</string>
+    <string name="empty_state_sessions_btn_start_recording">Begin opname</string>
+    <string name="empty_state_alerts_message">Geen aktiewe waarskuwings nie. Alle pasiëntparameters is normaal.</string>
+    <string name="empty_state_patients_message">Nog geen pasiënte aan jou gids toegewys nie.</string>
+    <string name="empty_state_notes_message">Geen kliniese notas vir hierdie sessie aangeteken nie.</string>
+    <string name="empty_state_reports_message">Nog geen diagnostiese verslae gegenereer nie.</string>
+    <string name="empty_state_notifications_message">Jy is op datum! Geen ongelese kennisgewings nie.</string>
+
+    <!-- Live recording indicator -->
+    <string name="live_ecg_status_recording">OPN</string>
+
+    <!-- About, Legal & Medical Privacy portal -->
+    <string name="about_title">Oor &amp; Regs</string>
+    <string name="about_back_desc">Terug</string>
+    <string name="about_emblem_desc">PulseLink-embleem</string>
+    <string name="about_purpose">PulseLink verbind pasiënte en klinici deur EKG-afstandmonitering: dit vang hartritmedata vanaf ’n gekoppelde toestel, sinchroniseer dit veilig, en gee dokters tydige insig in hul pasiënte se kardiale gesondheid.</string>
+
+    <string name="about_section_authorship">OUTEURSKAP &amp; INSTELLING</string>
+    <string name="about_author_role">Ontwikkelaar &amp; mede-outeur</string>
+    <string name="about_institution">Die Independent Institute of Education (IIE)</string>
+    <string name="about_module">PROG7314 - Portefeulje van bewyse</string>
+
+    <string name="about_section_disclaimer">MEDIESE VRYWARING</string>
+    <string name="about_medical_disclaimer">Hierdie toepassing is streng vir akademiese evaluering en kliniese prototipe-assessering ontwikkel; dit is nie ’n gesertifiseerde mediese diagnostiese toestel nie.</string>
+
+    <string name="about_section_legal">REGS</string>
+    <string name="about_privacy_title">Privaatheidsbeleid (POPIA)</string>
+    <string name="about_terms_title">Diensbepalings</string>
+
+    <string name="about_privacy_body">Verantwoordelike party: die PulseLink-studenteontwikkelingspan (Cameron van Heerden en Maxine Palm).\n\nNakoming: PulseLink verwerk persoonlike inligting ooreenkomstig die Wet op die Beskerming van Persoonlike Inligting 4 van 2013 (POPIA).\n\n1. Inligting wat ons verwerk\nRekeningbesonderhede (naam, e-pos, rol) en gesondheidsinligting, insluitend EKG-opnames, harttempolesings, sessienotas en toestelstatus. Gesondheidsinligting is "spesiale persoonlike inligting" ingevolge POPIA en word met bykomende sorg hanteer.\n\n2. Doel en regmatige grondslag\nData word slegs verwerk om EKG-afstandmonitering, kliniese hersiening en waarskuwings te lewer, en vir akademiese assessering. Verwerking berus op jou toestemming en is tot hierdie doeleindes beperk.\n\n3. Sekuriteitsmaatreëls\nData word oor geënkripteerde verbindings versend en met Firebase-dienste gestoor. Toegang word deur verifikasie en rol (pasiënt of dokter) beperk, met opsionele biometriese aanmelding op jou toestel.\n\n4. Deling en oorgrensoordrag\nPasiëntdata is slegs vir die pasiënt en hul behandelende dokter sigbaar. Dit word nie verkoop of vir bemarking gebruik nie. Firebase-infrastruktuur mag data buite Suid-Afrika verwerk; gelykwaardige beskerming word ingevolge POPIA artikel 72 vereis.\n\n5. Bewaring\nData word slegs behou terwyl jou rekening aktief is of soos vir assessering nodig, en word op versoek verwyder waar die wet dit toelaat.\n\n6. Jou regte\nJy kan toegang tot, regstelling van, of verwydering van jou persoonlike inligting versoek, toestemming terugtrek, en teen verwerking beswaar maak. Kontak die ontwikkelingspan deur die GitHub-bewaarplek.\n\n7. Klagtes\nJy kan ’n klag by die Inligtingsreguleerder (Suid-Afrika) by inforegulator.org.za indien.</string>
+
+    <string name="about_terms_body">1. Aanvaarding\nDeur PulseLink te gebruik, stem jy tot hierdie bepalings in.\n\n2. Akademiese prototipe\nPulseLink is ’n studenteprojek wat vir akademiese evaluering en kliniese prototipe-assessering gebou is. Dit is nie ’n gesertifiseerde mediese toestel nie en mag nie gebruik word om enige mediese toestand te diagnoseer, te behandel of te monitor nie.\n\n3. Noodgevalle\nKontak in ’n mediese noodgeval onmiddellik jou plaaslike nooddienste (Suid-Afrika: 112 of 10177). Moenie vir noodrespons op hierdie toepassing staatmaak nie.\n\n4. Jou verantwoordelikhede\nVerskaf akkurate inligting, hou jou geloofsbriewe vertroulik, en gebruik die toepassing slegs vir wettige doeleindes. Dokters bly ten volle verantwoordelik vir hul eie kliniese oordeel.\n\n5. Geen waarborg\nDie toepassing word "soos dit is" verskaf, sonder enige waarborge. Lesings, waarskuwings en verslae kan vertraag, onvolledig of onakkuraat wees.\n\n6. Beperking van aanspreeklikheid\nTot die mate wat die Suid-Afrikaanse reg toelaat, is die outeurs en hul instelling nie aanspreeklik vir enige verlies of skade wat uit die gebruik van die toepassing voortspruit nie.\n\n7. Intellektuele eiendom\nDie PulseLink-naam, -embleem en -bronkode is die werk van die outeurs en word deur die projek se GitHub-bewaarplek onder die vermelde lisensie gedeel.\n\n8. Veranderinge en toepaslike reg\nHierdie bepalings kan bygewerk word soos die projek ontwikkel. Dit word deur die reg van die Republiek van Suid-Afrika beheer.</string>
+    <string name="about_github_repo_link">Bekyk projek op GitHub</string>
+    <string name="about_github_privacy_link">Lees die volledige privaatheidsbeleid op GitHub</string>
+    <string name="about_github_terms_link">Lees die volledige bepalings op GitHub</string>
+    <string name="about_no_browser">Geen webblaaier beskikbaar om hierdie skakel oop te maak nie.</string>
+    <string name="about_copyright">© 2026 Cameron van Heerden &amp; Maxine Palm. Alle regte voorbehou.</string>
+
+    <!-- Settings entry -->
+    <string name="settings_about_legal_title">Oor &amp; Regs</string>
+    <string name="settings_about_legal_subtitle">Weergawe, erkennings, privaatheidsbeleid en bepalings.</string>
+
+    <!-- Multi-Language Support (Localisation) -->
+    <string name="language_saved">Taal bygewerk</string>
+    <string name="language_already_active">Daardie taal is reeds gekies</string>
+    <string name="language_restart_note">Die toepassing herbegin sodat elke skerm jou nuwe taal gebruik.</string>
+    <string name="language_option_desc">%1$s, nie gekies nie</string>
+    <string name="language_option_selected_desc">%1$s, gekies</string>
+    <string name="settings_language_title">Taal</string>
+    <string name="settings_language_subtitle">Engels</string>
+
+    <!-- Content descriptions for icon controls -->
+    <string name="cd_back">Terug</string>
+    <string name="cd_close">Maak toe</string>
+    <string name="cd_share">Deel</string>
+    <string name="cd_settings">Instellings</string>
+    <string name="cd_call">Bel</string>
+    <string name="cd_notifications">Kennisgewings</string>
+    <string name="cd_profile">Profiel</string>
+    <string name="cd_delete">Vee uit</string>
+    <string name="cd_toggle_password_visibility">Wys of versteek wagwoord</string>
+    <string name="cd_change_photo">Verander profielfoto</string>
+
+    <!-- Action feedback -->
+    <string name="action_not_available_yet">Hierdie deel van PulseLink is nog nie beskikbaar nie.</string>
+    <string name="action_signed_out">Afgemeld</string>
+    <string name="action_alert_dismissed">Waarskuwing verwerp</string>
+    <string name="action_alert_escalated">Waarskuwing na die diensdoenende span geëskaleer</string>
+    <string name="action_flagged_for_review">Vir hersiening gemerk</string>
+    <string name="action_marked_reviewed">Sessie as hersien gemerk</string>
+    <string name="action_report_flagged">Verslag gemerk</string>
+    <string name="action_report_signed_off">Verslag goedgekeur</string>
+    <string name="action_download_started">Berei die PDF voor.</string>
+    <string name="action_note_saved">Kliniese nota gestoor</string>
+    <string name="action_sync_started">Sinchroniseer met die bediener.</string>
+    <string name="action_calibration_started">Kalibreer die sensor.</string>
+    <string name="action_device_forgotten">Toestel verwyder</string>
+    <string name="action_pairing_started">Koppel aan die toestel.</string>
+    <string name="action_scanning">Soek tans na toestelle.</string>
+    <string name="action_marked_all_read">Alle kennisgewings as gelees gemerk</string>
+    <string name="action_calling_patient">Bel die pasiënt.</string>
+
+    <!-- Offline status feedback -->
+    <string name="status_offline_saving_locally">Vanlynmodus aktief: Telemetrie word veilig plaaslik gestoor</string>
+
+
+    <!-- Added missing translations -->
+    <string name="activity_main_text_hello_world" translatable="false">Hallo Wêreld!</string>
+    <string name="doctor_alert_details_text_bpm" translatable="false">bpm</string>
+    <string name="doctor_alert_details_text_eleanor_rigby" translatable="false">Pasiënt</string>
+    <string name="doctor_alert_details_text_id_mrn_88421" translatable="false">ID: Hangend</string>
+    <string name="doctor_dashboard_text_marcus_reed" translatable="false">Nog geen prioriteitspasiënte nie</string>
+    <string name="doctor_ecg_session_details_text_id_p_948271_oct" translatable="false">ID: Hangend</string>
+    <string name="doctor_ecg_session_details_text_lead_i" translatable="false">Lood I</string>
+    <string name="doctor_ecg_session_details_text_marcus_thorne" translatable="false">Pasiënt</string>
+    <string name="doctor_live_ecg_text_id_p_948271_ad8232">ID: Hangend - AD8232-sensor</string>
+    <string name="doctor_live_ecg_text_lead_i" translatable="false">Lood I</string>
+    <string name="doctor_live_ecg_text_marcus_thorne" translatable="false">Pasiënt</string>
+    <string name="doctor_new_patient_report_text_alex_mercer" translatable="false">Nuwe pasiënt</string>
+    <string name="doctor_patient_ecg_history_text_id_pt_84729_x">ID: Hangend - Geboortedatum: Nie verskaf nie</string>
+    <string name="doctor_patient_ecg_history_text_john_doe" translatable="false">Pasiënt</string>
+    <string name="doctor_patient_profile_text_bpm" translatable="false">bpm</string>
+    <string name="doctor_session_notes_text_lead_i" translatable="false">Lood I</string>
+    <string name="nav_patient_text_sos" translatable="false">SOS</string>
+    <string name="patient_dashboard_text_good_morning_alex">Goeiemôre</string>
+    <string name="patient_ecg_device_monitor_text_lead_i" translatable="false">Lood I</string>
+    <string name="patient_ecg_session_details_text_05_42_min">05:42 min</string>
+    <string name="patient_ecg_session_details_text_lead_i" translatable="false">Lood I</string>
+    <string name="patient_emergency_sos_text_sos" translatable="false">SOS</string>
+    <string name="patient_profile_text_12_05_1958" translatable="false">Nie verskaf nie</string>
+    <string name="patient_profile_text_27_82_555_0142" translatable="false">Nie verskaf nie</string>
+    <string name="patient_profile_text_dr_s_naidoo" translatable="false">Nog nie toegewys nie</string>
+    <string name="patient_profile_text_maria_johnson" translatable="false">Nie verskaf nie</string>
+    <string name="session_bpm_format" translatable="false">%d bpm</string>
+
+    <!-- Patient translations added for dashboard, emergency dispatch, ECG checks and profile gender -->
+    <string name="patient_ecg_pre_session_check_text_complete_all">Voltooi alle kontroles om te begin</string>
+    <string name="patient_profile_gender_male">Manlik</string>
+    <string name="patient_profile_gender_female">Vroulik</string>
+    <string name="patient_profile_gender_other">Ander</string>
+    <string name="patient_profile_gender_prefer_not_to_say">Verkies om nie te sê nie</string>
+    <string name="patient_dashboard_text_no_recordings">Geen opnames</string>
+    <string name="patient_dashboard_text_pair_device_status">Koppel ’n toestel om status te sien</string>
+    <string name="patient_dashboard_text_emergency_dispatch_title">Bel nooddienste</string>
+    <string name="patient_dashboard_text_emergency_dispatch_message">Kies ’n noodmediese diens om onmiddellik te skakel. Vir akute hartnood of verlies van bewussyn, skakel 112 sonder versuim.</string>
+    <string name="patient_ecg_pre_session_check_text_skin_cleansed">Vel is gereinig en voorberei</string>
+    <string name="patient_ecg_pre_session_check_text_pair_device_lead1">Koppel ’n toestel om Lead I-elektrodes te kontroleer</string>
+    <string name="patient_ecg_pre_session_check_text_complete_all_dynamic">Voltooi alle kontroles om te begin (%1$d oor)</string>
+
+    <!-- ===== Added: text that was previously hard-coded or untranslated ===== -->
+    <string name="patient_dashboard_text_no_device_paired">Geen toestel gekoppel nie</string>
+    <string name="patient_dashboard_text_power_source">Kragbron</string>
+    <string name="patient_dashboard_text_emergency_sos">Noodgeval-SOS (112 / 10177)</string>
+    <string name="patient_dashboard_text_emergency_sos_dispatch">Onmiddellike uitstuur na Suid-Afrikaanse mediese nooddienste</string>
+    <string name="patient_dashboard_text_no_sessions_yet">Nog geen sessies nie</string>
+    <string name="patient_dashboard_text_no_new_updates">Geen nuwe opdaterings nie</string>
+    <string name="patient_dashboard_text_clinical_reports_synced">Alle kliniese verslae en telemetrie is gesinchroniseer.</string>
+    <string name="patient_device_management_text_offline">Toestel se wolkstatus is vanlyn. Kontroleer die kliniek se netwerkkonnektiwiteit.</string>
+    <string name="patient_device_management_text_no_ecg_monitor_paired">Geen EKG-monitor gekoppel nie</string>
+    <string name="patient_device_management_text_pair_with_account">Verbind jou ESP32-C3-monitor met 5V USB-C-krag om dit aan jou pasiëntrekening te koppel.</string>
+    <string name="patient_ecg_pre_session_check_text_hardware_checking">Kontroleer tans hardeware-telemetrie…</string>
+    <string name="patient_ecg_pre_session_check_text_tap_skin">Tik om te bevestig dat die vel skoon en droog is</string>
+    <string name="patient_ecg_pre_session_check_text_lead_checking">Kontroleer tans AD8232-leidingaanhegting…</string>
+    <string name="patient_ecg_pre_session_check_text_placement_tap">Tik om die volledige 3-elektrode anatomiese plasingsgids te besigtig</string>
+    <string name="patient_profile_text_edit_details">Wysig besonderhede ✎</string>
+    <string name="patient_profile_text_edit_contact">Wysig kontak ✎</string>
+    <string name="patient_settings_help_support_text_need_more_help">Het jy meer hulp nodig?</string>
+    <string name="patient_settings_help_support_text_contact_support">Kontak ondersteuning</string>
+    <string name="patient_settings_help_support_text_get_help">Kry hulp van ons ondersteuningspan</string>
+    <string name="patient_settings_help_support_text_user_guide">Gebruikersgids</string>
+    <string name="patient_settings_help_support_text_learn_pulselink">Leer hoe om PulseLink te gebruik</string>
+    <string name="patient_settings_help_support_text_report_problem">Rapporteer \'n probleem</string>
+    <string name="patient_settings_help_support_text_issue_app_device">Vertel ons van \'n probleem met die toep of toestel</string>
+    <string name="doctor_profile_text_registered">Geregistreer</string>
+    <string name="doctor_profile_text_rpm_status">RPM-status</string>
+    <string name="security_password_text_security_password">Sekuriteit &amp; wagwoord</string>
+    <string name="security_password_text_account_verification">Rekeningverifikasie</string>
+    <string name="security_password_text_email_status_checking">E-posstatus: Kontroleer tans...</string>
+    <string name="security_password_text_verify">Verifieer</string>
+    <string name="security_password_text_biometric_authentication">Biometriese verifikasie</string>
+    <string name="security_password_text_biometric_face_unlock">Biometries / gesigsontsluiting</string>
+    <string name="security_password_text_biometric_description">Veilige kitsaanmelding met Keystore</string>
+    <string name="security_password_text_test_biometric">Toets biometriese herkenning</string>
+    <string name="security_password_text_change_biometrics">Verander biometrie</string>
+    <string name="security_password_text_password_management">Wagwoordbestuur</string>
+    <string name="security_password_text_send_reset">Stuur wagwoordterugstelskakel</string>
+    <string name="security_password_text_reset_description">Stuur \'n amptelike Firebase-wagwoordterugstelskakel na jou geregistreerde e-posadres.</string>
+    <string name="security_password_text_email_reset">E-pos wagwoordterugstelskakel</string>
+    <string name="security_password_text_change_in_app">Verander wagwoord in die toep</string>
+    <string name="security_password_hint_new_password">Nuwe wagwoord (min. 6 karakters)</string>
+    <string name="security_password_hint_confirm_password">Bevestig nuwe wagwoord</string>
+    <string name="security_password_text_update_password">Werk wagwoord op</string>
+    <string name="doctor_ecg_text_no_data_available">Geen EKG-data beskikbaar nie</string>
+    <string name="patient_ecg_pre_session_check_text_no_device_paired">Geen toestel gekoppel nie | Koppel eers jou ESP32-C3</string>
+    <string name="security_password_text_email_verified">E-posstatus: Geverifieer ✓</string>
+    <string name="security_password_text_email_unverified">E-posstatus: Nie geverifieer nie</string>
+    <string name="security_password_text_biometrics_active">Biometrie aktief vir kitsaanmelding</string>
+    <string name="security_password_text_fingerprint_face_ready">Vingerafdruk-/gesigshardeware gereed</string>
+    <string name="security_password_text_biometrics_unavailable">Biometrie is nie op hierdie toestel beskikbaar nie</string>
+    <string name="patient_dashboard_text_dial_112_national">Skakel 112 (nasionale noodgeval)</string>
+    <string name="patient_dashboard_text_dial_10177_ambulance">Skakel 10177 (ambulans)</string>
+
+    <!-- common -->
+    <string name="l10n_bpm_value">%1$d bpm</string>
+    <string name="l10n_bpm_none">-- bpm</string>
+    <string name="l10n_not_provided">Nie verskaf nie</string>
+    <string name="l10n_unavailable">Nie beskikbaar nie</string>
+    <string name="l10n_unknown">Onbekend</string>
+    <string name="l10n_today">Vandag</string>
+    <string name="l10n_recent">Onlangs</string>
+    <string name="l10n_recent_session">Onlangse sessie</string>
+    <string name="l10n_attending">Diensdoenend</string>
+    <string name="l10n_dr_name_format">Dr. %1$s</string>
+    <string name="l10n_unknown_doctor">Onbekende dokter</string>
+    <string name="l10n_unknown_patient">Onbekende pasiënt</string>
+    <string name="l10n_patient_short_format">Pasiënt %1$s</string>
+    <string name="l10n_patient_id_format">Pasiënt-ID: PT-%1$s</string>
+    <string name="l10n_id_and_date_format">ID: %1$s | %2$s</string>
+    <string name="l10n_error_format">Fout: %1$s</string>
+    <string name="l10n_continue">Gaan voort</string>
+    <string name="l10n_active">Aktief</string>
+    <string name="l10n_continuous">Deurlopend</string>
+
+    <!-- quality / status / rhythm -->
+    <string name="l10n_quality_excellent">Uitstekend</string>
+    <string name="l10n_quality_good">Goed</string>
+    <string name="l10n_quality_fair">Redelik</string>
+    <string name="l10n_quality_poor">Swak</string>
+    <string name="l10n_status_completed">Voltooi</string>
+    <string name="l10n_status_flagged">Gemerk</string>
+    <string name="l10n_status_active">Aktief</string>
+    <string name="l10n_status_irregular">Onreëlmatig</string>
+    <string name="l10n_status_normal">Normaal</string>
+    <string name="l10n_rhythm_tachycardia">Tagikardie</string>
+    <string name="l10n_rhythm_bradycardia">Bradikardie</string>
+    <string name="l10n_rhythm_normal_sinus">Normale sinusritme</string>
+    <string name="l10n_rhythm_normal_sinus_short">Normale sinus</string>
+    <string name="l10n_interp_tachy">Sinustagikardie bespeur (rustende harttempo is bo 100 bpm). Kliniese korrelasie word aanbeveel.</string>
+    <string name="l10n_interp_brady">Sinusbradikardie waargeneem (onder 50 bpm). Evalueer die simptomatiese geskiedenis en hartstatus.</string>
+    <string name="l10n_interp_irregular">Aritmie of verswakte seinkwaliteit bespeur tydens Lead I-monitering. Hersien die volledige strook.</string>
+    <string name="l10n_interp_normal">Normale sinusritme waargeneem met gereelde P-QRS-T-morfologie op Lead I. Geen akute diagnostiese alarms is geaktiveer nie.</string>
+    <string name="l10n_alert_elevated_hr">Verhoogde harttempo</string>
+    <string name="l10n_alert_tachycardia">Tagikardie</string>
+    <string name="l10n_alert_bradycardia">Bradikardie</string>
+    <string name="l10n_alert_lead_detached">Elektrodeleiding losgemaak</string>
+    <string name="l10n_alert_asystole">Geen polsslag bespeur nie (asistolie)</string>
+
+    <!-- BPM anomaly detector -->
+    <string name="l10n_anomaly_lead_msg">Elektrodeleiding ontkoppel (LO+/LO-)</string>
+    <string name="l10n_anomaly_lead_action">Kontroleer die AD8232 Lead I-elektrodeplasing op die bors of ledemate.</string>
+    <string name="l10n_anomaly_asystole_action">Verifieer dadelik die sensorverbinding of begin die noodprotokol.</string>
+    <string name="l10n_anomaly_brady_crit_msg">Kritieke bradikardie (%1$d bpm)</string>
+    <string name="l10n_anomaly_brady_crit_action">Ernstige lae harttempo. Soek dringende mediese hulp.</string>
+    <string name="l10n_anomaly_brady_warn_msg">Ligte bradikardie (%1$d bpm)</string>
+    <string name="l10n_anomaly_brady_warn_action">Harttempo onder 50 bpm. Maak seker die pasiënt rus gemaklik.</string>
+    <string name="l10n_anomaly_tachy_crit_msg">Kritieke tagikardie (%1$d bpm)</string>
+    <string name="l10n_anomaly_tachy_crit_action">Ernstig verhoogde harttempo. Soek onmiddellike kliniese beoordeling.</string>
+    <string name="l10n_anomaly_tachy_warn_msg">Verhoogde harttempo (%1$d bpm)</string>
+    <string name="l10n_anomaly_tachy_warn_action">Harttempo bo 100 bpm. Hou die pasiënt kalm en stil.</string>
+    <string name="l10n_anomaly_normal_msg">Normale sinusritme (%1$d bpm)</string>
+    <string name="l10n_anomaly_normal_action">Harttempo is binne die normale fisiologiese rusbereik (50-100 bpm).</string>
+
+    <!-- device / hardware -->
+    <string name="l10n_not_registered">Nie geregistreer nie</string>
+    <string name="l10n_no_device_paired_title">Geen toestel gekoppel nie</string>
+    <string name="l10n_not_paired">Nie gekoppel nie</string>
+    <string name="l10n_device_subtitle">ESP32-C3 + AD8232-sensorvoorkant</string>
+    <string name="l10n_usb_powered">USB-gevoed (5V)</string>
+    <string name="l10n_usb_disconnected_offline">Wolkstatus vanlyn</string>
+    <string name="l10n_status_unavailable">Status nie beskikbaar nie</string>
+    <string name="l10n_unable_to_load">Kan nie laai nie</string>
+    <string name="l10n_connected">Gekoppel</string>
+    <string name="l10n_offline">Vanlyn</string>
+    <string name="l10n_no_signal">Geen sein nie</string>
+    <string name="l10n_lead_normal">Lead I (Normaal)</string>
+    <string name="l10n_lead_detached">Leiding losgemaak</string>
+    <string name="l10n_lead_disconnected">Ontkoppel</string>
+    <string name="l10n_lead_attached">Lead I vasgemaak</string>
+    <string name="l10n_lead_active">Lead I aktief</string>
+    <string name="l10n_sensor_status_usb">ESP32-C3 (USB 5V-gevoed)</string>
+    <string name="l10n_syncing">Sinchroniseer tans…</string>
+    <string name="l10n_just_now_time_format">Sopas (%1$s)</string>
+    <string name="l10n_no_device_yet">Nog geen toestel gekoppel nie.</string>
+    <string name="l10n_esp_synced">ESP32-telemetrie is gesinchroniseer. Toestel is aanlyn.</string>
+    <string name="l10n_esp_offline_usb_wifi">Toestel se wolkstatus is vanlyn. Kontroleer die Wi-Fi- en API-verbinding.</string>
+    <string name="l10n_esp_unreachable">Kan nie ESP32 bereik nie. Toestel is vanlyn.</string>
+    <string name="l10n_calibrating">Kalibreer tans…</string>
+    <string name="l10n_calibration_done">AD8232-basislynkalibrasie voltooi. 12-bis-ADC belyn (0 tot 4095).</string>
+    <string name="l10n_unpair_title">Ontkoppel hardeware-monitor?</string>
+    <string name="l10n_unpair_message">Is jy seker jy wil hierdie ESP32-C3 EKG-monitor van jou PulseLink-rekening ontkoppel?</string>
+    <string name="l10n_unpair">Ontkoppel</string>
+    <string name="l10n_unpaired_toast">ESP32-monitor van rekening ontkoppel.</string>
+    <string name="l10n_scanning_network">Soek tans netwerk…</string>
+    <string name="l10n_scanning_title">Soek tans na ESP32-C3-monitors…</string>
+    <string name="l10n_scanning_subtitle">Luister tans vir 2,4 GHz Wi-Fi-bakenpakkies van nabygeleë AD8232 EKG-hardeware.</string>
+    <string name="l10n_no_device_found">Geen toestel gevind nie</string>
+    <string name="l10n_no_device_found_unpaired">Nog geen ESP32-C3-monitor is gekoppel nie. Prop jou hardeware in en koppel dit aan 2,4 GHz Wi-Fi, en tik dan op \'Soek weer\'.</string>
+    <string name="l10n_no_device_found_account">Ons kon nie \'n werklike ESP32-C3-monitor vir hierdie rekening vind nie. Kontroleer dat dit aan is en gekoppel is.</string>
+    <string name="l10n_mac_format">MAC: %1$s | AD8232 Lead I</string>
+    <string name="l10n_ping_online_ready">Aanlyn (USB 5V) | Gereed om te koppel</string>
+    <string name="l10n_ping_offline_power">Vanlyn | Skakel ESP32 aan en koppel Wi-Fi</string>
+    <string name="l10n_device_unreachable">Toestel onbereikbaar</string>
+    <string name="l10n_device_unreachable_msg">Kan nie die gekoppelde ESP32-C3-monitor bereik nie. Kontroleer dat dit aan is en met Wi-Fi gekoppel is.</string>
+    <string name="l10n_pinging">Ping tans…</string>
+    <string name="l10n_pinging_device_format">Ping tans %1$s…</string>
+    <string name="l10n_ping_esp32">Ping ESP32</string>
+    <string name="l10n_ping_result_format">Ping: %1$dms OK | Sein: %2$s | %3$s</string>
+    <string name="l10n_ping_toast_format">ESP32-pingrespons in %1$dms. Toestel is aanlyn.</string>
+    <string name="l10n_esp_offline_no_heartbeat">ESP32 vanlyn (geen hartklop bespeur nie)</string>
+    <string name="l10n_esp_offline_check_5v">Toestel se wolkstatus is vanlyn. Kontroleer die Wi-Fi- en API-verbinding.</string>
+    <string name="l10n_unable_reach_offline">Kan nie toestel bereik nie (vanlyn)</string>
+    <string name="l10n_unable_reach_named_format">Kan nie %1$s bereik nie. Kontroleer dat dit aan is.</string>
+    <string name="l10n_pairing">Koppel tans…</string>
+    <string name="l10n_pair_device">Koppel toestel</string>
+    <string name="l10n_must_sign_in_pair">Jy moet aangemeld wees om \'n toestel te koppel.</string>
+    <string name="l10n_paired_success_format">%1$s (%2$s) suksesvol gekoppel.</string>
+    <string name="l10n_pair_failed_format">Kan nie %1$s koppel nie. Probeer asseblief weer.</string>
+    <string name="l10n_no_device_to_ping">Geen toestel gevind om te ping nie.</string>
+    <string name="l10n_no_device_to_pair">Geen toestel gevind om te koppel nie.</string>
+    <string name="l10n_pairing_guide_title">Hardeware-opstellingsgids</string>
+    <string name="l10n_pairing_guide_steps">1. Prop die ESP32-C3 Super Mini in aan deurlopende 5V USB-C-krag.\n2. Maak seker die huis- of hospitaalroeteerder saai \'n 2,4 GHz Wi-Fi-netwerk uit (5 GHz word nie ondersteun nie).\n3. Tik \'Ping ESP32\' om regstreekse vertraging, seinkwaliteit en AD8232-leidingkonnektiwiteit voor koppeling te verifieer.</string>
+    <string name="l10n_ready_to_scan">Gereed om vir ESP32-C3 te soek</string>
+    <string name="l10n_ready_to_scan_desc">Maak seker jou ESP32-C3-monitor is aan deurlopende 5V USB-C-krag gekoppel en met 2,4 GHz Wi-Fi verbind.</string>
+    <string name="l10n_default_monitor_name">PulseLink ESP32-C3-monitor</string>
+    <string name="l10n_monitor_spec">AD8232 EKG | 5V USB-gevoed</string>
+    <string name="l10n_ready_to_connect">Gereed om te koppel</string>
+    <string name="l10n_esp_online_wifi">ESP32-C3 aanlyn (5V USB-gevoed) | Wi-Fi gekoppel</string>
+    <string name="l10n_esp_offline_retry">ESP32-C3 vanlyn | Koppel 5V USB-C-krag (tik om weer te probeer)</string>
+    <string name="l10n_electrodes_attached">Lead I-elektrodes vasgemaak (AD8232 aktief)</string>
+    <string name="l10n_electrodes_detached">Elektrodes losgemaak (heg RA-, LA-, RL-kussinkies vas - tik om weer te probeer)</string>
+
+    <!-- dashboard / notifications -->
+    <string name="l10n_unable_load_data">Kan nie data laai nie</string>
+    <string name="l10n_tap_to_retry">Tik om weer te probeer</string>
+    <string name="l10n_items_pending_format">Items wat op sinchronisasie wag: %1$d. Tik om die tou te sien.</string>
+    <string name="l10n_cat_health_alert">GESONDHEIDSWAARSKUWING</string>
+    <string name="l10n_cat_report">VERSLAG</string>
+    <string name="l10n_cat_clinical_note">KLINIESE NOTA</string>
+    <string name="l10n_notification_deleted">Kennisgewing uitgevee.</string>
+    <string name="l10n_no_session_report_attached">Geen sessieverslag is by hierdie kennisgewing aangeheg nie.</string>
+    <string name="l10n_report_forwarded">Telemetrieverslag na die toegewese klinikus deurgestuur.</string>
+    <string name="l10n_notification_default_title">PulseLink-kennisgewing</string>
+    <string name="l10n_notification_default_body">Jy het \'n nuwe kliniese opdatering van PulseLink.</string>
+    <string name="l10n_today_time_format">Vandag, %1$s</string>
+    <string name="l10n_channel_critical_name">Kritieke EKG-waarskuwings</string>
+    <string name="l10n_channel_critical_desc">Dringende kennisgewings oor abnormale hartritmes en leidingloskoppeling.</string>
+    <string name="l10n_channel_updates_name">Kliniese opdaterings en verslae</string>
+    <string name="l10n_channel_updates_desc">Opdaterings oor dokternotas, sessiegoedkeurings en PDF-verslae.</string>
+
+    <!-- doctor screens -->
+    <string name="l10n_unable_load_session">Kan nie sessiebesonderhede laai nie.</string>
+    <string name="l10n_btn_update_notes">Werk kliniese notas op</string>
+    <string name="l10n_share_clinical_subject_format">PulseLink kliniese EKG-hersiening - sessie %1$s</string>
+    <string name="l10n_share_clinical_body_format">PulseLink RPM kliniese telemetriehersiening\nPasiënt: %1$s\nSessie: %2$s\nGemiddelde harttempo: %3$s bpm\nDuur: %4$s\nSeinkwaliteit: %5$s\nRitme: %6$s</string>
+    <string name="l10n_share_clinical_chooser">Deel kliniese telemetrie</string>
+    <string name="l10n_downloading_pdf_clinical">Laai tans PDF-kliniese verslag af...</string>
+    <string name="l10n_opening_preview">Maak tans verslagvoorskou oop...</string>
+    <string name="l10n_session_flagged_followup">Sessie gemerk vir prioriteit kliniese opvolg.</string>
+    <string name="l10n_session_info_incomplete">Sessie-inligting onvolledig.</string>
+    <string name="l10n_no_patient_selected">Geen pasiënt gekies nie.</string>
+    <string name="l10n_unable_load_ecg_data">Kan nie EKG-data laai nie.</string>
+    <string name="l10n_unable_load_alerts">Kan nie waarskuwings laai nie.</string>
+    <string name="l10n_unable_load_alert_details">Kan nie waarskuwingbesonderhede laai nie.</string>
+    <string name="l10n_no_session_linked_alert">Geen EKG-sessie is aan hierdie waarskuwing gekoppel nie.</string>
+    <string name="l10n_picture_updated">Profielfoto opgedateer.</string>
+    <string name="l10n_picture_failed">Kan nie profielfoto opdateer nie.</string>
+    <string name="l10n_doctor_license_line">Kardiologie | HPCSA-reg: MP 0744821</string>
+    <string name="l10n_doctor_network">PulseLink-klinikusnetwerk</string>
+    <string name="l10n_verified_clinician_line">Geverifieerde klinikuslyn</string>
+    <string name="l10n_downloading_pdf_for_format">Laai tans PDF-verslag vir %1$s af...</string>
+    <string name="l10n_unable_load_notes_screen">Kan nie sessienotas laai nie.</string>
+    <string name="l10n_unable_load_notes">Kan nie notas laai nie.</string>
+    <string name="l10n_enter_observation">Voer asseblief eers \'n kliniese waarneming in.</string>
+    <string name="l10n_signed_in_to_save_note">Jy moet aangemeld wees om \'n nota te stoor.</string>
+    <string name="l10n_note_recommendation_default">Gaan voort met afstandmonitering met daaglikse EKG-kontroles.</string>
+    <string name="l10n_note_saved_ok">Kliniese nota suksesvol gestoor.</string>
+    <string name="l10n_unable_save_note">Kan nie nota stoor nie.</string>
+
+    <!-- emergency / help -->
+    <string name="l10n_sos_cancelled">Noodstuur gekanselleer.</string>
+    <string name="l10n_sos_connecting">Skakel tans met Suid-Afrikaanse nooddienste (112)...</string>
+    <string name="l10n_sos_subject">DRINGEND: PulseLink-hartnoodwaarskuwing</string>
+    <string name="l10n_sos_message_format">NOODWAARSKUWING van PulseLink RPM:\nPasiënt: %1$s\nMediese status: Hartnoodgeval geaktiveer via AD8232 EKG-monitor.\nLigging: Nooddienste is in kennis gestel.\nKontak asseblief dadelik.</string>
+    <string name="l10n_sos_chooser">Waarsku noodkontakte</string>
+    <string name="l10n_live_chat_soon">Regstreekse klets-ondersteuningskanaal word binnekort bekendgestel.</string>
+    <string name="l10n_diag_intro">Beskryf asseblief jou probleem bo hierdie lyn.</string>
+    <string name="l10n_diag_header">---- Toesteldiagnostiek (outomaties gegenereer, geen gesondheidsdata nie) ----</string>
+    <string name="l10n_diag_app_version">Toepweergawe: %1$s</string>
+    <string name="l10n_diag_android_version">Android-weergawe: %1$s (SDK %2$d)</string>
+    <string name="l10n_diag_device">Toestel: %1$s</string>
+    <string name="l10n_diag_role">Rekeningrol: %1$s</string>
+    <string name="l10n_diag_network">Netwerk: %1$s</string>
+    <string name="l10n_diag_timestamp">Tydstempel: %1$s</string>
+    <string name="l10n_diag_unknown">onbekend</string>
+    <string name="l10n_diag_offline">vanlyn</string>
+    <string name="l10n_diag_mobile_data">Mobiele data</string>
+    <string name="l10n_diag_connected">Gekoppel</string>
+    <string name="l10n_diag_no_internet_format">%1$s (geen internet nie)</string>
+
+    <!-- login / registration -->
+    <string name="l10n_google_token_failed">Kan nie Google-sekuriteitsteken haal nie.</string>
+    <string name="l10n_google_signin_error_format">Google-aanmeldfout: %1$s</string>
+    <string name="l10n_google_code_format">Kode %1$d</string>
+    <string name="l10n_valid_email_required">Voer asseblief \'n geldige e-posadres in.</string>
+    <string name="l10n_sending">Stuur tans…</string>
+    <string name="l10n_send_link">Stuur skakel</string>
+    <string name="l10n_reset_email_sent_format">Wagwoordterugstel-e-pos is na %1$s gestuur. Kontroleer asseblief jou inkassie.</string>
+    <string name="l10n_reset_email_failed">Kon nie terugstel-e-pos stuur nie.</string>
+    <string name="l10n_auth_success">Verifikasie suksesvol.</string>
+    <string name="l10n_auth_failed">Verifikasie het misluk.</string>
+    <string name="l10n_label_account_type">Kies rekeningtipe</string>
+    <string name="l10n_role_patient">Pasiënt</string>
+    <string name="l10n_role_doctor">Dokter / klinikus</string>
+    <string name="l10n_label_phone">Telefoonnommer</string>
+    <string name="l10n_label_dob">Geboortedatum</string>
+    <string name="l10n_label_gender">Geslag</string>
+    <string name="l10n_label_emergency_name">Noodkontakpersoon se naam</string>
+    <string name="l10n_label_emergency_phone">Noodkontakpersoon se telefoon</string>
+    <string name="l10n_label_speciality">Mediese spesialiteit</string>
+    <string name="l10n_label_license">Mediese praktyk- / lisensienommer</string>
+    <string name="l10n_label_hospital">Hospitaal / kliniese sentrum</string>
+    <string name="l10n_hint_dob">JJJJ-MM-DD (bv. 1995-06-15)</string>
+    <string name="l10n_hint_dob_dialog">JJJJ-MM-DD (bv. 1998-05-12)</string>
+    <string name="l10n_hint_contact_name">Volle naam van kontakpersoon</string>
+    <string name="l10n_hint_speciality">Primêre kardioloog</string>
+    <string name="l10n_hint_hospital">PulseLink-hartinstituut</string>
+    <string name="l10n_forgot_title">Stel wagwoord terug</string>
+    <string name="l10n_forgot_desc">Voer jou geregistreerde PulseLink-e-posadres in. Ons sal veilige wagwoordterugstelinstruksies aan jou stuur.</string>
+    <string name="l10n_profile_registered">Profiel suksesvol geregistreer.</string>
+    <string name="l10n_registration_failed">Registrasie het misluk.</string>
+
+    <!-- profile -->
+    <string name="l10n_no_emergency_number">Geen noodkontaknommer op lêer nie.</string>
+    <string name="l10n_edit_details_title">Werk persoonlike besonderhede op</string>
+    <string name="l10n_save_details">Stoor besonderhede</string>
+    <string name="l10n_profile_updated">Profielbesonderhede suksesvol opgedateer.</string>
+    <string name="l10n_profile_update_failed">Kon nie profiel opdateer nie.</string>
+    <string name="l10n_call_failed">Kan nie telefoonoproep begin nie</string>
+
+    <!-- live monitoring / sync -->
+    <string name="l10n_pair_before_recording">Koppel \'n toestel voordat jy \'n opname begin.</string>
+    <string name="l10n_unable_save_recording">Kan nie hierdie opnamesessie stoor nie.</string>
+    <string name="l10n_unable_start_recording">Kan nie opnamesessie begin nie.</string>
+    <string name="l10n_recording_complete">90-sekonde EKG-opname voltooi.</string>
+    <string name="l10n_resume_session">Hervat sessie</string>
+    <string name="l10n_mode_monitor">Monitor</string>
+    <string name="l10n_mode_paper">Hospitaalpapier</string>
+    <string name="l10n_no_internet_saved_locally">Geen internetverbinding nie. Data bly veilig plaaslik gestoor.</string>
+    <string name="l10n_syncing_cloud">Sinchroniseer tans met die wolk...</string>
+    <string name="l10n_sync_starting">Begin tans vanlyn-EKG-sinchronisasie...</string>
+    <string name="l10n_synchronising">Sinchroniseer tans...</string>
+    <string name="l10n_sync_failed_retry">Sinchronisasie het misluk. Sal outomaties herprobeer.</string>
+    <string name="l10n_pending_upload_format">Hangende oplaai (%1$d)</string>
+    <string name="l10n_cloud_connected">Aan die wolk gekoppel</string>
+    <string name="l10n_cloud_connected_sub">Intydse-telemetrie en EKG-sessies sinchroniseer met die Azure REST API.</string>
+    <string name="l10n_never_initial">Nooit (aanvanklike opstelling)</string>
+    <string name="l10n_ecg_session_title_format">EKG-opnamesessie (%1$ds)</string>
+    <string name="l10n_recorded_at_format">Opgeneem om %1$s • Gem.: %2$s bpm</string>
+    <string name="l10n_waveform_batch_title">250 Hz-golfvorm-telemetriebondel</string>
+    <string name="l10n_captured_at_format">Vasgelê om %1$s • %2$s bpm</string>
+    <string name="l10n_waiting">Wag</string>
+    <string name="l10n_all_synced_msg">Alle plaaslike EKG-sessies en monsters is ten volle met die wolk gesinchroniseer.</string>
+    <string name="l10n_cd_einthoven">Einthoven Lead I anatomiese plasingsgids</string>
+    <string name="l10n_cd_torso">Lead I anatomiese torso-elektrodeplasingsgids</string>
+
+    <!-- session details / report -->
+    <string name="l10n_session_report">Sessieverslag</string>
+    <string name="l10n_session_report_dated_format">Sessieverslag - %1$s</string>
+    <string name="l10n_loading_notes">Laai tans kliniese notas…</string>
+    <string name="l10n_unable_load_clinical_notes">Kan nie kliniese notas laai nie.</string>
+    <string name="l10n_no_clinical_notes_yet">Nog geen kliniese notas vir hierdie sessie aangeteken nie.</string>
+    <string name="l10n_duration_min_format">%1$02d:%2$02d min</string>
+    <string name="l10n_report_unable_load">Kan nie sessieverslag laai nie.</string>
+    <string name="l10n_patient_details_mrn_format">MRN: PL-%1$s | Leiding: Lead I</string>
+    <string name="l10n_lead_only">Leiding: Lead I</string>
+    <string name="l10n_already_visible_care_team">Hierdie sessie is reeds sigbaar vir jou sorgspan.</string>
+    <string name="l10n_downloading_pdf">Laai tans PDF-verslag af...</string>
+    <string name="l10n_unable_open_pdf">Kan nie PDF-verslag oopmaak nie.</string>
+    <string name="l10n_share_report_subject_format">PulseLink kliniese EKG-verslag - %1$s</string>
+    <string name="l10n_share_report_body_format">PulseLink kliniese EKG-verslag\nSessie-ID: %1$s\nGemiddelde bpm: %2$s\nDuur: %3$ds\nKwaliteit: %4$s</string>
+    <string name="l10n_share_report_chooser">Deel kliniese EKG-verslag</string>
+
+    <!-- canvas -->
+    <string name="l10n_lead_fault_banner">LEIDINGFOUT: ELEKTRODES ONTKOPPEL (LO+ / LO-)</string>
+    <string name="l10n_legend_paper">Standaard hospitaalpapier: 25 mm/s | 10 mm/mV | Lead I</string>
+    <string name="l10n_legend_monitor">Kliniese monitor: 25 mm/s | 10 mm/mV | Lead I</string>
+    <string name="l10n_paper_zoom_in">50 mm/s (ingezoem)</string>
+    <string name="l10n_paper_zoom_out">12,5 mm/s (uitgezoem)</string>
+
+    <!-- security & password -->
+    <string name="l10n_reenable_bio_title">Heraktiveer biometriese aanmelding</string>
+    <string name="l10n_reenable_bio_msg">Indien jy jou vingerafdruk of gesig in Android-instellings verander het, kan jy nou PulseLink se biometriese aanmelding weer aktiveer.</string>
+    <string name="l10n_not_now">Nie nou nie</string>
+    <string name="l10n_enable">Aktiveer</string>
+    <string name="l10n_no_email_associated">Geen e-pos gekoppel nie</string>
+    <string name="l10n_verification_sent_format">Verifikasie-e-pos na %1$s gestuur.</string>
+    <string name="l10n_verification_failed_format">Kan nie verifikasie-e-pos stuur nie: %1$s</string>
+    <string name="l10n_no_registered_email">Geen geregistreerde e-pos vir hierdie sessie gevind nie.</string>
+    <string name="l10n_reset_link_sent_format">Wagwoordterugstelskakel na %1$s gestuur.</string>
+    <string name="l10n_password_min_6">Wagwoord moet minstens 6 karakters wees.</string>
+    <string name="l10n_passwords_mismatch">Wagwoorde stem nie ooreen nie.</string>
+    <string name="l10n_session_expired">Gebruikersessie het verval. Meld asseblief weer aan.</string>
+    <string name="l10n_password_updated">Wagwoord suksesvol opgedateer.</string>
+    <string name="l10n_password_update_failed_format">Kon nie wagwoord opdateer nie. Jy sal dalk moet afmeld en weer aanmeld: %1$s</string>
+    <string name="l10n_bio_disabled">Biometriese aanmelding gedeaktiveer.</string>
+    <string name="l10n_bio_check_title">PulseLink-sekuriteitskontrole</string>
+    <string name="l10n_bio_check_subtitle">Bevestig jou vingerafdruk of gesig om die sensor te toets</string>
+    <string name="l10n_bio_verified">Biometriese verifikasie bevestig ✓</string>
+    <string name="l10n_bio_check_error_format">Biometriese kontrole: %1$s</string>
+    <string name="l10n_bio_mismatch">Biometriese handtekening het nie ooreengestem nie.</string>
+    <string name="l10n_bio_settings_hint">Verander jou vingerafdruk of gesig in Android-instellings en keer dan terug na PulseLink.</string>
+    <string name="l10n_bio_settings_failed">Android-biometriese instellings kon nie oopgemaak word nie. Jy kan biometrie in jou toestel se Instellings verander.</string>
+    <string name="l10n_current_password_hint">Huidige wagwoord</string>
+    <string name="l10n_confirm_password_title">Bevestig jou wagwoord</string>
+    <string name="l10n_confirm_password_msg">Voer jou PulseLink-wagwoord in om biometriese aanmelding op hierdie toestel te aktiveer.</string>
+    <string name="l10n_password_blank">Wagwoord mag nie leeg wees nie.</string>
+    <string name="l10n_incorrect_password_bio">Verkeerde wagwoord. Biometriese aanmelding is nie geaktiveer nie.</string>
+    <string name="l10n_bio_setup_unavailable">Kan nie biometrie op hierdie toestel opstel nie.</string>
+    <string name="l10n_enable_bio_title">Aktiveer biometriese aanmelding</string>
+    <string name="l10n_enable_bio_subtitle">Bevestig jou vingerafdruk of gesig om opstelling te voltooi</string>
+    <string name="l10n_bio_enabled">Biometriese aanmelding geaktiveer.</string>
+    <string name="l10n_bio_save_failed">Kan nie biometriese inskrywing stoor nie.</string>
+    <string name="l10n_bio_setup_error_format">Biometriese opstelling: %1$s</string>
+
+    <!-- repository / view-model messages -->
+    <string name="l10n_err_start_session">Kon nie EKG-sessie inisialiseer nie.</string>
+    <string name="l10n_err_net_start">Netwerkfout tydens inisialisering van sessie.</string>
+    <string name="l10n_err_stop_session">Kon nie EKG-sessie afsluit nie.</string>
+    <string name="l10n_err_net_stop">Netwerkfout tydens afsluiting van sessie.</string>
+    <string name="l10n_err_history">Kon nie sessiegeskiedenis haal nie.</string>
+    <string name="l10n_err_net_history">Netwerkfout tydens haal van geskiedenis.</string>
+    <string name="l10n_err_samples">Kon nie golfvormmonsters haal nie.</string>
+    <string name="l10n_err_net_samples">Netwerkfout tydens haal van monsters.</string>
+    <string name="l10n_err_device_status">Hardeware-monitorstatus nie beskikbaar nie.</string>
+    <string name="l10n_err_net_device_status">Netwerkfout tydens haal van toestelstatus.</string>
+    <string name="l10n_err_register_device">Kon nie hardeware-monitor registreer nie.</string>
+    <string name="l10n_err_net_register_device">Netwerkfout tydens registrasie van toestel.</string>
+    <string name="l10n_err_alerts">Kon nie aktiewe waarskuwings haal nie.</string>
+    <string name="l10n_err_net_alerts">Netwerkfout tydens haal van waarskuwings.</string>
+    <string name="l10n_err_ingest">Kon nie telemetrielading verwerk nie.</string>
+    <string name="l10n_err_net_ingest">Netwerkfout tydens telemetrieverwerking.</string>
+    <string name="l10n_err_notes">Kon nie dokternotas haal nie.</string>
+    <string name="l10n_err_net_notes">Netwerkfout tydens haal van dokternotas.</string>
+    <string name="l10n_err_submit_note">Kon nie kliniese nota indien nie.</string>
+    <string name="l10n_err_net_submit_note">Netwerkfout tydens indiening van kliniese nota.</string>
+    <string name="l10n_err_pdf">Kon nie PDF-verslag aflaai nie.</string>
+    <string name="l10n_err_net_pdf">Netwerkfout tydens aflaai van PDF-verslag.</string>
+    <string name="l10n_err_auth_no_user">Verifikasie was suksesvol maar geen gebruikersessie is gevind nie.</string>
+    <string name="l10n_err_sign_in">Kon nie aanmeld nie. Verifieer asseblief jou bewyse.</string>
+    <string name="l10n_err_google_null">Google-verifikasie was suksesvol maar die gebruiker was nul.</string>
+    <string name="l10n_err_google_signin">Kon nie met Google aanmeld nie.</string>
+    <string name="l10n_err_account_null">Rekeningskepping was suksesvol maar die gebruikerobjek was nul.</string>
+    <string name="l10n_err_register">Kon nie rekening registreer nie.</string>
+    <string name="l10n_err_load_profile">Kan nie profiel laai nie. Probeer asseblief weer.</string>
+    <string name="l10n_err_update_profile">Kon nie profielbesonderhede opdateer nie.</string>
+    <string name="l10n_err_latest_session">Kan nie jongste sessie haal nie.</string>
+    <string name="l10n_err_query_alerts">Kon nie waarskuwings navraag doen nie.</string>
+    <string name="l10n_err_email_password_required">Voer asseblief jou e-pos en wagwoord in.</string>
+    <string name="l10n_err_required_fields">Alle vereiste velde moet voltooi word.</string>
+    <string name="l10n_err_no_device_paired">Geen toestel gekoppel nie. Koppel \'n toestel voordat jy \'n opname begin.</string>
+
+    <!-- layout-only -->
+    <string name="l10n_power_source">Kragbron</string>
+    <string name="l10n_clinical_network">PulseLink-kliniese netwerk</string>
+    <string name="l10n_verified_practitioner_line">Geverifieerde praktisynlyn</string>
+    <string name="l10n_power_5v_usb">5V USB</string>
+    <string name="l10n_id_format">ID: %1$s</string>
+
+    <!-- appearance -->
+    <string name="l10n_theme_system">Stelselverstek</string>
+    <string name="l10n_theme_light">Lig</string>
+    <string name="l10n_theme_dark">Donker</string>
+
+
+    <!-- Profielfoto-opsies + geskiedenis-sortering -->
+    <string name="profile_photo_take">Neem foto</string>
+    <string name="profile_photo_choose">Kies uit galery</string>
+    <string name="profile_photo_camera_unavailable">Kamera is nie op hierdie toestel beskikbaar nie</string>
+    <string name="history_sort_newest">Mees onlangs eerste</string>
+    <string name="history_sort_oldest">Oudste eerste</string>
+
+    <!-- Regte-data toestande en lewendige tellings -->
+    <string name="live_waiting_for_device">Wag vir EKG-data vanaf die toestel</string>
+    <string name="doctor_live_no_session">Geen lewendige EKG-sessie is beskikbaar nie</string>
+    <string name="profile_no_doctor_number">Geen foonnommer vir u dokter op lêer nie</string>
+    <string name="alerts_chip_all_format">Alle waarskuwings (%1$d)</string>
+    <string name="alerts_chip_critical_format">Krities (%1$d)</string>
+    <string name="alerts_chip_warning_format">Waarskuwing (%1$d)</string>
+    <string name="alerts_chip_system_format">Stelsel (%1$d)</string>
+
+    <!-- Intydse hartritme-waarskuwings, SOS-aanwysing en pasiëntvloei -->
+    <string name="l10n_anomaly_irregular_msg">Onreëlmatige ritme bespeur (%1$d BPM)</string>
+    <string name="l10n_anomaly_irregular_action">Die tyd tussen hartslae is ongelyk. Gaan sit, bly stil en hou die elektrodes op hul plek.</string>
+    <string name="l10n_arrhythmia_title_warning">Hartritme-waarskuwing</string>
+    <string name="l10n_arrhythmia_title_critical">Kritieke hartritme-waarskuwing</string>
+    <string name="l10n_arrhythmia_body_format">%1$s\n\n%2$s</string>
+    <string name="l10n_arrhythmia_action_sos">Maak SOS oop</string>
+    <string name="l10n_arrhythmia_action_sos_now">Gaan nou na SOS</string>
+    <string name="l10n_arrhythmia_action_dismiss">Maak toe</string>
+    <string name="l10n_arrhythmia_action_im_ok">Ek is reg</string>
+    <string name="l10n_arrhythmia_action_call_now">Bel nooddienste</string>
+    <string name="l10n_arrhythmia_action_start_sos">Begin SOS-aftelling</string>
+    <string name="l10n_arrhythmia_sos_banner_format">Bespeur tydens u EKG-opname: %1$s\n\n%2$s</string>
+    <string name="l10n_pair_first_title">Koppel eers u monitor</string>
+    <string name="l10n_pair_first_message">Geen PulseLink-monitor is nog aan hierdie rekening gekoppel nie. Koppel u toestel om \'n EKG-opname te begin.</string>
+    <string name="l10n_pair_first_action">Koppel toestel</string>
+    <string name="appearance_option_theme">Tema</string>
+    <string name="appearance_option_text_size">Teksgrootte</string>
+    <string name="text_size_small">Klein</string>
+    <string name="text_size_default">Verstek</string>
+    <string name="text_size_large">Groot</string>
+    <string name="text_size_extra_large">Ekstra groot</string>
+    <string name="appearance_option_high_contrast">Hoë kontras</string>
+    <string name="high_contrast_off">Af</string>
+    <string name="high_contrast_on">Aan</string>
+    <string name="appearance_theme_desc">Kies hoe PulseLink lyk: volg jou foon, lig of donker.</string>
+    <string name="appearance_text_size_desc">Sleep die glyer om teks in die hele toep kleiner of groter te maak.</string>
+    <string name="appearance_high_contrast_desc">Sterker kleure en rande vir makliker lees.</string>
+    <string name="appearance_option_color_blind">Kleurblind-vriendelik</string>
+    <string name="appearance_color_blind_desc">Vervang rooi en groen met blou, amber en magenta, en voeg vorms by statuspunte.</string>
+    <string name="text_size_preview_sample">Jou hartklop is bestendig by 72 BPM.</string>
+    <string name="voice_option">Stemhulp</string>
+    <string name="voice_option_desc">Hoor jou hartklop, metings en kennisgewings hardop gelees, en gebruik stemopdragte om deur die app te beweeg.</string>
+    <string name="voice_enabled_spoken">Stemhulp is aan. Tik die mikrofoonknoppie en sê \'n opdrag, of sê hulp om te hoor wat jy kan sê.</string>
+    <string name="voice_button_description">Stemassistent. Dubbeltik om \'n opdrag te sê. Dubbeltik en hou vir meer opsies.</string>
+    <string name="voice_listen_prompt">Sê \'n opdrag, byvoorbeeld hartklop of maak kennisgewings oop</string>
+    <string name="voice_not_available">Spraakherkenning is nie op hierdie toestel beskikbaar nie.</string>
+    <string name="voice_not_understood">Jammer, ek het nie verstaan nie. Sê hulp om die opdragte te hoor.</string>
+    <string name="voice_help_spoken">Jy kan sê: hartklop, metings, kennisgewings, tuis, sessiestatus, verslae, noodgeval, profiel, instellings, voorkoms, terug, of stop.</string>
+    <string name="voice_help_doctor_spoken">Jy kan sê: hartklop, metings, kennisgewings, dashboard, pasiënte, verslae, waarskuwings, profiel, instellings, voorkoms, terug, of stop.</string>
+    <string name="voice_menu_title">Stemassistent</string>
+    <string name="voice_menu_speak">Sê \'n opdrag</string>
+    <string name="voice_menu_heart_rate">Hoor hartklop</string>
+    <string name="voice_menu_readings">Hoor gesondheidsmetings</string>
+    <string name="voice_menu_notifications">Hoor kennisgewings</string>
+    <string name="voice_menu_commands">Hoor stemopdragte</string>
+    <string name="voice_heart_rate_current">Jou huidige hartklop is %1$d slae per minuut.</string>
+    <string name="voice_heart_rate_latest">Jou jongste gemiddelde hartklop was %1$d slae per minuut.</string>
+    <string name="voice_heart_rate_none">Daar is nog nie \'n hartklopmeting op hierdie skerm nie.</string>
+    <string name="voice_readings_none">Daar is geen gesondheidsmetings op hierdie skerm nie.</string>
+    <string name="voice_notifications_none">Jy het geen kennisgewings nie.</string>
+    <string name="voice_notifications_one">Jy het 1 ongelese kennisgewing.</string>
+    <string name="voice_notifications_many">Jy het %1$d ongelese kennisgewings.</string>
+    <string name="voice_notifications_all_read">Jy het geen ongelese kennisgewings nie. Jou jongste een is:</string>
+    <string name="voice_notification_item">%1$s. %2$s.</string>
+    <string name="voice_opening">Maak %1$s oop.</string>
+    <string name="voice_already_on">Jy is reeds op daardie skerm.</string>
+    <string name="voice_going_back">Gaan terug.</string>
+    <string name="voice_dest_dashboard">tuisblad</string>
+    <string name="voice_dest_monitoring">monitering</string>
+    <string name="voice_dest_reports">verslae</string>
+    <string name="voice_dest_emergency">noodgeval</string>
+    <string name="voice_dest_profile">profiel</string>
+    <string name="voice_dest_settings">instellings</string>
+    <string name="voice_dest_notifications">kennisgewings</string>
+    <string name="voice_dest_patients">pasiënte</string>
+    <string name="voice_dest_alerts">waarskuwings</string>
+    <string name="voice_dest_appearance">voorkoms-instellings</string>
+    <string name="voice_dest_devices">toestelbestuur</string>
+    <string name="voice_dest_support">hulp en ondersteuning</string>
+    <string name="voice_dest_language">taal</string>
+    <string name="voice_dest_sync">sinkroniseringstatus</string>
+    <string name="a11y_heart_rate_reading">Hartklop, %1$s</string>
+    <string name="a11y_heart_rate_none">Hartklop, nog geen meting nie</string>
+    <string name="a11y_session_timer">Sessietyd, %1$s</string>
+    <string name="a11y_ecg_chart">EKG-golfvormgrafiek</string>
+    <string name="a11y_ecg_chart_with_rate">EKG-golfvormgrafiek. %1$s</string>
+</resources>

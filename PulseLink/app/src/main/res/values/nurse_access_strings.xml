@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nurse approval and status (Maxine Task 2) -->
+    <string name="nurse_section_site">Assigned site</string>
+    <string name="nurse_site_none">No site assigned yet. Ask your administrator to assign you to a site, then refresh.</string>
+    <string name="nurse_section_authorise">Authorise a touchscreen</string>
+    <string name="nurse_pairing_note">This is not the Bluetooth pairing code. Use the six-digit approval code shown on the touchscreen.</string>
+    <string name="nurse_device_name">Device name</string>
+    <string name="nurse_device_name_invalid">Use only letters, numbers, hyphens and underscores, up to 64 characters.</string>
+    <string name="nurse_approve_button">Approve</string>
+    <string name="nurse_loading">Checking the code with PulseLink...</string>
+    <string name="nurse_feedback_success">Approved. Device %1$s can use your nurse permissions until %2$s.</string>
+    <string name="nurse_feedback_wrong_code">Wrong code. Check the six digits on the touchscreen and enter them again. If the screen now shows a different code, use the new one.</string>
+    <string name="nurse_feedback_expired">Code expired. Request a new approval code on the touchscreen, then enter it here.</string>
+    <string name="nurse_feedback_denied">Approval denied. A nurse can only approve a screen at their own assigned site, and the account must be approved. Contact your site administrator.</string>
+    <string name="nurse_feedback_device_not_found">No device with that name was found. Check the device name shown on the touchscreen.</string>
+    <string name="nurse_feedback_sign_in">Your sign in has expired. Sign in again, then retry.</string>
+    <string name="nurse_feedback_too_many">Too many attempts. Wait a few minutes, then try again.</string>
+    <string name="nurse_feedback_offline">No connection. Connect to the internet, then press Approve again. Your entries have been kept.</string>
+    <string name="nurse_feedback_unavailable">Approval could not be completed. Try again in a moment.</string>
+    <string name="nurse_status_heading">Screen status</string>
+    <string name="nurse_auth_none">Authorisation: none this session. Approve a touchscreen above.</string>
+    <string name="nurse_auth_active">Authorisation: active until %1$s (%2$s remaining)</string>
+    <string name="nurse_auth_expired">Authorisation: expired at %1$s. Approve the screen again to continue.</string>
+    <string name="nurse_auth_device">Device: %1$s</string>
+    <string name="nurse_auth_site">Site: %1$s</string>
+    <string name="nurse_upload_window">Uploads from this screen accepted until %1$s</string>
+    <string name="nurse_remaining_hm">%1$d h %2$d min</string>
+    <string name="nurse_remaining_m">%1$d min</string>
+    <string name="nurse_sync_heading">Recordings on this screen</string>
+    <string name="nurse_sync_unavailable">Recording and upload status has not been supplied yet. Nothing is shown as uploaded until the device service reports it.</string>
+    <string name="nurse_sync_local">Saved on screen only: %1$d</string>
+    <string name="nurse_sync_synchronising">Synchronising: %1$d</string>
+    <string name="nurse_sync_uploaded">Uploaded: %1$d</string>
+    <string name="nurse_last_update">Last update: %1$s</string>
+    <string name="nurse_last_update_none">Last update: not available yet</string>
+    <string name="nurse_touchscreen_note">Patient selection and recording are done on the touchscreen.</string>
+    <!-- Branded nurse view: shift access card and code-only-when-needed form (Maxine Task 2) -->
+    <string name="nurse_section_access">Your shift access</string>
+    <string name="nurse_label_device">Approved device</string>
+    <string name="nurse_label_expiry">Shift expires</string>
+    <string name="nurse_site_unassigned">Not assigned yet</string>
+    <string name="nurse_device_none">None approved yet</string>
+    <string name="nurse_expiry_none">Not approved yet</string>
+    <string name="nurse_expiry_active">%1$s (%2$s left)</string>
+    <string name="nurse_expiry_expired">Expired at %1$s</string>
+    <string name="nurse_pill_active">Approved</string>
+    <string name="nurse_pill_expired">Expired</string>
+    <string name="nurse_pill_none">Not approved</string>
+    <string name="nurse_code_needed_expired">Your approval has expired. Enter the new six-digit code shown on the touchscreen.</string>
+    <string name="nurse_no_code_needed">No code needed. This was checked automatically and your approval is active until the shift expires.</string>
+    <string name="nurse_approve_another">Approve a different screen</string>
+</resources>

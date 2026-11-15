@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Skermgoedkeuring. Vertalings moet nog nagegaan word. -->
+    <string name="screen_authorise">Magtig verpleegkundige-raakskerm</string>
+    <string name="screen_shift_active">%1$s is vir jou skof goedgekeur tot %2$s. Geen nuwe kode is nodig solank hierdie goedkeuring aktief bly nie.</string>
+    <string name="screen_check_approval">Kontroleer huidige skermgoedkeuring</string>
+    <string name="screen_change_device">Magtig \'n ander raakskerm</string>
+    <string name="screen_code">Sessyferkode op die raakskerm</string>
+    <string name="screen_code_required">Voer al ses syfers in, insluitend voorloopnulle.</string>
+    <string name="screen_approval_help">Kontroleer die PulseLink-toestelnaam en kliniek op die fisiese skerm. Goedkeuring laat hierdie skerm toe om jou verpleegkundige-toestemmings vir \'n agt-uur-skof te gebruik.</string>
+    <string name="screen_approved">Skerm vir agt uur goedgekeur. Verpleegkundige: %1$s</string>
+    <string name="screen_approval_denied">Goedkeuring verwerp. Kontroleer die skermkode en jou verpleegkundige-terreintoewysing.</string>
+    <string name="screen_approval_expired">Die kode het verval of is gesluit. Versoek \'n nuwe kode op die raakskerm.</string>
+    <string name="screen_approval_conflict">Goedkeuring het verander of \'n ander verpleegkundige het hierdie skerm goedgekeur. Versoek \'n nuwe kode.</string>
+    <string name="screen_approval_invalid_receipt">Die goedkeuringsantwoord stem nie ooreen met hierdie verpleegkundige, toestel en terrein nie. Verfris toegang en probeer weer.</string>
+</resources>

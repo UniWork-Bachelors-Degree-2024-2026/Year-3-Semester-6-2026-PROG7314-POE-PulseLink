@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="doctor_registered">Kubhalisiwe</string>
+    <string name="doctor_follow_up">Kudingeka ukulandelelwa</string>
+    <string name="doctor_load_more">Layisha ezinye iziguli</string>
+    <string name="doctor_load_failed">Ulwazi lwezokwelapha alukwazanga ukulayishwa. Thepha ukuze uzame futhi.</string>
+    <string name="doctor_visits">Ukuvakasha nokuhlolwa kwangaphambilini</string>
+    <string name="doctor_no_visits">Akukho ukuvakasha kwangaphambilini okuqoshiwe.</string>
+    <string name="doctor_release">Khipha imiphumela</string>
+    <string name="doctor_release_confirm">Kukhishwe imiphumela ehloliwe ukuze isiguli siyibone? Izinguquko ezintsha zihlala ziyimfihlo zize zikhishwe futhi.</string>
+    <string name="doctor_released">Imiphumela ikhishiwe</string>
+    <string name="doctor_completed_sessions">Ukuqoshwa okuqediwe</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="doctor_registered">Geregistreer</string>
+    <string name="doctor_follow_up">Opvolg nodig</string>
+    <string name="doctor_load_more">Laai meer pasiënte</string>
+    <string name="doctor_load_failed">Kan nie kliniese inligting laai nie. Tik om weer te probeer.</string>
+    <string name="doctor_visits">Vorige besoeke en beoordelings</string>
+    <string name="doctor_no_visits">Geen vorige besoeke aangeteken nie.</string>
+    <string name="doctor_release">Stel resultate vry</string>
+    <string name="doctor_release_confirm">Stel die beoordeelde resultate vir die pasiënt vry? Latere konsepveranderings bly privaat totdat dit weer vrygestel word.</string>
+    <string name="doctor_released">Resultate vrygestel</string>
+    <string name="doctor_completed_sessions">Voltooide opnames</string>
+</resources>

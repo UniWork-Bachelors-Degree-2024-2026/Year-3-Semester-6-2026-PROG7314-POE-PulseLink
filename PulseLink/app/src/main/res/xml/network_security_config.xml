@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Base configuration: Enforce HTTPS & disable cleartext HTTP traffic -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- PulseLink ASP.NET Core Azure REST API -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">azurewebsites.net</domain>
+        <domain includeSubdomains="true">pulselink-api-dcd3gvhcfjchargy.southafricanorth-01.azurewebsites.net</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Firebase Realtime DB & Google Identity Services -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">firebasedatabase.app</domain>
+        <domain includeSubdomains="true">googleapis.com</domain>
+        <domain includeSubdomains="true">firebaseio.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>

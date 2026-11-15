@@ -1,0 +1,68 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="220dp"
+    android:viewportWidth="280"
+    android:viewportHeight="220">
+
+    <!-- Torso Outline -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 110,25 C 110,15 170,15 170,25 C 190,30 225,50 230,85 C 235,120 220,170 215,205 C 185,210 95,210 65,205 C 60,170 45,120 50,85 C 55,50 90,30 110,25 Z" />
+
+    <!-- Clavicle / Collarbone Indicators -->
+    <path
+        android:strokeColor="#E2E8F0"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M 120,40 C 95,45 80,50 70,55 M 160,40 C 185,45 200,50 210,55" />
+
+    <!-- Sternum Centre Line -->
+    <path
+        android:strokeColor="#F1F5F9"
+        android:strokeWidth="1.5"
+        android:pathData="M 140,40 L 140,170" />
+
+    <!-- RA Electrode (Right Arm / Right Infraclavicular Fossa - RED) -->
+    <!-- Displayed on viewer's left side (anatomical right) -->
+    <path
+        android:fillColor="#FEE2E2"
+        android:strokeColor="#DC2626"
+        android:strokeWidth="2.5"
+        android:pathData="M 85,70 m -16,0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0" />
+    <path
+        android:fillColor="#DC2626"
+        android:pathData="M 85,70 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0" />
+
+    <!-- LA Electrode (Left Arm / Left Infraclavicular Fossa - YELLOW / AMBER) -->
+    <!-- Displayed on viewer's right side (anatomical left) -->
+    <path
+        android:fillColor="#FEF3C7"
+        android:strokeColor="#D97706"
+        android:strokeWidth="2.5"
+        android:pathData="M 195,70 m -16,0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0" />
+    <path
+        android:fillColor="#D97706"
+        android:pathData="M 195,70 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0" />
+
+    <!-- RL Electrode (Right Leg / Right Lower Abdomen Ground - GREEN) -->
+    <!-- Displayed on viewer's lower left side (anatomical right lower quadrant) -->
+    <path
+        android:fillColor="#D1FAE5"
+        android:strokeColor="#10B981"
+        android:strokeWidth="2.5"
+        android:pathData="M 95,165 m -16,0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M 95,165 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0" />
+
+    <!-- Lead I Vector Axis Line between RA and LA -->
+    <path
+        android:strokeColor="#0EA5E9"
+        android:strokeWidth="2"
+        android:pathData="M 101,70 L 179,70" />
+
+</vector>

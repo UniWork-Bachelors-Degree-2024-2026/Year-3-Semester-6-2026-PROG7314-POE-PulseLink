@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Moniteringkontroles. Vertalings moet nog nagegaan word. -->
+    <string name="live_lead_disconnected_title">EKG-kabel ontkoppel</string>
+    <string name="live_lead_disconnected_message">Opname is gepouseer. Kontroleer die EKG-kabel en elektrodes. Hervat of herbegin word beskikbaar sodra die monitor bevestig dat die kabels gekoppel is.</string>
+    <string name="live_lead_reconnected_message">Die monitor bevestig dat die kabels gekoppel is. Hervat hierdie opname, begin oor met \'n nuwe 90-sekonde-sessie, of gooi dit weg.</string>
+    <string name="live_resume_recording">Hervat</string>
+    <string name="live_restart_recording">Herbegin</string>
+    <string name="live_discard_recording">Gooi weg</string>
+    <string name="live_discard_failed">Kan nie hierdie opname weggooi nie. Dit bly gepouseer. Kontroleer jou verbinding en probeer weer.</string>
+    <string name="live_session_starting">Wag asseblief totdat die opnamesessie gereed is.</string>
+    <string name="live_recording_paused">Gepouseer</string>
+    <string name="live_state_sync_failed">Kan nie die opname op die bediener opdateer nie. Die sessie is plaaslik gepouseer. Kontroleer jou verbinding en probeer weer.</string>
+</resources>

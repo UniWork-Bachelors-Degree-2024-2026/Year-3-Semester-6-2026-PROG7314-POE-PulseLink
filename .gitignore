@@ -1,0 +1,72 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+*.dex
+*.class
+*.zip
+
+# Generated and build files
+bin/
+gen/
+out/
+build/
+*/build/
+.gradle/
+*/.gradle/
+buildOutputCleanup/
+publish/
+*/publish/
+
+# Local configuration files
+local.properties
+*/local.properties
+proguard/
+
+# Android Studio / IntelliJ IDEA files
+.idea/
+*/.idea/
+*.iml
+*/.iml
+*.ipr
+*.iws
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# .NET / C# files
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*/.vs/
+
+# Arduino / Embedded files
+*.hex
+*.elf
+*.bin
+.arduino/
+PulseLink/.idea/misc.xml
+/PulseLink/.idea
+PulseLinkAPI/Properties/PublishProfiles/pulselink-api - Zip Deploy.pubxml
+
+# Kotlin compiler daemon and session files
+.kotlin/
+*/.kotlin/
+*.salive
+# Installed test dependencies and local Firebase emulator output
+node_modules/
+.firebase/
+firebase-debug.log*
+database-debug.log*
+
+/docs/*
+!/docs/images/
+!/docs/images/**

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="voice_mic_rationale_title">Allow microphone access</string>
+    <string name="voice_mic_rationale_message">PulseLink uses the microphone only when you tap the voice button, so you can say commands such as \"heart rate\" or \"open reports\". Your voice is not recorded or stored by the app.</string>
+    <string name="voice_mic_allow">Continue</string>
+    <string name="voice_mic_denied_title">Microphone access is off</string>
+    <string name="voice_mic_denied_message">Voice commands need the microphone. You can still use the voice menu (press and hold the microphone button) to hear your heart rate, readings and notifications read aloud. To use spoken commands, allow the microphone in the app settings.</string>
+    <string name="voice_mic_denied_spoken">The microphone is off, so spoken commands are unavailable. Press and hold the microphone button to use the voice menu instead.</string>
+    <string name="voice_open_settings">Open settings</string>
+</resources>

@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "973799025623",
+    "project_id": "pulselink-78842",
+    "storage_bucket": "pulselink-78842.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973799025623:android:b39a86a0dd96f25ec47992",
+        "android_client_info": {
+          "package_name": "com.example.prog7314_poepart23"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973799025623-5jth4ea7ne8qtljavqkn4mqm0tfb6obf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prog7314_poepart23",
+            "certificate_hash": "df3863f290816b2f31d1553abcdc0f9cd9991edb"
+          }
+        },
+        {
+          "client_id": "973799025623-d4jcf5e97fh7o23jd37ioimqnppi03p7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prog7314_poepart23",
+            "certificate_hash": "9c6e5ac1178664eaadfff4a3e158c2c053528501"
+          }
+        },
+        {
+          "client_id": "973799025623-qle372f35oidlgkenmj66p9b0sul0b21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxr-90GRpGtigMKpqJkD8UyitMJPMUtr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

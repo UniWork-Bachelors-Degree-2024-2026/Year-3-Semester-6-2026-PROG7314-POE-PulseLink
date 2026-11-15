@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="google_sign_in_network_error">Unable to connect to Google. Check your internet connection and try again.</string>
+    <string name="google_sign_in_configuration_error">Google sign-in is not configured correctly. Please contact support.</string>
+    <string name="google_sign_in_unavailable">Google sign-in is unavailable. Check that Google Play services is up to date and try again.</string>
+    <string name="google_sign_in_failed">Unable to sign in with Google. Please try again.</string>
+</resources>

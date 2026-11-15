@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="inbox_empty">Azikho izaziso okwamanje. Izibuyekezo ezintsha zizovela lapha.</string>
+    <string name="speciality_edit">Buyekeza umkhakha wezokwelapha</string>
+    <string name="speciality_hint">Faka umkhakha wakho wezokwelapha</string>
+    <string name="speciality_invalid">Faka izinhlamvu eziphakathi kuka-2 no-160.</string>
+    <string name="speciality_failed">Akukwazanga ukugcinwa. Hlola uxhumano lwakho bese uzama futhi.</string>
+    <string name="speciality_saving">Igcina umkhakha...</string>
+</resources>

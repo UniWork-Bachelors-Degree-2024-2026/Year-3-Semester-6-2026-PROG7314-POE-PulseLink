@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_status_paused">Onderbreek</string>
+    <string name="ui_status_finalising">Word afgehandel</string>
+    <string name="ui_status_discarded">Weggegooi</string>
+    <string name="ui_assessment_not_inferred">Opnamestatus en beraamde harttempo bepaal nie \'n diagnose nie. \'n Gemagtigde dokter moet die voltooide verslag beoordeel.</string>
+    <string name="ui_review_required">Kliniese beoordeling nodig</string>
+    <string name="ui_provide_doctor_notes">Voeg doktersnotas by</string>
+    <string name="ui_ble_sync_recordings">Sinkroniseer opnames in die tou via BLE</string>
+    <string name="ui_ble_pair_first">Koppel eers %1$s met Bluetooth en probeer dan die opnameoordrag weer. Bluetooth-koppeling is apart van verpleegkundige-goedkeuring.</string>
+    <string name="ui_ble_transfer_failed">Die opnameoordrag kon nie voltooi word nie. Kontroleer die toestelverbinding en probeer weer. Hangende opnames word behou.</string>
+    <string name="ui_care_plan_saved">Sorgplan gestoor.</string>
+    <string name="ui_care_plan_failed">Die sorgplan kon nie gestoor word nie. Probeer asseblief weer.</string>
+    <string name="ui_ecg_review_title">Opgetekende EKG-oorsig: %1$s</string>
+    <string name="ui_ecg_review_subtitle">Enkele golfvorm; amplitude nie klinies gekalibreer nie; duur %1$s</string>
+    <plurals name="ui_ble_transferred">
+        <item quantity="one">%d opname is via BLE na die vanlyn tou oorgedra. API-oplaai is steeds nodig.</item>
+        <item quantity="other">%d opnames is via BLE na die vanlyn tou oorgedra. API-oplaai is steeds nodig.</item>
+    </plurals>
+
+    <string name="ui_care_title">Werk die pasiënt se sorgplan by</string>
+    <string name="ui_care_description">Teken die beoordeling en sorginstruksies aan.</string>
+    <string name="ui_care_condition">Kliniese toestand</string>
+    <string name="ui_care_condition_hint">Voer die beoordeelde toestand in</string>
+    <string name="ui_medication_one">Medikasie 1</string>
+    <string name="ui_medication_two">Medikasie 2</string>
+    <string name="ui_medication_name">Naam van medikasie</string>
+    <string name="ui_medication_dose">Dosis</string>
+    <string name="ui_care_instructions">Sorginstruksies</string>
+    <string name="ui_care_instructions_hint">Voer instruksies vir die pasiënt in</string>
+    <string name="ui_save">Stoor</string>
+    <string name="ui_zoom_out">Zoem uit</string>
+    <string name="ui_zoom_in">Zoem in</string>
+    <string name="ui_fit">Pas by die aansig</string>
+    <string name="ui_full_screen">Maak volskerm oop</string>
+    <string name="ui_recorded_ecg">Opgetekende EKG</string>
+    <string name="ui_trace_help">Vee om die opname te bekyk. Die vertoongrootte is nie klinies gekalibreer nie.</string>
+
+    <string name="ui_voice_language_unavailable">Stemuitvoer is nie vir hierdie taal beskikbaar nie. Kontroleer geïnstalleerde stemme in Android se teks-na-spraak-instellings. Die teks bly op die skerm beskikbaar.</string>
+    <string name="ui_voice_help_staff">Jy kan sê: tuis, voorkoms, taal, terug, of stop.</string>
+</resources>

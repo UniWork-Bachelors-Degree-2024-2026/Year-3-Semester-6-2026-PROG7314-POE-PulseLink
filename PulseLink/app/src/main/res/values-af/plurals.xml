@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Task 12: Afrikaans quantity strings for DateTimeFormatter relative times. -->
+<resources>
+
+    <plurals name="time_ago_minutes">
+        <item quantity="one">%d minuut gelede</item>
+        <item quantity="other">%d minute gelede</item>
+    </plurals>
+
+    <plurals name="time_ago_hours">
+        <item quantity="one">%d uur gelede</item>
+        <item quantity="other">%d uur gelede</item>
+    </plurals>
+
+    <plurals name="time_ago_days">
+        <item quantity="one">%d dag gelede</item>
+        <item quantity="other">%d dae gelede</item>
+    </plurals>
+
+</resources>

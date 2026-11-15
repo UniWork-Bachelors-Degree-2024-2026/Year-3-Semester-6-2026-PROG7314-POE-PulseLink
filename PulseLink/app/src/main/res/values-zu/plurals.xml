@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Task 12: isiZulu quantity strings for DateTimeFormatter relative times. -->
+<resources>
+
+    <plurals name="time_ago_minutes">
+        <item quantity="one">Umzuzu ongu-%d odlule</item>
+        <item quantity="other">Imizuzu engu-%d edlule</item>
+    </plurals>
+
+    <plurals name="time_ago_hours">
+        <item quantity="one">Ihora eli-%d elidlule</item>
+        <item quantity="other">Amahora angu-%d adlule</item>
+    </plurals>
+
+    <plurals name="time_ago_days">
+        <item quantity="one">Usuku olu-%d olwedlule</item>
+        <item quantity="other">Izinsuku ezingu-%d ezedlule</item>
+    </plurals>
+
+</resources>

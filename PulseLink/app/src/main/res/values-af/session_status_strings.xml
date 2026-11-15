@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pasiënt-kontroleskerm en sessiestatus (Maxine Task 1) -->
+    <string name="nav_patient_text_session_status">Sessie</string>
+    <string name="voice_dest_session_status">sessiestatus</string>
+    <string name="patient_dashboard_subtitle_overview">Jou sessiestatus, verslae en notas van jou sorgspan.</string>
+    <string name="session_status_title">Sessiestatus</string>
+    <string name="session_status_last_session">Laaste sessie</string>
+    <string name="session_status_started">Begin</string>
+    <string name="session_status_duration">Duur</string>
+    <string name="session_status_quality">Opnamekwaliteit</string>
+    <string name="session_status_notes">Dokternotas</string>
+    <string name="session_status_upload">Oplaaistatus</string>
+    <string name="session_status_notes_available">Beskikbaar</string>
+    <string name="session_status_notes_none">Nog geen</string>
+    <string name="session_status_upload_none_pending">Niks wag om opgelaai te word nie</string>
+    <string name="session_status_upload_pending_format">%1$d wag om opgelaai te word</string>
+    <string name="session_status_quality_note">Opnamekwaliteit beskryf slegs die sein. Dit is nie \'n diagnose nie.</string>
+    <string name="session_status_loading">Laai</string>
+    <string name="session_status_loading_message">Laai tans jou sessiestatus</string>
+    <string name="session_status_pill_none">Nog geen sessies</string>
+    <string name="session_status_none_title">Nog geen sessies opgeneem nie</string>
+    <string name="session_status_none_message">Jou verpleegkundige begin opnames op die PulseLink-skerm. Voltooide sessies verskyn hier.</string>
+    <string name="session_status_error_title">Kan nie sessiestatus laai nie</string>
+    <string name="session_status_error_message">Kyk jou verbinding na en probeer weer.</string>
+    <string name="session_status_retry">Probeer weer</string>
+    <string name="session_status_view_details">Sien sessiebesonderhede</string>
+    <string name="session_status_no_live_note">Opnames word deur jou verpleegkundige op die PulseLink-raakskerm begin. Lewendige EKG word nie op hierdie foon gewys nie.</string>
+    <string name="dashboard_completed_reports">Voltooide verslae</string>
+    <string name="dashboard_released_notes">Vrygestelde notas</string>
+    <string name="dashboard_history_title">Geskiedenis</string>
+    <string name="dashboard_history_subtitle">Blaai deur vorige sessies en verslae</string>
+</resources>

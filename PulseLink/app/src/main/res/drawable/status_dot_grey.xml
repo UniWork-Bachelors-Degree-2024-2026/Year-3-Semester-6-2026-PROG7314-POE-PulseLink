@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    10dp status dot (#9CA3AF).
+    Clinical usage: 'Offline' / 'Device Inactive'
+    Vector, so it stays crisp at any size: drop it into an ImageView and set
+    layout_width / layout_height to 8dp, 10dp or 16dp as the design needs.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="10dp"
+    android:height="10dp"
+    android:viewportWidth="10"
+    android:viewportHeight="10">
+    <path
+        android:fillColor="@color/pulse_status_offline"
+        android:pathData="M5,0a5,5 0,1 0,0 10a5,5 0,1 0,0 -10z" />
+</vector>

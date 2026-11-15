@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ukuvunywa kwesikrini. Ukuhumusha kusadinga ukubuyekezwa. -->
+    <string name="screen_authorise">Gunyaza isikrini sokuthinta somhlengikazi</string>
+    <string name="screen_shift_active">U-%1$s uvunyelwe ishifu yakho kuze kube ngu-%2$s. Akudingeki ikhodi entsha inqobo nje uma lokhu kuvuma kusasebenza.</string>
+    <string name="screen_check_approval">Hlola ukuvunywa kwesikrini samanje</string>
+    <string name="screen_change_device">Gunyaza esinye isikrini sokuthinta</string>
+    <string name="screen_code">Ikhodi enamadijithi ayisithupha esikrinini sokuthinta</string>
+    <string name="screen_code_required">Faka wonke amadijithi ayisithupha, kuhlanganise nezinombolo zero zokuqala.</string>
+    <string name="screen_approval_help">Hlola igama ledivayisi ye-PulseLink nomtholampilo esikrinini sangempela. Ukuvuma kuvumela lesi sikrini ukuthi sisebenzise izimvume zakho zomhlengikazi ishifu yamahora ayisishiyagalombili.</string>
+    <string name="screen_approved">Isikrini sivunyiwe amahora ayisishiyagalombili. Umhlengikazi: %1$s</string>
+    <string name="screen_approval_denied">Ukuvuma kunqatshiwe. Hlola ikhodi yesikrini nesiza sakho sokwabelwa komhlengikazi.</string>
+    <string name="screen_approval_expired">Ikhodi iphelelwe yisikhathi noma ikhiyiwe. Cela ikhodi entsha esikrinini sokuthinta.</string>
+    <string name="screen_approval_conflict">Ukuvuma kushintshile noma omunye umhlengikazi uvume lesi sikrini. Cela ikhodi entsha.</string>
+    <string name="screen_approval_invalid_receipt">Impendulo yokuvuma ayifani nalo mhlengikazi, idivayisi nesiza. Vuselela ukufinyelela bese uzama futhi.</string>
+</resources>

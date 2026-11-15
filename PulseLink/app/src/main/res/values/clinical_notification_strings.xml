@@ -1,0 +1,22 @@
+<resources>
+    <string name="clinical_report_ready">Report ready</string>
+    <string name="clinical_results_released">Results released</string>
+    <string name="clinical_report_ready_body">A completed ECG report is ready for your review.</string>
+    <string name="clinical_results_released_body">Your care team has released your results. Open PulseLink to view them.</string>
+    <string name="clinical_report_ready_named_body">Completed ECG report for %1$s is ready for clinical review.</string>
+    <string name="clinical_results_released_title">ECG assessment released</string>
+    <string name="clinical_results_released_doctor_body">%1$s reviewed your ECG recording and released your clinical summary.</string>
+    <string name="clinical_prescription_issued_title">Prescription updated</string>
+    <string name="clinical_prescription_issued_body">%1$s updated your medication plan: %2$s.</string>
+    <string name="clinical_prescription_issued_generic_body">Your doctor updated your medication plan: %1$s.</string>
+    <string name="clinical_advice_issued_title">Clinical follow-up guidance</string>
+    <string name="clinical_advice_issued_body">%1$s shared follow-up guidance: %2$s</string>
+    <string name="clinical_advice_issued_generic_body">Follow-up guidance from your care team: %1$s</string>
+    <string name="clinical_doctor_activity_awaiting_title">ECG awaiting review: %1$s</string>
+    <string name="clinical_doctor_activity_awaiting_body">Recorded at %1$s. Prototype average pulse: %2$d BPM.</string>
+    <string name="clinical_doctor_activity_draft_title">Draft assessment saved: %1$s</string>
+    <string name="clinical_doctor_activity_draft_body">Clinical notes saved for %1$s and awaiting patient release.</string>
+    <string name="clinical_doctor_activity_released_title">Results released: %1$s</string>
+    <string name="clinical_doctor_activity_released_body">Clinical assessment and PDF report released for %1$s.</string>
+    <string name="clinical_doctor_no_activity_subtitle">Completed ECG recordings and clinical review updates will appear here.</string>
+</resources>

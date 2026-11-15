@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="inbox_empty">No notifications yet. New updates will appear here.</string>
+    <string name="speciality_edit">Update medical speciality</string>
+    <string name="speciality_hint">Enter your medical speciality</string>
+    <string name="speciality_invalid">Enter between 2 and 160 characters.</string>
+    <string name="speciality_failed">Unable to save. Check your connection and try again.</string>
+    <string name="speciality_saving">Saving speciality...</string>
+</resources>

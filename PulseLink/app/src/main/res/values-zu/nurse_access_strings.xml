@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ukuvunywa kwabahlengikazi nesimo (Maxine Task 2). Ukuhumusha kusadinga ukubuyekezwa. -->
+    <string name="nurse_section_site">Isiza esabelwe</string>
+    <string name="nurse_site_none">Awukabelwa isiza. Cela umqondisi wakho akwabele isiza, bese uvuselela.</string>
+    <string name="nurse_section_authorise">Gunyaza isikrini sokuthinta</string>
+    <string name="nurse_pairing_note">Lena akuyona ikhodi yokuhlanganisa ye-Bluetooth. Sebenzisa ikhodi yokuvuma enamadijithi ayisithupha ebonakala esikrinini sokuthinta.</string>
+    <string name="nurse_device_name">Igama ledivayisi</string>
+    <string name="nurse_device_name_invalid">Sebenzisa izinhlamvu, izinombolo, ama-hyphen nama-underscore kuphela, kuze kube yizinhlamvu ezingu-64.</string>
+    <string name="nurse_approve_button">Vuma</string>
+    <string name="nurse_loading">Ihlola ikhodi ne-PulseLink...</string>
+    <string name="nurse_feedback_success">Kuvunyiwe. Idivayisi %1$s ingasebenzisa izimvume zakho zomhlengikazi kuze kube ngu-%2$s.</string>
+    <string name="nurse_feedback_wrong_code">Ikhodi ayilungile. Hlola amadijithi ayisithupha esikrinini sokuthinta uphinde uwafake. Uma isikrini manje sibonisa enye ikhodi, sebenzisa entsha.</string>
+    <string name="nurse_feedback_expired">Ikhodi iphelelwe yisikhathi. Cela ikhodi entsha yokuvuma esikrinini sokuthinta, bese uyifaka lapha.</string>
+    <string name="nurse_feedback_denied">Ukuvuma kunqatshiwe. Umhlengikazi angavuma kuphela isikrini esizeni sakhe esabelwe, futhi i-akhawunti kumele ivunyelwe. Xhumana nomqondisi wesiza sakho.</string>
+    <string name="nurse_feedback_device_not_found">Ayikho idivayisi enalelo gama etholakele. Hlola igama ledivayisi elibonakala esikrinini sokuthinta.</string>
+    <string name="nurse_feedback_sign_in">Ukungena kwakho kuphelelwe yisikhathi. Ngena futhi, bese uzama kabusha.</string>
+    <string name="nurse_feedback_too_many">Imizamo eminingi kakhulu. Linda imizuzu embalwa, bese uzama futhi.</string>
+    <string name="nurse_feedback_offline">Alikho uxhumano. Xhuma ku-inthanethi, bese ucindezela Vuma futhi. Okufakile kugciniwe.</string>
+    <string name="nurse_feedback_unavailable">Ukuvuma akukwazanga ukuqedwa. Zama futhi emizuzwini embalwa.</string>
+    <string name="nurse_status_heading">Isimo sesikrini</string>
+    <string name="nurse_auth_none">Imvume: ayikho kule seshini. Vuma isikrini sokuthinta ngenhla.</string>
+    <string name="nurse_auth_active">Imvume: iyasebenza kuze kube ngu-%1$s (kusele %2$s)</string>
+    <string name="nurse_auth_expired">Imvume: iphelelwe yisikhathi ngo-%1$s. Vuma isikrini futhi ukuze uqhubeke.</string>
+    <string name="nurse_auth_device">Idivayisi: %1$s</string>
+    <string name="nurse_auth_site">Isiza: %1$s</string>
+    <string name="nurse_upload_window">Ukulayisha okuvela kuleli sikrini kwamukelwa kuze kube ngu-%1$s</string>
+    <string name="nurse_remaining_hm">%1$d h %2$d imiz</string>
+    <string name="nurse_remaining_m">%1$d imiz</string>
+    <string name="nurse_sync_heading">Okuqoshiwe kuleli sikrini</string>
+    <string name="nurse_sync_unavailable">Isimo sokuqoshwa nesokulayishwa asinikezwanga okwamanje. Akukho okubonisa njengokulayishiwe kuze kube yilapho isevisi yedivayisi ikubika.</string>
+    <string name="nurse_sync_local">Kugciniwe esikrinini kuphela: %1$d</string>
+    <string name="nurse_sync_synchronising">Kuyavumelanisa: %1$d</string>
+    <string name="nurse_sync_uploaded">Kulayishiwe: %1$d</string>
+    <string name="nurse_last_update">Isibuyekezo sokugcina: %1$s</string>
+    <string name="nurse_last_update_none">Isibuyekezo sokugcina: asikatholakali okwamanje</string>
+    <string name="nurse_touchscreen_note">Ukukhetha iziguli nokuqopha kwenziwa esikrinini sokuthinta.</string>
+    <!-- Branded nurse view: shift access card and code-only-when-needed form (Maxine Task 2) -->
+    <string name="nurse_section_access">Ukufinyelela kwakho kweshifu</string>
+    <string name="nurse_label_device">Idivayisi evunyiwe</string>
+    <string name="nurse_label_expiry">Ishifu iphelelwa yisikhathi</string>
+    <string name="nurse_site_unassigned">Ayikabelwa</string>
+    <string name="nurse_device_none">Ayikho evunyiwe</string>
+    <string name="nurse_expiry_none">Ayikavunywa</string>
+    <string name="nurse_expiry_active">%1$s (kusele %2$s)</string>
+    <string name="nurse_expiry_expired">Iphelelwe yisikhathi ngo-%1$s</string>
+    <string name="nurse_pill_active">Kuvunyiwe</string>
+    <string name="nurse_pill_expired">Kuphelelwe yisikhathi</string>
+    <string name="nurse_pill_none">Akuvunyiwe</string>
+    <string name="nurse_code_needed_expired">Imvume yakho iphelelwe yisikhathi. Faka ikhodi entsha enamadijithi ayisithupha ebonakala esikrinini sokuthinta.</string>
+    <string name="nurse_no_code_needed">Akudingeki ikhodi. Lokhu kuhlolwe ngokuzenzakalelayo futhi imvume yakho iyasebenza kuze kuphele ishifu.</string>
+    <string name="nurse_approve_another">Vuma esinye isikrini</string>
+</resources>

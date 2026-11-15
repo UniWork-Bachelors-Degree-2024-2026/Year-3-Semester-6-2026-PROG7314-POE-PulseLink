@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hr_status_normal">Normal</string>
+    <string name="hr_status_high">High</string>
+    <string name="hr_status_low">Low</string>
+    <string name="hr_status_with_value">%1$s - %2$s</string>
+</resources>

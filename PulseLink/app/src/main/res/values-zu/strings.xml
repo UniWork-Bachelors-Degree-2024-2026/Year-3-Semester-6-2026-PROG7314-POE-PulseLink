@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- isiZulu (zu) - South Africa -->
+<resources>
+
+    <!-- Splash -->
+    <string name="splash_tagline">Siqapha inhliziyo yakho, noma ikuphi.</string>
+
+    <!-- Login -->
+    <string name="login_welcome">Siyakwamukela futhi. Sicela ungene ku-akhawunti yakho.</string>
+    <string name="label_email">Ikheli le-imeyili</string>
+    <string name="label_password">Iphasiwedi</string>
+    <string name="forgot_password">Ukhohlwe iphasiwedi?</string>
+    <string name="sign_in">Ngena</string>
+    <string name="biometric_login">Ukungena ngokwe-biometric</string>
+    <string name="or_continue_with">NOMA QHUBEKA NGE-</string>
+    <string name="sign_in_google">Ngena nge-Google</string>
+    <string name="no_account">Awunayo i-akhawunti?</string>
+    <string name="request_access">Cela ukufinyelela</string>
+
+    <!-- Registration -->
+    <string name="registration_subtitle">Dala i-akhawunti yakho ukuze uqale ukuqapha impilo yakho.</string>
+    <string name="label_full_name">Igama eliphelele</string>
+    <string name="label_confirm_password">Qinisekisa iphasiwedi</string>
+    <string name="error_passwords_do_not_match">Amaphasiwedi awahambisani. Sicela uphinde uwafake.</string>
+    <string name="create_account">Dala i-akhawunti</string>
+    <string name="have_account">Usuvele unayo i-akhawunti?</string>
+    <string name="log_in_here">Ngena lapha</string>
+
+    <!-- Biometric Setup -->
+    <string name="biometric_setup_title">Ukungena okuphephile nokusheshayo</string>
+    <string name="biometric_setup_subtitle">Vumela i-biometrics ukuze ufinyelele ideshibhodi yakho yezokwelapha ngokuphephile ngemizuzwana, ngaphandle kokubhala iphasiwedi.</string>
+    <string name="instant_access_title">Ukufinyelela ngokushesha</string>
+    <string name="instant_access_desc">Yeqa inqubo yokungena ngesandla.</string>
+    <string name="clinical_security_title">Ukuphepha kwezinga lasekliniki</string>
+    <string name="clinical_security_desc">Kugcina idatha yakho yempilo iphephile.</string>
+    <string name="set_up_biometrics">Setha i-biometrics</string>
+    <string name="skip_for_now">Yeqa okwamanje</string>
+
+    <!-- Biometric Login -->
+    <string name="sign_in_securely">Ngena ngokuphephile</string>
+    <string name="position_face">Beka ubuso bakho ngaphakathi kohlaka</string>
+    <string name="use_password_instead">Sebenzisa iphasiwedi kunalokho</string>
+    <string name="cancel">Khansela</string>
+
+    <!-- Inselelo ye-biometric nokubhalisa -->
+    <string name="biometric_login_title">Qinisekisa ukuthi nguwe</string>
+    <string name="biometric_login_hint">Qinisekisa ubuwena ukuze uvule i-PulseLink</string>
+    <string name="biometric_prompt_title">Ngena ku-PulseLink</string>
+    <string name="biometric_prompt_subtitle">Qinisekisa ubuwena ukuze uqhubeke</string>
+    <string name="biometric_enroll_prompt_title">Vumela ukungena nge-biometric</string>
+    <string name="biometric_enroll_prompt_subtitle">Qinisekisa ukuze ugcine ukungena kwakho ngokuphephile kule divayisi</string>
+    <string name="biometric_signing_in">Uyangena.</string>
+    <string name="biometric_try_again">Zama futhi</string>
+    <string name="biometric_enabled_toast">Ukungena nge-biometric kuvunyelwe</string>
+    <string name="biometric_login_not_set_up">Ngena kuqala ngephasiwedi yakho, bese ukhetha Setha i-biometrics.</string>
+    <string name="biometric_err_unavailable">Ukungena nge-biometric akutholakali kule divayisi okwamanje. Sicela ungene ngephasiwedi yakho.</string>
+    <string name="biometric_err_none_enrolled">Engeza isigxivizo somunwe noma ubuso kumasethingi edivayisi yakho, bese ubuyela ukuze uqedele ukusetha.</string>
+    <string name="biometric_err_key_invalidated">I-biometrics yedivayisi yakho iguqukile. Ngena ngephasiwedi yakho ukuze usethe futhi ukungena nge-biometric.</string>
+    <string name="biometric_err_credentials_invalid">Ukungena kwakho okugciniwe akusasebenzi. Sicela ungene ngephasiwedi yakho.</string>
+    <string name="biometric_err_offline">Awunakho ukuxhumeka. Hlola i-inthanethi yakho uphinde uzame, noma usebenzise iphasiwedi yakho.</string>
+    <string name="biometric_err_generic">Asikwazanga ukukuqinisekisa. Zama futhi noma usebenzise iphasiwedi yakho.</string>
+    <string name="biometric_err_setup_failed">Ukuvumela ukungena nge-biometric kwehlulekile. Sicela uzame futhi.</string>
+
+    <!-- RecyclerView adapter strings -->
+    <string name="status_normal_rhythm">Isigqi esijwayelekile</string>
+    <string name="status_irregular_rhythm">Isigqi esingajwayelekile</string>
+
+    <string name="patient_last_session_format">Iseshini yokugcina: %s</string>
+    <string name="patient_status_stable">KUZINZILE</string>
+    <string name="patient_status_review_needed">KUDINGEKA UKUBUYEKEZWA</string>
+    <string name="patient_status_critical">KUBUCAYI</string>
+
+    <string name="severity_critical">KUBUCAYI</string>
+    <string name="severity_warning">ISEXWAYISO</string>
+    <string name="severity_system">ISISTIMU</string>
+
+    <string name="note_follow_up_required">KUDINGEKA UKULANDELELA</string>
+
+    <string name="report_duration_format">Ubude beseshini: %s</string>
+    <string name="report_status_pending">KULINDILE</string>
+    <string name="report_status_flagged">KUPHAWULIWE</string>
+    <string name="report_status_signed_off">KUSAYINDIWE</string>
+
+    <!-- Screen: doctor_alert_details -->
+    <string name="doctor_alert_details_text_alert_details">Imininingwane yesexwayiso</string>
+    <string name="doctor_alert_details_text_critical">KUBUCAYI</string>
+    <string name="doctor_alert_details_text_tachycardia_detected">Kutholakele i-Tachycardia</string>
+    <string name="doctor_alert_details_text_sustained_heart_rate_145">Kuqoshwe izinga lokushaya kwenhliziyo eliqhubekayo lika-145 bpm isikhathi esingaphezu kwemizuzu emi-5. Isiguli sinomlando obhaliwe we-Atrial Fibrillation, okwandisa ukubaluleka kwalesi sifundo kwezokwelapha. Kunconywa ukubuyekezwa ngokushesha.</string>
+    <string name="doctor_alert_details_text_heart_rate_time_alert">Izinga lokushaya kwenhliziyo ngesikhathi sesexwayiso</string>
+    <string name="doctor_alert_details_text_baseline_78_bpm">Izinga eliyisisekelo: 78 bpm</string>
+    <string name="doctor_alert_details_text_recommended_actions">Izenzo ezinconyiwe</string>
+    <string name="doctor_alert_details_text_contact_patient_confirm_symptoms">Xhumana nesiguli ukuze uqinisekise izimpawu</string>
+    <string name="doctor_alert_details_text_review_full_ecg_session">Buyekeza ukuqoshwa kweseshini ye-ECG ephelele</string>
+    <string name="doctor_alert_details_text_dismiss">Chitha</string>
+    <string name="doctor_alert_details_text_escalate_now">Khuphula manje</string>
+
+    <!-- Screen: doctor_alerts -->
+    <string name="doctor_alerts_text_clinical_alerts">Izexwayiso zasekliniki</string>
+    <string name="doctor_alerts_hint_search_by_patient_name">Sesha ngegama lesiguli, i-ID, noma isimo.</string>
+    <string name="doctor_alerts_text_all_alerts_12">Zonke izexwayiso (12)</string>
+    <string name="doctor_alerts_text_critical_3">Okubucayi (3)</string>
+    <string name="doctor_alerts_text_warning_5">Izexwayiso (5)</string>
+    <string name="doctor_alerts_text_system_4">Isistimu (4)</string>
+    <string name="doctor_alerts_text_mark_all_read">Maka konke njengokufundiwe</string>
+
+    <!-- Screen: doctor_dashboard -->
+    <string name="doctor_dashboard_text_overview">Uhlolojikelele</string>
+    <string name="doctor_dashboard_text_today_s_clinical_summary">Isifinyezo sasekliniki sanamuhla</string>
+    <string name="doctor_dashboard_text_active_patients">Iziguli ezisebenzayo</string>
+    <string name="doctor_dashboard_text_critical_alerts">Izexwayiso ezibucayi</string>
+    <string name="doctor_dashboard_text_pending_reports">Imibiko elindile</string>
+    <string name="doctor_dashboard_text_priority_patients">Iziguli ezibalulekile</string>
+    <string name="doctor_dashboard_text_view_all">Buka konke</string>
+    <string name="doctor_dashboard_text_hr_115_bpm_high">Izinga lokushaya kwenhliziyo liphezulu kuno-115 bpm</string>
+    <string name="doctor_dashboard_text_tachycardia_alert">Isexwayiso se-tachycardia</string>
+    <string name="doctor_dashboard_text_10m_ago">Emaminithi angu-10 edlule</string>
+    <string name="doctor_dashboard_text_elevated_bp">Umfutho wegazi ophakeme</string>
+    <string name="doctor_dashboard_text_45m_ago">Emaminithi angu-45 edlule</string>
+    <string name="doctor_dashboard_text_daily_ecg_received">I-ECG yansuku zonke itholiwe</string>
+    <string name="doctor_dashboard_text_pending_review">Kulindwe ukubuyekezwa</string>
+    <string name="doctor_dashboard_text_2h_ago">Emahoreni ama-2 edlule</string>
+    <string name="doctor_dashboard_text_recent_activity">Umsebenzi wakamuva</string>
+    <string name="doctor_dashboard_text_john_doe_s_ecg">Awukho umsebenzi wakamuva</string>
+    <string name="doctor_dashboard_text_automated_rhythm_analysis_normal">Ukuhlaziywa kwesigqi okuzenzakalelayo: okujwayelekile</string>
+    <string name="doctor_dashboard_text_new_report_sarah_smith">Umbiko omusha</string>
+    <string name="doctor_dashboard_text_weekly_summary_generated_review">Isifinyezo sasonto sokuqala senziwe</string>
+    <string name="doctor_dashboard_text_system_maintenance">Ukulungiswa kwesistimu</string>
+    <string name="doctor_dashboard_text_server_sync_successful">Ukuvumelanisa neseva kuphumelele.</string>
+
+    <!-- Screen: doctor_ecg_session_details -->
+    <string name="doctor_ecg_session_details_text_ecg_session_details">Imininingwane yeseshini ye-ECG</string>
+    <string name="doctor_ecg_session_details_text_normal_rhythm">Isigqi esijwayelekile</string>
+    <string name="doctor_ecg_session_details_text_avg_hr">HR emaphakathi</string>
+    <string name="doctor_ecg_session_details_text_duration">Ubude besikhathi</string>
+    <string name="doctor_ecg_session_details_text_quality">Ikhwalithi</string>
+    <string name="doctor_ecg_session_details_text_excellent">Kuhle kakhulu</string>
+    <string name="doctor_ecg_session_details_text_ecg_waveform_lead_i">Uhlobo lwegagasi le-ECG (Lead I)</string>
+    <string name="doctor_ecg_session_details_text_scroll_view_full_duration">Skrolela ukuze ubone isikhathi esiphelele</string>
+    <string name="doctor_ecg_session_details_text_session_details">Imininingwane yeseshini</string>
+    <string name="doctor_ecg_session_details_text_device_info">Ulwazi lwedivayisi</string>
+    <string name="doctor_ecg_session_details_text_lead_configuration">Ukulungiswa kwe-Lead</string>
+    <string name="doctor_ecg_session_details_text_sampling_rate">Izinga lokuthatha amasampula</string>
+    <string name="doctor_ecg_session_details_text_reviewed_by">Kubuyekezwe ngu-</string>
+    <string name="doctor_ecg_session_details_text_not_yet_reviewed">Akukabuyekezwa</string>
+    <string name="doctor_ecg_session_details_text_automated_interpretation">Ukuhumusha okuzenzakalelayo</string>
+    <string name="doctor_ecg_session_details_text_normal_sinus_rhythm_detected">Kutholakele isigqi se-sinus esijwayelekile. Akukho kuphambuka okubalulekile kwe-ST-segment, ukushaya okungajwayelekile, noma amaphethini e-arrhythmia atholakele ngesikhathi sokuqopha.</string>
+    <string name="doctor_ecg_session_details_text_flag_review">Phawula ukuze kubuyekezwe</string>
+    <string name="doctor_ecg_session_details_text_download_pdf">Landa i-PDF</string>
+    <string name="doctor_ecg_session_details_text_mark_as_reviewed">Maka njengokubuyekeziwe</string>
+
+    <!-- Screen: doctor_live_ecg -->
+    <string name="doctor_live_ecg_text_live_ecg">I-ECG ebukhoma</string>
+    <string name="doctor_live_ecg_text_live">Ibukhoma</string>
+    <string name="doctor_live_ecg_text_electrocardiogram_lead_i">I-Electrocardiogram (Lead I)</string>
+    <string name="doctor_live_ecg_text_streaming">Iyasakaza</string>
+    <string name="doctor_live_ecg_text_session_time">Isikhathi seseshini</string>
+    <string name="doctor_live_ecg_text_lead_config">Ukuhlelwa kwe-Lead</string>
+    <string name="doctor_live_ecg_text_signal">Isignali</string>
+    <string name="doctor_live_ecg_text_strong">Iqinile</string>
+    <string name="doctor_live_ecg_text_heart_rate_has_been">Izinga lokushaya kwenhliziyo belingaphezu kuka-110 bpm isikhathi esingaphezu kwemizuzu emi-3.</string>
+    <string name="doctor_live_ecg_text_add_note">Engeza inothi</string>
+    <string name="doctor_live_ecg_text_call_patient">Shayela isiguli</string>
+    <string name="doctor_live_ecg_text_escalate_emergency">Khuphulela kwisimo esiphuthumayo</string>
+
+    <!-- Screen: doctor_new_patient_report -->
+    <string name="doctor_new_patient_report_text_clinician_portal">Isango lodokotela</string>
+    <string name="doctor_new_patient_report_text_new_patient">Isiguli esisha</string>
+    <string name="doctor_new_patient_report_text_dob_10_12_1985">Usuku lokuzalwa: Kulindile - Owesilisa - MRN: #KULINDILE</string>
+    <string name="doctor_new_patient_report_text_edit_profile">Hlela iphrofayela</string>
+    <string name="doctor_new_patient_report_text_recent_vitals">Izimpawu zempilo zakamuva</string>
+    <string name="doctor_new_patient_report_text_no_baseline_vitals_recorded">Azikho izimpawu zempilo eziyisisekelo eziqoshiwe.</string>
+    <string name="doctor_new_patient_report_text_log_vitals">+ Faka izimpawu zempilo</string>
+    <string name="doctor_new_patient_report_text_clinical_history">Umlando wezokwelapha</string>
+    <string name="doctor_new_patient_report_text_allergies">Ukungezwani nezinto</string>
+    <string name="doctor_new_patient_report_text_not_assessed">Akuhlolwanga</string>
+    <string name="doctor_new_patient_report_text_active_medications">Imithi esetshenziswayo</string>
+    <string name="doctor_new_patient_report_text_previous_conditions">Izimo zangaphambilini</string>
+    <string name="doctor_new_patient_report_text_pending_patient_intake">Kulindwe ukwamukelwa kwesiguli</string>
+    <string name="doctor_new_patient_report_text_ecg_history_amp_assessment">Umlando we-ECG &amp; ukuhlolwa</string>
+    <string name="doctor_new_patient_report_text_no_ecg_history_yet">Awukho umlando we-ECG okwamanje</string>
+    <string name="doctor_new_patient_report_text_this_patient_s_cardiac">Irekhodi lenhliziyo yalesi siguli alinalutho okwamanje. Xhuma idivayisi yokuqapha noma ulayishe ukuhlolwa kwangaphambilini ukuze uqale ukwakha iphrofayela yabo yezokwelapha.</string>
+    <string name="doctor_new_patient_report_text_start_monitoring">Qala ukuqapha</string>
+    <string name="doctor_new_patient_report_text_add_initial_assessment">Engeza ukuhlolwa kokuqala</string>
+
+    <!-- Screen: doctor_patient_ecg_history -->
+    <string name="doctor_patient_ecg_history_text_back_patient_chart">Buyela kushathi yesiguli</string>
+    <string name="doctor_patient_ecg_history_text_view_profile">Buka iphrofayela</string>
+    <string name="doctor_patient_ecg_history_text_ecg_history">Umlando we-ECG</string>
+    <string name="doctor_patient_ecg_history_hint_search_by_clinical_notes">Sesha ngamanothi asekliniki noma udokotela ohumushayo.</string>
+    <string name="doctor_patient_ecg_history_text_last_30_days">Izinsuku ezingama-30 ezedlule</string>
+
+    <!-- Screen: doctor_patient_list -->
+    <string name="doctor_patient_list_text_patient_roster">Uhlu lweziguli</string>
+    <string name="doctor_patient_list_hint_search_by_name_or">Sesha ngegama noma i-ID.</string>
+    <string name="doctor_patient_list_text_all_patients">Zonke iziguli</string>
+    <string name="doctor_patient_list_text_critical_alerts">Izexwayiso ezibucayi</string>
+    <string name="doctor_patient_list_text_low_adherence">Ukunamathela okuphansi</string>
+
+    <!-- Screen: doctor_patient_profile -->
+    <string name="doctor_patient_profile_text_patient_profile">Iphrofayela yesiguli</string>
+    <string name="doctor_patient_profile_text_id_p_948271_45">I-ID: Kulindile</string>
+    <string name="doctor_patient_profile_text_high_adherence">Ukunamathela okuphezulu</string>
+    <string name="doctor_patient_profile_text_stable">Kuzinzile</string>
+    <string name="doctor_patient_profile_text_clinical_summary">Isifinyezo sasekliniki</string>
+    <string name="doctor_patient_profile_text_primary_condition">Isimo esiyinhloko</string>
+    <string name="doctor_patient_profile_text_chronic_hypertension">Umfutho wegazi ophakeme ongapheli</string>
+    <string name="doctor_patient_profile_text_secondary_status">Isimo sesibili</string>
+    <string name="doctor_patient_profile_text_post_op_recovery_appendectomy">Ukululama ngemva kokuhlinzwa (i-Appendectomy)</string>
+    <string name="doctor_patient_profile_text_primary_physician">Udokotela oyinhloko</string>
+    <string name="doctor_patient_profile_text_dr_sarah_jenkins_cardiology">UDkt. Sarah Jenkins, Ezenhliziyo</string>
+    <string name="doctor_patient_profile_text_7_day_vitals_trend">Ukuthambekela kwezimpawu zempilo zezinsuku ezi-7</string>
+    <string name="doctor_patient_profile_text_view_all">Buka konke</string>
+    <string name="doctor_patient_profile_text_heart_rate">Izinga lokushaya kwenhliziyo</string>
+    <string name="doctor_patient_profile_text_recent_ecg">I-ECG yakamuva</string>
+    <string name="doctor_patient_profile_text_normal_rhythm">Isigqi esijwayelekile</string>
+    <string name="doctor_patient_profile_text_tachycardia_detected">Kutholakele i-Tachycardia</string>
+    <string name="doctor_patient_profile_text_medications">Imithi</string>
+    <string name="doctor_patient_profile_text_10mg_once_daily_morning">10mg - Kanye ngosuku (Ekuseni)</string>
+    <string name="doctor_patient_profile_text_5mg_once_daily_evening">5mg - Kanye ngosuku (Kusihlwa)</string>
+    <string name="doctor_patient_profile_text_update_care_plan">Buyekeza uhlelo lokunakekelwa</string>
+    <string name="doctor_patient_profile_text_contact_patient">Xhumana nesiguli</string>
+
+    <!-- Screen: doctor_profile -->
+    <string name="doctor_profile_text_doctor_profile">Iphrofayela kadokotela</string>
+    <string name="doctor_profile_text_cardiology_license_za_44821">Ezenhliziyo - Ilayisensi #ZA-44821</string>
+    <string name="doctor_profile_text_verified_clinician">Udokotela oqinisekisiwe</string>
+    <string name="doctor_profile_text_patients">Iziguli</string>
+    <string name="doctor_profile_text_yrs_practice">Iminyaka yokusebenza</string>
+    <string name="doctor_profile_text_rating">Isilinganiso</string>
+    <string name="doctor_profile_text_professional_details">Imininingwane yobungcweti</string>
+    <string name="doctor_profile_text_specialty">Ubungcweti</string>
+    <string name="doctor_profile_text_cardiology_electrophysiology">Ezenhliziyo - I-Electrophysiology</string>
+    <string name="doctor_profile_text_affiliated_hospital">Isibhedlela esihlobene</string>
+    <string name="doctor_profile_text_email">I-imeyili</string>
+    <string name="doctor_profile_text_phone">Ucingo</string>
+    <string name="doctor_profile_text_availability">Ukutholakala</string>
+    <string name="doctor_profile_text_available_consultations">Uyatholakala ukubonana neziguli</string>
+    <string name="doctor_profile_text_mon_fri_08_00">UMsombuluko - ULwesihlanu, 08:00 - 17:00 SAST</string>
+    <string name="doctor_profile_text_sign_out">Phuma</string>
+
+    <!-- Screen: doctor_report_details -->
+    <string name="doctor_report_details_text_report_details">Imininingwane yombiko</string>
+    <string name="doctor_report_details_text_weekly_clinical_summary">Isifinyezo sasekliniki sesonto</string>
+    <string name="doctor_report_details_text_report_id">I-ID yombiko</string>
+    <string name="doctor_report_details_text_id_p_948271_45">I-ID: Kulindile</string>
+    <string name="doctor_report_details_text_pending_sign_off">Kulindwe ukusayinwa</string>
+    <string name="doctor_report_details_text_avg_hr">HR emaphakathi</string>
+    <string name="doctor_report_details_text_sessions">Amaseshini</string>
+    <string name="doctor_report_details_text_alerts">Izexwayiso</string>
+    <string name="doctor_report_details_text_clinical_findings">Okutholakele kwezokwelapha</string>
+    <string name="doctor_report_details_text_two_tachycardia_episodes_were">Kuqoshwe izigameko ezimbili ze-tachycardia ngesikhathi sokuqapha, zombili zedlula ku-140 bpm isikhathi esingaphezu kwemizuzu emi-5. Izinga eliyisisekelo lokushaya kwenhliziyo likhuphuke uma kuqhathaniswa nesikhathi sombiko esedlule. Kunconywa ukuhlanganisa nomlando wesiguli we-Atrial Fibrillation.</string>
+    <string name="doctor_report_details_text_representative_waveform">Uhlobo lwegagasi olumele</string>
+    <string name="doctor_report_details_text_included_sessions_6">Amaseshini afakiwe (6)</string>
+    <string name="doctor_report_details_text_tachycardia">I-Tachycardia</string>
+    <string name="doctor_report_details_text_normal_rhythm">Isigqi esijwayelekile</string>
+    <string name="doctor_report_details_text_sign_off_note">Inothi lokusayina</string>
+    <string name="doctor_report_details_hint_add_clinical_note_before">Engeza inothi lasekliniki ngaphambi kokusayina lo mbiko.</string>
+    <string name="doctor_report_details_text_flag_report">Phawula umbiko</string>
+    <string name="doctor_report_details_text_download_pdf">Landa i-PDF</string>
+    <string name="doctor_report_details_text_sign_off_report">Sayina umbiko</string>
+
+    <!-- Screen: doctor_reports -->
+    <string name="doctor_reports_text_reports">Imibiko</string>
+    <string name="doctor_reports_text_clinical_reports_generated_across">Imibiko yasekliniki ekhiqizwe kuzo zonke iziguli zakho</string>
+    <string name="doctor_reports_hint_search_by_patient_name">Sesha ngegama lesiguli noma i-ID yombiko.</string>
+    <string name="doctor_reports_text_all_reports">Yonke imibiko</string>
+    <string name="doctor_reports_text_pending_sign_off">Kulindwe ukusayinwa</string>
+    <string name="doctor_reports_text_flagged">Kuphawuliwe</string>
+    <string name="doctor_reports_text_signed_off">Kusayindiwe</string>
+
+    <!-- Screen: doctor_session_notes -->
+    <string name="doctor_session_notes_text_id_mrn_84729_dob">I-ID: Kulindile - Usuku lokuzalwa: Akunikeziwe</string>
+    <string name="doctor_session_notes_text_heart_rate">Izinga lokushaya kwenhliziyo</string>
+    <string name="doctor_session_notes_text_lead_config">Ukuhlelwa kwe-Lead</string>
+    <string name="doctor_session_notes_text_sampling">Isampula</string>
+    <string name="doctor_session_notes_text_lead_i_snapshot">Isithombe se-Lead I</string>
+    <string name="doctor_session_notes_hint_e_g_normal_sinus">Isb., Isigqi se-sinus esijwayelekile ne-ST segments ezinzile. Akukho ukushaya okungajwayelekile okubonwe ngesikhathi sokuqapha. Isiguli sibike ukuthi asinazo izimpawu.</string>
+    <string name="doctor_session_notes_text_recommendations">Izincomo</string>
+    <string name="doctor_session_notes_text_continue_remote_monitoring">Qhubeka nokuqapha ukude</string>
+    <string name="doctor_session_notes_text_maintain_current_rpm_schedule">Gcina ishejuli yamanje ye-RPM</string>
+    <string name="doctor_session_notes_text_schedule_person_follow_up">Hlela ukulandelela ubuso nobuso</string>
+    <string name="doctor_session_notes_text_require_clinic_visit_further">Kudingeka ukuvakashela umtholampilo ukuze kuhlolwe kabanzi</string>
+    <string name="doctor_session_notes_text_adjust_medication">Lungisa imithi</string>
+    <string name="doctor_session_notes_text_review_modify_current_prescriptions">Buyekeza ushintshe imithi enikeziwe yamanje</string>
+    <string name="doctor_session_notes_text_immediate_intervention_required">Kudingeka ukungenelela ngokushesha</string>
+    <string name="doctor_session_notes_text_flag_urgent_clinical_action">Phawula ukuze kuthathwe isinyathelo esiphuthumayo sasekliniki</string>
+    <string name="doctor_session_notes_text_save_clinical_note">Londoloza inothi lasekliniki</string>
+    <string name="doctor_session_notes_text_previous_notes">Amanothi angaphambilini</string>
+    <string name="doctor_session_notes_text_see_more">Bona okuningi</string>
+
+    <!-- Screen: doctor_settings -->
+    <string name="doctor_settings_text_settings">Izilungiselelo</string>
+    <string name="doctor_settings_text_manage_account_preferences_device">Phatha okuncamelayo kwe-akhawunti nokulungiswa kwedivayisi.</string>
+    <string name="doctor_settings_text_account">I-akhawunti</string>
+    <string name="doctor_settings_text_personal_information">Imininingwane yomuntu siqu</string>
+    <string name="doctor_settings_text_update_name_email_contact">Buyekeza igama, i-imeyili, nemininingwane yokuxhumana.</string>
+    <string name="doctor_settings_text_security_amp_password">Ukuphepha &amp; iphasiwedi</string>
+    <string name="doctor_settings_text_change_password_set_up">Shintsha iphasiwedi futhi usethe i-2FA.</string>
+    <string name="doctor_settings_text_preferences">Okuncamelayo</string>
+    <string name="doctor_settings_text_notifications">Izaziso</string>
+    <string name="doctor_settings_text_manage_alerts_messages_vitals">Phatha izexwayiso zemilayezo nezimpawu zempilo.</string>
+    <string name="doctor_settings_text_appearance">Ukubukeka</string>
+    <string name="doctor_settings_text_theme_accessibility_settings">Itimu nezilungiselelo zokufinyeleleka.</string>
+    <string name="doctor_settings_text_privacy_amp_support">Ubumfihlo &amp; usekelo</string>
+    <string name="doctor_settings_text_privacy_policy">Inqubomgomo yobumfihlo</string>
+    <string name="doctor_settings_text_help_center">Isikhungo sosizo</string>
+    <string name="doctor_settings_text_app_version_2_4">Inguqulo ye-app 3.0.0</string>
+
+    <!-- Screen: item_report_card -->
+    <string name="item_report_card_text_download">Landa</string>
+
+    <!-- Screen: nav_doctor -->
+    <string name="nav_doctor_dashboard_label">Ideshibhodi</string>
+    <string name="nav_doctor_patients_label">Iziguli</string>
+    <string name="nav_doctor_reports_label">Imibiko</string>
+    <string name="nav_doctor_profile_label">Iphrofayela</string>
+
+    <!-- Screen: nav_patient -->
+    <string name="nav_patient_text_dashboard">Ideshibhodi</string>
+    <string name="nav_patient_text_monitoring">Ukuqapha</string>
+    <string name="nav_patient_text_reports">Imibiko</string>
+
+    <!-- Screen: patient_dashboard -->
+    <string name="patient_dashboard_greeting_format">Sawubona, %1$s</string>
+    <string name="greeting_loading">Kuyalayishwa.</string>
+    <string name="greeting_empty">Siyakwamukela</string>
+    <string name="greeting_error">Ayikwazanga ukulayisha igama. Thinta ukuze uzame futhi.</string>
+    <string name="greeting_error_toast">Ayikwazanga ukulayisha iphrofayela yakho. Thinta igama lakho ukuze uzame futhi.</string>
+    <string name="profile_loading">Kulayishwa iphrofayela.</string>
+    <string name="profile_empty_name">Igama alibekiwe</string>
+    <string name="profile_empty_email">I-imeyili ayibekiwe</string>
+    <string name="profile_error">Ayikwazanga ukulayisha iphrofayela</string>
+    <string name="profile_error_retry">Ayikwazanga ukulayishwa iphrofayela. Thinta ukuze uzame futhi.</string>
+    <string name="profile_error_toast">Ayikwazanga ukulayisha iphrofayela yakho. Thinta ukuze uzame futhi.</string>
+    <string name="patient_dashboard_text_vitals_look_steady_today">Izimpawu zakho zempilo zibukeka zizinzile namuhla. Nakhu uhlolojikelele lwempilo yakho lwansuku zonke.</string>
+    <string name="patient_dashboard_text_hardware_status">Isimo sedivayisi</string>
+    <string name="patient_dashboard_text_online">Ku-inthanethi</string>
+    <string name="patient_dashboard_text_sensor_device">Idivayisi yenzwa</string>
+    <string name="patient_dashboard_text_start_ecg_recording">Qala ukuqopha i-ECG</string>
+    <string name="patient_dashboard_text_ensure_device_properly_attached">Qiniseka ukuthi idivayisi yakho inamathiselwe kahle esifubeni sakho.</string>
+    <string name="patient_dashboard_text_begin_session">Qala iseshini</string>
+    <string name="patient_dashboard_text_latest_reading">Isifundo sakamuva</string>
+    <string name="patient_dashboard_text_normal_rhythm">Isigqi esijwayelekile</string>
+    <string name="patient_dashboard_text_avg_heart_rate">Izinga lokushaya kwenhliziyo elimaphakathi</string>
+    <string name="patient_dashboard_text_recent_updates">Izibuyekezo zakamuva</string>
+    <string name="patient_dashboard_text_mark_all_read">Maka konke njengokufundiwe</string>
+    <string name="patient_dashboard_text_weekly_report_available">Umbiko wesonto uyatholakala</string>
+
+    <!-- Offline mode dashboard -->
+    <string name="patient_dashboard_offline_mode_active">Imodi engaxhunyiwe iyasebenza</string>
+    <string name="patient_dashboard_offline_mode_subtitle">Isitoreji sendawo sisebenza. Thinta ukuze ubone umugqa wokuvumelanisa.</string>
+
+    <!-- Screen: patient_device_management -->
+    <string name="patient_device_management_text_device_management">Ukuphathwa kwedivayisi</string>
+    <string name="patient_device_management_text_configure_monitor_connected_rpm">Lungisa uphinde uqaphe izinzwa zakho ze-RPM ezixhunyiwe.</string>
+    <string name="patient_device_management_text_primary_ad8232_sensor_array">ESP32-C3 + ingaphambili yenzwa ye-AD8232</string>
+    <string name="patient_device_management_text_connected">Kuxhunyiwe</string>
+    <string name="patient_device_management_text_battery">Umthombo wamandla</string>
+    <string name="patient_device_management_text_signal_strength">Amandla esignali</string>
+    <string name="patient_device_management_text_excellent">Kuhle kakhulu</string>
+    <string name="patient_device_management_text_last_sync">Ukuvumelanisa kokugcina</string>
+    <string name="patient_device_management_text_just_now">Manje nje</string>
+    <string name="patient_device_management_text_mac_address">Ikheli le-MAC</string>
+    <string name="patient_device_management_text_firmware">I-firmware</string>
+    <string name="patient_device_management_text_force_sync">Phoqa ukuvumelanisa</string>
+    <string name="patient_device_management_text_configure">Lungisa</string>
+    <string name="patient_device_management_text_pair_new_device">Bhangqa idivayisi entsha</string>
+    <string name="patient_device_management_text_connect_new_sensor_or">Xhuma inzwa entsha noma i-hub</string>
+    <string name="patient_device_management_text_device_support">Usekelo lwedivayisi</string>
+    <string name="patient_device_management_text_user_manual">Incwadi yomsebenzisi</string>
+    <string name="patient_device_management_text_troubleshooting">Ukuxazulula izinkinga</string>
+
+    <!-- Screen: patient_device_pairing -->
+    <string name="patient_device_pairing_text_device_pairing">Ukubhangqa idivayisi</string>
+    <string name="patient_device_pairing_text_scanning_devices">Kuskenwa amadivayisi</string>
+    <string name="patient_device_pairing_text_make_sure_pulselink_monitor">Qiniseka ukuthi isiqaphi sakho se-ESP32-C3 sixhunywe kugesi we-5V USB futhi sixhunywe ku-Wi-Fi engu-2.4 GHz.</string>
+    <string name="patient_device_pairing_text_pair">Bhangqa</string>
+    <string name="patient_device_pairing_text_signal">Isignali</string>
+    <string name="patient_device_pairing_text_excellent">Kuhle kakhulu</string>
+    <string name="patient_device_pairing_text_ready_to_connect">Ilungele ukuxhuma</string>
+    <string name="patient_device_pairing_text_mac">MAC: </string>
+    <string name="patient_device_pairing_text_scan_again">Skena futhi</string>
+    <string name="patient_device_pairing_text_having_trouble_pairing">Unenkinga yokubhangqa? Qiniseka ukuthi i-Wi-Fi yakho ingu-2.4 GHz futhi i-ESP32-C3 ivuliwe.</string>
+
+    <!-- Screen: patient_ecg_device_monitor -->
+    <string name="patient_ecg_device_monitor_text_ecg_device_monitor">Idivayisi / Isiqaphi se-ECG</string>
+    <string name="patient_ecg_device_monitor_text_ad8232_sensor_array">Ingaphambili ye-AD8232 yeleyidi elilodwa</string>
+    <string name="patient_ecg_device_monitor_text_connected">Kuxhunyiwe</string>
+    <string name="patient_ecg_device_monitor_text_battery">Umthombo wamandla</string>
+    <string name="patient_ecg_device_monitor_text_excellent">Kuhle kakhulu</string>
+    <string name="patient_ecg_device_monitor_text_signal">Isignali</string>
+    <string name="patient_ecg_device_monitor_text_lead_config">Ukulungiswa kwe-Lead</string>
+    <string name="patient_ecg_device_monitor_text_live_preview">Ukubuka bukhoma</string>
+    <string name="patient_ecg_device_monitor_text_waveform_monitor">Isiqaphi sohlobo lwegagasi</string>
+    <string name="patient_ecg_device_monitor_text_device_information">Ulwazi lwedivayisi</string>
+    <string name="patient_ecg_device_monitor_text_mac_address">Ikheli le-MAC</string>
+    <string name="patient_ecg_device_monitor_text_firmware">I-firmware</string>
+    <string name="patient_ecg_device_monitor_text_sampling_rate">Izinga lokuthatha amasampula</string>
+    <string name="patient_ecg_device_monitor_text_last_sync">Ukuvumelanisa kokugcina</string>
+    <string name="patient_ecg_device_monitor_text_just_now">Manje nje</string>
+    <string name="patient_ecg_device_monitor_text_force_sync">Phoqa ukuvumelanisa</string>
+    <string name="patient_ecg_device_monitor_text_calibrate">Kalibhretha</string>
+    <string name="patient_ecg_device_monitor_text_forget_device">Khohlwa idivayisi</string>
+
+    <!-- Screen: patient_ecg_history -->
+    <string name="patient_ecg_history_text_report_history">Umlando wemibiko</string>
+    <string name="patient_ecg_history_hint_search_reports">Sesha imibiko.</string>
+    <string name="patient_ecg_history_text_all">Konke</string>
+    <string name="patient_ecg_history_text_normal">Okujwayelekile</string>
+    <string name="patient_ecg_history_text_irregular">Okungajwayelekile</string>
+    <string name="patient_ecg_history_text_flagged">Okuphawuliwe</string>
+
+    <!-- Screen: patient_ecg_live_monitoring -->
+    <string name="patient_ecg_live_monitoring_text_live_ecg_monitoring">Ukuqapha i-ECG bukhoma</string>
+    <string name="patient_ecg_live_monitoring_text_ad8232_sensor_connected">Inzwa ye-AD8232 - Ixhunyiwe</string>
+    <string name="patient_ecg_live_monitoring_text_strong_signal">Isignali eqinile</string>
+    <string name="patient_ecg_live_monitoring_text_electrocardiogram_lead_i">I-Electrocardiogram (Lead I)</string>
+    <string name="patient_ecg_live_monitoring_text_session_duration">Ubude beseshini</string>
+    <string name="patient_ecg_live_monitoring_text_pause_session">Misa iseshini okwesikhashana</string>
+    <string name="patient_ecg_live_monitoring_text_end_session">Qeda iseshini</string>
+    <string name="patient_ecg_live_monitoring_text_call_emergency">Shayela abezimo eziphuthumayo</string>
+    <string name="patient_ecg_live_monitoring_text_pre_check">Ukuhlola kuqala</string>
+
+    <!-- Screen: patient_ecg_pre_session_check -->
+    <string name="patient_ecg_pre_session_check_text_pre_session_check">Ukuhlola ngaphambi kweseshini</string>
+    <string name="patient_ecg_pre_session_check_text_let_s_get_ready">Asikulungiseleleni</string>
+    <string name="patient_ecg_pre_session_check_text_complete_checklist_below_before">Qedela uhlu lokuhlola olungezansi ngaphambi kokuqala ukuqopha kwakho kwe-ECG.</string>
+    <string name="patient_ecg_pre_session_check_text_device_charged_paired">Idivayisi inikwe amandla futhi ibhangqiwe</string>
+    <string name="patient_ecg_pre_session_check_text_battery_84_bluetooth_connected">Kunikezwa amandla nge-5V USB, ixhunywe ku-Wi-Fi</string>
+    <string name="patient_ecg_pre_session_check_text_skin_clean_dry">Isikhumba sihlanzekile futhi somile</string>
+    <string name="patient_ecg_pre_session_check_text_remove_lotion_or_sweat">Susa amafutha noma umjuluko endaweni yesifuba</string>
+    <string name="patient_ecg_pre_session_check_text_electrodes_are_attached_correctly">Ama-electrode anamathiselwe ngendlela efanele</string>
+    <string name="patient_ecg_pre_session_check_text_electrode_placement_guide">Umhlahlandlela wokubeka ama-electrode</string>
+    <string name="patient_ecg_pre_session_check_text_sit_still_breathe_normally">Hlala uthule futhi uphefumule ngokujwayelekile uma ukuqopha sekuqalile ukuze uthole isifundo esinembe kakhulu.</string>
+    <string name="patient_ecg_pre_session_check_text_start_ecg_recording">Qala ukuqopha i-ECG</string>
+
+    <!-- Screen: patient_ecg_session_details -->
+    <string name="patient_ecg_session_details_text_overall_rhythm">ISIGQI SISONKE</string>
+    <string name="patient_ecg_session_details_text_normal_rhythm">Isigqi esijwayelekile</string>
+    <string name="patient_ecg_session_details_text_average_hr">HR emaphakathi</string>
+    <string name="patient_ecg_session_details_text_duration">Ubude besikhathi</string>
+    <string name="patient_ecg_session_details_text_ecg_waveform_lead_i">Uhlobo lwegagasi le-ECG (Lead I)</string>
+    <string name="patient_ecg_session_details_text_scroll_view_full_duration">Skrolela ukuze ubone isikhathi esiphelele</string>
+    <string name="patient_ecg_session_details_text_doctors_notes">Amanothi kadokotela</string>
+    <string name="patient_ecg_session_details_text_no_arrhythmias_detected_during">Awekho ama-arrhythmia atholakele ngesikhathi sokuqopha. Isigqi sizinzile futhi siyahambisana nesigqi se-sinus esijwayelekile. Ukuzulazula kwesisekelo kuncane, futhi ikhwalithi yesignali ihlale iphezulu kuyo yonke iseshini.</string>
+    <string name="patient_ecg_session_details_text_session_details">Imininingwane yeseshini</string>
+    <string name="patient_ecg_session_details_text_signal_quality">Ikhwalithi yesignali</string>
+    <string name="patient_ecg_session_details_text_excellent">Kuhle kakhulu</string>
+    <string name="patient_ecg_session_details_text_device_info">Ulwazi lwedivayisi</string>
+    <string name="patient_ecg_session_details_text_lead_configuration">Ukulungiswa kwe-Lead</string>
+    <string name="patient_ecg_session_details_text_sampling_rate">Izinga lokuthatha amasampula</string>
+    <string name="patient_ecg_session_details_text_download_pdf_report">Landa umbiko we-PDF</string>
+
+    <!-- Screen: patient_emergency_sos -->
+    <string name="patient_emergency_sos_text_breathe_calmly">Phefumula ngokuzola.</string>
+    <string name="patient_emergency_sos_text_help_being_notified_location">Usizo luyaziswa ngendawo okuyo nezimpawu zakho zempilo.</string>
+    <string name="patient_emergency_sos_text_call_hospital">Shayela isibhedlela</string>
+    <string name="patient_emergency_sos_text_connect_nearest_er">Xhuma ku-ER eseduze kakhulu</string>
+    <string name="patient_emergency_sos_text_call_ambulance">Shayela i-ambulensi</string>
+    <string name="patient_emergency_sos_text_dispatch_emergency_services">Thumela izinsizakalo zezimo eziphuthumayo</string>
+    <string name="patient_emergency_sos_text_alert_emergency_contacts">Yazisa othintwayo abaphuthumayo</string>
+    <string name="patient_emergency_sos_text_notify_family_friends">Yazisa umndeni nabangani</string>
+
+    <!-- Screen: patient_notification_details -->
+    <string name="patient_notification_details_text_notification">Isaziso</string>
+    <string name="patient_notification_details_text_health_alert">Isexwayiso sempilo</string>
+    <string name="patient_notification_details_text_irregular_rhythm_detected">Kutholakele isigqi esingajwayelekile</string>
+    <string name="patient_notification_details_text_last_ecg_session_recorded">Iseshini yakho yokugcina ye-ECG, eqoshwe ngo-09:15 AM, iphawule isigqi esingajwayelekile ukuze sibuyekezwe. Lokhu akusho ukuthi kunesimo esiphuthumayo, kodwa sincoma ukuthi uxoxe ngemiphumela nodokotela wakho ngokushesha okukhulu.</string>
+    <string name="patient_notification_details_text_irregular_rhythm">Isigqi esingajwayelekile</string>
+    <string name="patient_notification_details_text_view_full_session_report">Buka umbiko weseshini ophelele</string>
+    <string name="patient_notification_details_text_send_my_doctor">Thumela kudokotela wami</string>
+
+    <!-- Screen: patient_notifications -->
+    <string name="patient_notifications_text_notifications">Izaziso</string>
+    <string name="patient_notifications_text_mark_all_read">Maka konke njengokufundiwe</string>
+
+    <!-- Screen: patient_offline_sync_status -->
+    <string name="patient_offline_sync_status_text_sync_status">Isimo sokuvumelanisa</string>
+    <string name="patient_offline_sync_status_text_re_offline">Awukho ku-inthanethi</string>
+    <string name="patient_offline_sync_status_text_data_being_saved_locally">Idatha yakho ilondolozwa kule divayisi futhi izovumelaniswa ngokuzenzakalelayo uma usubuyele ku-inthanethi.</string>
+    <string name="patient_offline_sync_status_text_last_synced">Ukuvumelaniswa kokugcina</string>
+    <string name="patient_offline_sync_status_text_retry_sync_now">Zama ukuvumelanisa futhi manje</string>
+
+    <!-- Screen: patient_profile -->
+    <string name="patient_profile_text_patient_profile">Iphrofayela yesiguli</string>
+    <string name="patient_profile_text_personal_details">Imininingwane yomuntu siqu</string>
+    <string name="patient_profile_text_date_birth">Usuku lokuzalwa</string>
+    <string name="patient_profile_text_gender">Ubulili</string>
+    <string name="patient_profile_text_phone_number">Inombolo yocingo</string>
+    <string name="patient_profile_text_email">I-imeyili</string>
+    <string name="patient_profile_text_clinical_care_team">Ithimba lokunakekelwa kwezokwelapha</string>
+    <string name="patient_profile_text_primary_cardiologist">Udokotela wenhliziyo oyinhloko</string>
+    <string name="patient_profile_text_emergency_contact">Othintwayo ophuthumayo</string>
+    <string name="patient_profile_text_sign_out">Phuma</string>
+
+    <!-- Screen: patient_session_report_preview -->
+    <string name="patient_session_report_preview_text_session_report_preview">Ukubuka kuqala umbiko weseshini</string>
+    <string name="patient_session_report_preview_text_clinical_ecg_report">Umbiko wasekliniki we-ECG</string>
+    <string name="patient_session_report_preview_text_report_id">I-ID yombiko</string>
+    <string name="patient_session_report_preview_text_heart_rate">Izinga lokushaya kwenhliziyo</string>
+    <string name="patient_session_report_preview_text_clinical_summary">Isifinyezo sasekliniki</string>
+    <string name="patient_session_report_preview_text_analysis">Ukuhlaziywa</string>
+    <string name="patient_session_report_preview_text_normal_rhythm">Isigqi esijwayelekile</string>
+    <string name="patient_session_report_preview_text_avg_hr">HR emaphakathi</string>
+    <string name="patient_session_report_preview_text_duration">Ubude besikhathi</string>
+    <string name="patient_session_report_preview_text_lead_i_waveform">Uhlobo lwegagasi le-Lead I</string>
+    <string name="patient_session_report_preview_text_page_1_1">Ikhasi 1 kwangu-1</string>
+    <string name="patient_session_report_preview_text_clinical_review_only">Okokubuyekezwa kwezokwelapha kuphela</string>
+    <string name="patient_session_report_preview_text_send_doctor">Thumela kudokotela</string>
+    <string name="patient_session_report_preview_text_download_pdf">Landa i-PDF</string>
+
+    <!-- Screen: patient_setting_language_selection -->
+    <string name="patient_setting_language_selection_text_language">Ulimi</string>
+    <string name="patient_setting_language_selection_text_select_app_language">Khetha ulimi lwe-app</string>
+    <string name="patient_setting_language_selection_text_choose_language_d_like">Khetha ulimi ongathanda ukulusebenzisa kuyo yonke i-app.</string>
+    <string name="patient_setting_language_selection_text_english">IsiNgisi</string>
+    <string name="patient_setting_language_selection_text_afrikaans">IsiBhunu</string>
+    <string name="patient_setting_language_selection_text_isizulu">IsiZulu</string>
+    <string name="patient_setting_language_selection_text_save_changes">Londoloza izinguquko</string>
+
+    <!-- Screen: patient_settings -->
+    <string name="patient_settings_text_settings">Izilungiselelo</string>
+    <string name="patient_settings_text_manage_account_preferences_device">Phatha okuncamelayo kwe-akhawunti nokulungiswa kwedivayisi.</string>
+    <string name="patient_settings_text_account">I-akhawunti</string>
+    <string name="patient_settings_text_personal_information">Imininingwane yomuntu siqu</string>
+    <string name="patient_settings_text_update_name_email_contact">Buyekeza igama, i-imeyili, nemininingwane yokuxhumana.</string>
+    <string name="patient_settings_text_security_amp_password">Ukuphepha &amp; iphasiwedi</string>
+    <string name="patient_settings_text_change_password_set_up">Shintsha iphasiwedi futhi usethe i-2FA.</string>
+    <string name="patient_settings_text_preferences">Okuncamelayo</string>
+    <string name="patient_settings_text_notifications">Izaziso</string>
+    <string name="patient_settings_text_manage_alerts_messages_vitals">Phatha izexwayiso zemilayezo nezimpawu zempilo.</string>
+    <string name="patient_settings_text_device_management">Ukuphathwa kwedivayisi</string>
+    <string name="patient_settings_text_connected_monitors_wearables">Iziqaphi nezinto ezigqokwayo ezixhunyiwe.</string>
+    <string name="patient_settings_text_appearance">Ukubukeka</string>
+    <string name="patient_settings_text_theme_accessibility_settings">Itimu nezilungiselelo zokufinyeleleka.</string>
+    <string name="patient_settings_text_privacy_amp_support">Ubumfihlo &amp; usekelo</string>
+    <string name="patient_settings_text_privacy_policy">Inqubomgomo yobumfihlo</string>
+    <string name="patient_settings_text_help_center">Isikhungo sosizo</string>
+    <string name="patient_settings_text_app_version_2_4">Inguqulo ye-app 3.0.0</string>
+
+    <!-- Screen: patient_settings_help_support -->
+    <string name="patient_settings_help_support_text_help_amp_support">Usizo &amp; usekelo</string>
+    <string name="patient_settings_help_support_text_how_can_we_help">Singakusiza kanjani?</string>
+    <string name="patient_settings_help_support_hint_search_help_articles">Sesha izihloko zosizo.</string>
+    <string name="patient_settings_help_support_text_live_chat">Ingxoxo ebukhoma</string>
+    <string name="patient_settings_help_support_text_call_us">Sishayele</string>
+    <string name="patient_settings_help_support_text_email">I-imeyili</string>
+    <string name="patient_settings_help_support_text_frequently_asked_questions">Imibuzo ebuzwa njalo</string>
+    <string name="patient_settings_help_support_text_how_do_i_pair">Ngiyibhangqa kanjani idivayisi yami ye-ECG?</string>
+    <string name="patient_settings_help_support_text_what_does_irregular_rhythm">Kusho ukuthini isigqi esingajwayelekile?</string>
+    <string name="patient_settings_help_support_text_why_isn_t_my">Kungani idatha yami ingavumelanisi?</string>
+    <string name="patient_settings_help_support_text_battery_life">Isiqaphi sami se-PulseLink ECG sinikwa amandla kanjani?</string>
+    <string name="patient_settings_help_support_text_connectivity">Idivayisi yami ayixhumi - ngingabheka ini?</string>
+    <string name="patient_settings_help_support_text_how_my_health_data">Ivikelwe kanjani idatha yami yempilo?</string>
+    <string name="patient_settings_help_support_text_this_help_center_not">Lesi sikhungo sosizo asisona esezimo eziphuthumayo zezokwelapha. Uma ubhekene nesimo esinjalo, sebenzisa inkinobho ye-SOS.</string>
+
+    <!-- FAQ answers -->
+    <string name="patient_settings_help_support_text_electrode_placement">Ama-electrode e-ECG afakwa kuphi?</string>
+    <string name="patient_settings_help_support_text_electrode_placement_answer">I-PulseLink isebenzisa inzwa ye-ECG yesiteshi esisodwa ye-AD8232 enamaphedi angu-3: RA/R (abomvu, ingalo yesokunene/isifuba), LA/L (aphuzi, ingalo yesokunxele/isifuba), kanye ne-RL/COM (aluhlaza, umlenze wesokunene/isisu esingezansi - i-electrode yereferensi). Ukuze uthole isignali ehlanzekile kakhulu, awabeke esifubeni: abomvu ngaphansi nje kwekholabhoni yesokunene, aphuzi ngaphansi nje kwekholabhoni yesokunxele, futhi aluhlaza emaceleni aphansi esokunxele noma esiswini esingezansi sesokunene, kude nezihlukazi ezinkulu. Qala ngokuhlanza nokomisa isikhumba, futhi uhlale uthule ngesikhathi sokuqopha ukuze unciphise umsindo.</string>
+    <string name="patient_settings_help_support_text_view_placement_guide">Buka umhlahlandlela ogcwele wesinyathelo ngesinyathelo</string>
+    <string name="patient_settings_help_support_text_how_do_i_pair_answer">Vula Ukuphathwa kwedivayisi kuideshibhodi bese uthinta u-\"Engeza idivayisi\". Vula isiqaphi sakho se-PulseLink AD8232, usigcine ngaphakathi kwamamitha angu-1-2, bese usikhetha uma sivela ohlwini lokuskena. Uma sesibhangqiwe, ibheji lesimo kuideshibhodi lizoshintshela ku-\"Kuxhunyiwe\".</string>
+    <string name="patient_settings_help_support_text_what_does_irregular_rhythm_answer">Ifulegi le-\"isigqi esingajwayelekile\" lisho ukuthi isikhawu phakathi kokushaya kwenhliziyo okutholwe ngesikhathi seseshini yakho sibe ngaphandle kwebanga elilindelekile. Lena inkomba yokuhlola kuphela, akuyona ukuxilongwa - yabelana neseshini ephawuliwe nodokotela wakho nge-app ukuze abuyekeze ukuqoshwa.</string>
+    <string name="patient_settings_help_support_text_why_isn_t_my_answer">Amaseshini aqoshwe ungekho ku-inthanethi afakwa emgqeni futhi avumelaniswa ngokuzenzakalelayo uma usunoxhumano oluzinzile lwe-Wi-Fi noma ludatha yeselula. Ungabheka amaseshini akulindile noma inini ku-Izilungiselelo &gt; Isimo sokuvumelanisa, bese uthinta u-\"Zama ukuvumelanisa futhi\" uma iseshini isilinde isikhathi eside.</string>
+    <string name="patient_settings_help_support_text_battery_life_answer">Isiqaphi se-ESP32-C3 AD8232 ECG sinikwa amandla ngokuqhubekayo ngekhebula le-5V USB Type-C elixhunywe ku-adaptha yamandla noma embobeni ye-USB. Alisebenzisi amabhethri angaphakathi, okuqinisekisa ukudluliswa kwe-telemetry okungaguquki ngaphandle kokwehla phezu kwenethiwekhi yasekhaya ye-Wi-Fi engu-2.4 GHz.</string>
+    <string name="patient_settings_help_support_text_connectivity_answer">Qinisekisa ukuthi i-Bluetooth ne-Wi-Fi kuvuliwe efonini yakho, ukuthi isiqaphi sivuliwe (i-LED iyakhanya), nokuthi asixhunyiwe kakade kwenye ifoni. Sondela ngaphakathi kwamamitha angu-1-2 kusuka kudivayisi bese uzama futhi ngokuvula Ukuphathwa kwedivayisi. Uma isangaxhumi, qala kabusha isiqaphi ngokusikhipha emandleni imizuzwana eyi-10.</string>
+    <string name="patient_settings_help_support_text_how_my_health_data_answer">Ukuqoshwa kwakho kwe-ECG nedatha yephrofayela kudluliswa ngoxhumano olubethelwe futhi kugcinwa ngaphansi kwe-akhawunti yakho kuphela. Odokotela bangabona kuphela amaseshini obhangqwe nabo. Ungabuyekeza noma ucele ukususwa kwedatha yakho noma inini kusuka ku-Iphrofayela &gt; Ubumfihlo.</string>
+    <string name="patient_settings_help_support_email_subject">Isicelo sosizo lwe-PulseLink</string>
+    <string name="patient_settings_help_support_email_chooser_title">Thumela i-imeyili yosizo nge-</string>
+    <string name="patient_settings_help_support_email_no_client">Ayikho i-app ye-imeyili etholakele kule divayisi.</string>
+
+    <!-- Electrode placement guide -->
+    <string name="patient_electrode_placement_guide_title">Umhlahlandlela wokubeka ama-electrode</string>
+    <string name="patient_electrode_placement_guide_intro">Isiqaphi se-ECG se-PulseLink sisebenzisa inzwa ye-AD8232, engaphambili yamaleyidi angu-3 (isiteshi esisodwa). Amaphedi ayo amathathu avame ukubizwa ngokuthi i-RA / LA / RL, noma nje i-R / L / COM kwezinye izindlu zesiqaphi. Landela izinyathelo ezingezansi ukuze uthole ukuqoshwa okuhlanzekile, okunomsindo omncane.</string>
+    <string name="patient_electrode_placement_guide_legend_r">R (RA) - Elibomvu</string>
+    <string name="patient_electrode_placement_guide_legend_l">L (LA) - Eliphuzi</string>
+    <string name="patient_electrode_placement_guide_legend_com">COM (RL) - Eliluhlaza</string>
+    <string name="patient_electrode_placement_guide_legend_r_desc">Ingalo yesokunene / isifuba sesokunene, ngaphansi kwekholabhoni</string>
+    <string name="patient_electrode_placement_guide_legend_l_desc">Ingalo yesokunxele / isifuba sesokunxele, ngaphansi kwekholabhoni</string>
+    <string name="patient_electrode_placement_guide_legend_com_desc">Umlenze wesokunene / isisu esingezansi - i-electrode yereferensi (i-ground)</string>
+    <string name="patient_electrode_placement_guide_step1_title">Lungisa isikhumba</string>
+    <string name="patient_electrode_placement_guide_step1_desc">Hlanza izindawo zokubeka ngendwangu eyomile noma ngendwangu ye-alcohol. Gwema amafutha noma isikhumba esinamafutha - kwenza ingcina yephedi ibe buthaka futhi kwandise umsindo wesignali. Shefa indawo kuqala uma inezinweleni eziningi.</string>
+    <string name="patient_electrode_placement_guide_step2_title">Bophela amaphedi entambweni yamaleyidi</string>
+    <string name="patient_electrode_placement_guide_step2_desc">Namathisela iphedi ngalinye le-electrode elinenkinobho kuklampi yalo yeleyidi (R/obomvu, L/ophuzi, COM noma RL/oluhlaza) ngaphambi kokulinamathisela esikhumbeni - ukucindezela inkinobho ngemva kwalokho kuyakhungathekisa futhi kungenza iphedi ithambe.</string>
+    <string name="patient_electrode_placement_guide_step3_title">Beka iphedi elibomvu le-R (RA)</string>
+    <string name="patient_electrode_placement_guide_step3_desc">Libeke ohlangothini lwesokunene lwesifuba, ngaphansi nje kwekholabhoni (noma engalweni yesokunene ukuze uhlole ngokushesha).</string>
+    <string name="patient_electrode_placement_guide_step4_title">Beka iphedi eliphuzi le-L (LA)</string>
+    <string name="patient_electrode_placement_guide_step4_desc">Libeke ohlangothini lwesokunxele lwesifuba, ngaphansi nje kwekholabhoni, njengeliphedi elibomvu (noma engalweni yesokunxele ukuze uhlole ngokushesha).</string>
+    <string name="patient_electrode_placement_guide_step5_title">Beka iphedi eliluhlaza le-COM (RL)</string>
+    <string name="patient_electrode_placement_guide_step5_desc">Libeke emaceleni aphansi esokunxele noma esiswini esingezansi sesokunene, kude nomugqa wenhliziyo. Le i-electrode yereferensi/ye-ground futhi ayidingi ukuhlala eduze nezinye ezimbili.</string>
+    <string name="patient_electrode_placement_guide_step6_title">Qinisekisa uxhumano</string>
+    <string name="patient_electrode_placement_guide_step6_desc">Vula ukuhlola kwangaphambi kweseshini kuideshibhodi. Uma iphedi ikhululekile, i-app izophawula ukuthi \"Amaleyidi anqamukile\" - cindezela iphedi ngalinye ngokuqinile bese ubheka ukuthi isikrini sokuhlola sibuyekezwa sibe ngu-\"Kunamathiselwe\".</string>
+    <string name="patient_electrode_placement_guide_note">Ukubeka esifubeni kuveza isignali ye-QRS ehlanzekile futhi ende kunokubeka engalweni/emlenzeni futhi kunconywa ukuqapha okufana nasesibhedlela. Hlala uthule futhi uphefumule ngokujwayelekile ngesikhathi sokuqopha ukuze unciphise ukuphazamiseka kokunyakaza.</string>
+    <string name="patient_electrode_placement_guide_disclaimer">Lo mhlahlandlela wokusebenzisa isiqaphi sakho se-ECG se-PulseLink sokuzilibazisa futhi awuyena isikhundla sokubekwa kwama-electrode kwasemtholampilo noma seseluleko sezokwelapha.</string>
+
+    <!-- Toasts -->
+    <string name="login_toast_missing_fields">Sicela ufake i-imeyili nephasiwedi yakho</string>
+    <string name="login_toast_google_signing_in">Kungenwa nge-Google.</string>
+    <string name="login_toast_password_reset_sent">Ilinki yokusetha kabusha iphasiwedi ithunyelwe</string>
+    <string name="registration_toast_missing_fields">Sicela ugcwalise zonke izikhala</string>
+
+    <!-- InputValidator error messages -->
+    <string name="validator_email_required">Ikheli le-imeyili liyadingeka</string>
+    <string name="validator_email_invalid">Faka ikheli le-imeyili elivumelekile</string>
+    <string name="validator_password_required">Iphasiwedi iyadingeka</string>
+    <string name="validator_password_too_short">Iphasiwedi kufanele ibe nezinhlamvu ezingu-8 okungenani</string>
+    <string name="validator_password_missing_uppercase">Iphasiwedi kufanele ibe nohlamvu olulodwa olukhulu okungenani</string>
+    <string name="validator_password_missing_digit">Iphasiwedi kufanele ibe nenombolo eyodwa okungenani</string>
+    <string name="validator_name_required">Igama liyadingeka</string>
+    <string name="validator_name_too_short">Igama kufanele libe nezinhlamvu ezi-2 okungenani</string>
+    <string name="validator_name_invalid_chars">Igama lingaba nezinhlamvu kuphela</string>
+    <string name="validator_device_id_required">I-ID yedivayisi iyadingeka</string>
+    <string name="validator_device_id_invalid">Faka i-ID yedivayisi evumelekile, isb. ESP32C3-PLA1B</string>
+    <string name="validator_phone_required">Inombolo yocingo iyadingeka</string>
+    <string name="validator_phone_invalid">Faka inombolo yocingo yaseNingizimu Afrika evumelekile, isb. 082 123 4567</string>
+
+    <!-- DateTimeFormatter -->
+    <string name="time_ago_just_now">Manje nje</string>
+    <string name="time_ago_yesterday">Izolo</string>
+
+    <!-- Empty states -->
+    <string name="empty_state_sessions_message">Awekho amaseshini e-ECG aqoshiwe okwamanje. Qala ukuqopha kwakho kokuqala!</string>
+    <string name="empty_state_sessions_btn_start_recording">Qala ukuqopha</string>
+    <string name="empty_state_alerts_message">Azikho izexwayiso ezisebenzayo. Zonke izilinganiso zeziguli zijwayelekile.</string>
+    <string name="empty_state_patients_message">Azikho iziguli ezabelwe kuwe okwamanje.</string>
+    <string name="empty_state_notes_message">Awekho amanothi asekliniki aqoshwe kule seshini.</string>
+    <string name="empty_state_reports_message">Ayikho imibiko yokuxilonga ekhiqiziwe okwamanje.</string>
+    <string name="empty_state_notifications_message">Usuhambisane nakho konke! Azikho izaziso ezingafundiwe.</string>
+
+    <!-- Live recording indicator -->
+    <string name="live_ecg_status_recording">QOPHA</string>
+
+    <!-- About, Legal & Medical Privacy portal -->
+    <string name="about_title">Mayelana &amp; Ezomthetho</string>
+    <string name="about_back_desc">Emuva</string>
+    <string name="about_emblem_desc">Uphawu lwe-PulseLink</string>
+    <string name="about_purpose">I-PulseLink ixhuma iziguli nodokotela ngokuqapha i-ECG ukude: ithwebula idatha yesigqi senhliziyo kusuka kudivayisi ebhangqiwe, iyivumelanise ngokuphephile, futhi inikeze odokotela ukuqonda ngesikhathi esifanele mayelana nempilo yenhliziyo yeziguli zabo.</string>
+
+    <string name="about_section_authorship">UBUNIKAZI &amp; ISIKHUNGO</string>
+    <string name="about_author_role">Umthuthukisi &amp; umbhali kanye</string>
+    <string name="about_institution">I-Independent Institute of Education (IIE)</string>
+    <string name="about_module">PROG7314 - Iphothifoliyo yobufakazi</string>
+
+    <string name="about_section_disclaimer">ISAZISO SEZOKWELAPHA</string>
+    <string name="about_medical_disclaimer">Lolu hlelo lwenzelwe ukuhlolwa kwezemfundo nokuhlolwa kwephrothothayiphu yasekliniki kuphela; aluyona idivayisi yokuxilonga yezokwelapha eqinisekisiwe.</string>
+
+    <string name="about_section_legal">EZOMTHETHO</string>
+    <string name="about_privacy_title">Inqubomgomo yobumfihlo (POPIA)</string>
+    <string name="about_terms_title">Imigomo yesevisi</string>
+
+    <string name="about_privacy_body">Umuntu onesibopho: ithimba labafundi abathuthukisa i-PulseLink (uCameron van Heerden noMaxine Palm).\n\nUkuthobela: I-PulseLink icubungula ulwazi lomuntu siqu ngokuhambisana noMthetho Wokuvikelwa Kolwazi Lomuntu Siqu wama-4 ka-2013 (POPIA).\n\n1. Ulwazi esilucubungulayo\nImininingwane ye-akhawunti (igama, i-imeyili, indima) nolwazi lwezempilo, kufaka phakathi ukuqoshwa kwe-ECG, izifundo zokushaya kwenhliziyo, amanothi eseshini nesimo sedivayisi. Ulwazi lwezempilo \"lulwazi lomuntu siqu olukhethekile\" ngaphansi kwe-POPIA futhi luphathwa ngokunakekela okwengeziwe.\n\n2. Injongo nesisekelo somthetho\nIdatha icutshungulwa kuphela ukuze kunikezwe ukuqapha i-ECG ukude, ukubuyekezwa kukadokotela nezexwayiso, kanye nokuhlolwa kwezemfundo. Ukucubungula kusekelwe emvumeni yakho futhi kukhawulelwe kulezi zinjongo.\n\n3. Izivikelo zokuphepha\nIdatha idluliswa ngokuxhumana okubethelwe futhi igcinwe ngezinsizakalo ze-Firebase. Ukufinyelela kukhawulelwe ngokuqinisekiswa nangendima (isiguli noma udokotela), kanye nokungena kwe-biometric okukhethwayo kudivayisi yakho.\n\n4. Ukwabelana nokudluliselwa ngaphesheya kwemingcele\nIdatha yesiguli ibonwa yisiguli nodokotela waso kuphela. Ayithengiswa futhi ayisetshenziselwa ukukhangisa. Ingqalasizinda ye-Firebase ingase icubungule idatha ngaphandle kweNingizimu Afrika; kudingeka ukuvikelwa okulinganayo ngokuhambisana nesigaba 72 se-POPIA.\n\n5. Ukugcinwa\nIdatha igcinwa kuphela ngenkathi i-akhawunti yakho isebenza noma njengoba kudingeka ekuhloleni, futhi iyasuswa uma uyicela lapho umthetho uvuma.\n\n6. Amalungelo akho\nUngacela ukufinyelela, ukulungiswa, noma ukususwa kolwazi lwakho lomuntu siqu, uhoxise imvume, futhi uphikise ukucutshungulwa. Xhumana nethimba lokuthuthukisa nge-GitHub repository.\n\n7. Izikhalazo\nUngafaka isikhalazo ku-Information Regulator (South Africa) ku-inforegulator.org.za.</string>
+
+    <string name="about_terms_body">1. Ukwamukela\nNgokusebenzisa i-PulseLink uyavuma le migomo.\n\n2. Iphrothothayiphu yezemfundo\nI-PulseLink iyiphrojekthi yomfundi eyakhelwe ukuhlolwa kwezemfundo nokuhlolwa kwephrothothayiphu yasekliniki. Akuyona idivayisi yezokwelapha eqinisekisiwe futhi akumele isetshenziselwe ukuxilonga, ukwelapha noma ukuqapha noma yisiphi isimo sezempilo.\n\n3. Izimo eziphuthumayo\nEsimweni esiphuthumayo sezokwelapha, xhumana nezinsizakalo zezimo eziphuthumayo zendawo yakho ngokushesha (eNingizimu Afrika: 112 noma 10177). Ungathembeli kule app ukuze uthole usizo oluphuthumayo.\n\n4. Izibopho zakho\nNikeza ulwazi olunembile, ugcine imininingwane yakho iyimfihlo, futhi usebenzise i-app ngezinjongo ezisemthethweni kuphela. Odokotela basalokhu benesibopho esigcwele sokwahlulela kwabo kwezokwelapha.\n\n5. Akukho siqinisekiso\nI-app inikezwa \"njengoba injalo\" ngaphandle kwanoma yiziphi iziqinisekiso. Izifundo, izexwayiso nemibiko kungase kubambezeleke, kungapheleli noma kungabi nembile.\n\n6. Umkhawulo wesibopho\nNgokwezinga elivunyelwe umthetho waseNingizimu Afrika, ababhali nesikhungo sabo abanasibopho nganoma yikuphi ukulahlekelwa noma umonakalo ovela ekusebenziseni i-app.\n\n7. Impahla yengqondo\nIgama le-PulseLink, uphawu nekhodi yomthombo kungumsebenzi wababhali futhi kwabiwa nge-GitHub repository yephrojekthi ngaphansi kwelayisensi eshiwoyo.\n\n8. Izinguquko nomthetho obusayo\nLe migomo ingabuyekezwa njengoba iphrojekthi ithuthuka. Ibuswa yimithetho yeRiphabhulikhi yaseNingizimu Afrika.</string>
+    <string name="about_github_repo_link">Buka iphrojekthi ku-GitHub</string>
+    <string name="about_github_privacy_link">Funda inqubomgomo yobumfihlo ephelele ku-GitHub</string>
+    <string name="about_github_terms_link">Funda imigomo ephelele ku-GitHub</string>
+    <string name="about_no_browser">Alikho isiphequluli sewebhu esitholakalayo sokuvula le linki.</string>
+    <string name="about_copyright">© 2026 Cameron van Heerden &amp; Maxine Palm. Wonke amalungelo agodliwe.</string>
+
+    <!-- Settings entry -->
+    <string name="settings_about_legal_title">Mayelana &amp; Ezomthetho</string>
+    <string name="settings_about_legal_subtitle">Inguqulo, ababhali, inqubomgomo yobumfihlo nemigomo.</string>
+
+    <!-- Multi-Language Support (Localisation) -->
+    <string name="language_saved">Ulimi lubuyekeziwe</string>
+    <string name="language_already_active">Lolo limi selukhethiwe</string>
+    <string name="language_restart_note">I-app izoqala kabusha ukuze zonke izikrini zisebenzise ulimi lwakho olusha.</string>
+    <string name="language_option_desc">%1$s, alukhethiwe</string>
+    <string name="language_option_selected_desc">%1$s, lukhethiwe</string>
+    <string name="settings_language_title">Ulimi</string>
+    <string name="settings_language_subtitle">IsiNgisi</string>
+
+    <!-- Content descriptions for icon controls -->
+    <string name="cd_back">Emuva</string>
+    <string name="cd_close">Vala</string>
+    <string name="cd_share">Yabelana</string>
+    <string name="cd_settings">Izilungiselelo</string>
+    <string name="cd_call">Shayela</string>
+    <string name="cd_notifications">Izaziso</string>
+    <string name="cd_profile">Iphrofayela</string>
+    <string name="cd_delete">Susa</string>
+    <string name="cd_toggle_password_visibility">Khombisa noma fihla iphasiwedi</string>
+    <string name="cd_change_photo">Shintsha isithombe sephrofayela</string>
+
+    <!-- Action feedback -->
+    <string name="action_not_available_yet">Le ngxenye ye-PulseLink ayikatholakali.</string>
+    <string name="action_signed_out">Uphumile</string>
+    <string name="action_alert_dismissed">Isexwayiso sichithiwe</string>
+    <string name="action_alert_escalated">Isexwayiso sidluliselwe ethimbeni elisebenzayo</string>
+    <string name="action_flagged_for_review">Kuphawulelwe ukubuyekezwa</string>
+    <string name="action_marked_reviewed">Iseshini imakwe njengebuyekeziwe</string>
+    <string name="action_report_flagged">Umbiko uphawuliwe</string>
+    <string name="action_report_signed_off">Umbiko usayindiwe</string>
+    <string name="action_download_started">Kulungiswa i-PDF.</string>
+    <string name="action_note_saved">Inothi lasekliniki lilondoloziwe</string>
+    <string name="action_sync_started">Kuvumelaniswa neseva.</string>
+    <string name="action_calibration_started">Kukalibhrethwa inzwa.</string>
+    <string name="action_device_forgotten">Idivayisi isusiwe</string>
+    <string name="action_pairing_started">Kubhangqwa nedivayisi.</string>
+    <string name="action_scanning">Kuskenwa amadivayisi.</string>
+    <string name="action_marked_all_read">Zonke izaziso zimakwe njengezifundiwe</string>
+    <string name="action_calling_patient">Kushayelwa isiguli.</string>
+
+    <!-- Offline status feedback -->
+    <string name="status_offline_saving_locally">Imodi engaxhunyiwe iyasebenza: I-telemetry igcinwa ngokuphephile endaweni</string>
+
+    <string name="patient_dashboard_text_no_device_paired">Ayikho idivayisi ebhangqiwe</string>
+    <string name="patient_dashboard_text_power_source">Umthombo wamandla</string>
+    <string name="patient_dashboard_text_emergency_sos">I-Emergency SOS (112 / 10177)</string>
+    <string name="patient_dashboard_text_emergency_sos_dispatch">Ukuthunyelwa ngokushesha ezinsizeni zezokwelapha eziphuthumayo zaseNingizimu Afrika</string>
+    <string name="patient_dashboard_text_no_sessions_yet">Azikho izikhathi zokurekhoda okwamanje</string>
+    <string name="patient_dashboard_text_no_new_updates">Azikho izibuyekezo ezintsha</string>
+    <string name="patient_dashboard_text_clinical_reports_synced">Yonke imibiko yezokwelapha ne-telemetry ivumelanisiwe.</string>
+    <string name="patient_device_management_text_offline">Isiqaphi se-ESP32-C3 asixhunyiwe. Hlola amandla e-5V USB nokuxhumeka kwe-Wi-Fi engu-2.4 GHz.</string>
+    <string name="patient_device_management_text_no_ecg_monitor_paired">Ayikho i-ECG monitor ebhangqiwe</string>
+    <string name="patient_device_management_text_pair_with_account">Xhuma isiqaphi sakho se-ESP32-C3 kumandla e-5V USB-C ukuze usibhangqe ne-akhawunti yakho yesiguli.</string>
+    <string name="patient_ecg_pre_session_check_text_hardware_checking">Kuhlolwa i-telemetry yehardware…</string>
+    <string name="patient_ecg_pre_session_check_text_tap_skin">Thepha ukuze uqinisekise ukuthi isikhumba sihlanzekile futhi somile</string>
+    <string name="patient_ecg_pre_session_check_text_lead_checking">Kuhlolwa ukuxhumeka kwe-lead ye-AD8232…</string>
+    <string name="patient_ecg_pre_session_check_text_placement_tap">Thepha ukuze uhlole umhlahlandlela ophelele wokubekwa kwama-electrode angu-3 ngokwendawo yomzimba</string>
+    <string name="patient_ecg_pre_session_check_text_complete_all">Qedela konke ukuhlola ukuze uqale</string>
+    <string name="patient_profile_text_edit_details">Hlela imininingwane ✎</string>
+    <string name="patient_profile_text_edit_contact">Hlela othintana naye ✎</string>
+    <string name="patient_settings_help_support_text_need_more_help">Udinga olunye usizo?</string>
+    <string name="patient_settings_help_support_text_contact_support">Xhumana nosizo</string>
+    <string name="patient_settings_help_support_text_get_help">Thola usizo eqenjini lethu losizo</string>
+    <string name="patient_settings_help_support_text_user_guide">Umhlahlandlela womsebenzisi</string>
+    <string name="patient_settings_help_support_text_learn_pulselink">Funda ukusebenzisa i-PulseLink</string>
+    <string name="patient_settings_help_support_text_report_problem">Bika inkinga</string>
+    <string name="patient_settings_help_support_text_issue_app_device">Sitshele ngenkinga ngohlelo lokusebenza noma idivayisi</string>
+    <string name="doctor_profile_text_registered">Kubhalisiwe</string>
+    <string name="doctor_profile_text_rpm_status">Isimo se-RPM</string>
+    <string name="security_password_text_security_password">Ukuphepha nephasiwedi</string>
+    <string name="security_password_text_account_verification">Ukuqinisekiswa kwe-akhawunti</string>
+    <string name="security_password_text_email_status_checking">Isimo se-imeyili: Kuyahlolwa...</string>
+    <string name="security_password_text_verify">Qinisekisa</string>
+    <string name="security_password_text_biometric_authentication">Ukuqinisekiswa nge-biometric</string>
+    <string name="security_password_text_biometric_face_unlock">I-biometric / ukuvula ngobuso</string>
+    <string name="security_password_text_biometric_description">Ukungena ngokushesha okuphephile nge-Keystore</string>
+    <string name="security_password_text_test_biometric">Hlola ukuqashelwa nge-biometric</string>
+    <string name="security_password_text_change_biometrics">Shintsha i-biometric</string>
+    <string name="security_password_text_password_management">Ukuphathwa kwephasiwedi</string>
+    <string name="security_password_text_send_reset">Thumela isixhumanisi sokusetha kabusha iphasiwedi</string>
+    <string name="security_password_text_reset_description">Kuthumela isixhumanisi esisemthethweni se-Firebase sokusetha kabusha iphasiwedi ku-imeyili yakho ebhalisiwe.</string>
+    <string name="security_password_text_email_reset">Thumela isixhumanisi sokusetha kabusha nge-imeyili</string>
+    <string name="security_password_text_change_in_app">Shintsha iphasiwedi kuhlelo lokusebenza</string>
+    <string name="security_password_hint_new_password">Iphasiwedi entsha (okungenani izinhlamvu ezi-6)</string>
+    <string name="security_password_hint_confirm_password">Qinisekisa iphasiwedi entsha</string>
+    <string name="security_password_text_update_password">Buyekeza iphasiwedi</string>
+    <string name="doctor_ecg_text_no_data_available">Ayikho idatha ye-ECG etholakalayo</string>
+    <string name="patient_ecg_pre_session_check_text_no_device_paired">Ayikho idivayisi ebhangqiwe | Sicela uqale ubhangqe i-ESP32-C3 yakho</string>
+    <string name="patient_profile_gender_male">Owesilisa</string>
+    <string name="patient_profile_gender_female">Owesifazane</string>
+    <string name="patient_profile_gender_other">Okunye</string>
+    <string name="patient_profile_gender_prefer_not_to_say">Angikhethi ukusho</string>
+    <string name="security_password_text_email_verified">Isimo se-imeyili: Kuqinisekisiwe ✓</string>
+    <string name="security_password_text_email_unverified">Isimo se-imeyili: Akuqinisekisiwe</string>
+    <string name="security_password_text_biometrics_active">I-biometric isebenza ekungeneni okusheshayo</string>
+    <string name="security_password_text_fingerprint_face_ready">Ihadiwe yezigxivizo zeminwe/ubuso isilungile</string>
+    <string name="security_password_text_biometrics_unavailable">I-biometric ayitholakali kule divayisi</string>
+    <string name="patient_dashboard_text_no_recordings">Akukho okuqoshiwe</string>
+    <string name="patient_dashboard_text_pair_device_status">Bhangqa idivayisi ukuze ubone isimo</string>
+    <string name="patient_dashboard_text_emergency_dispatch_title">Shayela abezimo eziphuthumayo</string>
+    <string name="patient_dashboard_text_emergency_dispatch_message">Khetha insizakalo yezokwelapha ephuthumayo ozoyishayela ngokushesha. Uma kunokucindezeleka okukhulu kwenhliziyo noma ukulahlekelwa ukwazi, shayela u-112 ngaphandle kokulibala.</string>
+    <string name="patient_dashboard_text_dial_112_national">Shayela u-112 (Isimo Esiphuthumayo Sikazwelonke)</string>
+    <string name="patient_dashboard_text_dial_10177_ambulance">Shayela u-10177 (I-ambulensi)</string>
+    <string name="patient_ecg_pre_session_check_text_skin_cleansed">Isikhumba sihlanzwe futhi salungiselelwa</string>
+    <string name="patient_ecg_pre_session_check_text_pair_device_lead1">Bhangqa idivayisi ukuze uhlole ama-electrode e-Lead I</string>
+    <string name="patient_ecg_pre_session_check_text_complete_all_dynamic">Qedela Konke Ukuhlola Ukuze Uqale (%1$d kusasele)</string>
+
+    <!-- ===== Added: text that was previously hard-coded or untranslated ===== -->
+    <string name="doctor_live_ecg_text_id_p_948271_ad8232">I-ID: Ilindile - Inzwa ye-AD8232</string>
+    <string name="doctor_patient_ecg_history_text_id_pt_84729_x">I-ID: Ilindile - Usuku lokuzalwa: Akunikeziwe</string>
+    <string name="patient_dashboard_text_good_morning_alex">Sawubona</string>
+    <string name="patient_dashboard_text_2_hours_ago">Emahoreni ama-2 edlule</string>
+    <string name="patient_dashboard_text_cardiovascular_summary_oct_15">Isifinyezo sakho senhliziyo nemithambo yegazi sika-Okt 15 kuya ku-Okt 21 sesilungele ukubukwa. Zonke izilinganiso zisemazingeni avamile.</string>
+    <string name="patient_dashboard_text_device_firmware_update">Isibuyekezo se-firmware yedivayisi</string>
+    <string name="patient_dashboard_text_1_day_ago">Usuku olu-1 olwedlule</string>
+    <string name="patient_dashboard_text_new_update_esp8266_scheduled">Isibuyekezo esisha se-firmware yesiqaphi sakho se-ESP32-C3 sihlelelwe kusihlwa ngo-2:00 ekuseni. Gcina idivayisi ixhunywe emandleni e-5V USB.</string>
+    <string name="patient_dashboard_text_dr_s_naidoo_appointment">Ukuqokwa kukaDkt. S. Naidoo</string>
+    <string name="patient_dashboard_text_reminder_follow_up_consultation">Isikhumbuzo: ukubonisana kwakho kokulandelela kuhlelelwe ngo-Okt 25 ngo-09:00 ekuseni.</string>
+    <string name="patient_ecg_session_details_text_session_report_oct_24">Umbiko weseshini: Okt 24, 2023</string>
+    <string name="patient_ecg_session_details_text_05_42_min">05:42 imizuzu</string>
+    <string name="patient_offline_sync_status_text_today_08_45_am">Namuhla, 08:45 ekuseni</string>
+    <string name="patient_offline_sync_status_text_pending_upload_3">Okulindele ukulayishwa (3)</string>
+    <string name="patient_profile_text_male">Akunikeziwe</string>
+    <string name="patient_session_report_preview_text_id_mrn_84729_dob">I-ID: MRN-84729 - Usuku lokuzalwa: 05/12/1948, iminyaka engu-78</string>
+
+    <!-- common -->
+    <string name="l10n_bpm_value">%1$d bpm</string>
+    <string name="l10n_bpm_none">-- bpm</string>
+    <string name="l10n_not_provided">Akunikeziwe</string>
+    <string name="l10n_unavailable">Akutholakali</string>
+    <string name="l10n_unknown">Akwaziwa</string>
+    <string name="l10n_today">Namuhla</string>
+    <string name="l10n_recent">Kamuva nje</string>
+    <string name="l10n_recent_session">Iseshini yakamuva</string>
+    <string name="l10n_attending">Ophethe</string>
+    <string name="l10n_dr_name_format">Dkt. %1$s</string>
+    <string name="l10n_unknown_doctor">Udokotela ongaziwa</string>
+    <string name="l10n_unknown_patient">Isiguli esingaziwa</string>
+    <string name="l10n_patient_short_format">Isiguli %1$s</string>
+    <string name="l10n_patient_id_format">I-ID yesiguli: PT-%1$s</string>
+    <string name="l10n_id_and_date_format">I-ID: %1$s | %2$s</string>
+    <string name="l10n_error_format">Iphutha: %1$s</string>
+    <string name="l10n_continue">Qhubeka</string>
+    <string name="l10n_active">Kuyasebenza</string>
+    <string name="l10n_continuous">Kuqhubeka</string>
+
+    <!-- quality / status / rhythm -->
+    <string name="l10n_quality_excellent">Kuhle kakhulu</string>
+    <string name="l10n_quality_good">Kuhle</string>
+    <string name="l10n_quality_fair">Kuyamukeleka</string>
+    <string name="l10n_quality_poor">Kubi</string>
+    <string name="l10n_status_completed">Kuqediwe</string>
+    <string name="l10n_status_flagged">Kuphawuliwe</string>
+    <string name="l10n_status_active">Kuyasebenza</string>
+    <string name="l10n_status_irregular">Akujwayelekile</string>
+    <string name="l10n_status_normal">Kujwayelekile</string>
+    <string name="l10n_rhythm_tachycardia">I-Tachycardia</string>
+    <string name="l10n_rhythm_bradycardia">I-Bradycardia</string>
+    <string name="l10n_rhythm_normal_sinus">Isigqi se-sinus esijwayelekile</string>
+    <string name="l10n_rhythm_normal_sinus_short">I-sinus ejwayelekile</string>
+    <string name="l10n_interp_tachy">Kutholakele i-sinus tachycardia (izinga lokushaya kwenhliziyo lapho uphumule lidlula ku-100 bpm). Kunconywa ukuhlobanisa nesimo sokwelashwa.</string>
+    <string name="l10n_interp_brady">Kuqashelwe i-sinus bradycardia (ngezansi kuka-50 bpm). Hlola umlando wezimpawu nesimo senhliziyo.</string>
+    <string name="l10n_interp_irregular">Kutholakele i-arrhythmia noma ikhwalithi yesignali ephansi ngesikhathi sokuqapha i-Lead I. Buyekeza lonke ugqinsi lwe-ECG.</string>
+    <string name="l10n_interp_normal">Kuqashelwe isigqi se-sinus esijwayelekile esinomumo ojwayelekile we-P-QRS-T ku-Lead I. Awekho ama-alamu okuxilonga ayingozi aqalisiwe.</string>
+    <string name="l10n_alert_elevated_hr">Izinga lokushaya kwenhliziyo eliphakeme</string>
+    <string name="l10n_alert_tachycardia">I-Tachycardia</string>
+    <string name="l10n_alert_bradycardia">I-Bradycardia</string>
+    <string name="l10n_alert_lead_detached">Intambo ye-electrode ikhishiwe</string>
+    <string name="l10n_alert_asystole">Akukho ukushaya kwenhliziyo okutholakele (Asystole)</string>
+
+    <!-- BPM anomaly detector -->
+    <string name="l10n_anomaly_lead_msg">Intambo ye-electrode ayixhunyiwe (LO+/LO-)</string>
+    <string name="l10n_anomaly_lead_action">Hlola indawo ye-electrode ye-AD8232 Lead I esifubeni noma ezingxenyeni zomzimba.</string>
+    <string name="l10n_anomaly_asystole_action">Qinisekisa ngokushesha uxhumo lwenzwa noma uqale inqubo yesimo esiphuthumayo.</string>
+    <string name="l10n_anomaly_brady_crit_msg">I-Bradycardia ebucayi (%1$d bpm)</string>
+    <string name="l10n_anomaly_brady_crit_action">Izinga lokushaya kwenhliziyo eliphansi kakhulu. Funa usizo olusheshayo lwezokwelapha.</string>
+    <string name="l10n_anomaly_brady_warn_msg">I-Bradycardia ethambile (%1$d bpm)</string>
+    <string name="l10n_anomaly_brady_warn_action">Izinga lokushaya kwenhliziyo ngezansi kuka-50 bpm. Qinisekisa ukuthi isiguli siphumule kahle.</string>
+    <string name="l10n_anomaly_tachy_crit_msg">I-Tachycardia ebucayi (%1$d bpm)</string>
+    <string name="l10n_anomaly_tachy_crit_action">Izinga lokushaya kwenhliziyo eliphakeme kakhulu. Funa ukuhlolwa kwezokwelapha ngokushesha.</string>
+    <string name="l10n_anomaly_tachy_warn_msg">Izinga lokushaya kwenhliziyo eliphakeme (%1$d bpm)</string>
+    <string name="l10n_anomaly_tachy_warn_action">Izinga lokushaya kwenhliziyo ngaphezu kuka-100 bpm. Gcina isiguli sinokuthula futhi singahambi.</string>
+    <string name="l10n_anomaly_normal_msg">Isigqi se-sinus esijwayelekile (%1$d bpm)</string>
+    <string name="l10n_anomaly_normal_action">Izinga lokushaya kwenhliziyo lisemkhakheni ojwayelekile wokuphumula (50-100 bpm).</string>
+
+    <!-- device / hardware -->
+    <string name="l10n_not_registered">Akubhalisiwe</string>
+    <string name="l10n_no_device_paired_title">Ayikho idivayisi ebhangqiwe</string>
+    <string name="l10n_not_paired">Ayibhangqiwe</string>
+    <string name="l10n_device_subtitle">ESP32-C3 + AD8232 ingxenye yangaphambili yenzwa</string>
+    <string name="l10n_usb_powered">Inikezwa amandla nge-USB (5V)</string>
+    <string name="l10n_usb_disconnected_offline">Isimo se-cloud asikho ku-inthanethi</string>
+    <string name="l10n_status_unavailable">Isimo asitholakali</string>
+    <string name="l10n_unable_to_load">Ayikwazi ukulayishwa</string>
+    <string name="l10n_connected">Kuxhunyiwe</string>
+    <string name="l10n_offline">Ayikho ku-inthanethi</string>
+    <string name="l10n_no_signal">Akukho isignali</string>
+    <string name="l10n_lead_normal">I-Lead I (Ejwayelekile)</string>
+    <string name="l10n_lead_detached">Intambo ikhishiwe</string>
+    <string name="l10n_lead_disconnected">Ayixhunyiwe</string>
+    <string name="l10n_lead_attached">I-Lead I ixhunyiwe</string>
+    <string name="l10n_lead_active">I-Lead I iyasebenza</string>
+    <string name="l10n_sensor_status_usb">ESP32-C3 (inikezwa amandla nge-USB 5V)</string>
+    <string name="l10n_syncing">Iyavumelanisa…</string>
+    <string name="l10n_just_now_time_format">Manje nje (%1$s)</string>
+    <string name="l10n_no_device_yet">Ayikho idivayisi ebhangqiwe okwamanje.</string>
+    <string name="l10n_esp_synced">I-telemetry ye-ESP32 ivumelanisiwe. Idivayisi isebenza ku-inthanethi.</string>
+    <string name="l10n_esp_offline_usb_wifi">Isimo se-cloud sedivayisi asikho ku-inthanethi. Hlola uxhumo lwe-Wi-Fi ne-API.</string>
+    <string name="l10n_esp_unreachable">Ayikwazi ukufinyelela i-ESP32. Idivayisi ayikho ku-inthanethi.</string>
+    <string name="l10n_calibrating">Iyakalibhreta…</string>
+    <string name="l10n_calibration_done">Ukukalibhreta kwe-AD8232 kuqediwe. I-ADC engu-12-bit ilungisiwe (0 kuya ku-4095).</string>
+    <string name="l10n_unpair_title">Susa ukubhangqa isiqaphi sehadiwe?</string>
+    <string name="l10n_unpair_message">Uqinisekile ukuthi ufuna ukunqamula lesi siqaphi se-ECG se-ESP32-C3 ku-akhawunti yakho ye-PulseLink?</string>
+    <string name="l10n_unpair">Susa ukubhangqa</string>
+    <string name="l10n_unpaired_toast">Isiqaphi se-ESP32 sisusiwe ku-akhawunti.</string>
+    <string name="l10n_scanning_network">Iskena inethiwekhi…</string>
+    <string name="l10n_scanning_title">Iskena iziqaphi ze-ESP32-C3…</string>
+    <string name="l10n_scanning_subtitle">Ilalele amaphakethe e-beacon ye-Wi-Fi ye-2.4 GHz avela kuhadiwe ye-ECG ye-AD8232 eseduze.</string>
+    <string name="l10n_no_device_found">Ayikho idivayisi etholakele</string>
+    <string name="l10n_no_device_found_unpaired">Asikho isiqaphi se-ESP32-C3 esibhangqiwe okwamanje. Xhuma ihadiwe yakho bese uyixhuma ku-Wi-Fi ye-2.4 GHz, bese uthinta u-\'Skena futhi\'.</string>
+    <string name="l10n_no_device_found_account">Asikwazanga ukuthola isiqaphi sangempela se-ESP32-C3 salesi si-akhawunti. Hlola ukuthi sivuliwe futhi sixhunyiwe.</string>
+    <string name="l10n_mac_format">MAC: %1$s | AD8232 Lead I</string>
+    <string name="l10n_ping_online_ready">Ikuinthanethi (USB 5V) | Ilungele ukubhangqa</string>
+    <string name="l10n_ping_offline_power">Ayikho ku-inthanethi | Vula i-ESP32 uxhume i-Wi-Fi</string>
+    <string name="l10n_device_unreachable">Idivayisi ayifinyeleleki</string>
+    <string name="l10n_device_unreachable_msg">Ayikwazi ukufinyelela isiqaphi se-ESP32-C3 esibhangqiwe. Hlola ukuthi sivuliwe futhi sixhunywe ku-Wi-Fi.</string>
+    <string name="l10n_pinging">Iyapinga…</string>
+    <string name="l10n_pinging_device_format">Iyapinga i-%1$s…</string>
+    <string name="l10n_ping_esp32">Pinga i-ESP32</string>
+    <string name="l10n_ping_result_format">Ping: %1$dms KUHLE | Isignali: %2$s | %3$s</string>
+    <string name="l10n_ping_toast_format">Impendulo ye-ping ye-ESP32 ngo-%1$dms. Idivayisi isebenza ku-inthanethi.</string>
+    <string name="l10n_esp_offline_no_heartbeat">I-ESP32 ayikho ku-inthanethi (akukho ukushaya kutholakele)</string>
+    <string name="l10n_esp_offline_check_5v">Isimo se-cloud sedivayisi asikho ku-inthanethi. Hlola uxhumo lwe-Wi-Fi ne-API.</string>
+    <string name="l10n_unable_reach_offline">Ayikwazi ukufinyelela idivayisi (ayikho ku-inthanethi)</string>
+    <string name="l10n_unable_reach_named_format">Ayikwazi ukufinyelela i-%1$s. Hlola ukuthi ivuliwe.</string>
+    <string name="l10n_pairing">Iyabhangqa…</string>
+    <string name="l10n_pair_device">Bhangqa idivayisi</string>
+    <string name="l10n_must_sign_in_pair">Kumele ungene ukuze ubhangqe idivayisi.</string>
+    <string name="l10n_paired_success_format">I-%1$s (%2$s) ibhangqe ngempumelelo.</string>
+    <string name="l10n_pair_failed_format">Ayikwazi ukubhangqa i-%1$s. Sicela uzame futhi.</string>
+    <string name="l10n_no_device_to_ping">Ayikho idivayisi etholakele ukuze ipingwe.</string>
+    <string name="l10n_no_device_to_pair">Ayikho idivayisi etholakele ukuze ibhangqwe.</string>
+    <string name="l10n_pairing_guide_title">Umhlahlandlela wokulungiselela ihadiwe</string>
+    <string name="l10n_pairing_guide_steps">1. Xhuma i-ESP32-C3 Super Mini emandleni e-5V USB-C aqhubekayo.\n2. Qinisekisa ukuthi i-router yasekhaya noma yasesibhedlela isakaza inethiwekhi ye-Wi-Fi ye-2.4 GHz (i-5 GHz ayisekelwa).\n3. Thinta u-\'Pinga i-ESP32\' ukuze uqinisekise ukubambezeleka bukhoma, ikhwalithi yesignali, nokuxhumeka kwentambo ye-AD8232 ngaphambi kokubhangqa.</string>
+    <string name="l10n_ready_to_scan">Ilungele ukuskena i-ESP32-C3</string>
+    <string name="l10n_ready_to_scan_desc">Qinisekisa ukuthi isiqaphi sakho se-ESP32-C3 sixhunywe emandleni e-5V USB-C aqhubekayo futhi sixhunywe ku-Wi-Fi ye-2.4 GHz.</string>
+    <string name="l10n_default_monitor_name">Isiqaphi se-PulseLink ESP32-C3</string>
+    <string name="l10n_monitor_spec">I-ECG ye-AD8232 | Inikezwa amandla nge-5V USB</string>
+    <string name="l10n_ready_to_connect">Ilungele ukuxhuma</string>
+    <string name="l10n_esp_online_wifi">I-ESP32-C3 ikuinthanethi (inikezwa amandla nge-5V USB) | I-Wi-Fi ixhunyiwe</string>
+    <string name="l10n_esp_offline_retry">I-ESP32-C3 ayikho ku-inthanethi | Xhuma amandla e-5V USB-C (thinta ukuze uzame futhi)</string>
+    <string name="l10n_electrodes_attached">Ama-electrode e-Lead I axhunyiwe (i-AD8232 iyasebenza)</string>
+    <string name="l10n_electrodes_detached">Ama-electrode akhishiwe (Hlanganisa amaphedi e-RA, LA, RL - thinta ukuze uzame futhi)</string>
+
+    <!-- dashboard / notifications -->
+    <string name="l10n_unable_load_data">Ayikwazi ukulayisha idatha</string>
+    <string name="l10n_tap_to_retry">Thinta ukuze uzame futhi</string>
+    <string name="l10n_items_pending_format">Izinto ezilindele ukuvumelanisa: %1$d. Thinta ukuze ubone ulayini.</string>
+    <string name="l10n_cat_health_alert">ISEXWAYISO SEMPILO</string>
+    <string name="l10n_cat_report">UMBIKO</string>
+    <string name="l10n_cat_clinical_note">INOTHI LASEKLINIKI</string>
+    <string name="l10n_notification_deleted">Isaziso sisusiwe.</string>
+    <string name="l10n_no_session_report_attached">Awukho umbiko weseshini oncikene nalesi saziso.</string>
+    <string name="l10n_report_forwarded">Umbiko we-telemetry udluliselwe kudokotela ophethe.</string>
+    <string name="l10n_notification_default_title">Isaziso se-PulseLink</string>
+    <string name="l10n_notification_default_body">Unesibuyekezo esisha sasekliniki esivela ku-PulseLink.</string>
+    <string name="l10n_today_time_format">Namuhla, %1$s</string>
+    <string name="l10n_channel_critical_name">Izexwayiso ze-ECG ezibucayi</string>
+    <string name="l10n_channel_critical_desc">Izaziso eziphuthumayo mayelana nezigqi zenhliziyo ezingajwayelekile nokukhishwa kwentambo.</string>
+    <string name="l10n_channel_updates_name">Izibuyekezo nemibiko yasekliniki</string>
+    <string name="l10n_channel_updates_desc">Izibuyekezo mayelana namanothi odokotela, ukusayinwa kwamaseshini nemibiko ye-PDF.</string>
+
+    <!-- doctor screens -->
+    <string name="l10n_unable_load_session">Ayikwazi ukulayisha imininingwane yeseshini.</string>
+    <string name="l10n_btn_update_notes">Buyekeza amanothi asekliniki</string>
+    <string name="l10n_share_clinical_subject_format">Ukubuyekezwa kwe-ECG yasekliniki ye-PulseLink - iseshini %1$s</string>
+    <string name="l10n_share_clinical_body_format">Ukubuyekezwa kwe-telemetry yasekliniki ye-PulseLink RPM\nIsiguli: %1$s\nIseshini: %2$s\nIsilinganiso sokushaya kwenhliziyo: %3$s bpm\nUbude besikhathi: %4$s\nIkhwalithi yesignali: %5$s\nIsigqi: %6$s</string>
+    <string name="l10n_share_clinical_chooser">Yabelana nge-telemetry yasekliniki</string>
+    <string name="l10n_downloading_pdf_clinical">Iyadawunlodwa i-PDF yombiko wasekliniki...</string>
+    <string name="l10n_opening_preview">Ivula ukubuka kuqala umbiko...</string>
+    <string name="l10n_session_flagged_followup">Iseshini iphawulelwe ukulandelelwa kwasekliniki okubalulekile.</string>
+    <string name="l10n_session_info_incomplete">Ulwazi lweseshini aluphelele.</string>
+    <string name="l10n_no_patient_selected">Akukho siguli esikhethiwe.</string>
+    <string name="l10n_unable_load_ecg_data">Ayikwazi ukulayisha idatha ye-ECG.</string>
+    <string name="l10n_unable_load_alerts">Ayikwazi ukulayisha izexwayiso.</string>
+    <string name="l10n_unable_load_alert_details">Ayikwazi ukulayisha imininingwane yesexwayiso.</string>
+    <string name="l10n_no_session_linked_alert">Ayikho iseshini ye-ECG exhunyiwe nalesi sexwayiso.</string>
+    <string name="l10n_picture_updated">Isithombe sephrofayela sibuyekeziwe.</string>
+    <string name="l10n_picture_failed">Ayikwazi ukubuyekeza isithombe sephrofayela.</string>
+    <string name="l10n_doctor_license_line">I-Cardiology | Ukubhaliswa kwe-HPCSA: MP 0744821</string>
+    <string name="l10n_doctor_network">Inethiwekhi yodokotela ye-PulseLink</string>
+    <string name="l10n_verified_clinician_line">Ilayini yodokotela eqinisekisiwe</string>
+    <string name="l10n_downloading_pdf_for_format">Iyadawunlodwa umbiko we-PDF ka-%1$s...</string>
+    <string name="l10n_unable_load_notes_screen">Ayikwazi ukulayisha amanothi eseshini.</string>
+    <string name="l10n_unable_load_notes">Ayikwazi ukulayisha amanothi.</string>
+    <string name="l10n_enter_observation">Sicela uqale ufake ukubheka kwasekliniki.</string>
+    <string name="l10n_signed_in_to_save_note">Kumele ungene ukuze ulondoloze inothi.</string>
+    <string name="l10n_note_recommendation_default">Qhubeka nokuqapha ukude ngokuhlola i-ECG nsuku zonke.</string>
+    <string name="l10n_note_saved_ok">Inothi lasekliniki lilondolozwe ngempumelelo.</string>
+    <string name="l10n_unable_save_note">Ayikwazi ukulondoloza inothi.</string>
+
+    <!-- emergency / help -->
+    <string name="l10n_sos_cancelled">Ukuthunyelwa kosizo oluphuthumayo kukhanseliwe.</string>
+    <string name="l10n_sos_connecting">Kuxhumana nezinsizakalo eziphuthumayo zaseNingizimu Afrika (112)...</string>
+    <string name="l10n_sos_subject">KUPHUTHUMA: Isexwayiso sesimo senhliziyo esiphuthumayo se-PulseLink</string>
+    <string name="l10n_sos_message_format">ISEXWAYISO ESIPHUTHUMAYO esivela ku-PulseLink RPM:\nIsiguli: %1$s\nIsimo sezokwelapha: Isimo senhliziyo esiphuthumayo siqalisiwe nge-AD8232 ECG Monitor.\nIndawo: Izinsizakalo eziphuthumayo zazisiwe.\nSicela uxhumane ngokushesha.</string>
+    <string name="l10n_sos_chooser">Xwayisa oxhumana nabo ngezimo eziphuthumayo</string>
+    <string name="l10n_live_chat_soon">Isiteshi sokusekelwa kwe-Live Chat sizovulwa maduze.</string>
+    <string name="l10n_diag_intro">Sicela uchaze inkinga yakho ngenhla kwalo mugqa.</string>
+    <string name="l10n_diag_header">---- Ukuxilongwa kwedivayisi (kwenziwa ngokuzenzakalelayo, ayikho idatha yezempilo) ----</string>
+    <string name="l10n_diag_app_version">Inguqulo ye-app: %1$s</string>
+    <string name="l10n_diag_android_version">Inguqulo ye-Android: %1$s (SDK %2$d)</string>
+    <string name="l10n_diag_device">Idivayisi: %1$s</string>
+    <string name="l10n_diag_role">Indima ye-akhawunti: %1$s</string>
+    <string name="l10n_diag_network">Inethiwekhi: %1$s</string>
+    <string name="l10n_diag_timestamp">Isitembu sesikhathi: %1$s</string>
+    <string name="l10n_diag_unknown">akwaziwa</string>
+    <string name="l10n_diag_offline">ayikho ku-inthanethi</string>
+    <string name="l10n_diag_mobile_data">Idatha yeselula</string>
+    <string name="l10n_diag_connected">Ixhunyiwe</string>
+    <string name="l10n_diag_no_internet_format">%1$s (ayikho i-inthanethi)</string>
+
+    <!-- login / registration -->
+    <string name="l10n_google_token_failed">Ayikwazi ukuthola ithokheni yezokuphepha ye-Google.</string>
+    <string name="l10n_google_signin_error_format">Iphutha lokungena nge-Google: %1$s</string>
+    <string name="l10n_google_code_format">Ikhodi %1$d</string>
+    <string name="l10n_valid_email_required">Sicela ufake ikheli le-imeyili elivumelekile.</string>
+    <string name="l10n_sending">Iyathumela…</string>
+    <string name="l10n_send_link">Thumela isixhumanisi</string>
+    <string name="l10n_reset_email_sent_format">I-imeyili yokusetha kabusha iphasiwedi ithunyelwe ku-%1$s. Sicela uhlole ibhokisi lakho lokungena.</string>
+    <string name="l10n_reset_email_failed">Ukuthumela i-imeyili yokusetha kabusha kuhlulekile.</string>
+    <string name="l10n_auth_success">Ukuqinisekiswa kuphumelele.</string>
+    <string name="l10n_auth_failed">Ukuqinisekiswa kuhlulekile.</string>
+    <string name="l10n_label_account_type">Khetha uhlobo lwe-akhawunti</string>
+    <string name="l10n_role_patient">Isiguli</string>
+    <string name="l10n_role_doctor">Udokotela / Umhlinzeki wezokwelapha</string>
+    <string name="l10n_label_phone">Inombolo yocingo</string>
+    <string name="l10n_label_dob">Usuku lokuzalwa</string>
+    <string name="l10n_label_gender">Ubulili</string>
+    <string name="l10n_label_emergency_name">Igama loxhumana naye esimeni esiphuthumayo</string>
+    <string name="l10n_label_emergency_phone">Ucingo loxhumana naye esimeni esiphuthumayo</string>
+    <string name="l10n_label_speciality">Isifundo sezokwelapha</string>
+    <string name="l10n_label_license">Inombolo yomkhuba / yelayisense yezokwelapha</string>
+    <string name="l10n_label_hospital">Isibhedlela / Isikhungo sezokwelapha</string>
+    <string name="l10n_hint_dob">YYYY-MM-DD (isib. 1995-06-15)</string>
+    <string name="l10n_hint_dob_dialog">YYYY-MM-DD (isib. 1998-05-12)</string>
+    <string name="l10n_hint_contact_name">Igama eliphelele loxhumana naye</string>
+    <string name="l10n_hint_speciality">Udokotela oyinhloko wenhliziyo</string>
+    <string name="l10n_hint_hospital">Isikhungo senhliziyo se-PulseLink</string>
+    <string name="l10n_forgot_title">Setha kabusha iphasiwedi</string>
+    <string name="l10n_forgot_desc">Faka ikheli lakho le-imeyili elibhalisiwe le-PulseLink. Sizokuthumelela imiyalelo ephephile yokusetha kabusha iphasiwedi.</string>
+    <string name="l10n_profile_registered">Iphrofayela ibhalisiwe ngempumelelo.</string>
+    <string name="l10n_registration_failed">Ukubhalisa kuhlulekile.</string>
+
+    <!-- profile -->
+    <string name="l10n_no_emergency_number">Ayikho inombolo yoxhumana naye esimeni esiphuthumayo efayiliwe.</string>
+    <string name="l10n_edit_details_title">Buyekeza imininingwane yomuntu siqu</string>
+    <string name="l10n_save_details">Londoloza imininingwane</string>
+    <string name="l10n_profile_updated">Imininingwane yephrofayela ibuyekeziwe ngempumelelo.</string>
+    <string name="l10n_profile_update_failed">Ukubuyekeza iphrofayela kuhlulekile.</string>
+    <string name="l10n_call_failed">Ayikwazi ukuqala ikholi yocingo</string>
+
+    <!-- live monitoring / sync -->
+    <string name="l10n_pair_before_recording">Bhangqa idivayisi ngaphambi kokuqala ukurekhoda.</string>
+    <string name="l10n_unable_save_recording">Ayikwazi ukulondoloza leli seshini lokurekhoda.</string>
+    <string name="l10n_unable_start_recording">Ayikwazi ukuqala iseshini yokurekhoda.</string>
+    <string name="l10n_recording_complete">Ukurekhoda i-ECG kwemizuzwana engu-90 kuqediwe.</string>
+    <string name="l10n_resume_session">Qalisa kabusha iseshini</string>
+    <string name="l10n_mode_monitor">Isiqaphi</string>
+    <string name="l10n_mode_paper">Iphepha lasesibhedlela</string>
+    <string name="l10n_no_internet_saved_locally">Ayikho i-inthanethi. Idatha ihlala igcinwe ngokuphepha kule divayisi.</string>
+    <string name="l10n_syncing_cloud">Iyavumelanisa ne-cloud...</string>
+    <string name="l10n_sync_starting">Iqala ukuvumelanisa kwe-ECG engekho ku-inthanethi...</string>
+    <string name="l10n_synchronising">Iyavumelanisa...</string>
+    <string name="l10n_sync_failed_retry">Ukuvumelanisa kuhlulekile. Kuzozama kabusha ngokuzenzakalela.</string>
+    <string name="l10n_pending_upload_format">Okulindele ukulayishwa (%1$d)</string>
+    <string name="l10n_cloud_connected">Ixhunywe ne-cloud</string>
+    <string name="l10n_cloud_connected_sub">I-telemetry yesikhathi sangempela namaseshini e-ECG avumelanisa ne-Azure REST API.</string>
+    <string name="l10n_never_initial">Akukaze (Ukusetha kokuqala)</string>
+    <string name="l10n_ecg_session_title_format">Iseshini yokurekhoda i-ECG (%1$ds)</string>
+    <string name="l10n_recorded_at_format">Irekhodwe ngo-%1$s • Isilinganiso: %2$s bpm</string>
+    <string name="l10n_waveform_batch_title">Iqoqo le-telemetry yegagasi le-250 Hz</string>
+    <string name="l10n_captured_at_format">Kuthathwe ngo-%1$s • %2$s bpm</string>
+    <string name="l10n_waiting">Kuyalindwa</string>
+    <string name="l10n_all_synced_msg">Wonke amaseshini e-ECG namasampula endawo avumelanisiwe ngokuphelele ne-cloud.</string>
+    <string name="l10n_cd_einthoven">Umhlahlandlela wendawo ye-Einthoven Lead I</string>
+    <string name="l10n_cd_torso">Umhlahlandlela wendawo ye-electrode ye-Lead I emzimbeni</string>
+
+    <!-- session details / report -->
+    <string name="l10n_session_report">Umbiko weseshini</string>
+    <string name="l10n_session_report_dated_format">Umbiko weseshini - %1$s</string>
+    <string name="l10n_loading_notes">Iyalayisha amanothi asekliniki…</string>
+    <string name="l10n_unable_load_clinical_notes">Ayikwazi ukulayisha amanothi asekliniki.</string>
+    <string name="l10n_no_clinical_notes_yet">Awekho amanothi asekliniki arekhodiwe kuleli seshini okwamanje.</string>
+    <string name="l10n_duration_min_format">%1$02d:%2$02d imizuzu</string>
+    <string name="l10n_report_unable_load">Ayikwazi ukulayisha umbiko weseshini.</string>
+    <string name="l10n_patient_details_mrn_format">MRN: PL-%1$s | Intambo: Lead I</string>
+    <string name="l10n_lead_only">Intambo: Lead I</string>
+    <string name="l10n_already_visible_care_team">Leli seshini selivele libonakala ithimba lakho lokunakekela.</string>
+    <string name="l10n_downloading_pdf">Iyadawunlodwa umbiko we-PDF...</string>
+    <string name="l10n_unable_open_pdf">Ayikwazi ukuvula umbiko we-PDF.</string>
+    <string name="l10n_share_report_subject_format">Umbiko wasekliniki we-ECG we-PulseLink - %1$s</string>
+    <string name="l10n_share_report_body_format">Umbiko wasekliniki we-ECG we-PulseLink\nI-ID yeseshini: %1$s\nIsilinganiso se-BPM: %2$s\nUbude besikhathi: %3$ds\nIkhwalithi: %4$s</string>
+    <string name="l10n_share_report_chooser">Yabelana ngombiko wasekliniki we-ECG</string>
+
+    <!-- canvas -->
+    <string name="l10n_lead_fault_banner">ILUNGISO LENTAMBO: AMA-ELECTRODE AWAXHUNYIWE (LO+ / LO-)</string>
+    <string name="l10n_legend_paper">Iphepha lasesibhedlela elijwayelekile: 25 mm/s | 10 mm/mV | Lead I</string>
+    <string name="l10n_legend_monitor">Isiqaphi sasekliniki: 25 mm/s | 10 mm/mV | Lead I</string>
+    <string name="l10n_paper_zoom_in">50 mm/s (kusondelisiwe)</string>
+    <string name="l10n_paper_zoom_out">12.5 mm/s (kuhlehliswe)</string>
+
+    <!-- security & password -->
+    <string name="l10n_reenable_bio_title">Vula kabusha ukungena nge-biometric</string>
+    <string name="l10n_reenable_bio_msg">Uma ushintshe isigxivizo somunwe noma ubuso kumasethingi e-Android, manje ungavula futhi ukungena kwe-PulseLink nge-biometric.</string>
+    <string name="l10n_not_now">Hhayi manje</string>
+    <string name="l10n_enable">Vula</string>
+    <string name="l10n_no_email_associated">Ayikho i-imeyili ehlobene</string>
+    <string name="l10n_verification_sent_format">I-imeyili yokuqinisekisa ithunyelwe ku-%1$s.</string>
+    <string name="l10n_verification_failed_format">Ayikwazi ukuthumela i-imeyili yokuqinisekisa: %1$s</string>
+    <string name="l10n_no_registered_email">Ayikho i-imeyili ebhalisiwe etholakele kuleli seshini.</string>
+    <string name="l10n_reset_link_sent_format">Isixhumanisi sokusetha kabusha iphasiwedi sithunyelwe ku-%1$s.</string>
+    <string name="l10n_password_min_6">Iphasiwedi kufanele ibe nezinhlamvu ezingu-6 okungenani.</string>
+    <string name="l10n_passwords_mismatch">Amaphasiwedi awafani.</string>
+    <string name="l10n_session_expired">Iseshini yomsebenzisi iphelelwe yisikhathi. Sicela ungene futhi.</string>
+    <string name="l10n_password_updated">Iphasiwedi ibuyekezwe ngempumelelo.</string>
+    <string name="l10n_password_update_failed_format">Ukubuyekeza iphasiwedi kuhlulekile. Ungadinga ukuphuma bese ungena futhi: %1$s</string>
+    <string name="l10n_bio_disabled">Ukungena nge-biometric kuvaliwe.</string>
+    <string name="l10n_bio_check_title">Ukuhlolwa kokuphepha kwe-PulseLink</string>
+    <string name="l10n_bio_check_subtitle">Qinisekisa isigxivizo somunwe noma ubuso ukuze uhlole inzwa</string>
+    <string name="l10n_bio_verified">Ukuqinisekiswa kwe-biometric kuqinisekisiwe ✓</string>
+    <string name="l10n_bio_check_error_format">Ukuhlolwa kwe-biometric: %1$s</string>
+    <string name="l10n_bio_mismatch">Isignesha ye-biometric ayifani.</string>
+    <string name="l10n_bio_settings_hint">Shintsha isigxivizo somunwe noma ubuso kumasethingi e-Android, bese ubuyela ku-PulseLink.</string>
+    <string name="l10n_bio_settings_failed">Amasethingi e-biometric e-Android awakwazanga ukuvulwa. Ungashintsha i-biometric kumasethingi edivayisi yakho.</string>
+    <string name="l10n_current_password_hint">Iphasiwedi yamanje</string>
+    <string name="l10n_confirm_password_title">Qinisekisa iphasiwedi yakho</string>
+    <string name="l10n_confirm_password_msg">Faka iphasiwedi yakho ye-PulseLink ukuze uvule ukungena nge-biometric kule divayisi.</string>
+    <string name="l10n_password_blank">Iphasiwedi ayikwazi ukuba ize.</string>
+    <string name="l10n_incorrect_password_bio">Iphasiwedi ayilungile. Ukungena nge-biometric akuvulwanga.</string>
+    <string name="l10n_bio_setup_unavailable">Ayikwazi ukusetha i-biometric kule divayisi.</string>
+    <string name="l10n_enable_bio_title">Vula ukungena nge-biometric</string>
+    <string name="l10n_enable_bio_subtitle">Qinisekisa isigxivizo somunwe noma ubuso ukuze uqedele ukusetha</string>
+    <string name="l10n_bio_enabled">Ukungena nge-biometric kuvuliwe.</string>
+    <string name="l10n_bio_save_failed">Ayikwazi ukulondoloza ukubhaliswa kwe-biometric.</string>
+    <string name="l10n_bio_setup_error_format">Ukusetha i-biometric: %1$s</string>
+
+    <!-- repository / view-model messages -->
+    <string name="l10n_err_start_session">Ukuqalisa iseshini ye-ECG kuhlulekile.</string>
+    <string name="l10n_err_net_start">Iphutha lenethiwekhi ngesikhathi sokuqalisa iseshini.</string>
+    <string name="l10n_err_stop_session">Ukuphothula iseshini ye-ECG kuhlulekile.</string>
+    <string name="l10n_err_net_stop">Iphutha lenethiwekhi ngesikhathi sokuphothula iseshini.</string>
+    <string name="l10n_err_history">Ukuthola umlando weseshini kuhlulekile.</string>
+    <string name="l10n_err_net_history">Iphutha lenethiwekhi ngesikhathi sokuthola umlando.</string>
+    <string name="l10n_err_samples">Ukuthola amasampula egagasi kuhlulekile.</string>
+    <string name="l10n_err_net_samples">Iphutha lenethiwekhi ngesikhathi sokuthola amasampula.</string>
+    <string name="l10n_err_device_status">Isimo sesiqaphi sehadiwe asitholakali.</string>
+    <string name="l10n_err_net_device_status">Iphutha lenethiwekhi ngesikhathi sokuthola isimo sedivayisi.</string>
+    <string name="l10n_err_register_device">Ukubhalisa isiqaphi sehadiwe kuhlulekile.</string>
+    <string name="l10n_err_net_register_device">Iphutha lenethiwekhi ngesikhathi sokubhalisa idivayisi.</string>
+    <string name="l10n_err_alerts">Ukuthola izexwayiso ezisebenzayo kuhlulekile.</string>
+    <string name="l10n_err_net_alerts">Iphutha lenethiwekhi ngesikhathi sokuthola izexwayiso.</string>
+    <string name="l10n_err_ingest">Ukucubungula idatha ye-telemetry kuhlulekile.</string>
+    <string name="l10n_err_net_ingest">Iphutha lenethiwekhi ngesikhathi sokucubungula i-telemetry.</string>
+    <string name="l10n_err_notes">Ukuthola amanothi odokotela kuhlulekile.</string>
+    <string name="l10n_err_net_notes">Iphutha lenethiwekhi ngesikhathi sokuthola amanothi odokotela.</string>
+    <string name="l10n_err_submit_note">Ukuthumela inothi lasekliniki kuhlulekile.</string>
+    <string name="l10n_err_net_submit_note">Iphutha lenethiwekhi ngesikhathi sokuthumela inothi lasekliniki.</string>
+    <string name="l10n_err_pdf">Ukudawunlodwa kombiko we-PDF kuhlulekile.</string>
+    <string name="l10n_err_net_pdf">Iphutha lenethiwekhi ngesikhathi sokudawunlodwa kombiko we-PDF.</string>
+    <string name="l10n_err_auth_no_user">Ukuqinisekiswa kuphumelele kodwa awukho umsebenzisi otholakele.</string>
+    <string name="l10n_err_sign_in">Ukungena kuhlulekile. Sicela uqinisekise imininingwane yakho.</string>
+    <string name="l10n_err_google_null">Ukuqinisekiswa kwe-Google kuphumelele kodwa umsebenzisi ubengekho.</string>
+    <string name="l10n_err_google_signin">Ukungena nge-Google kuhlulekile.</string>
+    <string name="l10n_err_account_null">Ukudalwa kwe-akhawunti kuphumelele kodwa into yomsebenzisi ibingekho.</string>
+    <string name="l10n_err_register">Ukubhalisa i-akhawunti kuhlulekile.</string>
+    <string name="l10n_err_load_profile">Ayikwazi ukulayisha iphrofayela. Sicela uzame futhi.</string>
+    <string name="l10n_err_update_profile">Ukubuyekeza imininingwane yephrofayela kuhlulekile.</string>
+    <string name="l10n_err_latest_session">Ayikwazi ukuthola iseshini yakamuva.</string>
+    <string name="l10n_err_query_alerts">Ukubuza izexwayiso kuhlulekile.</string>
+    <string name="l10n_err_email_password_required">Sicela ufake i-imeyili nephasiwedi yakho.</string>
+    <string name="l10n_err_required_fields">Yonke imikhakha edingekayo kufanele igcwaliswe.</string>
+    <string name="l10n_err_no_device_paired">Ayikho idivayisi ebhangqiwe. Bhangqa idivayisi ngaphambi kokuqala ukurekhoda.</string>
+
+    <!-- layout-only -->
+    <string name="l10n_power_source">Umthombo wamandla</string>
+    <string name="l10n_clinical_network">Inethiwekhi yasekliniki ye-PulseLink</string>
+    <string name="l10n_verified_practitioner_line">Ilayini yodokotela eqinisekisiwe</string>
+    <string name="l10n_power_5v_usb">5V USB</string>
+    <string name="l10n_id_format">I-ID: %1$s</string>
+
+    <!-- appearance -->
+    <string name="l10n_theme_system">Ukulandela isistimu</string>
+    <string name="l10n_theme_light">Okukhanyayo</string>
+    <string name="l10n_theme_dark">Okumnyama</string>
+
+    <!-- Added for full translation coverage -->
+    <string name="patient_profile_text_patient_id_pt_55210"></string>
+    <string name="patient_profile_text_spouse_27_83_444"></string>
+    <string name="profile_photo_take">Thatha isithombe</string>
+    <string name="profile_photo_choose">Khetha kugalari</string>
+    <string name="profile_photo_camera_unavailable">Ikhamera ayitholakali kule divayisi</string>
+    <string name="history_sort_newest">Okwakamuva kuqala</string>
+    <string name="history_sort_oldest">Okudala kuqala</string>
+    <string name="live_waiting_for_device">Kulindwe idatha ye-ECG evela kudivayisi</string>
+    <string name="doctor_live_no_session">Alikho iseshini ye-ECG bukhoma etholakalayo</string>
+    <string name="profile_no_doctor_number">Alikho inombolo yocingo kudokotela wakho</string>
+    <string name="alerts_chip_all_format">Zonke izexwayiso (%1$d)</string>
+    <string name="alerts_chip_critical_format">Ezibucayi (%1$d)</string>
+    <string name="alerts_chip_warning_format">Isexwayiso (%1$d)</string>
+    <string name="alerts_chip_system_format">Isistimu (%1$d)</string>
+    <string name="doctor_alert_details_text_eleanor_rigby">Isiguli</string>
+    <string name="doctor_ecg_session_details_text_marcus_thorne">Isiguli</string>
+    <string name="doctor_live_ecg_text_marcus_thorne">Isiguli</string>
+    <string name="doctor_patient_ecg_history_text_john_doe">Isiguli</string>
+    <string name="doctor_alert_details_text_id_mrn_88421">ID: Isalindile</string>
+    <string name="doctor_ecg_session_details_text_id_p_948271_oct">ID: Isalindile</string>
+    <string name="doctor_dashboard_text_marcus_reed">Azikabikho iziguli ezibalulekile okwamanje</string>
+    <string name="doctor_new_patient_report_text_alex_mercer">Isiguli esisha</string>
+    <string name="doctor_ecg_session_details_text_lead_i">I-Lead I</string>
+    <string name="doctor_live_ecg_text_lead_i">I-Lead I</string>
+    <string name="doctor_session_notes_text_lead_i">I-Lead I</string>
+    <string name="patient_ecg_device_monitor_text_lead_i">I-Lead I</string>
+    <string name="patient_ecg_session_details_text_lead_i">I-Lead I</string>
+    <string name="doctor_alert_details_text_bpm">bpm</string>
+    <string name="doctor_patient_profile_text_bpm">bpm</string>
+    <string name="session_bpm_format">%d bpm</string>
+    <string name="nav_patient_text_sos">SOS</string>
+    <string name="patient_emergency_sos_text_sos">SOS</string>
+    <string name="patient_profile_text_12_05_1958">Akunikeziwe</string>
+    <string name="patient_profile_text_27_82_555_0142">Akunikeziwe</string>
+    <string name="patient_profile_text_maria_johnson">Akunikeziwe</string>
+    <string name="patient_profile_text_dr_s_naidoo">Akunikezwanga okwamanje</string>
+    <string name="activity_main_text_hello_world">Sawubona mhlaba!</string>
+
+    <!-- Izexwayiso zesikhathi sangempela zokushaya kwenhliziyo, ukuya ku-SOS nokugeleza kweziguli -->
+    <string name="l10n_anomaly_irregular_msg">Kutholwe ukushaya kwenhliziyo okungalingani (%1$d BPM)</string>
+    <string name="l10n_anomaly_irregular_action">Isikhathi phakathi kokushaya kwenhliziyo asilingani. Hlala phansi, unganyakazi futhi ugcine ama-electrode endaweni yawo.</string>
+    <string name="l10n_arrhythmia_title_warning">Isexwayiso sokushaya kwenhliziyo</string>
+    <string name="l10n_arrhythmia_title_critical">Isexwayiso esibucayi sokushaya kwenhliziyo</string>
+    <string name="l10n_arrhythmia_body_format">%1$s\n\n%2$s</string>
+    <string name="l10n_arrhythmia_action_sos">Vula i-SOS</string>
+    <string name="l10n_arrhythmia_action_sos_now">Yana ku-SOS manje</string>
+    <string name="l10n_arrhythmia_action_dismiss">Cashisa</string>
+    <string name="l10n_arrhythmia_action_im_ok">Ngiyaphila</string>
+    <string name="l10n_arrhythmia_action_call_now">Shayela amasevisi aphuthumayo</string>
+    <string name="l10n_arrhythmia_action_start_sos">Qala ukubala phansi kwe-SOS</string>
+    <string name="l10n_arrhythmia_sos_banner_format">Kutholwe ngesikhathi sokuqoshwa kwe-ECG yakho: %1$s\n\n%2$s</string>
+    <string name="l10n_pair_first_title">Qala ngokuhlanganisa isiqaphi sakho</string>
+    <string name="l10n_pair_first_message">Asikho isiqaphi se-PulseLink esihlanganiswe ne-akhawunti yakho. Hlanganisa idivayisi yakho ukuze uqale ukuqoshwa kwe-ECG.</string>
+    <string name="l10n_pair_first_action">Hlanganisa idivayisi</string>
+    <string name="appearance_option_theme">Itimu</string>
+    <string name="appearance_option_text_size">Usayizi wombhalo</string>
+    <string name="text_size_small">Incane</string>
+    <string name="text_size_default">Okuzenzakalelayo</string>
+    <string name="text_size_large">Kukhulu</string>
+    <string name="text_size_extra_large">Kukhulu kakhulu</string>
+    <string name="appearance_option_high_contrast">Umehluko wombala ophezulu</string>
+    <string name="high_contrast_off">Kuvaliwe</string>
+    <string name="high_contrast_on">Kuvuliwe</string>
+    <string name="appearance_theme_desc">Khetha ukuthi i-PulseLink ibukeka kanjani: landela ifoni yakho, okukhanyayo noma okumnyama.</string>
+    <string name="appearance_text_size_desc">Hudulela isilayidi ukwenza umbhalo ube mncane noma mkhulu kuyo yonke i-app.</string>
+    <string name="appearance_high_contrast_desc">Imibala namaphethelo aqinile ukuze kufundeke kalula.</string>
+    <string name="appearance_option_color_blind">Kulungele abangaboni imibala kahle</string>
+    <string name="appearance_color_blind_desc">Kushintsha obomvu nokuluhlaza ngokuluhlaza okwesibhakabhaka, i-amber ne-magenta, futhi kwengeza izimo ezinkomba zesimo.</string>
+    <string name="text_size_preview_sample">Isigqi senhliziyo yakho sizinzile ku-72 BPM.</string>
+    <string name="voice_option">Usizo ngezwi</string>
+    <string name="voice_option_desc">Zwa izinga lokushaya kwenhliziyo, ukufundwa kwempilo nezaziso kufundwa ngokuzwakalayo, futhi sebenzisa imiyalo yezwi ukuzulazula ku-app.</string>
+    <string name="voice_enabled_spoken">Usizo ngezwi luvuliwe. Thinta inkinobho yemakrofoni bese usho umyalo, noma usho usizo ukuze uzwe ongakusho.</string>
+    <string name="voice_button_description">Umsizi wezwi. Thinta kabili ukusho umyalo. Thinta kabili ubambe ukuze uthole okunye okukhethwa kukho.</string>
+    <string name="voice_listen_prompt">Sho umyalo ngesiNgisi, isibonelo heart rate noma open notifications</string>
+    <string name="voice_not_available">Ukubona izwi akutholakali kule divayisi.</string>
+    <string name="voice_not_understood">Uxolo, angiqondanga. Sho help ukuze uzwe imiyalo.</string>
+    <string name="voice_help_spoken">Ungathi: ukushaya kwenhliziyo, funda isikrini, funda izaziso, vula ikhaya, vula isimo, vula imibiko, vula izilungiselelo, vula ulimi, buyela emuva, noma thula.</string>
+    <string name="voice_help_doctor_spoken">Ungathi: ukushaya kwenhliziyo, funda isikrini, funda izaziso, vula ikhaya, vula iziguli, vula imibiko, vula izilungiselelo, vula ulimi, buyela emuva, noma thula.</string>
+    <string name="voice_menu_title">Umsizi wezwi</string>
+    <string name="voice_menu_speak">Sho umyalo</string>
+    <string name="voice_menu_heart_rate">Zwa izinga lenhliziyo</string>
+    <string name="voice_menu_readings">Zwa ukufundwa kwempilo</string>
+    <string name="voice_menu_notifications">Zwa izaziso</string>
+    <string name="voice_menu_commands">Zwa imiyalo yezwi</string>
+    <string name="voice_heart_rate_current">Izinga lakho lenhliziyo samanje lingu-%1$d ukushaya ngomzuzu.</string>
+    <string name="voice_heart_rate_latest">Izinga lakho lenhliziyo elimaphakathi lakamuva bekungu-%1$d ukushaya ngomzuzu.</string>
+    <string name="voice_heart_rate_none">Akukabikho ukufundwa kwenhliziyo kulesi sikrini.</string>
+    <string name="voice_readings_none">Azikho izifundo zempilo kulesi sikrini.</string>
+    <string name="voice_notifications_none">Awunazo izaziso.</string>
+    <string name="voice_notifications_one">Unesaziso esisodwa esingafundiwe.</string>
+    <string name="voice_notifications_many">Unezaziso ezingafundiwe ezingu-%1$d.</string>
+    <string name="voice_notifications_all_read">Awunazo izaziso ezingafundiwe. Esakamuva yile:</string>
+    <string name="voice_notification_item">%1$s. %2$s.</string>
+    <string name="voice_opening">Ivula %1$s.</string>
+    <string name="voice_already_on">Usesikrinini esifanayo.</string>
+    <string name="voice_going_back">Iyabuya.</string>
+    <string name="voice_dest_dashboard">ideshibhodi</string>
+    <string name="voice_dest_monitoring">ukuqapha</string>
+    <string name="voice_dest_reports">imibiko</string>
+    <string name="voice_dest_emergency">isimo esiphuthumayo</string>
+    <string name="voice_dest_profile">iphrofayela</string>
+    <string name="voice_dest_settings">izilungiselelo</string>
+    <string name="voice_dest_notifications">izaziso</string>
+    <string name="voice_dest_patients">iziguli</string>
+    <string name="voice_dest_alerts">izixwayiso</string>
+    <string name="voice_dest_appearance">izilungiselelo zokubukeka</string>
+    <string name="voice_dest_devices">ukuphatha amadivayisi</string>
+    <string name="voice_dest_support">usizo nokwesekwa</string>
+    <string name="voice_dest_language">ulimi</string>
+    <string name="voice_dest_sync">isimo sokuvumelanisa</string>
+    <string name="a11y_heart_rate_reading">Izinga lenhliziyo, %1$s</string>
+    <string name="a11y_heart_rate_none">Izinga lenhliziyo, akukabikho ukufundwa</string>
+    <string name="a11y_session_timer">Isikhathi senkathi, %1$s</string>
+    <string name="a11y_ecg_chart">Ishathi lamagagasi e-ECG</string>
+    <string name="a11y_ecg_chart_with_rate">Ishathi lamagagasi e-ECG. %1$s</string>
+</resources>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/pulse_card"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvEnlargedTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ui_recorded_ecg"
+                android:textColor="@color/pulse_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvEnlargedSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/ui_assessment_not_inferred"
+                android:textColor="@color/pulse_text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnDialogZoomOut"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/ui_zoom_out"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_zoom_out"
+                app:tint="@color/pulse_text_secondary" />
+
+            <ImageButton
+                android:id="@+id/btnDialogZoomIn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/ui_zoom_in"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_zoom_in"
+                app:tint="@color/pulse_text_secondary" />
+
+            <ImageButton
+                android:id="@+id/btnDialogFitToggle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/ui_fit"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fullscreen"
+                app:tint="@color/pulse_text_secondary" />
+
+            <ImageButton
+                android:id="@+id/btnDialogClose"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_close"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_close"
+                app:tint="@color/pulse_text_primary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Waveform Paper Container -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginTop="14dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp">
+
+        <HorizontalScrollView
+            android:id="@+id/scrollEnlargedWaveform"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="horizontal">
+
+            <com.example.prog7314_poepart23.views.HospitalPaperEcgView
+                android:id="@+id/waveformEnlargedPaper"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </HorizontalScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Footer Instructions -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/ui_trace_help"
+        android:textColor="@color/pulse_text_hint"
+        android:textSize="11sp" />
+
+</LinearLayout>

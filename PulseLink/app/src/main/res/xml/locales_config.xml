@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Task 12: locales PulseLink ships translations for. Also exposes the app in the
+     system per-app language picker on Android 13 (API 33) and above. -->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="zu" />
+    <locale android:name="af" />
+</locale-config>

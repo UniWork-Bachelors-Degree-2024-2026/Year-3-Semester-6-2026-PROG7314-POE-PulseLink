@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PulseLinkAPI/PulseLinkAPI.csproj" />
+  <Project Path="PulseLinkAPI.Tests/PulseLinkAPI.Tests.csproj" />
+</Solution>

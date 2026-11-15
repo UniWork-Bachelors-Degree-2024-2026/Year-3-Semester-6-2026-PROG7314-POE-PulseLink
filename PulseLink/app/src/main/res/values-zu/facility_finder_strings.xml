@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facility_finder_title">Isitholi Sezikhungo Namamephu</string>
+    <string name="facility_search_hint">Sesha imitholampilo nezibhedlela eGqeberha...</string>
+    <string name="facility_filter_all">Zonke Izikhungo</string>
+    <string name="facility_filter_hospitals">Izibhedlela</string>
+    <string name="facility_filter_clinics">Imitholampilo</string>
+    <string name="facility_filter_chc">Izikhungo Zomphakathi</string>
+    <string name="facility_directions_action">Izikhombisi-ndlela ku-Google Maps</string>
+    <string name="facility_copy_coords">Kopisha Izixhumanisi</string>
+    <string name="facility_coords_copied">Izixhumanisi zikopishelwe ebhodini lokunamathisela</string>
+    <string name="facility_verified_date">Kubuyekezwe: %1$s</string>
+    <string name="facility_source_label">Umthombo: %1$s</string>
+    <string name="facility_offline_notice">Okungaxhunyiwe: kuboniswa uhla lwasendaweni oluqinisekisiwe</string>
+    <string name="facility_empty_search">Azikho izikhungo zezempilo ezitholakele ezihambisana no-\"%1$s\"</string>
+    <string name="facility_toggle_list">Buka Uhlu Olugcwele</string>
+    <string name="facility_toggle_map">Buka Imephu</string>
+    <string name="facility_select_pin_prompt">Thepha noma iyiphi iphini kumephu noma khetha ohlwini</string>
+    <string name="facility_disclaimer_short">Izindawo zokungena zezempilo zomphakathi eziqinisekisiwe kuphela. Ayisho ukuthunyelwa kwemoto yezimo eziphuthumayo.</string>
+
+    <!-- Touchscreen BLE background transfer strings -->
+    <string name="sync_ble_title">Dlulisa kusuka kusikrini Sokuthinta (BLE)</string>
+    <string name="sync_ble_subtitle">Ukuvumelanisa okuphephile kwasemuva kokurekhodiwe okuqediwe ku-SQLite yasendaweni</string>
+    <string name="sync_ble_btn">Xhuma Futhi Udlulise</string>
+    <string name="sync_ble_stage_disconnected">Isikrini sokuthinta sinqanyuliwe</string>
+    <string name="sync_ble_stage_connecting">Ixhumeka futhi igunyaza ishifu...</string>
+    <string name="sync_ble_stage_transferring">Kudluliswa okuqediwe okurekhodiwe...</string>
+    <string name="sync_ble_success_format">Kudluliswe okuqoshiwe okungu-%1$d (amaqoqo angu-%2$d)</string>
+    <string name="sync_ble_not_found">Asikho isikrini sokuthinta se-PulseLink esiboshiwe esitholakele. Qala ngokubopha kuzilungiselelo ze-Bluetooth.</string>
+</resources>

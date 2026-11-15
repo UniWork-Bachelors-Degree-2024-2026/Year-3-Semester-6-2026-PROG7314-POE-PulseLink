@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:cardBackgroundColor="@color/pulse_card"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ui_care_title"
+                android:textColor="@color/pulse_text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/ui_care_description"
+                android:textColor="@color/pulse_text_secondary"
+                android:textSize="12sp" />
+
+            <!-- Primary Condition -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/etCarePlanCondition"
+                android:text="@string/ui_care_condition"
+                android:textColor="@color/pulse_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCarePlanCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="@string/ui_care_condition_hint"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/pulse_text_primary"
+                android:textColorHint="@color/pulse_text_hint"
+                android:textSize="13sp" />
+
+            <!-- Medication 1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/ui_medication_one"
+                android:textColor="@color/pulse_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etCarePlanMed1Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="@string/ui_medication_name"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textColor="@color/pulse_text_primary"
+                    android:textColorHint="@color/pulse_text_hint"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/etCarePlanMed1Dose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="@string/ui_medication_dose"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textColor="@color/pulse_text_primary"
+                    android:textColorHint="@color/pulse_text_hint"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Medication 2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/ui_medication_two"
+                android:textColor="@color/pulse_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etCarePlanMed2Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="@string/ui_medication_name"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textColor="@color/pulse_text_primary"
+                    android:textColorHint="@color/pulse_text_hint"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/etCarePlanMed2Dose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="@string/ui_medication_dose"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textColor="@color/pulse_text_primary"
+                    android:textColorHint="@color/pulse_text_hint"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Instructions -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:labelFor="@id/etCarePlanInstructions"
+                android:text="@string/ui_care_instructions"
+                android:textColor="@color/pulse_text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCarePlanInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="72dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:gravity="top|start"
+                android:hint="@string/ui_care_instructions_hint"
+                android:padding="12dp"
+                android:textColor="@color/pulse_text_primary"
+                android:textColorHint="@color/pulse_text_hint"
+                android:textSize="13sp" />
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelCarePlan"
+                    style="@style/Widget.PulseLink.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                    android:background="@drawable/bg_button_outline"
+                    android:text="@string/cancel"
+                    android:textColor="@color/pulse_text_secondary"
+                    android:textSize="13sp"
+                    app:backgroundTint="@null" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveCarePlan"
+                    style="@style/Widget.PulseLink.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/bg_card_blue"
+                    android:text="@string/ui_save"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.cardview.widget.CardView>

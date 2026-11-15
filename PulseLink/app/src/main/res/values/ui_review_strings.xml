@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_status_paused">Paused</string>
+    <string name="ui_status_finalising">Finalising</string>
+    <string name="ui_status_discarded">Discarded</string>
+    <string name="ui_assessment_not_inferred">Recording status and estimated BPM do not establish a diagnosis. An authorised doctor must assess the completed report.</string>
+    <string name="ui_review_required">Clinical review required</string>
+    <string name="ui_provide_doctor_notes">Add doctor notes</string>
+    <string name="ui_ble_sync_recordings">Sync queued recordings over BLE</string>
+    <string name="ui_ble_pair_first">Pair %1$s using Bluetooth first, then retry the recording transfer. Bluetooth pairing is separate from nurse approval.</string>
+    <string name="ui_ble_transfer_failed">The recording transfer could not be completed. Check the device connection and try again. Pending recordings are retained.</string>
+    <string name="ui_care_plan_saved">Care plan saved.</string>
+    <string name="ui_care_plan_failed">Unable to save the care plan. Please try again.</string>
+    <string name="ui_ecg_review_title">Recorded ECG review: %1$s</string>
+    <string name="ui_ecg_review_subtitle">Single waveform; amplitude not clinically calibrated; duration %1$s</string>
+    <plurals name="ui_ble_transferred">
+        <item quantity="one">Transferred %d recording over BLE to the offline queue. API upload is still required.</item>
+        <item quantity="other">Transferred %d recordings over BLE to the offline queue. API upload is still required.</item>
+    </plurals>
+
+    <string name="ui_care_title">Update patient care plan</string>
+    <string name="ui_care_description">Record the assessment and care instructions.</string>
+    <string name="ui_care_condition">Clinical condition</string>
+    <string name="ui_care_condition_hint">Enter the assessed condition</string>
+    <string name="ui_medication_one">Medication 1</string>
+    <string name="ui_medication_two">Medication 2</string>
+    <string name="ui_medication_name">Medication name</string>
+    <string name="ui_medication_dose">Dose</string>
+    <string name="ui_care_instructions">Care instructions</string>
+    <string name="ui_care_instructions_hint">Enter instructions for the patient</string>
+    <string name="ui_save">Save</string>
+    <string name="ui_zoom_out">Zoom out</string>
+    <string name="ui_zoom_in">Zoom in</string>
+    <string name="ui_fit">Fit to view</string>
+    <string name="ui_full_screen">Open full screen</string>
+    <string name="ui_recorded_ecg">Recorded ECG</string>
+    <string name="ui_trace_help">Swipe to review the recording. Display size is not a clinically calibrated measurement.</string>
+
+    <string name="ui_voice_language_unavailable">Voice output is unavailable for this language. Check installed voices in Android text-to-speech settings. On-screen text remains available.</string>
+    <string name="ui_voice_help_staff">You can say: open home, open appearance, open language, go back, or stop.</string>
+</resources>

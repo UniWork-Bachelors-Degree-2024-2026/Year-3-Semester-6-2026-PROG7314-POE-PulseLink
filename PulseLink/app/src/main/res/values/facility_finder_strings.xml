@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facility_finder_title">Facility Finder &amp; Maps</string>
+    <string name="facility_search_hint">Search clinics &amp; hospitals in Gqeberha...</string>
+    <string name="facility_filter_all">All Facilities</string>
+    <string name="facility_filter_hospitals">Hospitals</string>
+    <string name="facility_filter_clinics">Clinics</string>
+    <string name="facility_filter_chc">CHCs</string>
+    <string name="facility_directions_action">Directions in Google Maps</string>
+    <string name="facility_copy_coords">Copy Coordinates</string>
+    <string name="facility_coords_copied">Coordinates copied to clipboard</string>
+    <string name="facility_verified_date">Reviewed: %1$s</string>
+    <string name="facility_source_label">Source: %1$s</string>
+    <string name="facility_offline_notice">Offline: showing verified local directory</string>
+    <string name="facility_empty_search">No healthcare facilities found matching \"%1$s\"</string>
+    <string name="facility_toggle_list">View Full List</string>
+    <string name="facility_toggle_map">View Map</string>
+    <string name="facility_select_pin_prompt">Tap any pin on the map or select from the list below</string>
+    <string name="facility_disclaimer_short">Verified public healthcare entrances only. Does not claim emergency vehicle dispatch.</string>
+
+    <!-- Touchscreen BLE background transfer strings -->
+    <string name="sync_ble_title">Transfer from Physical Touchscreen (BLE)</string>
+    <string name="sync_ble_subtitle">Secure background sync of completed recordings into local SQLite</string>
+    <string name="sync_ble_btn">Connect &amp; Transfer</string>
+    <string name="sync_ble_stage_disconnected">Touchscreen disconnected</string>
+    <string name="sync_ble_stage_connecting">Connecting &amp; authorising shift...</string>
+    <string name="sync_ble_stage_transferring">Transferring completed recordings...</string>
+    <string name="sync_ble_success_format">Transferred %1$d recording(s) (%2$d batches)</string>
+    <string name="sync_ble_not_found">No bonded PulseLink touchscreen found. Pair in Bluetooth settings first.</string>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Simplified front-view torso/shoulders outline used as the backdrop for the
+    3-lead AD8232 electrode placement diagram. Deliberately schematic (not
+    anatomical) so it renders crisply at small sizes.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="220dp"
+    android:viewportWidth="200"
+    android:viewportHeight="220">
+
+    <!-- Head -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="@color/pulse_text_hint"
+        android:strokeWidth="3"
+        android:pathData="M100,10 c15,0 27,12 27,27 c0,15 -12,27 -27,27 c-15,0 -27,-12 -27,-27 C73,22 85,10 100,10 Z" />
+
+    <!-- Neck -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="@color/pulse_text_hint"
+        android:strokeWidth="3"
+        android:pathData="M90,62 L90,80 M110,62 L110,80" />
+
+    <!-- Shoulders + torso -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="@color/pulse_text_hint"
+        android:strokeWidth="3"
+        android:pathData="M90,80
+                          C55,84 30,105 24,140
+                          L24,205
+                          L176,205
+                          L176,140
+                          C170,105 145,84 110,80
+                          Z" />
+
+    <!-- Sternum midline guide -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="@color/pulse_divider"
+        android:strokeWidth="2"
+        android:pathData="M100,84 L100,205" />
+
+    <!-- Collarbone guide -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="@color/pulse_divider"
+        android:strokeWidth="2"
+        android:pathData="M45,100 L155,100" />
+</vector>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="doctor_registered">Registered</string>
+    <string name="doctor_follow_up">Follow-up required</string>
+    <string name="doctor_load_more">Load more patients</string>
+    <string name="doctor_load_failed">Unable to load clinical information. Tap to retry.</string>
+    <string name="doctor_visits">Prior visits and assessments</string>
+    <string name="doctor_no_visits">No prior visits recorded.</string>
+    <string name="doctor_release">Release results</string>
+    <string name="doctor_release_confirm">Release the assessed results for patient viewing? Later draft changes stay private until released again.</string>
+    <string name="doctor_released">Results released</string>
+    <string name="doctor_completed_sessions">Completed recordings</string>
+</resources>

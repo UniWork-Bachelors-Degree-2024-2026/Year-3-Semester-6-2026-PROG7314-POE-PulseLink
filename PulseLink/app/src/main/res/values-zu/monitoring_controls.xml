@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Izilawuli zokuqapha. Ukuhumusha kusadinga ukubuyekezwa. -->
+    <string name="live_lead_disconnected_title">Intambo ye-ECG inqamukile</string>
+    <string name="live_lead_disconnected_message">Ukuqopha kumisiwe. Hlola intambo ye-ECG nama-electrode. Ukuqhubeka noma ukuqala kabusha kuyatholakala uma isiqapheli siqinisekisa ukuthi izintambo zixhumiwe.</string>
+    <string name="live_lead_reconnected_message">Isiqapheli siqinisekisa ukuthi izintambo zixhumiwe. Qhubeka nalokhu kuqopha, qala kabusha ngeseshini entsha yamasekhondi angu-90, noma ukulahle.</string>
+    <string name="live_resume_recording">Qhubeka</string>
+    <string name="live_restart_recording">Qala kabusha</string>
+    <string name="live_discard_recording">Lahla</string>
+    <string name="live_discard_failed">Ayikwazi ukulahla lokhu kuqopha. Kuhlala kumisiwe. Hlola uxhumano lwakho bese uzama futhi.</string>
+    <string name="live_session_starting">Sicela ulinde kuze iseshini yokuqopha ilunge.</string>
+    <string name="live_recording_paused">Kumisiwe</string>
+    <string name="live_state_sync_failed">Ayikwazi ukubuyekeza ukuqopha kuseva. Iseshini imiswe endaweni. Hlola uxhumano lwakho bese uzama futhi.</string>
+</resources>

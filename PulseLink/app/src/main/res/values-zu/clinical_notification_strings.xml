@@ -1,0 +1,22 @@
+<resources>
+    <string name="clinical_report_ready">Umbiko usulungile</string>
+    <string name="clinical_results_released">Imiphumela isikhishiwe</string>
+    <string name="clinical_report_ready_body">Umbiko we-ECG oqediwe usulungele ukubuyekezwa.</string>
+    <string name="clinical_results_released_body">Ithimba lakho lokunakekela selikhiphe imiphumela yakho. Vula i-PulseLink ukuze uyibuke.</string>
+    <string name="clinical_report_ready_named_body">Umbiko we-ECG oqediwe we-%1$s usulungele ukubuyekezwa kwezokwelapha.</string>
+    <string name="clinical_results_released_title">Ukuhlolwa kwe-ECG kukhishiwe</string>
+    <string name="clinical_results_released_doctor_body">U-%1$s ubuyekeze ukuqoshwa kwakho kwe-ECG futhi wakhipha isifinyezo sakho sezokwelapha.</string>
+    <string name="clinical_prescription_issued_title">Incwadi yemithi ibuyekeziwe</string>
+    <string name="clinical_prescription_issued_body">U-%1$s ubuyekeze uhlelo lwakho lwemithi: %2$s.</string>
+    <string name="clinical_prescription_issued_generic_body">Udokotela wakho ubuyekeze uhlelo lwakho lwemithi: %1$s.</string>
+    <string name="clinical_advice_issued_title">Isiqondiso sokulandela sezokwelapha</string>
+    <string name="clinical_advice_issued_body">U-%1$s wabelane ngesiqondiso sokulandela: %2$s</string>
+    <string name="clinical_advice_issued_generic_body">Isiqondiso sokulandela esivela ethimbeni lakho lokunakekela: %1$s</string>
+    <string name="clinical_doctor_activity_awaiting_title">I-ECG ilinde ukubuyekezwa: %1$s</string>
+    <string name="clinical_doctor_activity_awaiting_body">Kuqoshwe e-%1$s. Isilinganiso sokushaya kwenhliziyo: %2$d BPM.</string>
+    <string name="clinical_doctor_activity_draft_title">Ukuhlolwa kwesikhashana kulondoloziwe: %1$s</string>
+    <string name="clinical_doctor_activity_draft_body">Amanothi ezokwelapha alondoloziwe ku-%1$s futhi alinde ukukhishwa esigulini.</string>
+    <string name="clinical_doctor_activity_released_title">Imiphumela ikhishiwe: %1$s</string>
+    <string name="clinical_doctor_activity_released_body">Ukuhlolwa kwezokwelapha nombiko we-PDF kukhishiwe ku-%1$s.</string>
+    <string name="clinical_doctor_no_activity_subtitle">Ukuqoshwa kwe-ECG okuqediwe nezibuyekezo zokubuyekezwa kwezokwelapha kuzovela lapha.</string>
+</resources>

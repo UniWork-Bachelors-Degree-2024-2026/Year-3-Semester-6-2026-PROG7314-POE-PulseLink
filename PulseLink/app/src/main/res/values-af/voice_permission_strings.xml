@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="voice_mic_rationale_title">Laat mikrofoontoegang toe</string>
+    <string name="voice_mic_rationale_message">PulseLink gebruik die mikrofoon net wanneer jy op die stemknoppie tik, sodat jy opdragte soos \"hartklop\" of \"maak verslae oop\" kan sê. Jou stem word nie deur die app opgeneem of gestoor nie.</string>
+    <string name="voice_mic_allow">Gaan voort</string>
+    <string name="voice_mic_denied_title">Mikrofoontoegang is af</string>
+    <string name="voice_mic_denied_message">Stemopdragte het die mikrofoon nodig. Jy kan steeds die stemkieslys (hou die mikrofoonknoppie ingedruk) gebruik om jou hartklop, metings en kennisgewings te hoor. Laat die mikrofoon toe in die app-instellings om gesproke opdragte te gebruik.</string>
+    <string name="voice_mic_denied_spoken">Die mikrofoon is af, so gesproke opdragte is nie beskikbaar nie. Hou die mikrofoonknoppie ingedruk om eerder die stemkieslys te gebruik.</string>
+    <string name="voice_open_settings">Maak instellings oop</string>
+</resources>

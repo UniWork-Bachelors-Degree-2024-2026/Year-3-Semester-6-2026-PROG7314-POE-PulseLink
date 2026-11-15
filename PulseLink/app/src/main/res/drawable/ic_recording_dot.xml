@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    8dp pulsating recording beacon.
+
+    Two things loop forever, in sync (1.4 s per cycle):
+      1. a translucent halo grows out of the core and fades to nothing
+      2. the solid core blinks between full and 35% alpha (alpha blink loop)
+
+    Resting (un-started) frame is a plain solid red dot, so it also reads
+    correctly if animation is disabled or never started.
+
+    Animated drawables do not self-start. Call:
+        (imageView.drawable as? Animatable)?.start()
+    and .stop() when recording pauses or the screen leaves the foreground.
+-->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="8dp"
+            android:height="8dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+
+            <!-- Expanding halo -->
+            <group
+                android:name="halo"
+                android:pivotX="12"
+                android:pivotY="12"
+                android:scaleX="0.6"
+                android:scaleY="0.6">
+                <path
+                    android:name="halo_fill"
+                    android:fillAlpha="0"
+                    android:fillColor="@color/pulse_danger"
+                    android:pathData="M12,0.5a11.5,11.5 0,1 0,0 23a11.5,11.5 0,1 0,0 -23z" />
+            </group>
+
+            <!-- Solid core -->
+            <path
+                android:name="core"
+                android:fillColor="@color/pulse_danger"
+                android:pathData="M12,5a7,7 0,1 0,0 14a7,7 0,1 0,0 -14z" />
+        </vector>
+    </aapt:attr>
+
+    <!-- Halo: grow -->
+    <target android:name="halo">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:duration="1400"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="scaleX"
+                    android:repeatCount="-1"
+                    android:repeatMode="restart"
+                    android:valueFrom="0.6"
+                    android:valueTo="1"
+                    android:valueType="floatType" />
+                <objectAnimator
+                    android:duration="1400"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"
+                    android:propertyName="scaleY"
+                    android:repeatCount="-1"
+                    android:repeatMode="restart"
+                    android:valueFrom="0.6"
+                    android:valueTo="1"
+                    android:valueType="floatType" />
+            </set>
+        </aapt:attr>
+    </target>
+
+    <!-- Halo: fade out while growing -->
+    <target android:name="halo_fill">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="1400"
+                android:interpolator="@android:interpolator/linear"
+                android:propertyName="fillAlpha"
+                android:repeatCount="-1"
+                android:repeatMode="restart"
+                android:valueFrom="0.55"
+                android:valueTo="0"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+
+    <!-- Core: alpha blink (700 ms down + 700 ms back up = one 1.4 s cycle) -->
+    <target android:name="core">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="700"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="fillAlpha"
+                android:repeatCount="-1"
+                android:repeatMode="reverse"
+                android:valueFrom="1"
+                android:valueTo="0.35"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+
+</animated-vector>

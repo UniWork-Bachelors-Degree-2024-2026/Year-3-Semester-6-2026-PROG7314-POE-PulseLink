@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Colour-blind friendly palette combined with HIGH CONTRAST, LIGHT.
+    Checked on pure white: status text 8.5:1 or better (WCAG AAA), also on its pill background.
+    Only the status colours are overridden; everything else comes from the matching normal / high contrast palette.
+    Resource folder qualifier "desk" is the switch used by utils/ColorBlindHelper.kt.
+-->
+<resources>
+    <!-- Clinical status: blue = good, amber = warning, magenta = critical -->
+    <color name="pulse_success">#00507F</color>
+    <color name="pulse_success_bg">#E6F2FB</color>
+    <color name="pulse_danger">#7D0039</color>
+    <color name="pulse_danger_bg">#FBE0EC</color>
+    <color name="pulse_warning">#6B4200</color>
+    <color name="pulse_warning_bg">#FEF3C7</color>
+    <color name="pulse_ecg_red">#7D0039</color>
+
+    <!-- Live ECG monitor trace (was green) -->
+    <color name="ecg_monitor_trace">#56B4E9</color>
+
+    <!-- Material3 design tokens -->
+    <color name="normal_green">#00507F</color>
+    <color name="warning_amber">#6B4200</color>
+    <color name="alert_red">#7D0039</color>
+</resources>

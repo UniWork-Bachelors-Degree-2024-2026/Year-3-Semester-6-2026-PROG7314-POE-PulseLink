@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Patient dashboard and session status (Maxine Task 1) -->
+    <string name="nav_patient_text_session_status">Session</string>
+    <string name="voice_dest_session_status">session status</string>
+    <string name="patient_dashboard_subtitle_overview">Your session status, reports and notes from your care team.</string>
+    <string name="session_status_title">Session status</string>
+    <string name="session_status_last_session">Last session</string>
+    <string name="session_status_started">Started</string>
+    <string name="session_status_duration">Duration</string>
+    <string name="session_status_quality">Recording quality</string>
+    <string name="session_status_notes">Doctor notes</string>
+    <string name="session_status_upload">Upload status</string>
+    <string name="session_status_notes_available">Available</string>
+    <string name="session_status_notes_none">None yet</string>
+    <string name="session_status_upload_none_pending">Nothing waiting to upload</string>
+    <string name="session_status_upload_pending_format">%1$d waiting to upload</string>
+    <string name="session_status_quality_note">Recording quality describes the signal only. It is not a diagnosis.</string>
+    <string name="session_status_loading">Loading</string>
+    <string name="session_status_loading_message">Loading your session status</string>
+    <string name="session_status_pill_none">No sessions yet</string>
+    <string name="session_status_none_title">No sessions recorded yet</string>
+    <string name="session_status_none_message">Your nurse starts recordings on the PulseLink screen. Completed sessions appear here.</string>
+    <string name="session_status_error_title">Unable to load session status</string>
+    <string name="session_status_error_message">Check your connection and try again.</string>
+    <string name="session_status_retry">Try again</string>
+    <string name="session_status_view_details">View session details</string>
+    <string name="session_status_no_live_note">Recordings are started on the PulseLink touchscreen by your nurse. Live ECG is not shown on this phone.</string>
+    <string name="dashboard_completed_reports">Completed reports</string>
+    <string name="dashboard_released_notes">Released notes</string>
+    <string name="dashboard_history_title">History</string>
+    <string name="dashboard_history_subtitle">Browse past sessions and reports</string>
+    <string name="dashboard_stat_cd_format" translatable="false">%1$s: %2$s</string>
+</resources>

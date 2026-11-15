@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Colour-blind friendly palette, DARK.
+    Checked on the dark card #1C2638: status text 4.8:1 or better, status text on its pill background 4.3:1 or better.
+    Only the status colours are overridden; everything else comes from the matching normal / high contrast palette.
+    Resource folder qualifier "desk" is the switch used by utils/ColorBlindHelper.kt.
+-->
+<resources>
+    <!-- Clinical status: blue = good, amber = warning, magenta = critical -->
+    <color name="pulse_success">#56B4E9</color>
+    <color name="pulse_success_bg">#12344A</color>
+    <color name="pulse_danger">#E0689F</color>
+    <color name="pulse_danger_bg">#4A1D36</color>
+    <color name="pulse_warning">#F2C14E</color>
+    <color name="pulse_warning_bg">#41331B</color>
+    <color name="pulse_ecg_red">#F08CB8</color>
+
+    <!-- Live ECG monitor trace (was green) -->
+    <color name="ecg_monitor_trace">#56B4E9</color>
+
+    <!-- Material3 design tokens -->
+    <color name="normal_green">#56B4E9</color>
+    <color name="warning_amber">#F2C14E</color>
+    <color name="alert_red">#E0689F</color>
+</resources>

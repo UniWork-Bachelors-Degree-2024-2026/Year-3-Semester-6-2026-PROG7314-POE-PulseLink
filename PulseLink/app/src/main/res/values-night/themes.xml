@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme (dark). Same Material3 brand colour roles as values/themes.xml, with the
+         surface roles mapped onto the PulseLink dark tokens (res/values-night/colors.xml) so dialogs,
+         bottom sheets, menus and spinner pop-ups match the screens instead of using the default
+         purple-grey Material3 dark surfaces. -->
+    <style name="Base.Theme.PROG7314_POEPart23" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/clinical_blue</item>
+        <item name="colorSecondary">@color/vitality_teal</item>
+        <item name="colorError">@color/alert_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="android:windowBackground">@color/pulse_bg</item>
+        <item name="android:colorBackground">@color/pulse_bg</item>
+        <item name="colorSurface">@color/pulse_card</item>
+        <item name="colorSurfaceContainer">@color/pulse_card</item>
+        <item name="colorSurfaceContainerHigh">@color/pulse_card</item>
+        <item name="colorSurfaceContainerHighest">@color/pulse_input_bg</item>
+        <item name="colorSurfaceVariant">@color/pulse_input_bg</item>
+        <item name="colorOnSurface">@color/pulse_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/pulse_text_secondary</item>
+        <item name="colorOnBackground">@color/pulse_text_primary</item>
+        <item name="colorOutline">@color/pulse_border</item>
+        <item name="android:textColorPrimary">@color/pulse_text_primary</item>
+        <item name="android:textColorSecondary">@color/pulse_text_secondary</item>
+        <item name="android:textColorHint">@color/pulse_text_hint</item>
+    </style>
+</resources>

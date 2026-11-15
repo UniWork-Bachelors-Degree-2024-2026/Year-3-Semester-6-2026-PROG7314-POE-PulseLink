@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Destructive / emergency action button background.
+    8dp radius, #DC2626 fill, ripple press feedback clipped to the rounded shape.
+-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/pulse_ripple_on_filled">
+
+    <!-- Content -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/pulse_danger" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Mask keeps the ripple inside the rounded corners -->
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+</ripple>

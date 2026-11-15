@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ukungena ngeGoogle. Ukuhumusha kusadinga ukubuyekezwa. -->
+    <string name="google_sign_in_network_error">Ayikwazi ukuxhumana noGoogle. Hlola uxhumano lwakho lwe-inthanethi bese uzama futhi.</string>
+    <string name="google_sign_in_configuration_error">Ukungena ngeGoogle akusethwanga kahle. Sicela uxhumane nosekelo.</string>
+    <string name="google_sign_in_unavailable">Ukungena ngeGoogle akutholakali. Hlola ukuthi amasevisi e-Google Play abuyekeziwe bese uzama futhi.</string>
+    <string name="google_sign_in_failed">Ayikwazi ukungena ngeGoogle. Sicela uzame futhi.</string>
+</resources>

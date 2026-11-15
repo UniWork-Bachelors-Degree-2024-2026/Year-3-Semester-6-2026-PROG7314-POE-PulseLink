@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facility_finder_title">Fasiliteitsoeker &amp; Kaarte</string>
+    <string name="facility_search_hint">Soek klinieke &amp; hospitale in Gqeberha...</string>
+    <string name="facility_filter_all">Alle Fasiliteite</string>
+    <string name="facility_filter_hospitals">Hospitale</string>
+    <string name="facility_filter_clinics">Klinieke</string>
+    <string name="facility_filter_chc">Gemeenskapsentrums</string>
+    <string name="facility_directions_action">Aanwysings in Google Maps</string>
+    <string name="facility_copy_coords">Kopieer Koördinate</string>
+    <string name="facility_coords_copied">Koördinate gekopieer na knipbord</string>
+    <string name="facility_verified_date">Hersien: %1$s</string>
+    <string name="facility_source_label">Bron: %1$s</string>
+    <string name="facility_offline_notice">Vanlyn: wys geverifieerde plaaslike gids</string>
+    <string name="facility_empty_search">Geen gesondheidsfasiliteite gevind vir \"%1$s\"</string>
+    <string name="facility_toggle_list">Wys Volledige Lys</string>
+    <string name="facility_toggle_map">Wys Kaart</string>
+    <string name="facility_select_pin_prompt">Tik enige speld op die kaart of kies uit die lys</string>
+    <string name="facility_disclaimer_short">Slegs geverifieerde openbare gesondheidsingange. Maak geen eis oor noodvoertuiguitsending nie.</string>
+
+    <!-- Touchscreen BLE background transfer strings -->
+    <string name="sync_ble_title">Dra oor vanaf Fisiese Raakskerm (BLE)</string>
+    <string name="sync_ble_subtitle">Veilige agtergrond-sinchronisasie van voltooide opnames na plaaslike SQLite</string>
+    <string name="sync_ble_btn">Verbind &amp; Dra Oor</string>
+    <string name="sync_ble_stage_disconnected">Raakskerm ontkoppel</string>
+    <string name="sync_ble_stage_connecting">Verbind &amp; magtig skof...</string>
+    <string name="sync_ble_stage_transferring">Dra voltooide opnames oor...</string>
+    <string name="sync_ble_success_format">%1$d opname(s) oorgedra (%2$d groepe)</string>
+    <string name="sync_ble_not_found">Geen gebonde PulseLink-raakskerm gevind nie. Bind eers in Bluetooth-instellings.</string>
+</resources>

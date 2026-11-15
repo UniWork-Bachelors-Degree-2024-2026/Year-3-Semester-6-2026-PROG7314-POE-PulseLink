@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_status_paused">Kumiswe okwesikhashana</string>
+    <string name="ui_status_finalising">Kuyaqedelwa</string>
+    <string name="ui_status_discarded">Kulahliwe</string>
+    <string name="ui_assessment_not_inferred">Isimo sokuqoshwa nesilinganiso sokushaya kwenhliziyo akusona isifo esixilongiwe. Udokotela ogunyaziwe kufanele ahlole umbiko oqediwe.</string>
+    <string name="ui_review_required">Kudingeka ukuhlolwa udokotela</string>
+    <string name="ui_provide_doctor_notes">Engeza amanothi kadokotela</string>
+    <string name="ui_ble_sync_recordings">Vumelanisa okuqoshiwe okulindile nge-BLE</string>
+    <string name="ui_ble_pair_first">Qala ngokubhangqa i-%1$s nge-Bluetooth, bese uzama ukudlulisa okuqoshiwe futhi. Ukubhangqa nge-Bluetooth kuhlukile ekuvunyweni komhlengikazi.</string>
+    <string name="ui_ble_transfer_failed">Ukudluliswa kokuqoshiwe akuphelanga. Hlola uxhumano lwedivayisi bese uzama futhi. Okuqoshiwe okulindile kugciniwe.</string>
+    <string name="ui_care_plan_saved">Uhlelo lokunakekelwa lugciniwe.</string>
+    <string name="ui_care_plan_failed">Uhlelo lokunakekelwa alukwazanga ukugcinwa. Sicela uzame futhi.</string>
+    <string name="ui_ecg_review_title">Ukubuyekezwa kwe-ECG eqoshiwe: %1$s</string>
+    <string name="ui_ecg_review_subtitle">Igagasi elilodwa; ubukhulu abukalinganiselwa ukusetshenziswa kwezokwelapha; ubude besikhathi %1$s</string>
+    <plurals name="ui_ble_transferred">
+        <item quantity="one">Kudluliselwe okurekhodiwe okungu-%d nge-BLE ohlwini olulindile. Kusadingeka ukulayisha nge-API.</item>
+        <item quantity="other">Kudluliselwe okurekhodiwe okungu-%d nge-BLE ohlwini olulindile. Kusadingeka ukulayisha nge-API.</item>
+    </plurals>
+
+    <string name="ui_care_title">Buyekeza uhlelo lokunakekelwa kwesiguli</string>
+    <string name="ui_care_description">Bhala ukuhlolwa nemiyalelo yokunakekelwa.</string>
+    <string name="ui_care_condition">Isimo sezempilo</string>
+    <string name="ui_care_condition_hint">Faka isimo esihloliwe</string>
+    <string name="ui_medication_one">Umuthi 1</string>
+    <string name="ui_medication_two">Umuthi 2</string>
+    <string name="ui_medication_name">Igama lomuthi</string>
+    <string name="ui_medication_dose">Umthamo</string>
+    <string name="ui_care_instructions">Imiyalelo yokunakekelwa</string>
+    <string name="ui_care_instructions_hint">Faka imiyalelo yesiguli</string>
+    <string name="ui_save">Gcina</string>
+    <string name="ui_zoom_out">Sondeza kude</string>
+    <string name="ui_zoom_in">Sondeza eduze</string>
+    <string name="ui_fit">Linganisela esikrinini</string>
+    <string name="ui_full_screen">Vula isikrini esigcwele</string>
+    <string name="ui_recorded_ecg">I-ECG eqoshiwe</string>
+    <string name="ui_trace_help">Swayipha ukuze ubuke okuqoshiwe. Usayizi obonisiwe awusona isilinganiso esiqinisekisiwe sezokwelapha.</string>
+
+    <string name="ui_voice_language_unavailable">Ukufundwa ngezwi akutholakali ngalolu limi. Hlola amazwi afakiwe kuzilungiselelo ze-Android zokufunda umbhalo ngezwi. Umbhalo usesekhona esikrinini.</string>
+    <string name="ui_voice_help_staff">Ungathi: vula ikhaya, vula ukubukeka, vula ulimi, buyela emuva, noma thula.</string>
+</resources>

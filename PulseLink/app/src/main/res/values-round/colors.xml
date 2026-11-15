@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    High contrast, LIGHT palette (used when Settings > Appearance > High contrast is on and the theme is light).
+    Pure white surfaces, near-black text and strong borders. Contrast checked against the #FFFFFF background:
+    body text 21:1, secondary text >= 14:1, hints >= 10:1, brand / status text and icons >= 7:1 on white (WCAG AAA),
+    borders and dividers >= 7:1. Filled buttons keep white text at >= 12:1.
+    ECG paper / monitor tokens are deliberately NOT overridden: hospital ECG paper stays as it is.
+    The folder name is "round" because that is the resource qualifier the app switches on for this mode
+    (see utils/HighContrastHelper.kt).
+-->
+<resources>
+    <!-- Brand -->
+    <color name="pulse_primary">#0B1F4B</color>
+    <color name="pulse_primary_dark">#000000</color>
+    <color name="pulse_primary_light">#1A2F5E</color>
+    <color name="pulse_accent_teal">#00594F</color>
+    <color name="pulse_action_cyan">#004E8C</color>
+    <color name="pulse_teal_bg">#D5F5EF</color>
+    <color name="pulse_blue_bg">#DCEEFF</color>
+
+    <!-- Filled brand surfaces (white text on top) -->
+    <color name="pulse_primary_fill">#0B1F4B</color>
+    <color name="pulse_primary_fill_light">#12306F</color>
+
+    <!-- Date picker -->
+    <color name="pulse_picker_accent">#003E73</color>
+    <color name="pulse_picker_on_accent">#FFFFFF</color>
+
+    <!-- Backgrounds & neutrals -->
+    <color name="pulse_bg">#FFFFFF</color>
+    <color name="pulse_card">#FFFFFF</color>
+    <color name="pulse_text_primary">#000000</color>
+    <color name="pulse_text_secondary">#1F2937</color>
+    <color name="pulse_text_hint">#374151</color>
+    <color name="pulse_border">#111827</color>
+    <color name="pulse_border_strong">#000000</color>
+    <color name="pulse_divider">#374151</color>
+    <color name="pulse_input_bg">#FFFFFF</color>
+    <color name="pulse_avatar_bg">#D1D5DB</color>
+
+    <!-- Clinical status -->
+    <color name="pulse_success">#005F33</color>
+    <color name="pulse_success_bg">#D1FAE5</color>
+    <color name="pulse_danger">#A30000</color>
+    <color name="pulse_danger_bg">#FEE2E2</color>
+    <color name="pulse_warning">#7A4100</color>
+    <color name="pulse_warning_bg">#FEF3C7</color>
+    <color name="pulse_ecg_red">#B00000</color>
+    <color name="pulse_track_bg">#8793A6</color>
+    <color name="pulse_nav_inactive">#374151</color>
+    <color name="pulse_status_offline">#4B5563</color>
+    <color name="pulse_ripple_on_light">#29000000</color>
+
+    <!-- Material3 design tokens -->
+    <color name="clinical_blue">#0B1F4B</color>
+    <color name="vitality_teal">#00594F</color>
+    <color name="normal_green">#005F33</color>
+    <color name="warning_amber">#7A4100</color>
+    <color name="alert_red">#A30000</color>
+    <color name="surface_bg">#FFFFFF</color>
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#1F2937</color>
+    <color name="text_body">#111827</color>
+
+    <!-- Shimmer skeletons -->
+    <color name="pulse_shimmer_base">#D1D5DB</color>
+    <color name="pulse_shimmer_highlight">#F3F4F6</color>
+</resources>

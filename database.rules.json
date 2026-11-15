@@ -1,0 +1,38 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "accessDirectory": { ".read": false, ".write": false },
+    "clinicalCarePlans": { ".read": false, ".write": false },
+    "patientReleases": { ".read": false, ".write": false },
+    "recordingsV2": { ".read": false, ".write": false },
+    "recordingChunksV2": { ".read": false, ".write": false },
+    "patientRecordingsV2": { "$patientId": { ".read": false, ".write": false, ".indexOn": ["sessionId"] } },
+    "recordingNotesV2": { ".read": false, ".write": false },
+    "recordingAlertsV2": { ".read": false, ".write": false },
+    "deviceStateV2": { ".read": false, ".write": false },
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid && newData.exists()",
+        ".validate": "newData.hasChildren(['uid', 'email', 'displayName', 'role']) && newData.child('care_plan').val() === data.child('care_plan').val()",
+        "uid": { ".validate": "newData.isString() && newData.val() === auth.uid" },
+        "email": { ".validate": "newData.isString() && newData.val().length <= 254" },
+        "displayName": { ".validate": "newData.isString() && newData.val().length <= 160" },
+        "role": { ".validate": "newData.isString() && ((!data.exists() && newData.val() === 'patient') || (data.exists() && newData.val() === data.val()))" },
+        "requestedRole": { ".validate": "newData.val() === 'patient' || newData.val() === 'doctor' || newData.val() === 'nurse'" },
+        "createdAtUtc": { ".validate": "newData.isNumber() && ((!data.exists() && newData.val() > 0) || newData.val() === data.val())" },
+        "care_plan": { ".validate": "newData.val() === data.val()" },
+        "$field": {
+          ".validate": "($field === 'phoneNumber' || $field === 'dateOfBirth' || $field === 'gender' || $field === 'emergencyContactName' || $field === 'emergencyContactPhone' || $field === 'emergencyContactRelationship' || $field === 'assignedDoctorName' || $field === 'specialization' || $field === 'practiceNumber' || $field === 'hospitalAffiliation') && newData.isString() && newData.val().length <= 250"
+        }
+      }
+    },
+    "notifications": {
+      "$uid": { ".read": "auth != null && auth.uid === $uid", ".write": false }
+    },
+    "alerts": { ".read": false, ".write": false },
+    "telemetry": { ".read": false, ".write": false },
+    "sessions": { ".read": false, ".write": false }
+  }
+}

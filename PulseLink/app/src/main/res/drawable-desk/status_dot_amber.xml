@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Colour-blind friendly version of the amber status dot: a TRIANGLE, so "Warning" can be told apart
+    from the circle (normal) and the diamond (critical) without relying on colour.
+    Used automatically when Settings > Appearance > Colour-blind friendly is on.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="10dp"
+    android:height="10dp"
+    android:viewportWidth="10"
+    android:viewportHeight="10">
+    <path
+        android:fillColor="@color/pulse_warning"
+        android:pathData="M5,0.5L10,9.5L0,9.5z" />
+</vector>

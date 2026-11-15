@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="voice_mic_rationale_title">Vumela ukufinyelela imakrofoni</string>
+    <string name="voice_mic_rationale_message">I-PulseLink isebenzisa imakrofoni kuphela uma ucindezela inkinobho yezwi, ukuze ukwazi ukusho imiyalo efana nokuthi \"ukushaya kwenhliziyo\". Izwi lakho alirekhodwa noma ligcinwe yi-app.</string>
+    <string name="voice_mic_allow">Qhubeka</string>
+    <string name="voice_mic_denied_title">Ukufinyelela imakrofoni kuvaliwe</string>
+    <string name="voice_mic_denied_message">Imiyalo yezwi idinga imakrofoni. Usengasebenzisa imenyu yezwi (cindezela unyakazise inkinobho yemakrofoni) ukuze uzwe ukushaya kwenhliziyo, izilinganiso nezaziso zifundwa phezulu. Ukuze usebenzise imiyalo ekhulunywayo, vumela imakrofoni ezilungiselelweni ze-app.</string>
+    <string name="voice_mic_denied_spoken">Imakrofoni ivaliwe, ngakho imiyalo ekhulunywayo ayitholakali. Cindezela unyakazise inkinobho yemakrofoni ukuze usebenzise imenyu yezwi.</string>
+    <string name="voice_open_settings">Vula izilungiselelo</string>
+</resources>

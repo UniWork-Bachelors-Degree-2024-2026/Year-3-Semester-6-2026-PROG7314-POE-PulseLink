@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="inbox_empty">Nog geen kennisgewings nie. Nuwe opdaterings sal hier verskyn.</string>
+    <string name="speciality_edit">Werk mediese spesialiteit by</string>
+    <string name="speciality_hint">Voer jou mediese spesialiteit in</string>
+    <string name="speciality_invalid">Voer tussen 2 en 160 karakters in.</string>
+    <string name="speciality_failed">Kan nie stoor nie. Kontroleer jou verbinding en probeer weer.</string>
+    <string name="speciality_saving">Stoor tans spesialiteit...</string>
+</resources>

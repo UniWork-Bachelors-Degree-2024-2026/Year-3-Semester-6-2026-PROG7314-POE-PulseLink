@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ideshibhodi yesiguli nesimo seseshini (Maxine Task 1) -->
+    <string name="nav_patient_text_session_status">Iseshini</string>
+    <string name="voice_dest_session_status">isimo seseshini</string>
+    <string name="patient_dashboard_subtitle_overview">Isimo seseshini yakho, imibiko namanothi avela ethimbeni lakho lokunakekela.</string>
+    <string name="session_status_title">Isimo seseshini</string>
+    <string name="session_status_last_session">Iseshini yokugcina</string>
+    <string name="session_status_started">Kwaqala</string>
+    <string name="session_status_duration">Ubude besikhathi</string>
+    <string name="session_status_quality">Ikhwalithi yokuqoshwa</string>
+    <string name="session_status_notes">Amanothi kadokotela</string>
+    <string name="session_status_upload">Isimo sokulayisha</string>
+    <string name="session_status_notes_available">Ayatholakala</string>
+    <string name="session_status_notes_none">Akukabikho okwamanje</string>
+    <string name="session_status_upload_none_pending">Akukho okulindele ukulayishwa</string>
+    <string name="session_status_upload_pending_format">%1$d kulindele ukulayishwa</string>
+    <string name="session_status_quality_note">Ikhwalithi yokuqoshwa ichaza uphawu kuphela. Akuyona ukuxilongwa.</string>
+    <string name="session_status_loading">Iyalayisha</string>
+    <string name="session_status_loading_message">Iyalayisha isimo seseshini yakho</string>
+    <string name="session_status_pill_none">Awakabikho amaseshini</string>
+    <string name="session_status_none_title">Awakabikho amaseshini aqoshiwe</string>
+    <string name="session_status_none_message">Unesi wakho uqala ukuqosha esikrinini se-PulseLink. Amaseshini aqediwe avela lapha.</string>
+    <string name="session_status_error_title">Ayikwazi ukulayisha isimo seseshini</string>
+    <string name="session_status_error_message">Hlola uxhumano lwakho bese uyazama futhi.</string>
+    <string name="session_status_retry">Zama futhi</string>
+    <string name="session_status_view_details">Buka imininingwane yeseshini</string>
+    <string name="session_status_no_live_note">Ukuqosha kuqalwa unesi esikrinini sokuthinta se-PulseLink. I-ECG ephilayo ayibonisiwe kule foni.</string>
+    <string name="dashboard_completed_reports">Imibiko eqediwe</string>
+    <string name="dashboard_released_notes">Amanothi akhishiwe</string>
+    <string name="dashboard_history_title">Umlando</string>
+    <string name="dashboard_history_subtitle">Phequlula amaseshini nemibiko edlule</string>
+</resources>

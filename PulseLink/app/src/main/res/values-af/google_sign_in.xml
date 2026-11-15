@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Google-aanmelding. Vertalings moet nog nagegaan word. -->
+    <string name="google_sign_in_network_error">Kan nie met Google koppel nie. Kontroleer jou internetverbinding en probeer weer.</string>
+    <string name="google_sign_in_configuration_error">Google-aanmelding is nie korrek opgestel nie. Kontak asseblief ondersteuning.</string>
+    <string name="google_sign_in_unavailable">Google-aanmelding is nie beskikbaar nie. Kontroleer dat Google Play-dienste op datum is en probeer weer.</string>
+    <string name="google_sign_in_failed">Kan nie met Google aanmeld nie. Probeer asseblief weer.</string>
+</resources>

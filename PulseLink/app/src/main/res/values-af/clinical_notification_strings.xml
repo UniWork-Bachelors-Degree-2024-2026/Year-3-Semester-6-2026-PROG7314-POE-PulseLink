@@ -1,0 +1,22 @@
+<resources>
+    <string name="clinical_report_ready">Verslag gereed</string>
+    <string name="clinical_results_released">Uitslae vrygestel</string>
+    <string name="clinical_report_ready_body">’n Voltooide EKG-verslag is gereed vir u hersiening.</string>
+    <string name="clinical_results_released_body">U sorgspan het u uitslae vrygestel. Maak PulseLink oop om dit te sien.</string>
+    <string name="clinical_report_ready_named_body">Voltooide EKG-verslag vir %1$s is gereed vir kliniese hersiening.</string>
+    <string name="clinical_results_released_title">EKG-assessering vrygestel</string>
+    <string name="clinical_results_released_doctor_body">%1$s het u EKG-opname hersien en u kliniese opsomming vrygestel.</string>
+    <string name="clinical_prescription_issued_title">Voorskrif opgedateer</string>
+    <string name="clinical_prescription_issued_body">%1$s het u medikasieplan opgedateer: %2$s.</string>
+    <string name="clinical_prescription_issued_generic_body">U dokter het u medikasieplan opgedateer: %1$s.</string>
+    <string name="clinical_advice_issued_title">Kliniese opvolgleiding</string>
+    <string name="clinical_advice_issued_body">%1$s het opvolgleiding gedeel: %2$s</string>
+    <string name="clinical_advice_issued_generic_body">Opvolgleiding van u sorgspan: %1$s</string>
+    <string name="clinical_doctor_activity_awaiting_title">EKG wag vir hersiening: %1$s</string>
+    <string name="clinical_doctor_activity_awaiting_body">Opgeneem by %1$s. Prototipe gemiddelde pols: %2$d BPM.</string>
+    <string name="clinical_doctor_activity_draft_title">Konsepassessering gestoor: %1$s</string>
+    <string name="clinical_doctor_activity_draft_body">Kliniese notas vir %1$s gestoor en wag vir pasiëntvrystelling.</string>
+    <string name="clinical_doctor_activity_released_title">Uitslae vrygestel: %1$s</string>
+    <string name="clinical_doctor_activity_released_body">Kliniese assessering en PDF-verslag vrygestel vir %1$s.</string>
+    <string name="clinical_doctor_no_activity_subtitle">Voltooide EKG-opnames en kliniese hersieningsopdaterings sal hier verskyn.</string>
+</resources>

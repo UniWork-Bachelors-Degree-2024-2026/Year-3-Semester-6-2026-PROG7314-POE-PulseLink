@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Essential permissions for PulseLink remote telemetry and hardware notifications -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Voice assistance: the microphone is used only for voice commands, and is asked for at runtime. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" tools:targetApi="s" />
+
+    <!-- Android 11+ package visibility: lets Voice assistance find TTS/speech engines, and enables Google Maps intent resolution. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <intent>
+            <action android:name="android.speech.action.RECOGNIZE_SPEECH" />
+        </intent>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
+
+    <!-- Release hardening notes
+         - Application label is @string/app_name ("PulseLink").
+         - Theme.PROG7314_POEPart23 extends Theme.Material3.DayNight.NoActionBar and is set on
+           <application>, so every activity inherits Material3.
+         - Every activity is locked to portrait.
+         - SplashActivity is the ONLY exported component declared by this app. Every other activity is exported=false,
+           so other apps cannot start it with an explicit or implicit intent. In-app navigation and
+           notification PendingIntents are unaffected because they run under this app's identity.
+         - android:parentActivityName gives each screen a logical Up target. Top-level screens
+           (Splash, Login, both dashboards) intentionally have no parent. -->
+    <application
+        android:name=".PulseLinkApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PROG7314_POEPart23">
+
+        <!-- ===== Launch and authentication ===== -->
+
+        <!-- Sole entry point (launcher). The only exported component. -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Root of the auth flow; Splash finishes itself, so there is nothing to navigate Up to. -->
+        <activity android:name=".SiteAccessActivity" android:exported="false"
+            android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".BiometricSetupActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".BiometricLoginActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:parentActivityName=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ===== Patient area (home: PatientDashboardActivity) ===== -->
+
+        <!-- Patient home. -->
+        <activity
+            android:name=".PatientDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Session status: destination of the second patient bottom bar tab. -->
+        <activity
+            android:name=".PatientSessionStatusActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Reviewed Public Healthcare Facility Directory and Google Maps Navigation. -->
+        <activity
+            android:name=".FacilityFinderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DeviceManagementActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DevicePairingActivity"
+            android:exported="false"
+            android:parentActivityName=".DeviceManagementActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".EcgDeviceMonitorActivity"
+            android:exported="false"
+            android:parentActivityName=".DeviceManagementActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Recording is started on the PulseLink touchscreen. The former Android pre-session check and
+             live ECG monitoring screens are intentionally not declared, so they cannot be opened. -->
+
+        <!-- Step-by-step AD8232 3-lead electrode placement guide. -->
+        <activity
+            android:name=".ElectrodePlacementGuideActivity"
+            android:exported="false"
+            android:parentActivityName=".HelpSupportActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".PatientEcgHistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".SessionDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientEcgHistoryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".SessionReportPreviewActivity"
+            android:exported="false"
+            android:parentActivityName=".SessionDetailsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".EmergencySosActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".PatientProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".OfflineSyncStatusActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".Patient_Settings"
+            android:exported="false"
+            android:parentActivityName=".PatientDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ===== Screens shared by patients and doctors (reached from either Settings screen) ===== -->
+
+        <activity
+            android:name=".SecurityPasswordActivity"
+            android:exported="false"
+            android:parentActivityName=".Patient_Settings"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false"
+            android:parentActivityName=".Patient_Settings"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".NotificationDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".NotificationsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".AppearanceActivity"
+            android:exported="false"
+            android:parentActivityName=".Patient_Settings"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".LanguageSelectionActivity"
+            android:exported="false"
+            android:parentActivityName=".Patient_Settings"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".HelpSupportActivity"
+            android:exported="false"
+            android:parentActivityName=".Patient_Settings"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- About, Legal & Medical Privacy portal. -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:parentActivityName=".Patient_Settings"
+            android:screenOrientation="portrait" />
+
+        <!-- ===== Doctor area (home: DoctorDashboardActivity) ===== -->
+
+        <!-- Doctor home. -->
+        <activity
+            android:name=".DoctorDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".PatientListActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorPatientProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorPatientEcgHistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorPatientProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorEcgSessionDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorPatientEcgHistoryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".NewPatientReportActivity"
+            android:exported="false"
+            android:parentActivityName=".PatientListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorLiveEcgActivity"
+            android:exported="false"
+            android:parentActivityName=".NewPatientReportActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorSessionNotesActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorLiveEcgActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorAlertsActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorAlertDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorAlertsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorReportsActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorReportDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorReportsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DoctorSettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".DoctorProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- AppCompat per-app language backport for devices below Android 13 -->
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="false" />
+        </service>
+
+        <!-- Firebase Cloud Messaging Push Notification Service -->
+        <service
+            android:name=".messaging.PulseLinkMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Shares the camera capture file for "Take photo" on the profile screens -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>
