@@ -1,3 +1,9 @@
+# PulseLink featured in The Herald Newspaper- 23rd of November 2026
+
+<img width="1096" height="815" alt="Screenshot 2026-11-23 184233" src="https://github.com/user-attachments/assets/40bf8efb-e31f-4d26-be09-4b8e15ef328b" />
+
+---
+
 <p align="center">
   <img src="https://miro.medium.com/max/2048/1*OohqW5DGh9CQS4hLY5FXzA.png" height="230" alt="PulseLink Banner"/>
 </p>
