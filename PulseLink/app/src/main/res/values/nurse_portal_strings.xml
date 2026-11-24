@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Role & Registration -->
+    <string name="l10n_role_nurse">Nurse</string>
+    <string name="voice_dest_nurse_patients">Patients</string>
+    <string name="voice_dest_nurse_monitor">Monitor</string>
+    <string name="voice_dest_nurse_chat">Support chat</string>
+    <string name="voice_dest_nurse_settings">Settings</string>
+    <string name="voice_devices_nurse_only">Device management is restricted to authorised clinic nursing staff.</string>
+
+    <!-- Nurse Bottom Navigation -->
+    <string name="nav_nurse_dashboard_label">Dashboard</string>
+    <string name="nav_nurse_patients_label">Patients</string>
+    <string name="nav_nurse_monitor_label">Monitor</string>
+    <string name="nav_nurse_support_label">Support</string>
+
+    <!-- Nurse Dashboard -->
+    <string name="nurse_ui_title_dashboard">Nurse Dashboard</string>
+    <string name="nurse_ui_greeting_format">Good day, %1$s</string>
+    <string name="nurse_ui_greeting_subtitle">Clinic nurse workflow, hardware telemetry and patient intake.</string>
+    <string name="nurse_ui_assigned_site_format">Assigned site: %1$s</string>
+    <string name="nurse_ui_assigned_site_none">Assigned site: Pending administrator assignment</string>
+    <string name="nurse_ui_shift_card_title">Shift &amp; Touchscreen Authorisation</string>
+    <string name="nurse_ui_shift_pill_active">ACTIVE 8H SHIFT</string>
+    <string name="nurse_ui_shift_pill_expired">SHIFT EXPIRED</string>
+    <string name="nurse_ui_shift_pill_none">CODE REQUIRED</string>
+    <string name="nurse_ui_approved_screen_label">Approved touchscreen</string>
+    <string name="nurse_ui_shift_expiry_label">Shift status</string>
+    <string name="nurse_ui_btn_authorise_screen">Authorise Touchscreen</string>
+    <string name="nurse_ui_btn_authorise_another">Authorise Another Screen</string>
+    <string name="nurse_ui_btn_sync_ble">Synchronise BLE Recordings</string>
+    <string name="nurse_ui_active_patient_title">Active Patient Session</string>
+    <string name="nurse_ui_active_patient_none_title">No clinic patient selected</string>
+    <string name="nurse_ui_active_patient_none_subtitle">Select or register a patient from the clinic queue before starting an ECG capture.</string>
+    <string name="nurse_ui_selected_patient_label">Selected patient</string>
+    <string name="nurse_ui_attending_doctor_format">Attending Doctor: %1$s</string>
+    <string name="nurse_ui_btn_start_precheck">Start Pre-Session Check</string>
+    <string name="nurse_ui_btn_select_register_patient">Select / Register Patient</string>
+    <string name="nurse_ui_hardware_card_title">Hardware &amp; Telemetry Link</string>
+    <string name="nurse_ui_hardware_online">Link Active</string>
+    <string name="nurse_ui_hardware_offline">Not Linked</string>
+    <string name="nurse_ui_hardware_unit_label">Paired hardware unit</string>
+    <string name="nurse_ui_hardware_ble_label">Touchscreen BLE</string>
+    <string name="nurse_ui_hardware_ble_bonded">Bonded (%1$s)</string>
+    <string name="nurse_ui_hardware_ble_not_bonded">Not bonded</string>
+    <string name="nurse_ui_hardware_queue_label">Offline SQLite queue</string>
+    <string name="nurse_ui_hardware_queue_count">%1$d pending</string>
+    <string name="nurse_ui_btn_device_management">Device Management &amp; BLE</string>
+    <string name="nurse_ui_chat_card_title">Patient Support Live Chat</string>
+    <string name="nurse_ui_chat_card_empty">No patient support messages yet.</string>
+    <string name="nurse_ui_btn_open_chat">Open Live Support Chat</string>
+    <string name="nurse_ui_ble_sync_requires_shift">Authorise an 8-hour touchscreen shift first to synchronise BLE recordings.</string>
+    <string name="nurse_ui_ble_permission_missing">Allow Bluetooth permission to connect to the bonded touchscreen.</string>
+
+    <!-- Modals (Commit d37c0c96 Style) -->
+    <string name="nurse_ui_modal_auth_title">Authorise Clinic Touchscreen</string>
+    <string name="nurse_ui_modal_auth_desc">Enter the touchscreen unit identifier (e.g. PulseLink-1EBA94) and the 6-digit approval code shown on the physical screen.</string>
+    <string name="nurse_ui_modal_device_id_hint">Touchscreen unit ID (e.g. PulseLink-1EBA94)</string>
+    <string name="nurse_ui_modal_code_hint">6-digit code shown on touchscreen</string>
+    <string name="nurse_ui_modal_auth_submit">Authorise Screen</string>
+    <string name="nurse_ui_modal_reg_title">Register New Clinic Patient</string>
+    <string name="nurse_ui_modal_reg_desc">Register an incoming patient into Firebase Realtime Database. Records synchronise with the physical ESP32 touchscreen.</string>
+    <string name="nurse_ui_modal_patient_name_hint">Patient full legal name</string>
+    <string name="nurse_ui_modal_patient_dob_hint">Date of birth (YYYY-MM-DD, optional)</string>
+    <string name="nurse_ui_modal_doctor_label">Attending Doctor (approved at your site)</string>
+    <string name="nurse_ui_modal_doctor_uid_hint">Attending Doctor UID (if list unavailable)</string>
+    <string name="nurse_ui_modal_reg_submit">Register Patient</string>
+    <string name="nurse_ui_modal_pair_title">Pair ESP32-C3 / Touchscreen</string>
+    <string name="nurse_ui_modal_pair_desc">Bind your ESP32 Touchscreen or ESP32-C3 hardware ID for simultaneous Wi-Fi telemetry and encrypted BLE transfer.</string>
+    <string name="nurse_ui_modal_hw_id_hint">Device ID (e.g. PulseLink-1EBA94)</string>
+    <string name="nurse_ui_modal_hw_mac_hint">Bluetooth / Wi-Fi MAC (optional)</string>
+    <string name="nurse_ui_modal_use_bonded_ble">Detect Bonded BLE Touchscreen</string>
+    <string name="nurse_ui_modal_pair_submit">Pair Hardware</string>
+    <string name="nurse_ui_btn_pair_hardware_cta">Pair ESP32-C3 / Touchscreen (Wi-Fi or BLE)</string>
+
+    <!-- Nurse Patient Intake (Select & Register Patient) -->
+    <string name="nurse_ui_intake_title">Clinic Patient Queue</string>
+    <string name="nurse_ui_intake_new_btn">+ New Intake</string>
+    <string name="nurse_ui_intake_search_hint">Search by patient name or PAT ID...</string>
+    <string name="nurse_ui_intake_sync_online">Synchronised with Firebase Realtime Database &amp; Touchscreen</string>
+    <string name="nurse_ui_intake_sync_offline">Offline cached clinic patient queue</string>
+    <string name="nurse_ui_intake_total_label">Clinic Patients</string>
+    <string name="nurse_ui_intake_pending_label">Awaiting Review</string>
+    <string name="nurse_ui_intake_released_label">Confirmed</string>
+    <string name="nurse_ui_intake_select_btn">Select for ECG</string>
+    <string name="nurse_ui_intake_empty">No patients match your search at this clinic site.</string>
+    <string name="nurse_ui_intake_patient_selected">Selected %1$s for pre-session checks and ECG capture.</string>
+    <string name="nurse_ui_intake_dob_unknown">DOB not recorded</string>
+    <string name="nurse_ui_intake_doctor_label">Doctor ID: %1$s</string>
+    <string name="nurse_ui_intake_doctor_named">Attending: %1$s</string>
+    <string name="nurse_ui_intake_no_site">Assign your Nurse account to a clinic site before registering patients.</string>
+    <string name="nurse_ui_intake_no_doctor">Please select or enter an approved attending Doctor UID.</string>
+    <string name="nurse_ui_intake_registered_ok">Patient registered and synchronised with clinic queue.</string>
+
+    <!-- Nurse Settings & Pre-Session Additions -->
+    <string name="nurse_ui_settings_title">Nurse Settings</string>
+    <string name="nurse_ui_settings_subtitle">Manage clinical credentials, hardware pairing, appearance and support.</string>
+    <string name="nurse_ui_settings_sign_out">Sign Out</string>
+    <string name="nurse_ui_firmware_esp32">ESP32-C3 + AD8232 / Touchscreen</string>
+    <string name="nurse_ui_selected_patient_banner">Patient: %1$s (%2$s)</string>
+    <string name="nurse_ui_precheck_no_patient">Please select a clinic patient from the Patients tab first.</string>
+    <string name="nurse_ui_precheck_shift_online">Authorised unit online (%1$s)</string>
+
+    <!-- Patient-Specific Help & Support FAQs -->
+    <string name="patient_faq_q1">When will my ECG results and Doctor\'s diagnosis be ready?</string>
+    <string name="patient_faq_a1">After the clinic Nurse completes your 90-second ECG recording, it is uploaded securely for your assigned Doctor to review. For your clinical safety, raw waveforms and medical notes remain hidden under Awaiting Doctor Review until your Doctor confirms the diagnosis and releases the results to you.</string>
+    <string name="patient_faq_q2">How do I view my Doctor\'s prescription, care plan, and clinical advice?</string>
+    <string name="patient_faq_a2">Once your Doctor releases your results, open the Reports tab on the bottom navigation bar and tap the session. You can read your Doctor\'s clinical impression, follow-up instructions, prescribed medications and dosages, and download your official PulseLink Released Report PDF.</string>
+    <string name="patient_faq_q3">What do the statuses on my Session Status page mean?</string>
+    <string name="patient_faq_a3">Awaiting Doctor Review means your clinic ECG recording has been uploaded safely and your Doctor is reviewing the trace. Results Released means your Doctor has finalised and released your clinical notes and prescription, which can now be viewed under Reports.</string>
+    <string name="patient_faq_q4">How do I find a nearby clinic or hospital in Gqeberha?</string>
+    <string name="patient_faq_a4">Open the SOS tab on the bottom navigation bar and tap Facility Finder &amp; Maps. You can filter verified public Hospitals, Clinics and Community Health Centres, zoom in or out on the map, inspect facility entrances and launch turn-by-turn directions in Google Maps.</string>
+    <string name="patient_faq_q5">How do I message my clinic Nurse using Live Chat?</string>
+    <string name="patient_faq_a5">Tap Live Chat or Contact Support at the top of this Help &amp; Support screen to send a direct message to the clinic Nurse for appointment, report-status or non-urgent support questions.</string>
+    <string name="patient_faq_q6">What should I do in a medical emergency (SOS)?</string>
+    <string name="patient_faq_a6">PulseLink is a remote monitoring prototype and does not dispatch ambulances automatically. If you experience chest pain, shortness of breath or a medical emergency, tap the SOS tab immediately to dial 112 (National Emergency) or 10177 (Ambulance).</string>
+    <string name="patient_faq_q7">How is my personal health data protected?</string>
+    <string name="patient_faq_a7">Your profile and released reports are protected with Firebase Authentication, optional biometric lock (fingerprint or face unlock), encrypted HTTPS transport and role-based clinical access. Patients can only view recordings linked to their verified account after Doctor release.</string>
+    <string name="patient_faq_search_empty">No matching help articles found. Try another keyword or tap Live Chat.</string>
+    <string name="patient_faq_user_guide_title">Session &amp; Clinic Finder Guide</string>
+    <string name="patient_faq_user_guide_subtitle">Check your latest ECG status or locate a clinic</string>
+
+    <!-- Live Support Chat -->
+    <string name="support_chat_title_patient">Clinic Nurse Support Chat</string>
+    <string name="support_chat_title_nurse">Patient Support Live Chat</string>
+    <string name="support_chat_subtitle_patient">Connected to clinic nursing support</string>
+    <string name="support_chat_subtitle_nurse_thread">Chatting with: %1$s</string>
+    <string name="support_chat_switch_thread">Threads (%1$d)</string>
+    <string name="support_chat_choose_thread">Select patient conversation</string>
+    <string name="support_chat_banner_warning">Support chat is for clinic coordination only. For medical emergencies dial 112.</string>
+    <string name="support_chat_empty">No messages in this conversation yet. Send a message below to start.</string>
+    <string name="support_chat_input_hint">Type a support message...</string>
+    <string name="support_chat_send">Send</string>
+    <string name="support_chat_sender_you">You</string>
+    <string name="support_chat_sender_nurse">Clinic Nurse</string>
+    <string name="support_chat_sender_patient">Patient</string>
+    <string name="support_chat_quick_1">Lead I contacts are clear. Please remain still during the 90s capture.</string>
+    <string name="support_chat_quick_2">Your 90-second ECG recording has been uploaded for Doctor review.</string>
+    <string name="support_chat_quick_3">Please open the Reports tab once your Doctor releases your results.</string>
+    <string name="support_chat_no_threads">No patient support conversations yet. When a patient messages from Help &amp; Support, their thread will appear here.</string>
+    <string name="support_chat_choose_thread_desc">Tap a patient conversation below to view and reply to messages.</string>
+    <string name="patient_settings_subtitle_account_only">Manage your personal account, security, appearance and support preferences.</string>
+    <string name="precheck_tap_confirm_electrodes">Tap to confirm RA, LA, RL pads attached</string>
+    <string name="nurse_ui_modal_doctor_select_title">Select Attending Doctor</string>
+    <string name="nurse_ui_modal_doctor_select_desc">Choose an approved doctor at your clinic site for this patient\'s ECG review.</string>
+</resources>

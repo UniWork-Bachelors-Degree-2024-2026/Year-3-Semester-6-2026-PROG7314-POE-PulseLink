@@ -318,6 +318,13 @@ int main() {
   CHECK(!pl::shouldFallbackToSavedNetwork(false, true, true));
   CHECK(!pl::shouldFallbackToSavedNetwork(true, false, true));
   CHECK(!pl::shouldFallbackToSavedNetwork(true, true, false));
+  CHECK(pl::isEnterpriseSsid("eduroam"));
+  CHECK(pl::isEnterpriseSsid("EduRoam"));
+  CHECK(!pl::isEnterpriseSsid("ClinicWiFi"));
+  CHECK(pl::isEnterpriseSsid("CustomNet", "student@mandela.ac.za"));
+  CHECK(pl::enterprisePasswordError("", "secret") != nullptr);
+  CHECK(pl::enterprisePasswordError("student@mandela.ac.za", "") != nullptr);
+  CHECK(pl::enterprisePasswordError("student@mandela.ac.za", "pw") == nullptr);
   CHECK(pl::validPatientBirthDate(""));
   CHECK(pl::validPatientBirthDate("2000-02-29"));
   CHECK(pl::validPatientBirthDate("2024-02-29"));

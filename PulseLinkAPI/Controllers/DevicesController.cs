@@ -1,5 +1,6 @@
 //Controller managing ESP32-C3 hardware registration and live connection telemetry.
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;    // (Microsoft, 2024)
 using PulseLinkAPI.Models.DTOs;
 using PulseLinkAPI.Services.Interfaces;
@@ -7,6 +8,7 @@ using PulseLinkAPI.Services.Interfaces;
 namespace PulseLinkAPI.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/devices")]
 public class DevicesController : ControllerBase
 {

@@ -27,9 +27,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope               // (Google Developers, 2024)
+import com.example.prog7314_poepart23.security.SecurePreferences
 import com.example.prog7314_poepart23.utils.ArrhythmiaAlertHandler
+import com.example.prog7314_poepart23.utils.BottomNavHelper
 import com.example.prog7314_poepart23.utils.BpmAnomalyDetector
 import com.example.prog7314_poepart23.utils.HapticFeedbackManager
+import com.example.prog7314_poepart23.utils.SessionManager
 import com.example.prog7314_poepart23.utils.applyStoredAvatar
 import com.example.prog7314_poepart23.views.EcgWaveformView
 import com.example.prog7314_poepart23.viewmodels.EcgSessionViewModel
@@ -81,6 +84,8 @@ class LiveEcgMonitoringActivity : AppCompatActivity() {
 
     private var patientId: String? = null
     private var deviceId: String? = null
+    private var activePatientName: String? = null
+    private var isNurseMode: Boolean = false
 
     // Real-time arrhythmia alerting (dialog + notification + redirect to SOS)
     private lateinit var arrhythmiaAlerts: ArrhythmiaAlertHandler
@@ -101,10 +106,34 @@ class LiveEcgMonitoringActivity : AppCompatActivity() {
             insets
         }
 
-        patientId = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid
-        deviceId = com.example.prog7314_poepart23.security.SecurePreferences.getInstance(this).getPairedDeviceId()
+        val currentUser = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser
+        val prefs = SecurePreferences.getInstance(this)
+        val uid = currentUser?.uid.orEmpty()
+        val role = (if (uid.isNotBlank()) SessionManager.getCachedRole(this, uid) else null)
+            ?: prefs.getUserRole()?.lowercase(Locale.ROOT)
+        isNurseMode = role == SessionManager.ROLE_NURSE || role == SessionManager.ROLE_ADMINISTRATOR
+
+        val rememberedScreen = if (uid.isNotBlank()) {
+            getSharedPreferences("nurse_screen_devices", MODE_PRIVATE).getString(uid, null)
+        } else null
+        deviceId = prefs.getPairedDeviceId()?.takeIf { it.isNotBlank() } ?: rememberedScreen
+
+        if (isNurseMode) {
+            patientId = prefs.getSelectedNursePatientId()?.takeIf { it.isNotBlank() }
+            activePatientName = prefs.getSelectedNursePatientName()?.takeIf { it.isNotBlank() }
+            if (patientId == null) {
+                Toast.makeText(this, getString(R.string.nurse_ui_precheck_no_patient), Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, NursePatientIntakeActivity::class.java))
+                finish()
+                return
+            }
+        } else {
+            patientId = currentUser?.uid
+            activePatientName = currentUser?.displayName
+        }
 
         bindViews()
+        BottomNavHelper.setUpNurseNav(this, BottomNavHelper.NurseTab.MONITOR)
         setupWaveformListener()
         setupClickListeners()
         observeSessionViewModel()
@@ -228,7 +257,7 @@ class LiveEcgMonitoringActivity : AppCompatActivity() {
         ecgSessionViewModel.startRecording(
             patientId = patientId!!,
             deviceId = deviceId,
-            patientName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName,
+            patientName = activePatientName ?: com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName,
             context = this
         )
     }
@@ -472,7 +501,9 @@ class LiveEcgMonitoringActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        applyStoredAvatar(R.id.btnProfileAvatar, patientId)
+        BottomNavHelper.setUpNurseNav(this, BottomNavHelper.NurseTab.MONITOR)
+        val avatarUid = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid ?: patientId
+        applyStoredAvatar(R.id.btnProfileAvatar, avatarUid)
         ecgWaveformView.startRendering()
         if (isSessionActive && !isSessionPaused) {
             startTelemetryIngestion()
@@ -501,8 +532,9 @@ class LiveEcgMonitoringActivity : AppCompatActivity() {
         if (controlsWired) return
         controlsWired = true
         HapticFeedbackManager.initialise(this)
-        openOnClick(R.id.btnSettings, Patient_Settings::class.java)
-        openOnClick(R.id.btnProfileAvatar, PatientProfileActivity::class.java)
+        val settingsTarget = if (isNurseMode) NurseSettingsActivity::class.java else Patient_Settings::class.java
+        openOnClick(R.id.btnSettings, settingsTarget)
+        openOnClick(R.id.btnProfileAvatar, if (isNurseMode) NurseSettingsActivity::class.java else PatientProfileActivity::class.java)
     }
 
 }

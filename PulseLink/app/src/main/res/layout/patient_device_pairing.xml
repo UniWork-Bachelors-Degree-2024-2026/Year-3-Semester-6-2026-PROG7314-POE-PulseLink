@@ -305,11 +305,30 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenPairHardwareModal"
+                style="@style/Widget.PulseLink.Button"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/nurse_ui_btn_pair_hardware_cta"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/pulse_primary_fill"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconSize="18dp"
+                app:iconTint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnScanAgain"
                 style="@style/Widget.PulseLink.Button"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/bg_button_outline_blue"
                 android:text="@string/patient_device_pairing_text_scan_again"
                 android:textColor="@color/pulse_primary"

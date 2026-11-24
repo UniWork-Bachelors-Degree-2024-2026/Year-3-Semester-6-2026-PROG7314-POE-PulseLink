@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="@string/patient_settings_text_manage_account_preferences_device"
+                android:text="@string/patient_settings_subtitle_account_only"
                 android:textColor="@color/pulse_text_secondary"
                 android:textSize="13sp" />
 
@@ -262,58 +262,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="1dp"
                                 android:text="@string/patient_settings_text_manage_alerts_messages_vitals"
-                                android:textColor="@color/pulse_text_secondary"
-                                android:textSize="11sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="14dp"
-                        android:layout_marginEnd="14dp"
-                        android:background="@color/pulse_divider" />
-
-                    <LinearLayout
-                        android:id="@+id/rowDeviceManagement"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:foreground="?attr/selectableItemBackground"
-                        android:minHeight="48dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="14dp">
-
-                        <ImageView
-                            android:layout_width="34dp"
-                            android:layout_height="34dp"
-                            android:background="@drawable/circle_gray"
-                            android:contentDescription="@null"
-                            android:padding="8dp"
-                            android:src="@drawable/ic_monitor" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/patient_settings_text_device_management"
-                                android:textColor="@color/pulse_text_primary"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="1dp"
-                                android:text="@string/patient_settings_text_connected_monitors_wearables"
                                 android:textColor="@color/pulse_text_secondary"
                                 android:textSize="11sp" />
                         </LinearLayout>

@@ -20,7 +20,54 @@ data class ClinicalPatientDto(
     val primaryDoctorUid: String, val additionalDoctorUids: List<String> = emptyList(), val version: Int,
     val dateOfBirth: String? = null
 )
-data class PatientRegistrationDto(val fullName: String, val siteId: String, val primaryDoctorUid: String)
+data class PatientRegistrationDto(
+    val fullName: String,
+    val siteId: String,
+    val primaryDoctorUid: String,
+    val dateOfBirth: String? = null
+)
+
+data class ApprovedDoctorDto(
+    val uid: String = "",
+    val name: String = "",
+    val email: String = ""
+) {
+    fun displayWithEmail(): String {
+        val cleanName = name.trim()
+        val cleanEmail = email.trim()
+        return when {
+            cleanName.isNotBlank() && cleanEmail.isNotBlank() && !cleanName.contains(cleanEmail, ignoreCase = true) ->
+                "$cleanName - $cleanEmail"
+            cleanName.isNotBlank() -> cleanName
+            cleanEmail.isNotBlank() -> cleanEmail
+            else -> uid
+        }
+    }
+}
+
+data class SupportChatThreadDto(
+    val threadId: String = "",
+    val patientName: String = "",
+    val lastMessage: String = "",
+    val lastTimestampMillis: Long = 0L,
+    val lastSenderRole: String = "patient"
+)
+
+data class SupportChatMessageDto(
+    val id: String = "",
+    val threadId: String = "",
+    val patientName: String = "",
+    val senderUid: String = "",
+    val senderName: String = "",
+    val senderRole: String = "patient",
+    val text: String = "",
+    val timestampMillis: Long = 0L
+)
+
+data class SendSupportMessageDto(
+    val text: String,
+    val patientName: String? = null
+)
 
 data class PatientAssignmentDto(val primaryDoctorUid: String, val additionalDoctorUids: List<String>, val expectedVersion: Int)
 

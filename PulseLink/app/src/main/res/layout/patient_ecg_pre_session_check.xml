@@ -54,6 +54,21 @@
             android:padding="18dp">
 
             <TextView
+                android:id="@+id/tvNurseSelectedPatientBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_pill_neutral"
+                android:paddingStart="12dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/pulse_primary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/patient_ecg_pre_session_check_text_let_s_get_ready"
@@ -309,5 +324,7 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <include layout="@layout/layout_bottom_nav_nurse" />
 
 </LinearLayout>

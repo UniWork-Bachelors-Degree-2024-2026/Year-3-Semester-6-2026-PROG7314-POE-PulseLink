@@ -20,7 +20,7 @@ public sealed class ScreenDoctorAssignmentRequest
     [Required, StringLength(128)] public string PrimaryDoctorUid { get; set; } = "";
     [Range(1, int.MaxValue)] public int ExpectedVersion { get; set; }
 }
-public sealed record ScreenDoctor(string Uid, string Name);
+public sealed record ScreenDoctor(string Uid, string Name, string Email = "");
 public sealed record ClinicPage(NurseGrant Grant, string SiteName, AccessPage<ScreenPatient> Patients, AccessPage<ScreenDoctor> Doctors);
 public sealed class ScreenPatientRequest
 {

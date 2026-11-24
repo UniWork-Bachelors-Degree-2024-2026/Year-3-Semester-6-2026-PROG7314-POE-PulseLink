@@ -17,8 +17,14 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.IdRes
 import androidx.annotation.StringRes
+import com.example.prog7314_poepart23.AboutActivity
+import com.example.prog7314_poepart23.AppearanceActivity
+import com.example.prog7314_poepart23.HelpSupportActivity
+import com.example.prog7314_poepart23.LanguageSelectionActivity
 import com.example.prog7314_poepart23.LoginActivity
+import com.example.prog7314_poepart23.NotificationsActivity
 import com.example.prog7314_poepart23.R
+import com.example.prog7314_poepart23.SecurityPasswordActivity
 import com.example.prog7314_poepart23.data.local.OfflineEcgDatabase
 import com.example.prog7314_poepart23.data.repository.NotificationRepository
 import com.example.prog7314_poepart23.security.BiometricCredentialVault
@@ -94,4 +100,24 @@ fun Activity.signOutToLogin() {
     }
     startActivity(intent)
     finish()
+}
+
+/** Shared wiring for Settings preferences common to Patient, Doctor and Nurse settings screens. */
+fun Activity.wireCommonSettingsRows(
+    personalInfoTarget: Class<out Activity>? = null,
+    onPersonalInfoClick: (() -> Unit)? = null
+) {
+    wireBack(R.id.btnBack)
+    if (onPersonalInfoClick != null) {
+        onClick(R.id.rowPersonalInfo) { onPersonalInfoClick() }
+    } else if (personalInfoTarget != null) {
+        openOnClick(R.id.rowPersonalInfo, personalInfoTarget)
+    }
+    openOnClick(R.id.rowSecurity, SecurityPasswordActivity::class.java)
+    openOnClick(R.id.rowNotifications, NotificationsActivity::class.java)
+    openOnClick(R.id.rowAppearance, AppearanceActivity::class.java)
+    openOnClick(R.id.rowLanguage, LanguageSelectionActivity::class.java)
+    openOnClick(R.id.rowPrivacyPolicy, AboutActivity::class.java)
+    openOnClick(R.id.rowHelpCenter, HelpSupportActivity::class.java)
+    openOnClick(R.id.rowAboutLegal, AboutActivity::class.java)
 }

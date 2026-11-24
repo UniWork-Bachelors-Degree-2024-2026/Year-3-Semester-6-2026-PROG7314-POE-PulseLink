@@ -13,22 +13,34 @@
 
 package com.example.prog7314_poepart23
 
+import android.Manifest
+import android.bluetooth.BluetoothDevice
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge             // (Google Developers, 2024)
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity        // (Google Developers, 2024)
+import androidx.appcompat.app.AppCompatDialog
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat                  // (Google Developers, 2024)
 import androidx.core.view.WindowInsetsCompat          // (Google Developers, 2024)
 import androidx.lifecycle.lifecycleScope              // (Google Developers, 2024)
+import com.example.prog7314_poepart23.ble.PulseLinkBleManager
 import com.example.prog7314_poepart23.data.repository.EcgRepository
+import com.example.prog7314_poepart23.security.SecurePreferences
 import com.example.prog7314_poepart23.utils.HapticFeedbackManager
 import com.example.prog7314_poepart23.utils.Resource
 import com.example.prog7314_poepart23.utils.enableFadeThroughEntry
 import com.example.prog7314_poepart23.utils.wireBack
-import android.view.View
-import androidx.cardview.widget.CardView
 import com.google.android.material.button.MaterialButton // (Google Developers, 2024)
 import com.google.firebase.auth.FirebaseAuth         // (Google Cloud, 2024)
 import kotlinx.coroutines.delay                       // (JetBrains, 2024)
@@ -48,7 +60,24 @@ class DevicePairingActivity : AppCompatActivity() { // (Google Developers, 2024;
     private lateinit var tvDiscoveredPingStatus: TextView
     private lateinit var btnPingDiscoveredDevice: MaterialButton
     private lateinit var btnPairDiscoveredDevice: MaterialButton
+    private lateinit var btnOpenPairHardwareModal: MaterialButton
     private lateinit var btnScanAgain: MaterialButton
+
+    private val bleManager by lazy { PulseLinkBleManager(this) }
+    private var pendingBleDetectAction: (() -> Unit)? = null
+
+    private val blePermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { grants ->
+        val granted = grants.values.all { it }
+        val action = pendingBleDetectAction
+        pendingBleDetectAction = null
+        if (granted) {
+            action?.invoke()
+        } else {
+            Toast.makeText(this, R.string.nurse_ui_ble_permission_missing, Toast.LENGTH_LONG).show()
+        }
+    }
 
     private var discoveredDeviceId: String? = null
     private var discoveredDeviceName: String? = null
@@ -81,6 +110,7 @@ class DevicePairingActivity : AppCompatActivity() { // (Google Developers, 2024;
         tvDiscoveredPingStatus = findViewById(R.id.tvDiscoveredPingStatus)
         btnPingDiscoveredDevice = findViewById(R.id.btnPingDiscoveredDevice)
         btnPairDiscoveredDevice = findViewById(R.id.btnPairDiscoveredDevice)
+        btnOpenPairHardwareModal = findViewById(R.id.btnOpenPairHardwareModal)
         btnScanAgain = findViewById(R.id.btnScanAgain)
     }
 
@@ -118,6 +148,11 @@ class DevicePairingActivity : AppCompatActivity() { // (Google Developers, 2024;
             )
         }
 
+        btnOpenPairHardwareModal.setOnClickListener {
+            HapticFeedbackManager.lightTick()
+            openPairHardwareModal()
+        }
+
         btnScanAgain.setOnClickListener {
             startDeviceScan()
         }
@@ -135,15 +170,32 @@ class DevicePairingActivity : AppCompatActivity() { // (Google Developers, 2024;
         lifecycleScope.launch {
             delay(1200L) // Network probe delay
 
-            // Only look for a device the patient has actually paired before - never invent an ID.
-            val prefs = com.example.prog7314_poepart23.security.SecurePreferences.getInstance(this@DevicePairingActivity)
-            val existingId = prefs.getPairedDeviceId()
+            val prefs = SecurePreferences.getInstance(this@DevicePairingActivity)
+            val uid = auth.currentUser?.uid.orEmpty()
+            val remembered = if (uid.isNotBlank()) {
+                getSharedPreferences("nurse_screen_devices", MODE_PRIVATE).getString(uid, null)
+            } else null
+            val bonded = findBondedSafely(null)
+            val existingId = prefs.getPairedDeviceId()?.takeIf { it.isNotBlank() }
+                ?: remembered?.takeIf { it.isNotBlank() }
+                ?: bonded?.name?.takeIf { it.isNotBlank() }
 
             if (existingId.isNullOrBlank()) {
                 showNoDeviceFoundState(
                     title = getString(R.string.l10n_no_device_found),
                     subtitle = getString(R.string.l10n_no_device_found_unpaired)
                 )
+            } else if (bonded != null && prefs.getPairedDeviceId().isNullOrBlank()) {
+                discoveredDeviceId = existingId
+                discoveredDeviceName = bonded.name ?: existingId
+                discoveredDeviceMac = bonded.address
+                tvDiscoveredDeviceName.text = discoveredDeviceName
+                tvDiscoveredDeviceSubtitle.text =
+                    getString(R.string.l10n_mac_format, discoveredDeviceMac ?: getString(R.string.l10n_unavailable))
+                tvDiscoveredPingStatus.text = getString(R.string.l10n_ping_online_ready)
+                tvDiscoveredPingStatus.setTextColor(ContextCompat.getColor(this@DevicePairingActivity, R.color.pulse_success))
+                cardDiscoveredDevice.visibility = View.VISIBLE
+                layoutScanningState.visibility = View.GONE
             } else {
                 when (val result = ecgRepository.getDeviceStatus(existingId)) {
                     is Resource.Success -> {
@@ -286,7 +338,7 @@ class DevicePairingActivity : AppCompatActivity() { // (Google Developers, 2024;
                 deviceId = deviceId,
                 patientId = patientId,
                 deviceName = deviceName,
-                macAddress = macAddress
+                macAddress = macAddress.takeIf { it.isNotBlank() }
             )
 
             pairButton.isEnabled = true
@@ -294,14 +346,20 @@ class DevicePairingActivity : AppCompatActivity() { // (Google Developers, 2024;
 
             when (response) {
                 is Resource.Success -> {
-                    val prefs = com.example.prog7314_poepart23.security.SecurePreferences.getInstance(this@DevicePairingActivity)
+                    val prefs = SecurePreferences.getInstance(this@DevicePairingActivity)
                     prefs.savePairedDeviceId(deviceId)
                     prefs.savePairedDeviceName(deviceName)
-                    prefs.savePairedDeviceMac(macAddress)
+                    prefs.savePairedDeviceMac(macAddress.takeIf { it.isNotBlank() })
+                    auth.currentUser?.uid?.let { uid ->
+                        getSharedPreferences("nurse_screen_devices", MODE_PRIVATE)
+                            .edit()
+                            .putString(uid, deviceId)
+                            .apply()
+                    }
                     HapticFeedbackManager.confirmClick()
                     Toast.makeText(
                         this@DevicePairingActivity,
-                        getString(R.string.l10n_paired_success_format, deviceName, macAddress),
+                        getString(R.string.l10n_paired_success_format, deviceName, macAddress.ifBlank { getString(R.string.l10n_not_registered) }),
                         Toast.LENGTH_LONG
                     ).show()
                     setResult(RESULT_OK)
@@ -316,6 +374,104 @@ class DevicePairingActivity : AppCompatActivity() { // (Google Developers, 2024;
                 }
                 is Resource.Loading -> Unit
             }
+        }
+    }
+
+    private fun openPairHardwareModal() {
+        val prefs = SecurePreferences.getInstance(this)
+        val uid = auth.currentUser?.uid.orEmpty()
+        val dialogView = layoutInflater.inflate(R.layout.dialog_pair_hardware_device, null)
+        val etDeviceId = dialogView.findViewById<EditText>(R.id.etDialogHardwareDeviceId)
+        val etMac = dialogView.findViewById<EditText>(R.id.etDialogHardwareMac)
+        val btnDetectBle = dialogView.findViewById<MaterialButton>(R.id.btnDetectBondedBle)
+        val btnCancel = dialogView.findViewById<MaterialButton>(R.id.btnCancelPairDialog)
+        val btnConfirm = dialogView.findViewById<MaterialButton>(R.id.btnConfirmPairDialog)
+
+        val currentId = prefs.getPairedDeviceId()
+            ?: if (uid.isNotBlank()) getSharedPreferences("nurse_screen_devices", MODE_PRIVATE).getString(uid, null) else null
+        if (!currentId.isNullOrBlank()) etDeviceId.setText(currentId)
+        prefs.getPairedDeviceMac()?.takeIf { it.isNotBlank() }?.let { etMac.setText(it) }
+
+        val dialog = AppCompatDialog(
+            this,
+            com.google.android.material.R.style.ThemeOverlay_Material3_MaterialAlertDialog
+        ).apply {
+            supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+            setContentView(dialogView)
+            window?.apply {
+                setBackgroundDrawableResource(android.R.color.transparent)
+                setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+                val dm = resources.displayMetrics
+                val maxWidth = (500 * dm.density).toInt()
+                setLayout(minOf(dm.widthPixels - (24 * dm.density).toInt(), maxWidth), ViewGroup.LayoutParams.WRAP_CONTENT)
+            }
+        }
+
+        fun detectBondedIntoInputs() {
+            val queryId = etDeviceId.text.toString().trim().ifBlank { null }
+            val bonded = findBondedSafely(queryId)
+            if (bonded != null) {
+                val detectedId = bonded.name?.takeIf { it.isNotBlank() } ?: (queryId ?: "PulseLink-1EBA94")
+                if (etDeviceId.text.isNullOrBlank()) {
+                    etDeviceId.setText(detectedId)
+                }
+                etMac.setText(bonded.address.orEmpty())
+                Toast.makeText(
+                    this,
+                    getString(R.string.nurse_ui_hardware_ble_bonded, bonded.name ?: bonded.address),
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(
+                    this,
+                    getString(R.string.ui_ble_pair_first, queryId ?: "PulseLink-1EBA94"),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+
+        btnDetectBle.setOnClickListener {
+            HapticFeedbackManager.lightTick()
+            if (hasBluetoothPermissions()) {
+                detectBondedIntoInputs()
+            } else {
+                pendingBleDetectAction = { detectBondedIntoInputs() }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    blePermissionLauncher.launch(
+                        arrayOf(Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.BLUETOOTH_SCAN)
+                    )
+                }
+            }
+        }
+
+        btnCancel.setOnClickListener { dialog.dismiss() }
+        btnConfirm.setOnClickListener {
+            val deviceId = etDeviceId.text.toString().trim()
+            if (deviceId.isBlank()) {
+                etDeviceId.error = getString(R.string.access_required)
+                return@setOnClickListener
+            }
+            val mac = etMac.text.toString().trim()
+            dialog.dismiss()
+            pairDevice(deviceId, deviceId, mac, btnConfirm)
+        }
+        dialog.show()
+    }
+
+    private fun hasBluetoothPermissions(): Boolean {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return true
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) ==
+            PackageManager.PERMISSION_GRANTED &&
+            ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_SCAN) ==
+            PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun findBondedSafely(deviceId: String?): BluetoothDevice? {
+        if (!hasBluetoothPermissions()) return null
+        return try {
+            bleManager.findBondedTouchscreen(deviceId)
+        } catch (_: SecurityException) {
+            null
         }
     }
 }

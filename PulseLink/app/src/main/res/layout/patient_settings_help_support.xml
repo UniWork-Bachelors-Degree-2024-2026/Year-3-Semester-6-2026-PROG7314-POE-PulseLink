@@ -204,21 +204,34 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardFaqContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@color/pulse_card"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="1dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!-- Electrode / AD8232 placement -->
+                    <TextView
+                        android:id="@+id/tvHelpSearchEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:text="@string/patient_faq_search_empty"
+                        android:textColor="@color/pulse_text_secondary"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+                    <!-- FAQ 1 -->
                     <LinearLayout
+                        android:id="@+id/faqContainer1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -235,6 +248,7 @@
                             android:padding="16dp">
 
                             <ImageView
+                                android:id="@+id/ivFaqIcon1"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:background="@drawable/circle_blue_bg"
@@ -243,6 +257,7 @@
                                 android:src="@drawable/ic_electrode" />
 
                             <TextView
+                                android:id="@+id/tvFaqQuestion1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -265,6 +280,7 @@
                             android:visibility="gone">
 
                             <TextView
+                                android:id="@+id/tvFaqAnswer1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/patient_settings_help_support_text_electrode_placement_answer"
@@ -289,14 +305,16 @@
                     </LinearLayout>
 
                     <View
+                        android:id="@+id/faqDivider1"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:background="@color/pulse_divider" />
 
-                    <!-- Pairing -->
+                    <!-- FAQ 2 -->
                     <LinearLayout
+                        android:id="@+id/faqContainer2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -313,6 +331,7 @@
                             android:padding="16dp">
 
                             <ImageView
+                                android:id="@+id/ivFaqIcon2"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:background="@drawable/circle_blue_bg"
@@ -321,6 +340,7 @@
                                 android:src="@drawable/ic_bluetooth" />
 
                             <TextView
+                                android:id="@+id/tvFaqQuestion2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -346,14 +366,16 @@
                     </LinearLayout>
 
                     <View
+                        android:id="@+id/faqDivider2"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:background="@color/pulse_divider" />
 
-                    <!-- Irregular rhythm -->
+                    <!-- FAQ 3 -->
                     <LinearLayout
+                        android:id="@+id/faqContainer3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -370,6 +392,7 @@
                             android:padding="16dp">
 
                             <ImageView
+                                android:id="@+id/ivFaqIcon3"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:background="@drawable/circle_success_bg"
@@ -378,6 +401,7 @@
                                 android:src="@drawable/ic_heart_pulse" />
 
                             <TextView
+                                android:id="@+id/tvFaqQuestion3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -403,14 +427,16 @@
                     </LinearLayout>
 
                     <View
+                        android:id="@+id/faqDivider3"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:background="@color/pulse_divider" />
 
-                    <!-- Syncing -->
+                    <!-- FAQ 4 -->
                     <LinearLayout
+                        android:id="@+id/faqContainer4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -427,6 +453,7 @@
                             android:padding="16dp">
 
                             <ImageView
+                                android:id="@+id/ivFaqIcon4"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:background="@drawable/circle_warning_bg"
@@ -435,6 +462,7 @@
                                 android:src="@drawable/ic_cloud_off" />
 
                             <TextView
+                                android:id="@+id/tvFaqQuestion4"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -460,14 +488,16 @@
                     </LinearLayout>
 
                     <View
+                        android:id="@+id/faqDivider4"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:background="@color/pulse_divider" />
 
-                    <!-- Battery -->
+                    <!-- FAQ 5 -->
                     <LinearLayout
+                        android:id="@+id/faqContainer5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -484,6 +514,7 @@
                             android:padding="16dp">
 
                             <ImageView
+                                android:id="@+id/ivFaqIcon5"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:background="@drawable/circle_success_bg"
@@ -492,6 +523,7 @@
                                 android:src="@drawable/ic_battery" />
 
                             <TextView
+                                android:id="@+id/tvFaqQuestion5"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -517,14 +549,16 @@
                     </LinearLayout>
 
                     <View
+                        android:id="@+id/faqDivider5"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:background="@color/pulse_divider" />
 
-                    <!-- Connectivity -->
+                    <!-- FAQ 6 -->
                     <LinearLayout
+                        android:id="@+id/faqContainer6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -541,6 +575,7 @@
                             android:padding="16dp">
 
                             <ImageView
+                                android:id="@+id/ivFaqIcon6"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:background="@drawable/circle_blue_bg"
@@ -549,6 +584,7 @@
                                 android:src="@drawable/ic_wifi" />
 
                             <TextView
+                                android:id="@+id/tvFaqQuestion6"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -574,14 +610,16 @@
                     </LinearLayout>
 
                     <View
+                        android:id="@+id/faqDivider6"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:background="@color/pulse_divider" />
 
-                    <!-- Data privacy -->
+                    <!-- FAQ 7 -->
                     <LinearLayout
+                        android:id="@+id/faqContainer7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
@@ -598,6 +636,7 @@
                             android:padding="16dp">
 
                             <ImageView
+                                android:id="@+id/ivFaqIcon7"
                                 android:layout_width="34dp"
                                 android:layout_height="34dp"
                                 android:background="@drawable/circle_danger_bg"
@@ -606,6 +645,7 @@
                                 android:src="@drawable/ic_shield" />
 
                             <TextView
+                                android:id="@+id/tvFaqQuestion7"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
@@ -631,7 +671,7 @@
                     </LinearLayout>
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- ====================================================== -->
             <!-- ACTION BUTTONS BELOW FAQ -->
@@ -720,6 +760,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tvUserGuideTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/patient_settings_help_support_text_user_guide"
@@ -728,6 +769,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tvUserGuideSubtitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"

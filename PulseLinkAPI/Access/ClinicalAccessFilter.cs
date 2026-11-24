@@ -25,7 +25,8 @@ public sealed class ClinicalAccessFilter(AccessDirectory directory) : IAsyncActi
             descriptor.ControllerTypeInfo.AsType() == typeof(Controllers.AccessController) ||
             descriptor.ControllerTypeInfo.AsType() == typeof(Controllers.AdministrationController) ||
             descriptor.ControllerTypeInfo.AsType() == typeof(Controllers.FacilitiesController) ||
-            descriptor.ControllerTypeInfo.AsType() == typeof(Controllers.NotificationsController)) { await next(); return; }
+            descriptor.ControllerTypeInfo.AsType() == typeof(Controllers.NotificationsController) ||
+            descriptor.ControllerTypeInfo.AsType() == typeof(Controllers.SupportChatController)) { await next(); return; }
         var caller = context.HttpContext.Features.Get<CurrentAccess>();
         if (caller?.Account is { Role: AccessRoles.Patient, Status: "approved" })
         {

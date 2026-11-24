@@ -2,7 +2,11 @@
 #include <Arduino.h>
 #include <atomic>
 #include <esp_timer.h>
+#if __has_include(<PulseLinkSerial.h>)
 #include <PulseLinkSerial.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkSerial.h"
+#endif
 
 HardwareSerial screen(1);
 pl::Parser screenParser;
@@ -37,6 +41,7 @@ void acquire(void *) {
   uint32_t missedSlots = 0, maxLatenessUs = 0;
   bool recording = false, ending = false;
   uint8_t endReason = pl::Duration;
+  uint16_t lastRawAdc = 0;
   for (;;) {
     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
     uint64_t now = esp_timer_get_time();
@@ -62,13 +67,14 @@ void acquire(void *) {
       recording = false; ending = true; endReason = pl::LinkLost;
     }
     const uint8_t leads = (digitalRead(5) ? pl::LeadPlus : 0) | (digitalRead(4) ? pl::LeadMinus : 0);
+    lastRawAdc = static_cast<uint16_t>(analogRead(0));
     if (recording && now >= due) {
       const uint32_t missed = (now - due) / pl::PeriodUs;
       slots += missed;
       missedSlots += missed;
       const uint64_t target = due + static_cast<uint64_t>(missed) * pl::PeriodUs;
       maxLatenessUs = max(maxLatenessUs, static_cast<uint32_t>(now - target));
-      pl::Sample sample{slots++, now, static_cast<uint16_t>(analogRead(0)), leads};
+      pl::Sample sample{slots++, now, lastRawAdc, leads};
       if (sample.raw <= 8 || sample.raw >= 4087) sample.flags |= pl::Clipped;
       if (now - target > 1000 || missed) sample.flags |= pl::TimingLate;
       due = target + pl::PeriodUs; beats.add(sample);
@@ -102,7 +108,7 @@ void acquire(void *) {
     sharedHealth.slots = slots; sharedHealth.captured = captured;
     sharedHealth.missedSlots = missedSlots; sharedHealth.maxLatenessUs = maxLatenessUs;
     sharedHealth.queueDepth = uxQueueMessagesWaiting(records);
-    sharedHealth.leadFlags = leads; sharedHealth.recording = recording;
+    sharedHealth.leadFlags = leads; sharedHealth.recording = recording; sharedHealth.raw = lastRawAdc;
     sharedHealth.bpm = recording && !leads ? beats.bpm(now) : 0;
     sharedHealth.bpmValid = sharedHealth.bpm != 0;
     portEXIT_CRITICAL(&stateLock);

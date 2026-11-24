@@ -307,42 +307,73 @@ public class PdfReportGenerator : IPdfReportGenerator
         var startSec = (double)startSample / sampleRate;
         var endSec = (double)(startSample + samplesPerStrip) / sampleRate;
 
-        // Background and ECG grid (pink clinical grid lines, uncalibrated ADC amplitude)
-        SetFillColor(sb, 1.0, 0.985, 0.985);
-        SetStrokeColor(sb, 0.86, 0.65, 0.68);
+        // Background and authentic 25 mm/s hospital thermal ECG grid (#FFF5F5 paper, 1 mm = 40 ms minor, 5 mm = 200 ms major)
+        SetFillColor(sb, 1.0, 0.96, 0.96);
+        SetStrokeColor(sb, 0.86, 0.56, 0.58);
         SetLineWidth(sb, 0.7);
         DrawRect(sb, left, bottom, width, height, fill: true, stroke: true);
 
-        // Minor grid: 0.2s horizontal divisions (50 samples), 8 vertical divisions
-        SetStrokeColor(sb, 0.96, 0.86, 0.88);
-        SetLineWidth(sb, 0.35);
-        for (var i = 1; i < 50; i++)
+        // True square 1 mm (40 ms) minor divisions across the 10-second strip (250 squares = 10 s at 25 mm/s)
+        var minorStep = width / 250.0;
+        var midY = bottom + height * 0.5;
+        var maxVerticalSteps = Math.Max(5, (int)Math.Floor((height * 0.5) / minorStep));
+
+        // Minor grid: 1 mm (40 ms horizontal), square-aspect vertical minor lines (#FFD4D4)
+        SetStrokeColor(sb, 0.98, 0.83, 0.83);
+        SetLineWidth(sb, 0.22);
+        for (var i = 1; i < 250; i++)
         {
             if (i % 5 == 0) continue;
-            var x = left + width * (i / 50.0);
+            var x = left + i * minorStep;
             DrawLine(sb, x, bottom, x, top);
         }
-        for (var j = 1; j < 8; j++)
+        for (var k = 1; k <= maxVerticalSteps; k++)
         {
-            if (j == 4) continue;
-            var y = bottom + height * (j / 8.0);
-            DrawLine(sb, left, y, right, y);
+            if (k % 5 == 0) continue;
+            var dy = k * minorStep;
+            if (midY + dy < top) DrawLine(sb, left, midY + dy, right, midY + dy);
+            if (midY - dy > bottom) DrawLine(sb, left, midY - dy, right, midY - dy);
         }
 
-        // Major grid: 1.0s horizontal divisions, midpoint baseline (ADC 2048)
-        SetStrokeColor(sb, 0.91, 0.72, 0.75);
-        SetLineWidth(sb, 0.6);
+        // Major grid: 5 mm (200 ms horizontal, 50 divisions = 10 s), major vertical lines every 5 minor squares (#F87171)
+        SetStrokeColor(sb, 0.94, 0.53, 0.55);
+        SetLineWidth(sb, 0.50);
+        for (var i = 5; i < 250; i += 5)
+        {
+            var x = left + i * minorStep;
+            DrawLine(sb, x, bottom, x, top);
+        }
+        DrawLine(sb, left, midY, right, midY);
+        for (var k = 5; k <= maxVerticalSteps; k += 5)
+        {
+            var dy = k * minorStep;
+            if (midY + dy < top) DrawLine(sb, left, midY + dy, right, midY + dy);
+            if (midY - dy > bottom) DrawLine(sb, left, midY - dy, right, midY - dy);
+        }
+
+        // Subtle 1.0-second time markers (every 25 mm = 5 major boxes) and uncalibrated ADC reference pulse on left margin
+        SetStrokeColor(sb, 0.72, 0.22, 0.24);
+        SetLineWidth(sb, 0.65);
         for (var sec = 1; sec < 10; sec++)
         {
-            var x = left + width * (sec / 10.0);
-            DrawLine(sb, x, bottom, x, top);
+            var x = left + sec * 25.0 * minorStep;
+            DrawLine(sb, x, bottom, x, bottom + 4.0);
+            DrawLine(sb, x, top - 4.0, x, top);
         }
-        var midY = bottom + height * 0.5;
-        DrawLine(sb, left, midY, right, midY);
+        var refHeight = Math.Min(height * 0.28, 5.0 * minorStep * 2.0);
+        var p0 = left + 2.5;
+        var p1 = left + 4.5;
+        var p2 = left + 10.5;
+        var p3 = left + 12.5;
+        DrawLine(sb, p0, midY, p1, midY);
+        DrawLine(sb, p1, midY, p1, midY + refHeight);
+        DrawLine(sb, p1, midY + refHeight, p2, midY + refHeight);
+        DrawLine(sb, p2, midY + refHeight, p2, midY);
+        DrawLine(sb, p2, midY, p3, midY);
 
         // Strip header label
-        DrawText(sb, "F2", 7.8, left + 6.0, top - 10.0, 0.15, 0.18, 0.26,
-            $"Strip {stripIndex + 1}: {startSec:0.0}s - {endSec:0.0}s (Samples {startSample} - {Math.Max(startSample, endSampleExclusive - 1)}) | ADC 0-4095 (Midpoint 2048, Uncalibrated)");
+        DrawText(sb, "F2", 7.6, left + 16.0, top - 10.0, 0.15, 0.18, 0.26,
+            $"Strip {stripIndex + 1}: {startSec:0.0}s - {endSec:0.0}s (Samples {startSample} - {Math.Max(startSample, endSampleExclusive - 1)}) | 25 mm/s Hospital Grid (1 mm = 40 ms, 5 mm = 200 ms) | AD8232 12-bit ADC (0-4095, Midpoint 2048, Uncalibrated)");
 
         if (session.SampleBuffer.Count == 0 || startSample >= session.SampleBuffer.Count)
         {

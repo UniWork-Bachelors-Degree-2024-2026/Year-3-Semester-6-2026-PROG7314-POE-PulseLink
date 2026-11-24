@@ -1,7 +1,11 @@
 #pragma once
 #include <SD.h>
 #include <ArduinoJson.h>
+#if __has_include(<PulseLinkUpload.h>)
 #include <PulseLinkUpload.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkUpload.h"
+#endif
 #include <memory>
 #include "PulseLinkNetwork.h"
 #include "PulseLinkClinicalStore.h"

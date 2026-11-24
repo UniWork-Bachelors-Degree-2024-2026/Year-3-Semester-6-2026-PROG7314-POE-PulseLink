@@ -47,6 +47,7 @@ class EcgRepository( // (Google Developers, 2024)
         defaultError: () -> String,
         networkError: () -> String,
         allow404AsSuccessUnit: Boolean = false,
+        treatSuccessAsUnit: Boolean = false,
         request: suspend () -> Response<T>
     ): Resource<T> = withContext(Dispatchers.IO) {
         val startingUid = currentUid()
@@ -62,7 +63,9 @@ class EcgRepository( // (Google Developers, 2024)
             if (startingUid != null && currentUid() != startingUid) {
                 return@withContext Resource.Error(LocaleHelper.stringOr(R.string.rt_err_session_changed, "Session changed. Please sign in again."))
             }
-            if (allow404AsSuccessUnit && (response.isSuccessful || response.code() == 404)) {
+            if ((allow404AsSuccessUnit && (response.isSuccessful || response.code() == 404)) ||
+                (treatSuccessAsUnit && response.isSuccessful)
+            ) {
                 @Suppress("UNCHECKED_CAST")
                 return@withContext Resource.Success(Unit as T)
             }
@@ -107,45 +110,52 @@ class EcgRepository( // (Google Developers, 2024)
             apiService.stopSession(sessionId, recordedDurationSeconds)
         }
 
-    suspend fun setRecordingState(sessionId: String, paused: Boolean): Resource<Unit> = withContext(Dispatchers.IO) {
-        val startingUid = currentUid()
-        try {
-            val token = refreshToken()
-            if (startingUid != null && (currentUid() != startingUid || token.isNullOrBlank())) {
-                return@withContext Resource.Error(LocaleHelper.stringOr(R.string.rt_err_session_changed, "Session changed. Please sign in again."))
-            }
-            val response = apiService.setRecordingState(sessionId, paused)
-            if (startingUid != null && currentUid() != startingUid) {
-                return@withContext Resource.Error(LocaleHelper.stringOr(R.string.rt_err_session_changed, "Session changed. Please sign in again."))
-            }
-            if (response.isSuccessful) Resource.Success(Unit)
-            else Resource.Error(LocaleHelper.string(R.string.live_state_sync_failed))
-        } catch (e: CancellationException) {
-            throw e
-        } catch (_: Exception) {
-            Resource.Error(LocaleHelper.string(R.string.live_state_sync_failed))
+    suspend fun setRecordingState(sessionId: String, paused: Boolean): Resource<Unit> =
+        executeAuthenticated(
+            defaultError = { LocaleHelper.string(R.string.live_state_sync_failed) },
+            networkError = { LocaleHelper.string(R.string.live_state_sync_failed) },
+            treatSuccessAsUnit = true
+        ) {
+            apiService.setRecordingState(sessionId, paused)
         }
-    }
 
-    suspend fun discardSession(sessionId: String): Resource<Unit> = withContext(Dispatchers.IO) {
-        val startingUid = currentUid()
-        try {
-            val token = refreshToken()
-            if (startingUid != null && (currentUid() != startingUid || token.isNullOrBlank())) {
-                return@withContext Resource.Error(LocaleHelper.stringOr(R.string.rt_err_session_changed, "Session changed. Please sign in again."))
-            }
-            val response = apiService.discardSession(sessionId)
-            if (startingUid != null && currentUid() != startingUid) {
-                return@withContext Resource.Error(LocaleHelper.stringOr(R.string.rt_err_session_changed, "Session changed. Please sign in again."))
-            }
-            if (response.isSuccessful || response.code() == 404) Resource.Success(Unit)
-            else Resource.Error(LocaleHelper.string(R.string.live_discard_failed))
-        } catch (e: CancellationException) {
-            throw e
-        } catch (_: Exception) {
-            Resource.Error(LocaleHelper.string(R.string.live_discard_failed))
+    suspend fun discardSession(sessionId: String): Resource<Unit> =
+        executeAuthenticated(
+            defaultError = { LocaleHelper.string(R.string.live_discard_failed) },
+            networkError = { LocaleHelper.string(R.string.live_discard_failed) },
+            allow404AsSuccessUnit = true
+        ) {
+            apiService.discardSession(sessionId)
         }
-    }
+
+    suspend fun permitSessionUpload(sessionId: String): Resource<Unit> =
+        executeAuthenticated(
+            defaultError = { LocaleHelper.string(R.string.l10n_err_start_session) },
+            networkError = { LocaleHelper.string(R.string.l10n_err_net_start) },
+            treatSuccessAsUnit = true
+        ) {
+            apiService.permitSessionUpload(sessionId)
+        }
+
+    suspend fun completeRecording(
+        sessionId: String,
+        expectedBatchCount: Int,
+        expectedSampleCount: Int,
+        recordedDurationSeconds: Int? = null
+    ): Resource<com.example.prog7314_poepart23.data.remote.models.RecordingProgressDto> =
+        executeAuthenticated(
+            defaultError = { LocaleHelper.string(R.string.l10n_err_stop_session) },
+            networkError = { LocaleHelper.string(R.string.l10n_err_net_stop) }
+        ) {
+            apiService.completeRecording(
+                sessionId,
+                com.example.prog7314_poepart23.data.remote.models.CompleteRecordingRequestDto(
+                    expectedBatchCount = expectedBatchCount,
+                    expectedSampleCount = expectedSampleCount,
+                    recordedDurationSeconds = recordedDurationSeconds
+                )
+            )
+        }
 
     // Retrieves all historical ECG sessions for a given patient.
     suspend fun getPatientSessions(patientId: String): Resource<List<EcgSessionSummaryDto>> =

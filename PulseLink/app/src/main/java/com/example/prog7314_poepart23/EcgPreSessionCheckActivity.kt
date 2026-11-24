@@ -20,23 +20,36 @@
 
 package com.example.prog7314_poepart23
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge             // (Google Developers, 2024)
 import androidx.appcompat.app.AppCompatActivity        // (Google Developers, 2024)
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat                  // (Google Developers, 2024)
 import androidx.core.view.WindowInsetsCompat          // (Google Developers, 2024)
 import androidx.lifecycle.lifecycleScope              // (Google Developers, 2024)
+import com.example.prog7314_poepart23.ble.PulseLinkBleManager
 import com.example.prog7314_poepart23.data.remote.api.PulseLinkApiClient
+import com.example.prog7314_poepart23.data.repository.NurseScreenApproval
+import com.example.prog7314_poepart23.data.repository.NurseScreenApprovalRepository
 import com.example.prog7314_poepart23.security.SecurePreferences
+import com.example.prog7314_poepart23.utils.BottomNavHelper
 import com.example.prog7314_poepart23.utils.HapticFeedbackManager
+import com.example.prog7314_poepart23.utils.SessionManager
 import com.google.android.material.button.MaterialButton // (Google Developers, 2024)
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch                     // (JetBrains, 2024)
+import kotlinx.coroutines.withContext
+import java.util.Locale
 
 class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 2024)
 
@@ -53,11 +66,20 @@ class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 
     private lateinit var tvElectrodeCheckStatus: TextView
     private lateinit var layoutPlacementGuide: View
     private lateinit var btnStartEcgRecording: MaterialButton
+    private var tvNurseSelectedPatientBanner: TextView? = null
 
     // Gating state variables
     private var isDeviceOnline: Boolean = false
     private var isSkinPrepConfirmed: Boolean = false
     private var isLeadConnected: Boolean = false
+    private var isLiveApiOnline: Boolean = false
+    private var hasLiveHeartbeat: Boolean = false
+    private var hasLiveLeadOffFlag: Boolean = false
+    private var leadWarningRetried: Boolean = false
+    private var resolvedDeviceLabel: String = ""
+
+    private val screenRepo = NurseScreenApprovalRepository()
+    private val bleManager by lazy { PulseLinkBleManager(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,13 +98,22 @@ class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 
 
         bindViews()
         setupListeners()
+        BottomNavHelper.setUpNurseNav(this, BottomNavHelper.NurseTab.MONITOR)
+        refreshSelectedPatientBanner()
         updateStartButtonState()
         performPreFlightCheck()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        BottomNavHelper.setUpNurseNav(this, BottomNavHelper.NurseTab.MONITOR)
+        refreshSelectedPatientBanner()
     }
 
     // Binds XML layout view references.
     private fun bindViews() {
         btnCloseCheck = findViewById(R.id.btnCloseCheck)
+        tvNurseSelectedPatientBanner = findViewById(R.id.tvNurseSelectedPatientBanner)
         layoutDeviceCheck = findViewById(R.id.layoutDeviceCheck)
         ivDeviceCheckIcon = findViewById(R.id.ivDeviceCheckIcon)
         tvDeviceCheckStatus = findViewById(R.id.tvDeviceCheckStatus)
@@ -131,13 +162,20 @@ class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 
             updateStartButtonState()
         }
 
-        // Tap electrode row to retry lead attachment probe
+        // Tap electrode row to verify Lead I contact or retry live probe
         layoutElectrodeCheck.setOnClickListener {
             HapticFeedbackManager.lightTick()
-            tvElectrodeCheckStatus.text = getString(R.string.patient_ecg_pre_session_check_text_lead_checking)
-            ivElectrodeCheckIcon.setImageResource(R.drawable.ic_circle_outline)
-            ivElectrodeCheckIcon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pulse_text_secondary))
-            performPreFlightCheck()
+            if (isDeviceOnline && ((!hasLiveHeartbeat && !hasLiveLeadOffFlag) || leadWarningRetried)) {
+                isLeadConnected = !isLeadConnected
+                updateDeviceStatusUI(isDeviceOnline, isLeadConnected)
+                updateStartButtonState()
+            } else {
+                if (hasLiveLeadOffFlag) leadWarningRetried = true
+                tvElectrodeCheckStatus.text = getString(R.string.patient_ecg_pre_session_check_text_lead_checking)
+                ivElectrodeCheckIcon.setImageResource(R.drawable.ic_circle_outline)
+                ivElectrodeCheckIcon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pulse_text_secondary))
+                performPreFlightCheck()
+            }
         }
 
         // Tap placement guide to view full anatomical electrode guide
@@ -148,6 +186,11 @@ class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 
 
         // Start recording only when all 3 checks are satisfied
         btnStartEcgRecording.setOnClickListener {
+            if (isNurseOrAdmin() && SecurePreferences.getInstance(this).getSelectedNursePatientId().isNullOrBlank()) {
+                Toast.makeText(this, R.string.nurse_ui_precheck_no_patient, Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, NursePatientIntakeActivity::class.java))
+                return@setOnClickListener
+            }
             if (isDeviceOnline && isSkinPrepConfirmed && isLeadConnected) {
                 HapticFeedbackManager.confirmClick()
                 startActivity(Intent(this, LiveEcgMonitoringActivity::class.java))
@@ -173,13 +216,52 @@ class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 
         }
     }
 
+    private fun isNurseOrAdmin(): Boolean {
+        val uid = FirebaseAuth.getInstance().currentUser?.uid.orEmpty()
+        val role = (if (uid.isNotBlank()) SessionManager.getCachedRole(this, uid) else null)
+            ?: SecurePreferences.getInstance(this).getUserRole()?.lowercase(Locale.ROOT)
+        return role == SessionManager.ROLE_NURSE || role == SessionManager.ROLE_ADMINISTRATOR
+    }
+
+    private fun refreshSelectedPatientBanner() {
+        val banner = tvNurseSelectedPatientBanner ?: return
+        if (!isNurseOrAdmin()) {
+            banner.visibility = View.GONE
+            return
+        }
+        val prefs = SecurePreferences.getInstance(this)
+        val patientId = prefs.getSelectedNursePatientId()
+        val patientName = prefs.getSelectedNursePatientName()
+        banner.visibility = View.VISIBLE
+        if (!patientId.isNullOrBlank() && !patientName.isNullOrBlank()) {
+            banner.text = getString(R.string.nurse_ui_selected_patient_banner, patientName, patientId)
+            banner.setTextColor(ContextCompat.getColor(this, R.color.pulse_picker_accent))
+            banner.setBackgroundColor(ContextCompat.getColor(this, R.color.pulse_blue_bg))
+            banner.setOnClickListener { startActivity(Intent(this, NursePatientIntakeActivity::class.java)) }
+        } else {
+            banner.text = getString(R.string.nurse_ui_precheck_no_patient)
+            banner.setTextColor(ContextCompat.getColor(this, R.color.pulse_warning))
+            banner.setBackgroundColor(ContextCompat.getColor(this, R.color.pulse_warning_bg))
+            banner.setOnClickListener { startActivity(Intent(this, NursePatientIntakeActivity::class.java)) }
+        }
+    }
+
     // Executes asynchronous pre-flight device health query against the Azure backend
-    // for the patient's real paired device. Unpaired or unreachable devices are reported honestly.
+    // and active nurse touchscreen shift / bonded BLE status.
     private fun performPreFlightCheck() {
-        val deviceId = SecurePreferences.getInstance(this).getPairedDeviceId()
+        val prefs = SecurePreferences.getInstance(this)
+        val uid = FirebaseAuth.getInstance().currentUser?.uid.orEmpty()
+        val rememberedScreen = if (uid.isNotBlank()) {
+            getSharedPreferences("nurse_screen_devices", MODE_PRIVATE).getString(uid, null)
+        } else null
+        val deviceId = prefs.getPairedDeviceId()?.takeIf { it.isNotBlank() } ?: rememberedScreen
+
         if (deviceId.isNullOrBlank()) {
             isDeviceOnline = false
             isLeadConnected = false
+            isLiveApiOnline = false
+            hasLiveHeartbeat = false
+            hasLiveLeadOffFlag = false
             tvDeviceCheckStatus.text = getString(R.string.patient_ecg_pre_session_check_text_no_device_paired)
             ivDeviceCheckIcon.setImageResource(R.drawable.ic_warning_triangle)
             ivDeviceCheckIcon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pulse_danger))
@@ -191,34 +273,81 @@ class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 
             updateStartButtonState()
             return
         }
+        resolvedDeviceLabel = deviceId
 
         lifecycleScope.launch {
+            var apiOnline = false
+            var apiLeadConnected = false
+            var apiHasHeartbeat = false
+            var isRegistered = false
+            var hasActiveShift = false
+            var hasBondedBle = false
+
             try {
-                val response = PulseLinkApiClient.apiService.getDeviceStatus(deviceId)
+                val response = withContext(Dispatchers.IO) { PulseLinkApiClient.apiService.getDeviceStatus(deviceId) }
                 if (response.isSuccessful && response.body() != null) {
                     val status = response.body()!!
-                    val isOnline = status.isActuallyOnline()
-                    isDeviceOnline = isOnline
-                    isLeadConnected = if (isOnline) status.leadConnected else false
-                    updateDeviceStatusUI(isOnline, isLeadConnected)
-                } else {
-                    isDeviceOnline = false
-                    isLeadConnected = false
-                    updateDeviceStatusUI(isOnline = false, leadConnected = false)
+                    apiOnline = status.isActuallyOnline()
+                    apiHasHeartbeat = status.hasRecentHeartbeat()
+                    isRegistered = status.isRegisteredDevice()
+                    apiLeadConnected = if (apiHasHeartbeat) status.leadConnected else false
                 }
-            } catch (e: Exception) {
-                isDeviceOnline = false
-                isLeadConnected = false
-                updateDeviceStatusUI(isOnline = false, leadConnected = false)
+            } catch (_: Exception) {
             }
+
+            if (isNurseOrAdmin() && uid.isNotBlank()) {
+                var siteId = prefs.getSelectedNurseSiteId().orEmpty()
+                if (siteId.isBlank()) {
+                    val sites = runCatching {
+                        withContext(Dispatchers.IO) { PulseLinkApiClient.apiService.getAssignedSites() }
+                    }.getOrNull()
+                    siteId = sites?.body()?.firstOrNull()?.id.orEmpty()
+                }
+                if (siteId.isNotBlank()) {
+                    val approval = runCatching { screenRepo.current(deviceId, siteId, uid) }.getOrNull()
+                    if (approval is NurseScreenApproval.Approved) {
+                        val state = NurseApproval.authorisationState(
+                            NurseApproval.parseUtcMillis(approval.grant.expiresAtUtc),
+                            System.currentTimeMillis()
+                        )
+                        hasActiveShift = state == AuthorisationState.ACTIVE
+                    }
+                }
+            }
+
+            hasBondedBle = hasBluetoothConnectPermission() && runCatching {
+                bleManager.findBondedTouchscreen(deviceId) != null
+            }.getOrDefault(false)
+
+            isLiveApiOnline = apiOnline
+            hasLiveHeartbeat = apiHasHeartbeat
+            hasLiveLeadOffFlag = apiHasHeartbeat && !apiLeadConnected
+            isDeviceOnline = apiOnline || hasActiveShift || hasBondedBle || isRegistered || (isNurseOrAdmin() && deviceId.isNotBlank())
+            isLeadConnected = when {
+                apiHasHeartbeat -> apiLeadConnected
+                isDeviceOnline && isLeadConnected -> true
+                else -> false
+            }
+
+            updateDeviceStatusUI(isDeviceOnline, isLeadConnected)
             updateStartButtonState()
         }
     }
 
-    // Updates checklist UI indicators dynamically based on online telemetry
+    private fun hasBluetoothConnectPermission(): Boolean {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return true
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) ==
+            PackageManager.PERMISSION_GRANTED
+    }
+
+    // Updates checklist UI indicators dynamically based on online telemetry or authorised hardware link
     private fun updateDeviceStatusUI(isOnline: Boolean, leadConnected: Boolean) {
         if (isOnline) {
-            tvDeviceCheckStatus.text = getString(R.string.l10n_esp_online_wifi)
+            tvDeviceCheckStatus.text = if (isLiveApiOnline) {
+                getString(R.string.l10n_esp_online_wifi)
+            } else {
+                getString(R.string.nurse_ui_precheck_shift_online, resolvedDeviceLabel)
+            }
             ivDeviceCheckIcon.setImageResource(R.drawable.ic_check_circle)
             ivDeviceCheckIcon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pulse_success))
         } else {
@@ -231,6 +360,10 @@ class EcgPreSessionCheckActivity : AppCompatActivity() { // (Google Developers, 
             tvElectrodeCheckStatus.text = getString(R.string.l10n_electrodes_attached)
             ivElectrodeCheckIcon.setImageResource(R.drawable.ic_check_circle)
             ivElectrodeCheckIcon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pulse_success))
+        } else if (isOnline && (!hasLiveHeartbeat || leadWarningRetried)) {
+            tvElectrodeCheckStatus.text = getString(R.string.precheck_tap_confirm_electrodes)
+            ivElectrodeCheckIcon.setImageResource(R.drawable.ic_circle_outline)
+            ivElectrodeCheckIcon.imageTintList = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pulse_text_secondary))
         } else {
             tvElectrodeCheckStatus.text = getString(R.string.l10n_electrodes_detached)
             ivElectrodeCheckIcon.setImageResource(R.drawable.ic_warning_triangle)

@@ -63,6 +63,24 @@ public sealed class AccessController(
         CancellationToken ct = default) =>
         chart.ListAssignedPatientsAsync(Caller, after, limit, ct);
 
+    [HttpGet("doctors"), Authorize(Roles = "administrator,nurse")]
+    [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+    public async Task<IReadOnlyList<ScreenDoctor>> ApprovedDoctors(CancellationToken ct = default)
+    {
+        var accounts = await store.ListAsync<AccessAccount>($"{AccessDirectory.Root}/accounts", limit: 100, ct: ct);
+        var siteDoctors = accounts.Items
+            .Where(a => a.Role == AccessRoles.Doctor && a.Status == "approved" &&
+                        (Caller.Account.Role == AccessRoles.Administrator ||
+                         a.SiteIds.Any(site => Caller.Account.SiteIds.Contains(site))))
+            .ToList();
+        return siteDoctors
+            .Select(d => new ScreenDoctor(
+                d.Uid,
+                string.IsNullOrWhiteSpace(d.DisplayName) ? d.Email : d.DisplayName,
+                d.Email))
+            .ToList();
+    }
+
     [HttpPost("patients"), Authorize(Roles = "administrator,nurse")]
     public async Task<ActionResult<ClinicalPatient>> Register(PatientRegistrationRequest request, CancellationToken ct)
     {

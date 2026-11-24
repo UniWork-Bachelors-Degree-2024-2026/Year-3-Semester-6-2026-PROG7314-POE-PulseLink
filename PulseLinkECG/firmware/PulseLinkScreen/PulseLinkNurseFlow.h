@@ -1,5 +1,9 @@
 #pragma once
+#if __has_include(<PulseLinkNursePolicy.h>)
 #include <PulseLinkNursePolicy.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkNursePolicy.h"
+#endif
 #include "PulseLinkNetwork.h"
 #include "PulseLinkClinicalStore.h"
 #include "PulseLinkTextEntry.h"
@@ -39,7 +43,7 @@ private:
   const char *notice = "Approve this unit from the nurse app.";
   char eventId[65] = {}, eventSession[41] = {};
   char eventAuthor[81] = {}, eventMessage[301] = {}, eventKind[33] = {};
-  bool eventReceived = false, hasUnreadMessage = false, returnToMonitor = false;
+  bool eventReceived = false, hasUnreadMessage = false, returnToMonitor = false, activeSessionSynced = false;
 
   static uint64_t parseUtc(const char *text) {
     if (!text || strlen(text) < 19) return 0;
@@ -109,7 +113,7 @@ private:
   void lock() {
     permission.clear(); pendingStart = false; repairingAssignment = false; patientCount = doctorCount = 0; selected = Patient{};
     entry.clear(); draftName[0] = draftDob[0] = search[0] = siteId[0] = eventId[0] = eventSession[0] = eventAuthor[0] = eventMessage[0] = eventKind[0] = 0;
-    eventReceived = hasUnreadMessage = returnToMonitor = false;
+    eventReceived = hasUnreadMessage = returnToMonitor = activeSessionSynced = false;
     memset(patients, 0, sizeof(patients)); memset(doctors, 0, sizeof(doctors));
     nurseName[0] = nurseUid[0] = siteName[0] = grantId[0] = 0; code[0] = 0; page = Page::Welcome;
   }
@@ -181,10 +185,10 @@ private:
     doc["startedAtUtc"] = utc(permission.current(millis()));
     const String base = String("/pulselink/private/r-") + activeHex;
     if (!store.save(base, doc)) { notice = "Private recording metadata could not be saved."; return; }
-    saved = false;
+    saved = false; activeSessionSynced = false;
     if (net.view().api == ApiState::Ready && !selected.local) {
-      targetMeta = base; jsonRequest(Job::Prepare, "/api/device-workflow/recordings/check", doc);
-      notice = "Preparing authorised recording...";
+      targetMeta = base; jsonRequest(Job::Prepare, "/api/device-workflow/recordings", doc);
+      notice = "Preparing live capture session...";
     } else { pendingStart = true; page = Page::Monitor; notice = "Offline recording. Upload pending."; }
   }
   void synchronise() {
@@ -292,8 +296,9 @@ private:
       for (unsigned i = 0; i < patientCount; ++i) if (!strcmp(patients[i].id, selected.id)) patients[i] = selected;
       cachePatients(); repairingAssignment = false; page = Page::Confirm; notice = "Doctor assigned. Confirm patient details.";
     } else if (completed == Job::Prepare) {
-      if (reply.status != 204) { notice = "Recording permission response invalid."; return; }
-      pendingStart = true; page = Page::Monitor; notice = "Recording checked. Starting local capture.";
+      JsonDocument metadata;
+      if (store.load(targetMeta, metadata)) { metadata["synchronised"] = true; store.save(targetMeta, metadata); activeSessionSynced = true; }
+      pendingStart = true; page = Page::Monitor; notice = "Recording live to touchscreen, app & SD.";
     } else if (completed == Job::SyncRecording) {
       JsonDocument metadata;
       if (!store.load(targetMeta, metadata) || json["sessionId"] != String("SESSION-") + plainUuid(metadata["recordingId"].as<String>())) { notice = "Recording receipt mismatch. Kept locally."; return; }
@@ -320,6 +325,26 @@ private:
         }
       }
       notice = hasUnreadMessage ? "New doctor coordination message." : eventId[0] ? "Upload permission received for this session." : "No current session updates.";
+      if (!hasUnreadMessage && strcmp(eventKind, "upload-permitted") == 0 &&
+          strncmp(eventSession, "SESSION-", 8) == 0 && strlen(eventSession) == 40) {
+        const String hex = String(eventSession + 8);
+        const String base = String("/pulselink/private/r-") + hex;
+        if (!SD.exists(base + ".0") && !SD.exists(String("/pulselink/") + hex + ".ready") && canWork(90000)) {
+          strlcpy(activeHex, hex.c_str(), sizeof(activeHex));
+          JsonDocument doc;
+          doc["grantId"] = grantId; doc["recordingId"] = uuid(activeHex);
+          doc["patientId"] = selected.id[0] ? selected.id : "REMOTE"; doc["patientName"] = selected.name;
+          doc["operatorUid"] = nurseUid; doc["siteId"] = siteId;
+          doc["primaryDoctorUid"] = selected.doctor; doc["patientVersion"] = selected.version;
+          doc["startedAtUtc"] = utc(permission.current(millis()));
+          doc["synchronised"] = true;
+          if (store.save(base, doc)) {
+            activeSessionSynced = true; pendingStart = true; page = Page::Monitor;
+            notice = "Live capture started from Android app.";
+          }
+        }
+        send(Job::Receipt, String("/api/device-transport/events/") + eventId + "/received", true, "{}");
+      }
     } else if (completed == Job::Receipt) {
       eventReceived = true; hasUnreadMessage = false;
       notice = "Doctor coordination message acknowledged.";
@@ -333,6 +358,7 @@ public:
     if (prefs.begin("pl-nurse", true)) { mustApprove = prefs.getBool("locked", true); prefs.end(); }
   }
   bool canWork(uint32_t remaining = 0) { return storageVerified && grantId[0] && permission.allows(millis(), remaining); }
+  bool isActiveSessionSynchronised() const { return activeSessionSynced; }
   bool busy() const { return requestId != 0; }
   bool monitor() const { return page == Page::Monitor; }
   Page currentPage() const { return page; }
@@ -390,6 +416,11 @@ public:
       if (!storageVerified) { lock(); notice = "Private card storage failed its safety check."; return; }
     }
     if (grantId[0] && !canWork()) { lock(); notice = "Nurse shift expired. Connect and approve again."; }
+    if (canWork() && net.view().api == ApiState::Ready && net.view().pendingEvents > 0 && !hasUnreadMessage) {
+      net.clearPendingEvents();
+      send(Job::Updates, "/api/device-transport/events", false);
+      return;
+    }
     if (page == Page::Welcome && net.view().api == ApiState::Ready && millis() - pollAt >= 5000 && ((!mustApprove && !checkedServer) || code[0])) {
       pollAt = millis(); send(Job::Grant, "/api/device-workflow/authorisation", false);
     } else if (canWork() && net.view().api == ApiState::Ready && millis() - pollAt >= 60000) {

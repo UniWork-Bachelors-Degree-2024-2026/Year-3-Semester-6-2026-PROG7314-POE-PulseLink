@@ -25,6 +25,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.prog7314_poepart23.data.repository.EcgRepository
 import com.example.prog7314_poepart23.security.SecurePreferences
+import com.example.prog7314_poepart23.utils.BottomNavHelper
 import com.example.prog7314_poepart23.utils.HapticFeedbackManager
 import com.example.prog7314_poepart23.utils.Resource
 import com.example.prog7314_poepart23.utils.enableFadeThroughEntry
@@ -74,6 +75,13 @@ class EcgDeviceMonitorActivity : AppCompatActivity() {
         HapticFeedbackManager.initialise(this)
         bindViews()
         wireControls()
+        BottomNavHelper.setUpNurseNavDetached(this)
+        loadDeviceDiagnostics()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        BottomNavHelper.setUpNurseNavDetached(this)
         loadDeviceDiagnostics()
     }
 
@@ -109,7 +117,7 @@ class EcgDeviceMonitorActivity : AppCompatActivity() {
         tvDeviceMac.text = savedMac
         tvDevicePowerSource.text = getString(R.string.l10n_power_5v_usb)
         tvDeviceSamplingRate.text = getString(R.string.patient_ecg_device_monitor_text_250hz)
-        tvDeviceFirmware.text = getString(R.string.patient_ecg_device_monitor_text_esp8266_v2_4_1)
+        tvDeviceFirmware.text = getString(R.string.nurse_ui_firmware_esp32)
 
         if (!isPaired) {
             tvDeviceStatus.text = getString(R.string.l10n_not_paired)
@@ -122,7 +130,8 @@ class EcgDeviceMonitorActivity : AppCompatActivity() {
             when (val result = ecgRepository.getDeviceStatus(deviceId)) {
                 is Resource.Success -> {
                     val status = result.data
-                    val isOnline = status?.isActuallyOnline() == true
+                    val isLive = status?.isActuallyOnline() == true
+                    val isOnline = isLive || status?.isRegisteredDevice() == true
                     if (isOnline) {
                         tvDeviceStatus.text = getString(R.string.l10n_connected)
                         tvDeviceStatus.setTextColor(getColor(R.color.pulse_success))
@@ -132,9 +141,9 @@ class EcgDeviceMonitorActivity : AppCompatActivity() {
                         tvDeviceStatus.setTextColor(getColor(R.color.pulse_danger))
                         ivDeviceStatusDot.setImageResource(R.drawable.circle_danger_bg)
                     }
-                    tvDeviceSignal.text = if (isOnline) (com.example.prog7314_poepart23.utils.LocaleHelper.qualityLabel(this@EcgDeviceMonitorActivity, status?.signalQuality ?: "Excellent")) else getString(R.string.l10n_no_signal)
-                    tvDeviceFirmware.text = status?.firmwareVersion ?: getString(R.string.patient_ecg_device_monitor_text_esp8266_v2_4_1)
-                    tvLeadConfig.text = if (isOnline && status?.leadConnected == true) getString(R.string.l10n_lead_normal) else if (isOnline) getString(R.string.l10n_lead_detached) else getString(R.string.l10n_lead_disconnected)
+                    tvDeviceSignal.text = if (isLive) (com.example.prog7314_poepart23.utils.LocaleHelper.qualityLabel(this@EcgDeviceMonitorActivity, status?.signalQuality ?: "Excellent")) else if (isOnline) getString(R.string.nurse_ui_hardware_online) else getString(R.string.l10n_no_signal)
+                    tvDeviceFirmware.text = status?.firmwareVersion?.takeIf { it.isNotBlank() } ?: getString(R.string.nurse_ui_firmware_esp32)
+                    tvLeadConfig.text = if (isLive && status?.leadConnected == true) getString(R.string.l10n_lead_normal) else if (isLive) getString(R.string.l10n_lead_detached) else getString(R.string.l10n_lead_disconnected)
                 }
                 is Resource.Error -> {
                     tvDeviceStatus.text = getString(R.string.l10n_offline)
@@ -175,7 +184,7 @@ class EcgDeviceMonitorActivity : AppCompatActivity() {
                             tvDeviceStatus.setTextColor(getColor(R.color.pulse_success))
                             ivDeviceStatusDot.setImageResource(R.drawable.circle_success_bg)
                             tvDeviceSignal.text = com.example.prog7314_poepart23.utils.LocaleHelper.qualityLabel(this@EcgDeviceMonitorActivity, status?.signalQuality ?: "Excellent")
-                            tvDeviceFirmware.text = status?.firmwareVersion ?: getString(R.string.patient_ecg_device_monitor_text_esp8266_v2_4_1)
+                            tvDeviceFirmware.text = status?.firmwareVersion ?: getString(R.string.nurse_ui_firmware_esp32)
                             tvLeadConfig.text = if (status?.leadConnected == true) getString(R.string.l10n_lead_normal) else getString(R.string.l10n_lead_detached)
                             HapticFeedbackManager.confirmClick()
                             Toast.makeText(

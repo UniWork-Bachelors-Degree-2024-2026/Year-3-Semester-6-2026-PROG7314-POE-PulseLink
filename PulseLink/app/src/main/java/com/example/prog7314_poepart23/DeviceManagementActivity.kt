@@ -69,12 +69,12 @@ class DeviceManagementActivity : AppCompatActivity() {
         wireControls()
         fetchLatestDeviceTelemetry()
 
-        BottomNavHelper.setUpPatientNav(this, BottomNavHelper.PatientTab.DASHBOARD)
+        BottomNavHelper.setUpNurseNavDetached(this)
     }
 
     override fun onResume() {
         super.onResume()
-        BottomNavHelper.setUpPatientNav(this, BottomNavHelper.PatientTab.DASHBOARD)
+        BottomNavHelper.setUpNurseNavDetached(this)
         fetchLatestDeviceTelemetry()
     }
 
@@ -113,11 +113,14 @@ class DeviceManagementActivity : AppCompatActivity() {
         }
     }
 
-    // Fetches live ESP32 connection state from the remote backend for the device the
-    // patient has actually paired. Shows an empty state if no device is paired yet.
+    // Fetches live ESP32 connection state from the remote backend or paired touchscreen shift/BLE state.
     private fun fetchLatestDeviceTelemetry() {
         val prefs = com.example.prog7314_poepart23.security.SecurePreferences.getInstance(this)
-        val deviceId = prefs.getPairedDeviceId()
+        val uid = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid.orEmpty()
+        val rememberedScreen = if (uid.isNotBlank()) {
+            getSharedPreferences("nurse_screen_devices", MODE_PRIVATE).getString(uid, null)
+        } else null
+        val deviceId = prefs.getPairedDeviceId()?.takeIf { it.isNotBlank() } ?: rememberedScreen
 
         if (deviceId == null) {
             cardPrimaryDevice.visibility = android.view.View.GONE
@@ -129,19 +132,21 @@ class DeviceManagementActivity : AppCompatActivity() {
         cardPrimaryDevice.visibility = android.view.View.VISIBLE
         cardNoDevice.visibility = android.view.View.GONE
 
-        val savedName = prefs.getPairedDeviceName() ?: getString(R.string.l10n_default_monitor_name)
+        val savedName = prefs.getPairedDeviceName() ?: deviceId
         val savedMac = prefs.getPairedDeviceMac() ?: getString(R.string.l10n_not_registered)
         tvDeviceName.text = savedName
         tvDeviceMac.text = savedMac
         tvDeviceSubtitle.text = getString(R.string.l10n_device_subtitle)
         tvDevicePowerSource.text = getString(R.string.l10n_usb_powered)
+        tvDeviceFirmware.text = getString(R.string.nurse_ui_firmware_esp32)
 
         lifecycleScope.launch {
             when (val result = ecgRepository.getDeviceStatus(deviceId)) {
                 is Resource.Success -> {
                     val status = result.data
-                    val isOnline = status?.isActuallyOnline() == true
-                    if (isOnline) {
+                    val isLive = status?.isActuallyOnline() == true
+                    val isLinked = isLive || status?.isRegisteredDevice() == true || !rememberedScreen.isNullOrBlank()
+                    if (isLinked) {
                         tvDeviceConnectionStatus.text = getString(R.string.l10n_connected)
                         tvDeviceConnectionStatus.setBackgroundResource(R.drawable.bg_pill_success)
                         tvDeviceConnectionStatus.setTextColor(getColor(R.color.pulse_success))
@@ -152,15 +157,34 @@ class DeviceManagementActivity : AppCompatActivity() {
                         tvDeviceConnectionStatus.setTextColor(getColor(R.color.pulse_danger))
                         layoutDeviceOfflineBanner.visibility = android.view.View.VISIBLE
                     }
-                    tvDeviceSignalQuality.text = if (isOnline) (com.example.prog7314_poepart23.utils.LocaleHelper.qualityLabel(this@DeviceManagementActivity, status?.signalQuality ?: "Excellent")) else getString(R.string.l10n_no_signal)
-                    tvDeviceFirmware.text = status?.firmwareVersion ?: getString(R.string.patient_ecg_device_monitor_text_esp8266_v2_4_1)
+                    tvDeviceSignalQuality.text = if (isLive) {
+                        com.example.prog7314_poepart23.utils.LocaleHelper.qualityLabel(
+                            this@DeviceManagementActivity,
+                            status?.signalQuality ?: "Excellent"
+                        )
+                    } else if (isLinked) {
+                        getString(R.string.nurse_ui_hardware_online)
+                    } else {
+                        getString(R.string.l10n_no_signal)
+                    }
+                    tvDeviceFirmware.text = status?.firmwareVersion?.takeIf { it.isNotBlank() }
+                        ?: getString(R.string.nurse_ui_firmware_esp32)
                 }
                 is Resource.Error -> {
-                    tvDeviceConnectionStatus.text = getString(R.string.l10n_offline)
-                    tvDeviceConnectionStatus.setBackgroundResource(R.drawable.bg_pill_danger)
-                    tvDeviceConnectionStatus.setTextColor(getColor(R.color.pulse_danger))
-                    layoutDeviceOfflineBanner.visibility = android.view.View.VISIBLE
-                    tvDeviceSignalQuality.text = getString(R.string.l10n_no_signal)
+                    val hasLocalLink = !rememberedScreen.isNullOrBlank()
+                    if (hasLocalLink) {
+                        tvDeviceConnectionStatus.text = getString(R.string.l10n_connected)
+                        tvDeviceConnectionStatus.setBackgroundResource(R.drawable.bg_pill_success)
+                        tvDeviceConnectionStatus.setTextColor(getColor(R.color.pulse_success))
+                        layoutDeviceOfflineBanner.visibility = android.view.View.GONE
+                        tvDeviceSignalQuality.text = getString(R.string.nurse_ui_hardware_online)
+                    } else {
+                        tvDeviceConnectionStatus.text = getString(R.string.l10n_offline)
+                        tvDeviceConnectionStatus.setBackgroundResource(R.drawable.bg_pill_danger)
+                        tvDeviceConnectionStatus.setTextColor(getColor(R.color.pulse_danger))
+                        layoutDeviceOfflineBanner.visibility = android.view.View.VISIBLE
+                        tvDeviceSignalQuality.text = getString(R.string.l10n_no_signal)
+                    }
                 }
                 is Resource.Loading -> Unit
             }
@@ -191,14 +215,19 @@ class DeviceManagementActivity : AppCompatActivity() {
                     val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
                     tvDeviceLastSync.text = getString(R.string.l10n_just_now_time_format, currentTime)
                     val status = result.data
-                    val isOnline = status?.isActuallyOnline() == true
+                    val isOnline = status?.isActuallyOnline() == true || status?.isRegisteredDevice() == true
                     if (isOnline) {
                         tvDeviceConnectionStatus.text = getString(R.string.l10n_connected)
                         tvDeviceConnectionStatus.setBackgroundResource(R.drawable.bg_pill_success)
                         tvDeviceConnectionStatus.setTextColor(getColor(R.color.pulse_success))
                         layoutDeviceOfflineBanner.visibility = android.view.View.GONE
-                        tvDeviceSignalQuality.text = com.example.prog7314_poepart23.utils.LocaleHelper.qualityLabel(this@DeviceManagementActivity, status?.signalQuality ?: "Excellent")
-                        tvDeviceFirmware.text = status?.firmwareVersion ?: getString(R.string.patient_ecg_device_monitor_text_esp8266_v2_4_1)
+                        tvDeviceSignalQuality.text = if (status?.isActuallyOnline() == true) {
+                            com.example.prog7314_poepart23.utils.LocaleHelper.qualityLabel(this@DeviceManagementActivity, status.signalQuality)
+                        } else {
+                            getString(R.string.nurse_ui_hardware_online)
+                        }
+                        tvDeviceFirmware.text = status?.firmwareVersion?.takeIf { it.isNotBlank() }
+                            ?: getString(R.string.nurse_ui_firmware_esp32)
                         HapticFeedbackManager.confirmClick()
                         Toast.makeText(
                             this@DeviceManagementActivity,

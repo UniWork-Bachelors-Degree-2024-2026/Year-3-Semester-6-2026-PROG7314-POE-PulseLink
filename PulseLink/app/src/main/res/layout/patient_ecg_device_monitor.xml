@@ -369,7 +369,7 @@
                             android:id="@+id/tvDeviceFirmware"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/patient_ecg_device_monitor_text_esp8266_v2_4_1"
+                            android:text="@string/nurse_ui_firmware_esp32"
                             android:textColor="@color/pulse_text_primary"
                             android:textSize="13sp"
                             android:textStyle="bold" />
@@ -506,5 +506,7 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <include layout="@layout/layout_bottom_nav_nurse" />
 
 </LinearLayout>

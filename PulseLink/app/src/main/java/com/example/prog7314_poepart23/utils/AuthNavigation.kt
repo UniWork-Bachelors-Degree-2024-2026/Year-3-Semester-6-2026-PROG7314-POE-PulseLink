@@ -15,6 +15,7 @@ import android.app.Activity
 import android.content.Intent
 import com.example.prog7314_poepart23.BiometricSetupActivity
 import com.example.prog7314_poepart23.DoctorDashboardActivity
+import com.example.prog7314_poepart23.NurseDashboardActivity
 import com.example.prog7314_poepart23.PatientDashboardActivity
 import com.example.prog7314_poepart23.SiteAccessActivity
 import com.example.prog7314_poepart23.security.PendingBiometricEnrollment
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 fun dashboardFor(role: String?): Class<out Activity> = when (role?.lowercase()) {
     SessionManager.ROLE_DOCTOR -> DoctorDashboardActivity::class.java
+    SessionManager.ROLE_NURSE -> NurseDashboardActivity::class.java
     SessionManager.ROLE_PATIENT -> PatientDashboardActivity::class.java
     else -> SiteAccessActivity::class.java
 }

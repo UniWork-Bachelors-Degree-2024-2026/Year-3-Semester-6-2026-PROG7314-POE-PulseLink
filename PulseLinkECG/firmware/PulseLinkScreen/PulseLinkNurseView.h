@@ -373,7 +373,8 @@ inline void PulseLinkNurseFlow::draw(PulseLinkDisplay &d, bool c3Fresh, uint8_t 
     }
     const bool leadsClear = c3Fresh && !leadFlags;
     d.fillCircle(109, 77, 3, leadsClear ? MintGreen : WarnRed);
-    line(117, 73, 188, !c3Fresh ? "Waiting for C3 UART" : leadsClear ? "Lead-off inputs: clear" : "Lead-off: check R, L, COM",
+    line(117, 73, 188, !c3Fresh ? String("Waiting for C3 UART") : leadsClear ? String("Lead-off inputs: clear") :
+         String("Lead-off:") + ((leadFlags & 1) ? " LO+" : "") + ((leadFlags & 2) ? " LO-" : "") + " check",
          leadsClear ? MintGreen : WarnRed, CardBg);
     if (fullRedraw) btn(8, 170, 304, 28, "Pads Placed: Pre-Recording Checklist >", true);
   } else if (page == Page::Leads) {
@@ -403,7 +404,8 @@ inline void PulseLinkNurseFlow::draw(PulseLinkDisplay &d, bool c3Fresh, uint8_t 
     checkRow(84, "3. Shift", shiftOk ? "Authorised (>=90s)" : "Approve nurse shift", shiftOk);
     checkRow(98, "4. C3 UART", uartOk ? "Connected (115200)" : "Link unavailable", uartOk);
     checkRow(112, "5. microSD", sdOk ? "Ready for journal" : "Storage check needed", sdOk);
-    checkRow(126, "6. R, L, COM", !c3Fresh ? "Waiting C3..." : leadsOk ? "Contacts clear" : "Lead-off asserted", leadsOk);
+    checkRow(126, "6. R, L, COM", !c3Fresh ? "Waiting C3..." : leadsOk ? "Contacts clear" :
+      leadFlags == 1 ? "LO+ high (GPIO 5)" : leadFlags == 2 ? "LO- high (GPIO 4)" : "LO+ & LO- high", leadsOk);
     checkRow(140, "7. Uplink", apiReady ? "API ready (HTTPS)" : "Offline SD queue", apiReady, true);
 
     if (allOk) {

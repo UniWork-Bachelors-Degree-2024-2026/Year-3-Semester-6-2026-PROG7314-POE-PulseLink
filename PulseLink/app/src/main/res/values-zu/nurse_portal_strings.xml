@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Indima nokubhalisa -->
+    <string name="l10n_role_nurse">Umhlengikazi</string>
+    <string name="voice_dest_nurse_patients">Iziguli</string>
+    <string name="voice_dest_nurse_monitor">Ukuqapha</string>
+    <string name="voice_dest_nurse_chat">Ingxoxo yosizo</string>
+    <string name="voice_dest_nurse_settings">Izilungiselelo</string>
+    <string name="voice_devices_nurse_only">Ukuphathwa kwedivayisi kukhawulelwe kubahlengikazi baseklinikhi abagunyaziwe kuphela.</string>
+
+    <!-- Imenyu engezansi yomhlengikazi -->
+    <string name="nav_nurse_dashboard_label">Ideshibhodi</string>
+    <string name="nav_nurse_patients_label">Iziguli</string>
+    <string name="nav_nurse_monitor_label">Ukuqapha</string>
+    <string name="nav_nurse_support_label">Usizo</string>
+
+    <!-- Ideshibhodi yomhlengikazi -->
+    <string name="nurse_ui_title_dashboard">Ideshibhodi Yomhlengikazi</string>
+    <string name="nurse_ui_greeting_format">Usuku oluhle, %1$s</string>
+    <string name="nurse_ui_greeting_subtitle">Umsebenzi womhlengikazi, idatha yedivayisi kanye nokubhaliswa kweziguli.</string>
+    <string name="nurse_ui_assigned_site_format">Iklinikhi eyabelwe: %1$s</string>
+    <string name="nurse_ui_assigned_site_none">Iklinikhi eyabelwe: Ilinde ukwabelwa ngumlawuli</string>
+    <string name="nurse_ui_shift_card_title">Ukugunyazwa Kweshifu Nesikrini</string>
+    <string name="nurse_ui_shift_pill_active">ISHIFU YAMAHORA ANGU-8</string>
+    <string name="nurse_ui_shift_pill_expired">ISHIFU IPHELILE</string>
+    <string name="nurse_ui_shift_pill_none">KUDINGEKA IKHODI</string>
+    <string name="nurse_ui_approved_screen_label">Isikrini esigunyaziwe</string>
+    <string name="nurse_ui_shift_expiry_label">Isimo seshifu</string>
+    <string name="nurse_ui_btn_authorise_screen">Gunyaza Isikrini</string>
+    <string name="nurse_ui_btn_authorise_another">Gunyaza Esinye Isikrini</string>
+    <string name="nurse_ui_btn_sync_ble">Vumelanisa ama-ECG nge-BLE</string>
+    <string name="nurse_ui_active_patient_title">Iseshini Yesiguli Esisebenzayo</string>
+    <string name="nurse_ui_active_patient_none_title">Asikho isiguli esikhethiwe</string>
+    <string name="nurse_ui_active_patient_none_subtitle">Khetha noma bhalisa isiguli ohlwini lweklinikhi ngaphambi kokuqopha i-ECG.</string>
+    <string name="nurse_ui_selected_patient_label">Isiguli esikhethiwe</string>
+    <string name="nurse_ui_attending_doctor_format">Udokotela Ophethe: %1$s</string>
+    <string name="nurse_ui_btn_start_precheck">Qala Ukuhlola Kwangaphambili</string>
+    <string name="nurse_ui_btn_select_register_patient">Khetha / Bhalisa Isiguli</string>
+    <string name="nurse_ui_hardware_card_title">Idivayisi Nokuxhumana</string>
+    <string name="nurse_ui_hardware_online">Kuxhunyiwe</string>
+    <string name="nurse_ui_hardware_offline">Akuxhunyiwe</string>
+    <string name="nurse_ui_hardware_unit_label">Idivayisi ebhangqiwe</string>
+    <string name="nurse_ui_hardware_ble_label">I-Bluetooth yeSikini</string>
+    <string name="nurse_ui_hardware_ble_bonded">Ibhangqiwe (%1$s)</string>
+    <string name="nurse_ui_hardware_ble_not_bonded">Ayibhangqiwe</string>
+    <string name="nurse_ui_hardware_queue_label">Umugqa we-SQLite ongaxhunyiwe</string>
+    <string name="nurse_ui_hardware_queue_count">%1$d okusalindile</string>
+    <string name="nurse_ui_btn_device_management">Ukuphathwa Kwedivayisi ne-BLE</string>
+    <string name="nurse_ui_chat_card_title">Ingxoxo Yosizo Lweziguli</string>
+    <string name="nurse_ui_chat_card_empty">Ayikho imilayezo yeziguli okwamanje.</string>
+    <string name="nurse_ui_btn_open_chat">Vula Ingxoxo Ebukhoma</string>
+    <string name="nurse_ui_ble_sync_requires_shift">Gunyaza kuqala ishifu yamahora angu-8 yesikrini ukuze uvumelanise ama-ECG nge-BLE.</string>
+    <string name="nurse_ui_ble_permission_missing">Vumela imvume ye-Bluetooth ukuze uxhume esikrinini esibhangqiwe.</string>
+
+    <!-- Amamodal -->
+    <string name="nurse_ui_modal_auth_title">Gunyaza Isikrini Seklinikhi</string>
+    <string name="nurse_ui_modal_auth_desc">Faka i-ID yesikrini (isib. PulseLink-1EBA94) kanye nekhodi enamadijithi angu-6 eboniswa esikrinini.</string>
+    <string name="nurse_ui_modal_device_id_hint">I-ID yesikrini (isib. PulseLink-1EBA94)</string>
+    <string name="nurse_ui_modal_code_hint">Ikhodi enamadijithi angu-6 esikrinini</string>
+    <string name="nurse_ui_modal_auth_submit">Gunyaza Isikrini</string>
+    <string name="nurse_ui_modal_reg_title">Bhalisa Isiguli Esisha</string>
+    <string name="nurse_ui_modal_reg_desc">Bhalisa isiguli ku-Firebase Realtime Database ukuze sivumelane nesikrini se-ESP32.</string>
+    <string name="nurse_ui_modal_patient_name_hint">Igama eliphelele lesiguli</string>
+    <string name="nurse_ui_modal_patient_dob_hint">Usuku lokuzalwa (YYYY-MM-DD, okuzikhethela)</string>
+    <string name="nurse_ui_modal_doctor_label">Udokotela ophethe (ogunyazwe eklinikhi)</string>
+    <string name="nurse_ui_modal_doctor_uid_hint">I-UID kaDokotela (uma uhlu lungatholakali)</string>
+    <string name="nurse_ui_modal_reg_submit">Bhalisa Isiguli</string>
+    <string name="nurse_ui_modal_pair_title">Bhangqa i-ESP32-C3 / Isikrini</string>
+    <string name="nurse_ui_modal_pair_desc">Xhumanisa i-ID yedivayisi ye-ESP32 ukuze usebenzise i-Wi-Fi kanye ne-BLE ngesikhathi esisodwa.</string>
+    <string name="nurse_ui_modal_hw_id_hint">I-ID yedivayisi (isib. PulseLink-1EBA94)</string>
+    <string name="nurse_ui_modal_hw_mac_hint">Ikheli le-MAC (okuzikhethela)</string>
+    <string name="nurse_ui_modal_use_bonded_ble">Thola Isikrini Se-BLE Esibhangqiwe</string>
+    <string name="nurse_ui_modal_pair_submit">Bhangqa Idivayisi</string>
+    <string name="nurse_ui_btn_pair_hardware_cta">Bhangqa i-ESP32-C3 / Isikrini (Wi-Fi noma BLE)</string>
+
+    <!-- Umugqa weziguli eklinikhi -->
+    <string name="nurse_ui_intake_title">Uhlu Lweziguli Zeklinikhi</string>
+    <string name="nurse_ui_intake_new_btn">+ Bhalisa</string>
+    <string name="nurse_ui_intake_search_hint">Sesha ngegama noma nge-PAT ID...</string>
+    <string name="nurse_ui_intake_sync_online">Kuvumelaniswe ne-Firebase Realtime Database nesikrini</string>
+    <string name="nurse_ui_intake_sync_offline">Uhlu lweziguli olugciniwe ungaxhunyiwe</string>
+    <string name="nurse_ui_intake_total_label">Iziguli</string>
+    <string name="nurse_ui_intake_pending_label">Okusalindile</string>
+    <string name="nurse_ui_intake_released_label">Kuqinisekisiwe</string>
+    <string name="nurse_ui_intake_select_btn">Khetha i-ECG</string>
+    <string name="nurse_ui_intake_empty">Azikho iziguli ezihambisana nosesho lwakho kule klinikhi.</string>
+    <string name="nurse_ui_intake_patient_selected">Kukhethwe u-%1$s ukuhlola nokuqopha i-ECG.</string>
+    <string name="nurse_ui_intake_dob_unknown">Usuku lokuzalwa alurekhodiwe</string>
+    <string name="nurse_ui_intake_doctor_label">I-ID kaDokotela: %1$s</string>
+    <string name="nurse_ui_intake_doctor_named">Udokotela: %1$s</string>
+    <string name="nurse_ui_intake_no_site">Yabela i-akhawunti yakho eklinikhi kuqala ngaphambi kokubhalisa iziguli.</string>
+    <string name="nurse_ui_intake_no_doctor">Sicela ukhethe noma ufake i-UID kaDokotela ogunyaziwe.</string>
+    <string name="nurse_ui_intake_registered_ok">Isiguli sibhalisiwe futhi savumelaniswa nohlu lweklinikhi.</string>
+
+    <!-- Izilungiselelo zomhlengikazi -->
+    <string name="nurse_ui_settings_title">Izilungiselelo Zomhlengikazi</string>
+    <string name="nurse_ui_settings_subtitle">Phatha imininingwane, amadivayisi, ukubonakala kanye nosizo.</string>
+    <string name="nurse_ui_settings_sign_out">Phuma</string>
+    <string name="nurse_ui_firmware_esp32">ESP32-C3 + AD8232 / Isikrini</string>
+    <string name="nurse_ui_selected_patient_banner">Isiguli: %1$s (%2$s)</string>
+    <string name="nurse_ui_precheck_no_patient">Sicela ukhethe isiguli kuthebhu Yeziguli kuqala.</string>
+    <string name="nurse_ui_precheck_shift_online">Iyunithi egunyaziwe iku-inthanethi (%1$s)</string>
+
+    <!-- Imibuzo Yosizo Yesiguli -->
+    <string name="patient_faq_q1">Imiphumela yami ye-ECG nokuhlolwa kukadokotela kuzolunga nini?</string>
+    <string name="patient_faq_a1">Ngemuva kokuba umhlengikazi eqede ukuqopha i-ECG yakho imizuzwana engu-90, ithunyelwa kudokotela wakho. Ukuze uvikeleke, imiphumela ihlala ilindile kuze kube udokotela uyayiqinisekisa bese eyikhiphela kuwe.</string>
+    <string name="patient_faq_q2">Ngiwubona kanjani umuthi kadokotela, uhlelo lokunakekelwa nezeluleko?</string>
+    <string name="patient_faq_a2">Uma udokotela esekhiphe imiphumela yakho, vula ithebhu Yemibiko ngezansi bese ucindezela iseshini ukuze ufunde imithi nezeluleko noma ulande umbiko we-PDF.</string>
+    <string name="patient_faq_q3">Asho ukuthini amabanga akhonjiswa ekhasini lesimo seseshini?</string>
+    <string name="patient_faq_a3">Okulinde Ukubuyekezwa Kudokotela kusho ukuthi ukuqoshwa kwe-ECG kulondoloziwe ukuze udokotela akubuke. Imiphumela Ikhishiwe kusho ukuthi udokotela useqinisekise imiphumela yakho.</string>
+    <string name="patient_faq_q4">Ngiyithola kanjani iklinikhi noma isibhedlela esiseduze e-Gqeberha?</string>
+    <string name="patient_faq_a4">Vula ithebhu ye-SOS ngezansi bese ucindezela i-Facility Finder &amp; Maps ukuze usondeze ibalazwe futhi uvule izikhombisi-ndlela ku-Google Maps.</string>
+    <string name="patient_faq_q5">Ngithumela kanjani umlayezo kumhlengikazi ngengxoxo ebukhoma?</string>
+    <string name="patient_faq_a5">Cindezela i-Live Chat noma i-Contact Support phezulu kuleli khasi ukuze uxoxe nomhlengikazi weklinikhi ngesikhathi sangempela.</string>
+    <string name="patient_faq_q6">Kufanele ngenzeni esimweni esiphuthumayo sezempilo (SOS)?</string>
+    <string name="patient_faq_a6">I-PulseLink ayithumeli ama-ambulensi ngokuzenzakalelayo. Uma uzwa ubuhlungu esifubeni noma usenkingeni ephuthumayo, cindezela ithebhu ye-SOS ngokushesha ukuze ushayele u-112 noma u-10177.</string>
+    <string name="patient_faq_q7">Ivikelwa kanjani idatha yami yezempilo?</string>
+    <string name="patient_faq_a7">Iphrofayili yakho nemibiko ivikelwe nge-Firebase Authentication, ukukhiya kwezigxivizo zeminwe, ukuxhumana okubethelwe nge-HTTPS kanye nokulawula ukufinyelela okusekelwe endimeni.</string>
+    <string name="patient_faq_search_empty">Azikho izihloko zosizo ezitholiwe. Zama elinye igama noma uvule i-Live Chat.</string>
+    <string name="patient_faq_user_guide_title">Umhlahlandlela Weseshini Neklinikhi</string>
+    <string name="patient_faq_user_guide_subtitle">Hlola isimo sakho sakamuva se-ECG noma thola iklinikhi</string>
+
+    <!-- Ingxoxo Ebukhoma Yosizo -->
+    <string name="support_chat_title_patient">Ingxoxo Nomhlengikazi Weklinikhi</string>
+    <string name="support_chat_title_nurse">Ingxoxo Yosizo Lweziguli</string>
+    <string name="support_chat_subtitle_patient">Uxhunyiwe nabahlengikazi baseklinikhi</string>
+    <string name="support_chat_subtitle_nurse_thread">Uxoxa no: %1$s</string>
+    <string name="support_chat_switch_thread">Izingxoxo (%1$d)</string>
+    <string name="support_chat_choose_thread">Khetha ingxoxo yesiguli</string>
+    <string name="support_chat_banner_warning">Le ngxoxo ingeyokuxhumana eklinikhi kuphela. Ezimeni eziphuthumayo shayela u-112.</string>
+    <string name="support_chat_empty">Ayikho imilayezo okwamanje. Thumela umlayezo ngezansi ukuze uqale.</string>
+    <string name="support_chat_input_hint">Bhala umlayezo wosizo...</string>
+    <string name="support_chat_send">Thumela</string>
+    <string name="support_chat_sender_you">Wena</string>
+    <string name="support_chat_sender_nurse">Umhlengikazi</string>
+    <string name="support_chat_sender_patient">Isiguli</string>
+    <string name="support_chat_quick_1">Ama-electrode ahlelekile. Sicela uhlale uthule ngesikhathi sokuqopha imizuzwana engu-90.</string>
+    <string name="support_chat_quick_2">Ukuqoshwa kwakho kwe-ECG kulayishiwe ukuze udokotela akubuyekeze.</string>
+    <string name="support_chat_quick_3">Sicela uvule ithebhu Yemibiko uma udokotela esekhiphe imiphumela yakho.</string>
+    <string name="support_chat_no_threads">Azikho izingxoxo zeziguli okwamanje. Uma isiguli sithumela umlayezo kusuka ku-Help &amp; Support, uzovela lapha.</string>
+    <string name="support_chat_choose_thread_desc">Cindezela ingxoxo yesiguli ngezansi ukuze ubone futhi uphendule imilayezo.</string>
+    <string name="patient_settings_subtitle_account_only">Phatha i-akhawunti yakho, ukuphepha, ukubonakala kanye nosizo.</string>
+    <string name="precheck_tap_confirm_electrodes">Cindezela ukuqinisekisa ukuthi ama-pad e-RA, LA, RL axhunyiwe</string>
+    <string name="nurse_ui_modal_doctor_select_title">Khetha Udokotela</string>
+    <string name="nurse_ui_modal_doctor_select_desc">Khetha udokotela ogunyaziwe eklinikhi yakho ukuze abuyekeze i-ECG yalesi siguli.</string>
+</resources>

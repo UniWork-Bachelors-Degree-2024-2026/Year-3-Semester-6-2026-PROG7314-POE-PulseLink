@@ -61,24 +61,29 @@ data class DeviceStatusDto(
     @SerializedName("lastHeartbeatUtc") // (Google Developers, 2024)
     val lastHeartbeatUtc: String = ""
 ) {
-    // Validates that the device is marked online AND has sent a telemetry heartbeat recently (within 60s)
-    fun isActuallyOnline(): Boolean {
-        if (!isOnline) return false
-        if (lastHeartbeatUtc.isBlank()) return isOnline
+    // Evaluates telemetry recency from lastHeartbeatUtc (within 5 minutes) since backend historical
+    // reads intentionally leave isOnline = false when querying cached state.
+    fun hasRecentHeartbeat(nowMs: Long = System.currentTimeMillis()): Boolean {
+        if (lastHeartbeatUtc.isBlank() || lastHeartbeatUtc.startsWith("0001-")) {
+            return false
+        }
         return try {
             val sdf = java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", java.util.Locale.US).apply {
                 timeZone = java.util.TimeZone.getTimeZone("UTC")
             }
             val date = sdf.parse(lastHeartbeatUtc.take(19))
             if (date != null) {
-                val ageMillis = System.currentTimeMillis() - date.time
-                // Consider online if heartbeat was within the last 60 seconds (accounting for clock skew)
-                ageMillis < 60_000L
+                val ageMillis = nowMs - date.time
+                ageMillis in -60_000L..300_000L
             } else {
-                isOnline
+                false
             }
-        } catch (e: Exception) {
-            isOnline
+        } catch (_: Exception) {
+            false
         }
     }
+
+    fun isActuallyOnline(): Boolean = hasRecentHeartbeat() || isOnline
+
+    fun isRegisteredDevice(): Boolean = deviceId.isNotBlank() && patientId.isNotBlank()
 }

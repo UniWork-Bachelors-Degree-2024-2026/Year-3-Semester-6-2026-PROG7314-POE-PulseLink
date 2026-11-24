@@ -3,7 +3,12 @@
 #include <esp_bt.h>
 #include <SPI.h>
 #include <SD.h>
+#include <memory>
+#if __has_include(<PulseLinkSerial.h>)
 #include <PulseLinkSerial.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkSerial.h"
+#endif
 #include "PulseLinkDisplay.h"
 #include "PulseLinkBle.h"
 #include "PulseLinkTouch.h"
@@ -41,7 +46,10 @@ bool forgetConfirm = false;
 const char *bleNotice = "";
 constexpr unsigned WaveWidth = 238, WaveHeight = 114, WaveX = 8, WaveY = 36;
 constexpr unsigned BpmX = 250, BpmWidth = 62;
-int waveform[WaveWidth] = {}; unsigned waveHead = 0;
+int16_t waveform[WaveWidth] = {}; unsigned waveHead = 0;
+std::unique_ptr<pl::UploadJournal> liveStream;
+uint32_t liveBatchReq = 0, liveReqSeq = 0, liveReqCrc = 0, liveAckSeq = 0, liveAckCrc = 0;
+bool liveAckValid = false, liveContiguous = false;
 bool waveDirty = false;
 uint32_t lastWaveUi = 0;
 constexpr uint16_t NAVY = pl::ui::NavyBg, TEAL = pl::ui::TealBtn, WHITE = pl::ui::White, MUTED = pl::ui::MutedText;
@@ -101,9 +109,55 @@ bool requestRecording(bool clinical) {
   journal = SD.open(openPath, FILE_WRITE);
   if (!journal) { failed = true; return false; }
   clinicalRecording = clinical;
+  liveStream.reset(); liveBatchReq = 0; liveAckValid = false; liveContiguous = clinical;
+  if (clinical) {
+    if (network.view().api == ApiState::Ready) ble.releaseIfIdle();
+    liveStream.reset(new (std::nothrow) pl::UploadJournal(session));
+  }
   journal.flush(); requested = true; stopRequested = false; failed = false; recording = pl::RecordingValidator(clinical);
   lastStart = millis() - 1000;
   return true;
+}
+
+void feedLiveBatch(const uint8_t *bytes, size_t count) {
+  if (!clinicalRecording || !liveStream) return;
+  for (size_t i = 0; i < count; ++i) liveStream->feed(bytes[i]);
+  if (liveStream->state != pl::UploadReadState::Ready) return;
+  if (liveStream->count > 0 && workflow.isActiveSessionSynchronised() &&
+      network.view().api == ApiState::Ready && liveBatchReq == 0) {
+    String body;
+    if (body.reserve(4600)) {
+      char hex[33]; for (unsigned i = 0; i < 16; ++i) snprintf(hex + i * 2, 3, "%02x", session[i]);
+      const String sid = String("SESSION-") + hex;
+      const auto config = network.settings();
+      const auto &samples = liveStream->samples;
+      const uint16_t n = liveStream->count, bpm = liveStream->bpm;
+      JsonDocument json;
+      json["schemaVersion"] = 2; json["sessionId"] = sid; json["deviceId"] = config.deviceId;
+      char boot[17]; snprintf(boot, sizeof(boot), "%016llx", liveStream->record.identity.boot);
+      json["bootId"] = boot; json["sequence"] = liveStream->sequence; json["firstSampleIndex"] = samples[0].index;
+      json["timestamp"] = samples[0].us / 1000; json["firstSampleTimestampUs"] = samples[0].us;
+      json["sampleRateHz"] = 250; json["firmwareVer"] = "pulselink-wifi-1";
+      json["estimatedBpm"] = bpm; json["adaptiveThreshold"] = 0;
+      bool leads = true, flagged = false;
+      auto raw = json["samples"].to<JsonArray>(); auto offsets = json["sampleOffsetsUs"].to<JsonArray>();
+      auto flags = json["sampleFlags"].to<JsonArray>();
+      for (unsigned i = 0; i < n; ++i) {
+        raw.add(samples[i].raw); offsets.add(samples[i].us - samples[0].us); flags.add(samples[i].flags);
+        leads &= (samples[i].flags & 3) == 0; flagged |= samples[i].flags != 0;
+      }
+      json["leadConnected"] = leads; json["signalQuality"] = !leads ? "LeadsDisconnected" : flagged ? "Degraded" : bpm ? "Good" : "Unknown";
+      serializeJson(json, body);
+      liveReqSeq = liveStream->sequence; liveReqCrc = liveStream->prefixCrc;
+      if (!liveContiguous || (liveAckValid && liveReqSeq != liveAckSeq + 1) || (!liveAckValid && liveReqSeq != 0)) liveContiguous = false;
+      liveBatchReq = network.submitMoved(("/api/device-transport/recordings/" + sid + "/batches").c_str(), true, std::move(body), NetOwner::Upload);
+    } else {
+      liveContiguous = false;
+    }
+  } else {
+    liveContiguous = false;
+  }
+  liveStream->nextBatch();
 }
 
 void acknowledge(const pl::Frame &f) {
@@ -116,7 +170,7 @@ void receive(pl::Frame &f) {
     if (!pl::get(f, value)) return;
     if (c3Boot && c3Boot != f.h.boot && journal) {
       pl::debug("PL_FAULT c3_restarted\n");
-      renameRecording(".interrupted"); requested = false; failed = true;
+      renameRecording(".interrupted"); liveStream.reset(); liveBatchReq = 0; requested = false; failed = true;
       if (clinicalRecording) workflow.finished(false);
     }
     c3Boot = f.h.boot; c3At = millis(); health = value; return;
@@ -131,13 +185,14 @@ void receive(pl::Frame &f) {
   if (journal.write(bytes, count) != count) {
     pl::debug("PL_FAULT storage_write\n");
     failed = true; pl::Frame stop = pl::frame(pl::Stop, screenBoot, 0, session); pl::send(c3, stop);
-    renameRecording(".interrupted"); requested = false;
+    renameRecording(".interrupted"); liveStream.reset(); liveBatchReq = 0; requested = false;
     if (clinicalRecording) workflow.finished(false);
     return;
   }
   journal.flush();
   // ACK follows the card flush. Consumer retries never append duplicate frames.
   recording = candidate; acknowledge(f); c3At = millis();
+  feedLiveBatch(bytes, count);
   if (f.h.type == pl::Samples) {
     for (size_t offset = 0; offset < f.h.length; offset += sizeof(pl::Sample)) {
       pl::Sample sample; memcpy(&sample, f.payload + offset, sizeof(sample));
@@ -152,6 +207,21 @@ void receive(pl::Frame &f) {
     const bool verified = recording.complete() && readBackComplete();
     if (recording.complete() && !verified) { failed = true; pl::debug("PL_FAULT readback\n"); }
     renameRecording(verified ? ".ready" : ".interrupted"); requested = false;
+    liveStream.reset(); liveBatchReq = 0;
+    if (verified && !failed && liveContiguous && liveAckValid) {
+      char idHex[33]; for (unsigned i = 0; i < 16; ++i) snprintf(idHex + i * 2, 3, "%02x", session[i]);
+      const String readyPath = String("/pulselink/") + idHex + ".ready";
+      const String syncPath = String("/pulselink/") + idHex + ".sync";
+      File rf = SD.open(readyPath, FILE_READ);
+      if (rf) {
+        const uint32_t rBytes = rf.size(); rf.close();
+        File sf = SD.open(syncPath, FILE_WRITE);
+        if (sf) {
+          JsonDocument cp; cp["nextSequence"] = liveAckSeq + 1; cp["prefixCrc"] = liveAckCrc; cp["fileBytes"] = rBytes;
+          serializeJson(cp, sf); sf.flush(); sf.close();
+        }
+      }
+    }
     if (clinicalRecording) workflow.finished(verified && !failed);
     char log[160];
     snprintf(log, sizeof(log), "PL6_END captured=%lu slots=%lu gaps=%u reason=%u readback=%u sd_error=%u\n",
@@ -357,7 +427,7 @@ void draw() {
       display.label(BpmX + 3, WaveY + 76, BpmWidth - 6, 10, "Lead I", pl::ui::MintGreen, false, true, pl::ui::CardBg);
       display.label(BpmX + 3, WaveY + 90, BpmWidth - 6, 10, "AD8232", MUTED, false, true, pl::ui::CardBg);
       display.label(BpmX + 3, WaveY + 102, BpmWidth - 6, 10, "12-bit ADC", MUTED, false, true, pl::ui::CardBg);
-      display.label(8, 154, 304, 10, "*ECG & BPM only. Live view exclusive to touchscreen.", MUTED, false, false, NAVY);
+      display.label(8, 154, 304, 10, "*ECG & BPM live on touchscreen & PulseLink app.", MUTED, false, false, NAVY);
       display.label(8, 166, 304, 10, "90s prototype capture; not diagnostic sufficiency.", pl::ui::WarnAmber, false, false, NAVY);
     }
 
@@ -384,7 +454,7 @@ void draw() {
 
     const auto monitorNet = network.view();
     const char *statusLine = failed ? "Recording retained. Storage/link needs review." :
-      requested ? "Recording locally | Upload follows capture" :
+      requested ? (workflow.isActiveSessionSynchronised() && monitorNet.api == ApiState::Ready ? "Streaming live to app & microSD" : "Recording locally | Upload follows capture") :
       recording.complete() && monitorNet.api != ApiState::Ready ? "Saved locally | Upload retained for retry" :
       monitorNet.api == ApiState::Ready ? uploader.message() :
       monitorNet.wifi == WifiState::Connected ? "Wi-Fi connected | Synchronising API..." :
@@ -422,8 +492,8 @@ void setup() {
 #if CONFIG_IDF_TARGET_ESP32
   esp_bt_controller_mem_release(ESP_BT_MODE_CLASSIC_BT);
 #endif
-  for (int &value : waveform) value = -1;
-  c3.enableRxInternalPull(false); c3.setRxBufferSize(4096); c3.setTxBufferSize(512);
+  for (int16_t &value : waveform) value = -1;
+  c3.enableRxInternalPull(false); c3.setRxBufferSize(2048); c3.setTxBufferSize(512);
   c3.begin(115200, SERIAL_8N1, 35, 22);
   pinMode(33, OUTPUT); digitalWrite(33, HIGH); pinMode(25, OUTPUT); digitalWrite(25, LOW);
   pinMode(32, OUTPUT); pinMode(39, INPUT); pinMode(36, INPUT);
@@ -452,10 +522,24 @@ void loop() {
   }
   if (journal && c3At && now - c3At > 10000) {
     pl::debug("PL_FAULT c3_timeout\n");
-    renameRecording(".interrupted"); requested = false; failed = true;
+    renameRecording(".interrupted"); liveStream.reset(); liveBatchReq = 0; requested = false; failed = true;
     if (clinicalRecording) workflow.finished(false);
   }
   handleTouch();
+  if (requested) {
+    if (auto r = network.takeResult(NetOwner::Upload)) {
+      if (r->id == liveBatchReq) {
+        liveBatchReq = 0;
+        JsonDocument ack;
+        if (r->status >= 200 && r->status < 300 && !deserializeJson(ack, r->body) && ack["persisted"] == true && liveContiguous) {
+          liveAckSeq = liveReqSeq; liveAckCrc = liveReqCrc; liveAckValid = true;
+        } else {
+          liveContiguous = false;
+        }
+      }
+      delete r;
+    }
+  }
   workflow.poll(requested, cardOk && !failed);
   if (!requested && workflow.wantsBench()) { clinicalRecording = false; requestRecording(false); }
   if (!requested && workflow.start(session)) workflow.started(requestRecording(true));
@@ -475,9 +559,10 @@ void loop() {
       static_cast<unsigned>(connection.wifi), static_cast<unsigned>(connection.api), connection.settingsStored);
     pl::debug(log);
     // Observe acquisition via its existing UART heartbeat without opening native C3 USB.
-    snprintf(log, sizeof(log), "PL_ACQ captured=%lu slots=%lu missed=%lu late_us=%lu queue=%u recording=%u\n",
+    snprintf(log, sizeof(log), "PL_ACQ captured=%lu slots=%lu missed=%lu late_us=%lu queue=%u recording=%u leads=%u lo_p=%u lo_m=%u raw=%u\n",
       (unsigned long)health.captured, (unsigned long)health.slots, (unsigned long)health.missedSlots,
-      (unsigned long)health.maxLatenessUs, health.queueDepth, health.recording);
+      (unsigned long)health.maxLatenessUs, health.queueDepth, health.recording,
+      health.leadFlags, (health.leadFlags & pl::LeadPlus) != 0, (health.leadFlags & pl::LeadMinus) != 0, health.raw);
     pl::debug(log);
     static uint32_t reportedRequest = 0;
     if (connection.requestCount != reportedRequest) {

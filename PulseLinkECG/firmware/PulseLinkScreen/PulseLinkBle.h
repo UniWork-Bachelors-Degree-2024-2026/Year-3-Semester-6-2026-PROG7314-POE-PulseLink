@@ -4,8 +4,16 @@
 #include <ArduinoJson.h>
 #include <esp_mac.h>
 #include <NimBLEDevice.h>
+#if __has_include(<PulseLinkPairing.h>)
 #include <PulseLinkPairing.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkPairing.h"
+#endif
+#if __has_include(<PulseLinkUpload.h>)
 #include <PulseLinkUpload.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkUpload.h"
+#endif
 #include <memory>
 #include "PulseLinkClinicalStore.h"
 #if MYNEWT_VAL(BLE_SM_LEGACY)
@@ -27,6 +35,7 @@ class PulseLinkBle : private NimBLEServerCallbacks, private NimBLECharacteristic
   bool shuttingDown = false;
   bool authenticationFailed = false;
   bool bondedReconnectAttempt = false;
+  bool pendingDeinit = false;
   const char *feedback = "BLE is off. Enable BLE to pair.";
 
   // Authorised background transfer command queued from GATT write callback and serviced on the display task.
@@ -36,9 +45,17 @@ class PulseLinkBle : private NimBLEServerCallbacks, private NimBLECharacteristic
   bool shiftAllows_ = false;
   uint32_t queuedCount_ = 0;
 
+  void deinitialiseBle() {
+    if (!initialised) { pendingDeinit = false; return; }
+    NimBLEDevice::deinit(true);
+    server = nullptr; status = nullptr; control = nullptr; chunk = nullptr;
+    initialised = false; pendingDeinit = false;
+  }
+
   bool failedInitialisation() {
     NimBLEDevice::deinit(true);
     server = nullptr; status = nullptr; control = nullptr; chunk = nullptr; initialised = false;
+    pendingDeinit = false;
     portENTER_CRITICAL(&lock);
     policy.disable(); peer = BLE_HS_CONN_HANDLE_NONE; shuttingDown = false; bondedReconnectAttempt = false;
     feedback = "BLE unavailable. Restart and try again.";
@@ -102,7 +119,7 @@ class PulseLinkBle : private NimBLEServerCallbacks, private NimBLECharacteristic
     authenticationFailed = false;
     bondedReconnectAttempt = false;
     hasPendingCommand = false; pendingCommand[0] = 0;
-    if (disableMode) { policy.disable(); feedback = "BLE is off. Enable BLE to pair."; } else policy.disconnect();
+    if (disableMode) { policy.disable(); feedback = "BLE is off. Enable BLE to pair."; pendingDeinit = true; } else policy.disconnect();
     shuttingDown = previous != BLE_HS_CONN_HANDLE_NONE;
     portEXIT_CRITICAL(&lock);
     if (initialised) {
@@ -112,6 +129,9 @@ class PulseLinkBle : private NimBLEServerCallbacks, private NimBLECharacteristic
         portENTER_CRITICAL(&lock);
         if (peer == previous) { peer = BLE_HS_CONN_HANDLE_NONE; shuttingDown = false; }
         portEXIT_CRITICAL(&lock);
+      }
+      if (disableMode && peer == BLE_HS_CONN_HANDLE_NONE) {
+        deinitialiseBle();
       }
     }
   }
@@ -392,6 +412,13 @@ public:
   const char *message() {
     portENTER_CRITICAL(&lock); const char *value = feedback; portEXIT_CRITICAL(&lock); return value;
   }
+  void releaseIfIdle() {
+    if (!initialised) return;
+    const auto state = view().state;
+    if (peer == BLE_HS_CONN_HANDLE_NONE && state != pl::BleState::Pairing && state != pl::BleState::Connecting) {
+      stopConnection(true);
+    }
+  }
   void poll(bool c3Fresh, bool cardReady, bool recording = false,
             const char *grantId = "", const char *nurseUid = "", const char *siteId = "",
             bool shiftAllows = false, uint8_t wifiState = 0, uint8_t apiState = 0,
@@ -406,8 +433,14 @@ public:
     if (expired) feedback = "BLE session timed out. Tap Pair phone.";
     const auto currentView = policy.view(millis());
     const uint32_t queued = queuedCount_;
+    const bool shouldDeinit = pendingDeinit && peer == BLE_HS_CONN_HANDLE_NONE;
     portEXIT_CRITICAL(&lock);
-    if (expired) stopConnection(false);
+    if (expired) {
+      stopConnection(false);
+      if (peer == BLE_HS_CONN_HANDLE_NONE) deinitialiseBle();
+    } else if (shouldDeinit) {
+      deinitialiseBle();
+    }
     if (initialised) {
       servicePendingCommand(recording, cardReady, store);
       char statusLine[160] = {};

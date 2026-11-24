@@ -151,6 +151,8 @@ class SplashActivity : AppCompatActivity() {
 
         return if (role.equals(SessionManager.ROLE_DOCTOR, ignoreCase = true)) {
             DoctorDashboardActivity::class.java
+        } else if (role.equals(SessionManager.ROLE_NURSE, ignoreCase = true)) {
+            NurseDashboardActivity::class.java
         } else if (role.equals(SessionManager.ROLE_PATIENT, ignoreCase = true)) {
             PatientDashboardActivity::class.java
         } else SiteAccessActivity::class.java

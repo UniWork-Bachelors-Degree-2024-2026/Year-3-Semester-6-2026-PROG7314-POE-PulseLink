@@ -58,13 +58,18 @@ import com.example.prog7314_poepart23.DoctorDashboardActivity
 import com.example.prog7314_poepart23.DoctorProfileActivity
 import com.example.prog7314_poepart23.DoctorReportsActivity
 import com.example.prog7314_poepart23.DoctorSettingsActivity
+import com.example.prog7314_poepart23.EcgPreSessionCheckActivity
 import com.example.prog7314_poepart23.EmergencySosActivity
 import com.example.prog7314_poepart23.HelpSupportActivity
 import com.example.prog7314_poepart23.LanguageSelectionActivity
 import com.example.prog7314_poepart23.LiveEcgMonitoringActivity
+import com.example.prog7314_poepart23.LiveSupportChatActivity
 import com.example.prog7314_poepart23.LoginActivity
 import com.example.prog7314_poepart23.MainActivity
 import com.example.prog7314_poepart23.NotificationsActivity
+import com.example.prog7314_poepart23.NurseDashboardActivity
+import com.example.prog7314_poepart23.NursePatientIntakeActivity
+import com.example.prog7314_poepart23.NurseSettingsActivity
 import com.example.prog7314_poepart23.OfflineSyncStatusActivity
 import com.example.prog7314_poepart23.PatientDashboardActivity
 import com.example.prog7314_poepart23.PatientEcgHistoryActivity
@@ -400,7 +405,6 @@ object VoiceAssistant {
         Destination(listOf("appearance", "text size", "contrast", "theme", "voorkoms"), R.string.voice_dest_appearance, AppearanceActivity::class.java),
         Destination(listOf("language", "taal", "ulimi"), R.string.voice_dest_language, LanguageSelectionActivity::class.java),
         Destination(listOf("sync", "offline"), R.string.voice_dest_sync, OfflineSyncStatusActivity::class.java),
-        Destination(listOf("device", "pair", "toestel"), R.string.voice_dest_devices, DeviceManagementActivity::class.java),
         Destination(listOf("notification", "alert", "kennisgewing", "waarskuwing", "izaziso", "imiyalezo"), R.string.voice_dest_notifications, NotificationsActivity::class.java),
         Destination(listOf("setting", "instelling", "izilungiselelo"), R.string.voice_dest_settings, Patient_Settings::class.java),
         Destination(listOf("profile", "profiel"), R.string.voice_dest_profile, PatientProfileActivity::class.java),
@@ -418,6 +422,18 @@ object VoiceAssistant {
         Destination(listOf("report", "verslae", "imibiko"), R.string.voice_dest_reports, DoctorReportsActivity::class.java),
         Destination(listOf("patient", "roster", "pasient", "pasiënt", "iziguli"), R.string.voice_dest_patients, PatientListActivity::class.java),
         Destination(listOf("dashboard", "home", "tuis", "ikhaya"), R.string.voice_dest_dashboard, DoctorDashboardActivity::class.java)
+    )
+
+    private fun nurseDestinations() = listOf(
+        Destination(listOf("device", "pair", "toestel"), R.string.voice_dest_devices, DeviceManagementActivity::class.java),
+        Destination(listOf("support"), R.string.voice_dest_support, HelpSupportActivity::class.java),
+        Destination(listOf("chat"), R.string.voice_dest_nurse_chat, LiveSupportChatActivity::class.java),
+        Destination(listOf("monitor", "ecg", "check"), R.string.voice_dest_nurse_monitor, EcgPreSessionCheckActivity::class.java),
+        Destination(listOf("patient", "intake", "pasient", "pasiënt", "iziguli"), R.string.voice_dest_nurse_patients, NursePatientIntakeActivity::class.java),
+        Destination(listOf("setting", "instelling", "izilungiselelo"), R.string.voice_dest_nurse_settings, NurseSettingsActivity::class.java),
+        Destination(listOf("appearance", "voorkoms", "ukubukeka"), R.string.voice_dest_appearance, AppearanceActivity::class.java),
+        Destination(listOf("language", "taal", "ulimi"), R.string.voice_dest_language, LanguageSelectionActivity::class.java),
+        Destination(listOf("dashboard", "home", "tuis", "ikhaya"), R.string.voice_dest_dashboard, NurseDashboardActivity::class.java)
     )
 
     private fun staffDestinations() = listOf(
@@ -455,9 +471,14 @@ object VoiceAssistant {
     }
 
     private fun navigate(activity: Activity, spoken: String) {
-        val role = SecurePreferences.getInstance(activity).getUserRole()
+        val role = SecurePreferences.getInstance(activity).getUserRole()?.lowercase()
+        if (role != SessionManager.ROLE_NURSE && listOf("device", "pair", "toestel").any { spoken.contains(it) }) {
+            speak(activity, text(R.string.voice_devices_nurse_only))
+            return
+        }
         val destinations = when {
-            role == SessionManager.ROLE_NURSE || role == SessionManager.ROLE_ADMINISTRATOR || activity is SiteAccessActivity -> staffDestinations()
+            role == SessionManager.ROLE_NURSE -> nurseDestinations()
+            role == SessionManager.ROLE_ADMINISTRATOR || activity is SiteAccessActivity -> staffDestinations()
             isDoctor(activity) -> doctorDestinations()
             role == SessionManager.ROLE_PATIENT -> patientDestinations()
             else -> emptyList()

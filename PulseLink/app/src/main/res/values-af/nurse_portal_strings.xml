@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Rol & Registrasie -->
+    <string name="l10n_role_nurse">Verpleegkundige</string>
+    <string name="voice_dest_nurse_patients">Pasiënte</string>
+    <string name="voice_dest_nurse_monitor">Monitor</string>
+    <string name="voice_dest_nurse_chat">Ondersteuningsklets</string>
+    <string name="voice_dest_nurse_settings">Instellings</string>
+    <string name="voice_devices_nurse_only">Toestelbestuur is beperk tot gemagtigde kliniekverpleegpersoneel.</string>
+
+    <!-- Verpleegkundige Onderste Navigasie -->
+    <string name="nav_nurse_dashboard_label">Paneelbord</string>
+    <string name="nav_nurse_patients_label">Pasiënte</string>
+    <string name="nav_nurse_monitor_label">Monitor</string>
+    <string name="nav_nurse_support_label">Klets</string>
+
+    <!-- Verpleegkundige Paneelbord -->
+    <string name="nurse_ui_title_dashboard">Verpleegkundige Paneelbord</string>
+    <string name="nurse_ui_greeting_format">Goeie dag, %1$s</string>
+    <string name="nurse_ui_greeting_subtitle">Kliniekverpleging, hardeware-telemetrie en pasiëntopname.</string>
+    <string name="nurse_ui_assigned_site_format">Toegewysde kliniek: %1$s</string>
+    <string name="nurse_ui_assigned_site_none">Toegewysde kliniek: Wag op administrateurtoewysing</string>
+    <string name="nurse_ui_shift_card_title">Skof &amp; Raakskerm-magtiging</string>
+    <string name="nurse_ui_shift_pill_active">AKTIEWE 8U SKOF</string>
+    <string name="nurse_ui_shift_pill_expired">SKOF VERVAL</string>
+    <string name="nurse_ui_shift_pill_none">KODE BENODIG</string>
+    <string name="nurse_ui_approved_screen_label">Goedgekeurde raakskerm</string>
+    <string name="nurse_ui_shift_expiry_label">Skofstatus</string>
+    <string name="nurse_ui_btn_authorise_screen">Magtig Raakskerm</string>
+    <string name="nurse_ui_btn_authorise_another">Magtig Ander Skerm</string>
+    <string name="nurse_ui_btn_sync_ble">Sinchroniseer BLE-opnames</string>
+    <string name="nurse_ui_active_patient_title">Aktiewe Pasiëntsessie</string>
+    <string name="nurse_ui_active_patient_none_title">Geen kliniekpasiënt gekies nie</string>
+    <string name="nurse_ui_active_patient_none_subtitle">Kies of registreer \'n pasiënt voordat \'n EKG-opname begin word.</string>
+    <string name="nurse_ui_selected_patient_label">Gekose pasiënt</string>
+    <string name="nurse_ui_attending_doctor_format">Behandelende Dokter: %1$s</string>
+    <string name="nurse_ui_btn_start_precheck">Begin Voor-sessie Kontrole</string>
+    <string name="nurse_ui_btn_select_register_patient">Kies / Registreer Pasiënt</string>
+    <string name="nurse_ui_hardware_card_title">Hardeware &amp; Telemetrieskakel</string>
+    <string name="nurse_ui_hardware_online">Skakel Aktief</string>
+    <string name="nurse_ui_hardware_offline">Nie Gekoppel Nie</string>
+    <string name="nurse_ui_hardware_unit_label">Gekoppelde hardeware-eenheid</string>
+    <string name="nurse_ui_hardware_ble_label">Raakskerm BLE</string>
+    <string name="nurse_ui_hardware_ble_bonded">Gekoppel (%1$s)</string>
+    <string name="nurse_ui_hardware_ble_not_bonded">Nie gekoppel nie</string>
+    <string name="nurse_ui_hardware_queue_label">Aflyn SQLite-tou</string>
+    <string name="nurse_ui_hardware_queue_count">%1$d hangend</string>
+    <string name="nurse_ui_btn_device_management">Toestelbestuur &amp; BLE</string>
+    <string name="nurse_ui_chat_card_title">Pasiënt Ondersteuningsklets</string>
+    <string name="nurse_ui_chat_card_empty">Geen pasiëntondersteuningsboodskappe nog nie.</string>
+    <string name="nurse_ui_btn_open_chat">Maak Regstreekse Klets Oop</string>
+    <string name="nurse_ui_ble_sync_requires_shift">Magtig eers \'n 8-uur raakskermskof om BLE-opnames te sinchroniseer.</string>
+    <string name="nurse_ui_ble_permission_missing">Laat Bluetooth-toestemming toe om met die gekoppelde raakskerm te verbind.</string>
+
+    <!-- Modale -->
+    <string name="nurse_ui_modal_auth_title">Magtig Kliniekraakskerm</string>
+    <string name="nurse_ui_modal_auth_desc">Voer die raakskerm-ID (bv. PulseLink-1EBA94) en die 6-syfer goedkeuringskode op die fisiese skerm in.</string>
+    <string name="nurse_ui_modal_device_id_hint">Raakskerm-eenheid-ID (bv. PulseLink-1EBA94)</string>
+    <string name="nurse_ui_modal_code_hint">6-syfer kode op raakskerm</string>
+    <string name="nurse_ui_modal_auth_submit">Magtig Skerm</string>
+    <string name="nurse_ui_modal_reg_title">Registreer Nuwe Kliniekpasiënt</string>
+    <string name="nurse_ui_modal_reg_desc">Registreer \'n pasiënt in Firebase Realtime Database. Rekords sinchroniseer met die fisiese ESP32-raakskerm.</string>
+    <string name="nurse_ui_modal_patient_name_hint">Pasiënt se volle naam</string>
+    <string name="nurse_ui_modal_patient_dob_hint">Geboortedatum (JJJJ-MM-DD, opsioneel)</string>
+    <string name="nurse_ui_modal_doctor_label">Behandelende Dokter (by u kliniek goedgekeur)</string>
+    <string name="nurse_ui_modal_doctor_uid_hint">Behandelende Dokter UID (indien lys nie gelaai is nie)</string>
+    <string name="nurse_ui_modal_reg_submit">Registreer Pasiënt</string>
+    <string name="nurse_ui_modal_pair_title">Koppel ESP32-C3 / Raakskerm</string>
+    <string name="nurse_ui_modal_pair_desc">Bind u ESP32-raakskerm of ESP32-C3 hardeware-ID vir gelyktydige Wi-Fi-telemetrie en BLE-oordrag.</string>
+    <string name="nurse_ui_modal_hw_id_hint">Toestel-ID (bv. PulseLink-1EBA94)</string>
+    <string name="nurse_ui_modal_hw_mac_hint">Bluetooth / Wi-Fi MAC (opsioneel)</string>
+    <string name="nurse_ui_modal_use_bonded_ble">Spoor Gekoppelde BLE Raakskerm Op</string>
+    <string name="nurse_ui_modal_pair_submit">Koppel Hardeware</string>
+    <string name="nurse_ui_btn_pair_hardware_cta">Koppel ESP32-C3 / Raakskerm (Wi-Fi of BLE)</string>
+
+    <!-- Kliniekpasiënt-tou -->
+    <string name="nurse_ui_intake_title">Kliniekpasiënt-tou</string>
+    <string name="nurse_ui_intake_new_btn">+ Nuwe Pasiënt</string>
+    <string name="nurse_ui_intake_search_hint">Soek volgens naam of PAT-ID...</string>
+    <string name="nurse_ui_intake_sync_online">Gesinchroniseer met Firebase Realtime Database &amp; Raakskerm</string>
+    <string name="nurse_ui_intake_sync_offline">Aflyn gekasde kliniekpasiënt-tou</string>
+    <string name="nurse_ui_intake_total_label">Kliniekpasiënte</string>
+    <string name="nurse_ui_intake_pending_label">Wag Hersiening</string>
+    <string name="nurse_ui_intake_released_label">Bevestig</string>
+    <string name="nurse_ui_intake_select_btn">Kies vir EKG</string>
+    <string name="nurse_ui_intake_empty">Geen pasiënte pas by u soektog by hierdie kliniek nie.</string>
+    <string name="nurse_ui_intake_patient_selected">%1$s gekies vir voor-sessie kontroles en EKG-opname.</string>
+    <string name="nurse_ui_intake_dob_unknown">Geboortedatum nie aangeteken nie</string>
+    <string name="nurse_ui_intake_doctor_label">Dokter-ID: %1$s</string>
+    <string name="nurse_ui_intake_doctor_named">Dokter: %1$s</string>
+    <string name="nurse_ui_intake_no_site">Wys eers u verpleegkundige rekening aan \'n kliniek toe.</string>
+    <string name="nurse_ui_intake_no_doctor">Kies of voer asseblief \'n goedgekeurde Dokter-UID in.</string>
+    <string name="nurse_ui_intake_registered_ok">Pasiënt geregistreer en met kliniektou gesinchroniseer.</string>
+
+    <!-- Verpleegkundige Instellings & Voor-sessie -->
+    <string name="nurse_ui_settings_title">Verpleegkundige Instellings</string>
+    <string name="nurse_ui_settings_subtitle">Bestuur kliniese besonderhede, toestelle, voorkoms en ondersteuning.</string>
+    <string name="nurse_ui_settings_sign_out">Teken Uit</string>
+    <string name="nurse_ui_firmware_esp32">ESP32-C3 + AD8232 / Raakskerm</string>
+    <string name="nurse_ui_selected_patient_banner">Pasiënt: %1$s (%2$s)</string>
+    <string name="nurse_ui_precheck_no_patient">Kies eers \'n kliniekpasiënt vanaf die Pasiënte-oortjie.</string>
+    <string name="nurse_ui_precheck_shift_online">Gemagtigde eenheid aanlyn (%1$s)</string>
+
+    <!-- Pasiënt Hulp & Ondersteuning -->
+    <string name="patient_faq_q1">Wanneer sal my EKG-uitslae en dokter se diagnose gereed wees?</string>
+    <string name="patient_faq_a1">Nadat die kliniekverpleegkundige u 90-sekonde EKG-opname voltooi het, word dit veilig opgelaai vir u dokter om te hersien. Vir u veiligheid bly EKG-lyne en notas versteek onder Wag op Dokterhersiening totdat die dokter dit vrystel.</string>
+    <string name="patient_faq_q2">Hoe besigtig ek my dokter se voorskrif, sorgplan en advies?</string>
+    <string name="patient_faq_a2">Sodra u dokter u uitslae vrystel, maak die Verslae-oortjie oop en tik op die sessie. U kan u dokter se kliniese notas, medikasie-voorskrifte en opvolgadvies lees en die vrygestelde PDF-verslag aflaai.</string>
+    <string name="patient_faq_q3">Wat beteken die statusse op my Sessiestatus-bladsy?</string>
+    <string name="patient_faq_a3">Wag op Dokterhersiening beteken u EKG-opname is veilig gestoor vir dokterhersiening. Uitslae Vrygestel beteken u dokter het die diagnose en voorskrif bevestig sodat u dit onder Verslae kan oopmaak.</string>
+    <string name="patient_faq_q4">Hoe vind ek \'n nabygeleë kliniek of hospitaal in Gqeberha?</string>
+    <string name="patient_faq_a4">Maak die SOS-oortjie oop en tik op Fasiliteitsoeker &amp; Kaarte. U kan openbare hospitale, klinieke en gemeenskapsgesondheidsentrums filtreer, die kaart in- en uitzoem en Google Maps-aanwysings kry.</string>
+    <string name="patient_faq_q5">Hoe stuur ek \'n boodskap aan my kliniekverpleegkundige in Regstreekse Klets?</string>
+    <string name="patient_faq_a5">Tik op Regstreekse Klets of Kontak Ondersteuning boaan hierdie Hulp &amp; Ondersteuning-skerm om regstreeks met die kliniekverpleegkundige te gesels.</string>
+    <string name="patient_faq_q6">Wat moet ek doen tydens \'n mediese noodgeval (SOS)?</string>
+    <string name="patient_faq_a6">PulseLink is \'n monitering-prototipe en stuur nie outomaties ambulanse nie. Indien u borspyn of \'n noodgeval ervaar, gebruik die rooi SOS-oortjie om 112 of 10177 te skakel.</string>
+    <string name="patient_faq_q7">Hoe word my persoonlike gesondheidsdata beskerm?</string>
+    <string name="patient_faq_a7">U profiel en vrygestelde verslae word beskerm deur Firebase-verifikasie, biometriese slot, geënkripteerde HTTPS-oordrag en rolgebaseerde kliniese toegang.</string>
+    <string name="patient_faq_search_empty">Geen bypassende hulpartikels gevind nie. Probeer \'n ander soekwoord of tik Regstreekse Klets.</string>
+    <string name="patient_faq_user_guide_title">Sessie- en Klinieksoekergids</string>
+    <string name="patient_faq_user_guide_subtitle">Gaan u jongste EKG-status na of vind \'n kliniek</string>
+
+    <!-- Regstreekse Ondersteuningsklets -->
+    <string name="support_chat_title_patient">Kliniek Verpleegkundige Ondersteuning</string>
+    <string name="support_chat_title_nurse">Pasiënt Ondersteuningsklets</string>
+    <string name="support_chat_subtitle_patient">Gekoppel aan kliniekverpleging</string>
+    <string name="support_chat_subtitle_nurse_thread">Gesels met: %1$s</string>
+    <string name="support_chat_switch_thread">Gesprekke (%1$d)</string>
+    <string name="support_chat_choose_thread">Kies pasiëntgesprek</string>
+    <string name="support_chat_banner_warning">Ondersteuningsklets is slegs vir kliniekkoördinering. Vir noodgevalle skakel 112.</string>
+    <string name="support_chat_empty">Geen boodskappe nog nie. Stuur \'n boodskap hieronder om te begin.</string>
+    <string name="support_chat_input_hint">Tik \'n ondersteuningsboodskap...</string>
+    <string name="support_chat_send">Stuur</string>
+    <string name="support_chat_sender_you">U</string>
+    <string name="support_chat_sender_nurse">Kliniek Verpleegkundige</string>
+    <string name="support_chat_sender_patient">Pasiënt</string>
+    <string name="support_chat_quick_1">Lead I-kontakte is reg. Bly asseblief stil tydens die 90s opname.</string>
+    <string name="support_chat_quick_2">U 90-sekonde EKG-opname is opgelaai vir dokterhersiening.</string>
+    <string name="support_chat_quick_3">Maak asseblief Verslae oop sodra u dokter u uitslae vrystel.</string>
+    <string name="support_chat_no_threads">Geen pasiëntondersteuningsgesprekke nog nie. Wanneer \'n pasiënt vanuit Hulp &amp; Ondersteuning skryf, sal dit hier verskyn.</string>
+    <string name="support_chat_choose_thread_desc">Tik op \'n pasiëntgesprek hieronder om boodskappe te sien en te antwoord.</string>
+    <string name="patient_settings_subtitle_account_only">Bestuur u persoonlike rekening, sekuriteit, voorkoms en ondersteuningsvoorkeure.</string>
+    <string name="precheck_tap_confirm_electrodes">Tik om te bevestig RA-, LA-, RL-plakkers is aangebring</string>
+    <string name="nurse_ui_modal_doctor_select_title">Kies Behandelende Dokter</string>
+    <string name="nurse_ui_modal_doctor_select_desc">Kies \'n goedgekeurde dokter by u kliniek vir hierdie pasiënt se EKG-hersiening.</string>
+</resources>

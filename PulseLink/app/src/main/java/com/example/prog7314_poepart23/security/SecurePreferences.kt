@@ -50,6 +50,13 @@ class SecurePreferences private constructor(context: Context) {
         private const val KEY_BIOMETRIC_EMAIL = "key_biometric_email"
         private const val KEY_BIOMETRIC_DECLINED_EMAIL = "key_biometric_declined_email"
         private const val KEY_DISMISSED_ALERTS = "key_dismissed_alerts"
+        private const val KEY_NURSE_PATIENT_ID = "key_nurse_selected_patient_id"
+        private const val KEY_NURSE_PATIENT_NAME = "key_nurse_selected_patient_name"
+        private const val KEY_NURSE_PATIENT_DOB = "key_nurse_selected_patient_dob"
+        private const val KEY_NURSE_DOCTOR_UID = "key_nurse_selected_doctor_uid"
+        private const val KEY_NURSE_DOCTOR_NAME = "key_nurse_selected_doctor_name"
+        private const val KEY_NURSE_SITE_ID = "key_nurse_selected_site_id"
+        private const val KEY_NURSE_SITE_NAME = "key_nurse_selected_site_name"
 
         @Volatile
         private var INSTANCE: SecurePreferences? = null
@@ -209,5 +216,48 @@ class SecurePreferences private constructor(context: Context) {
     // Clear all credentials on Sign Out
     fun clearAll() {
         sharedPreferences.edit().clear().apply()
+    }
+
+    // Active clinic patient and site selected by the Nurse for pre-session checks and live monitoring
+    fun saveSelectedNursePatient(
+        patientId: String,
+        patientName: String,
+        dateOfBirth: String? = null,
+        doctorUid: String? = null,
+        doctorName: String? = null,
+        siteId: String? = null
+    ) {
+        sharedPreferences.edit()
+            .putString(KEY_NURSE_PATIENT_ID, patientId)
+            .putString(KEY_NURSE_PATIENT_NAME, patientName)
+            .putString(KEY_NURSE_PATIENT_DOB, dateOfBirth)
+            .putString(KEY_NURSE_DOCTOR_UID, doctorUid)
+            .putString(KEY_NURSE_DOCTOR_NAME, doctorName)
+            .putString(KEY_NURSE_SITE_ID, siteId)
+            .apply()
+    }
+
+    fun getSelectedNursePatientId(): String? = sharedPreferences.getString(KEY_NURSE_PATIENT_ID, null)
+    fun getSelectedNursePatientName(): String? = sharedPreferences.getString(KEY_NURSE_PATIENT_NAME, null)
+    fun getSelectedNursePatientDob(): String? = sharedPreferences.getString(KEY_NURSE_PATIENT_DOB, null)
+    fun getSelectedNurseDoctorUid(): String? = sharedPreferences.getString(KEY_NURSE_DOCTOR_UID, null)
+    fun getSelectedNurseDoctorName(): String? = sharedPreferences.getString(KEY_NURSE_DOCTOR_NAME, null)
+    fun getSelectedNurseSiteId(): String? = sharedPreferences.getString(KEY_NURSE_SITE_ID, null)
+
+    fun saveNurseSiteName(siteName: String?) {
+        sharedPreferences.edit().putString(KEY_NURSE_SITE_NAME, siteName).apply()
+    }
+
+    fun getNurseSiteName(): String? = sharedPreferences.getString(KEY_NURSE_SITE_NAME, null)
+
+    fun clearSelectedNursePatient() {
+        sharedPreferences.edit()
+            .remove(KEY_NURSE_PATIENT_ID)
+            .remove(KEY_NURSE_PATIENT_NAME)
+            .remove(KEY_NURSE_PATIENT_DOB)
+            .remove(KEY_NURSE_DOCTOR_UID)
+            .remove(KEY_NURSE_DOCTOR_NAME)
+            .remove(KEY_NURSE_SITE_ID)
+            .apply()
     }
 }

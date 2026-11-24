@@ -1,13 +1,6 @@
-// Help & Support Centre.
-// - Interactive FAQ accordion covering pairing, ECG electrode placement (AD8232),
-//   irregular-rhythm flags, offline sync, battery life, and connectivity.
-// - "Email Us" opens an ACTION_SENDTO intent pre-populated with device diagnostic
-//   metadata (app version, OS version, device model, signed-in role, network state)
-//   so support can triage without back-and-forth.
-// - "Where do the ECG electrodes go?" links into ElectrodePlacementGuideActivity,
-//   a step-by-step visual instruction manual for 3-lead placement.
-// - "User Guide" under Need More Help also opens ElectrodePlacementGuideActivity,
-//   since it's currently the only standalone instructional screen in the app.
+// Role-aware Help & Support Centre with live JavaScript-style dynamic search filtering,
+// patient-specific vs nurse-specific FAQs, replacement vector iconography, and real-time
+// Live Chat routing between Patient and Clinic Nurse.
 
 package com.example.prog7314_poepart23
 
@@ -18,13 +11,19 @@ import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.prog7314_poepart23.security.SecurePreferences
+import com.example.prog7314_poepart23.utils.HapticFeedbackManager
 import com.example.prog7314_poepart23.utils.SessionManager
 import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
@@ -33,12 +32,24 @@ import java.util.Locale
 
 class HelpSupportActivity : AppCompatActivity() {
 
-    // One entry per accordion row: the tappable header and its answer panel.
-    // No chevron indicator - the row itself is the button, and tapping it
-    // toggles the answer panel directly.
-    private data class AccordionItem(val header: View, val answerPanel: View)
+    companion object {
+        const val EXTRA_ROLE_OVERRIDE = "extra_help_role_override"
+    }
+
+    private data class AccordionItem(
+        val container: View,
+        val dividerAfter: View?,
+        val header: View,
+        val answerPanel: View,
+        val questionText: String,
+        val answerText: String,
+        var manualExpanded: Boolean = false
+    )
 
     private val accordionItems = mutableListOf<AccordionItem>()
+    private lateinit var tvHelpSearchEmpty: TextView
+    private lateinit var etSearchHelp: EditText
+    private var isPatientMode: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,72 +61,267 @@ class HelpSupportActivity : AppCompatActivity() {
             insets
         }
 
-        findViewById<View>(R.id.ivBack).setOnClickListener { finish() }
+        HapticFeedbackManager.initialise(this)
+        isPatientMode = resolveRoleMode().equals(SessionManager.ROLE_PATIENT, ignoreCase = true)
 
+        findViewById<View>(R.id.ivBack).setOnClickListener { finish() }
+        tvHelpSearchEmpty = findViewById(R.id.tvHelpSearchEmpty)
+        etSearchHelp = findViewById(R.id.etSearchHelp)
+
+        applyRoleSpecificContent()
         setupFaqAccordion()
+        setupDynamicSearch()
         setupNeedMoreHelpButtons()
 
-        // Call: opens the dialer with official support telephone
+        val launchLiveChat = View.OnClickListener {
+            HapticFeedbackManager.confirmClick()
+            startActivity(Intent(this, LiveSupportChatActivity::class.java))
+        }
+        findViewById<View>(R.id.btnLiveChat).setOnClickListener(launchLiveChat)
+        findViewById<View>(R.id.btnContactSupport).setOnClickListener(launchLiveChat)
+
+        // Call: opens the dialler with official support telephone
         findViewById<View>(R.id.btnCallUs).setOnClickListener {
             startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:0614466943")))
         }
 
-        // Email: opens the user's mail app pre-populated with official support address,
-        // subject, and diagnostic metadata to speed up triage.
+        // Email: opens the user's mail app pre-populated with official support address and diagnostic metadata
         findViewById<View>(R.id.btnEmailUs).setOnClickListener { sendSupportEmail() }
+        findViewById<View>(R.id.btnReportProblem).setOnClickListener {
+            HapticFeedbackManager.lightTick()
+            sendSupportEmail("PulseLink Issue Report")
+        }
 
-        // Electrode placement guide: opens the full step-by-step visual guide.
         findViewById<View>(R.id.btnViewPlacementGuide).setOnClickListener {
             startActivity(Intent(this, ElectrodePlacementGuideActivity::class.java))
         }
+    }
 
-        // Live chat: placeholder until that channel exists.
-        findViewById<View>(R.id.btnLiveChat).setOnClickListener {
-            Toast.makeText(this, getString(R.string.l10n_live_chat_soon), Toast.LENGTH_SHORT).show()
+    private fun resolveRoleMode(): String {
+        val explicit = intent.getStringExtra(EXTRA_ROLE_OVERRIDE)
+        if (!explicit.isNullOrBlank()) return explicit
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        val cached = uid?.let { SessionManager.getCachedRole(this, it) }
+        return cached ?: SecurePreferences.getInstance(this).getUserRole() ?: SessionManager.ROLE_PATIENT
+    }
+
+    private fun applyRoleSpecificContent() {
+        val btnViewPlacementGuide = findViewById<View>(R.id.btnViewPlacementGuide)
+        val tvUserGuideTitle = findViewById<TextView>(R.id.tvUserGuideTitle)
+        val tvUserGuideSubtitle = findViewById<TextView>(R.id.tvUserGuideSubtitle)
+
+        if (!isPatientMode) {
+            btnViewPlacementGuide.visibility = View.VISIBLE
+            return
+        }
+
+        // Patients do not operate ECG hardware or attach electrodes: replace hardware FAQs and SVG icons
+        btnViewPlacementGuide.visibility = View.GONE
+        tvUserGuideTitle.setText(R.string.patient_faq_user_guide_title)
+        tvUserGuideSubtitle.setText(R.string.patient_faq_user_guide_subtitle)
+
+        configureFaqRow(
+            iconId = R.id.ivFaqIcon1,
+            iconRes = R.drawable.ic_clinical_release,
+            bgRes = R.drawable.circle_blue_bg,
+            questionId = R.id.tvFaqQuestion1,
+            questionRes = R.string.patient_faq_q1,
+            answerId = R.id.tvFaqAnswer1,
+            answerRes = R.string.patient_faq_a1
+        )
+        configureFaqRow(
+            iconId = R.id.ivFaqIcon2,
+            iconRes = R.drawable.ic_prescription_pill,
+            bgRes = R.drawable.circle_success_bg,
+            questionId = R.id.tvFaqQuestion2,
+            questionRes = R.string.patient_faq_q2,
+            answerId = R.id.faqPairingAnswer,
+            answerRes = R.string.patient_faq_a2
+        )
+        configureFaqRow(
+            iconId = R.id.ivFaqIcon3,
+            iconRes = R.drawable.ic_session_clock,
+            bgRes = R.drawable.circle_warning_bg,
+            questionId = R.id.tvFaqQuestion3,
+            questionRes = R.string.patient_faq_q3,
+            answerId = R.id.faqIrregularRhythmAnswer,
+            answerRes = R.string.patient_faq_a3
+        )
+        configureFaqRow(
+            iconId = R.id.ivFaqIcon4,
+            iconRes = R.drawable.ic_map_pin,
+            bgRes = R.drawable.circle_blue_bg,
+            questionId = R.id.tvFaqQuestion4,
+            questionRes = R.string.patient_faq_q4,
+            answerId = R.id.faqSyncingAnswer,
+            answerRes = R.string.patient_faq_a4
+        )
+        configureFaqRow(
+            iconId = R.id.ivFaqIcon5,
+            iconRes = R.drawable.ic_chat,
+            bgRes = R.drawable.circle_success_bg,
+            questionId = R.id.tvFaqQuestion5,
+            questionRes = R.string.patient_faq_q5,
+            answerId = R.id.faqBatteryAnswer,
+            answerRes = R.string.patient_faq_a5
+        )
+        configureFaqRow(
+            iconId = R.id.ivFaqIcon6,
+            iconRes = R.drawable.ic_ambulance,
+            bgRes = R.drawable.circle_danger_bg,
+            questionId = R.id.tvFaqQuestion6,
+            questionRes = R.string.patient_faq_q6,
+            answerId = R.id.faqConnectivityAnswer,
+            answerRes = R.string.patient_faq_a6
+        )
+        configureFaqRow(
+            iconId = R.id.ivFaqIcon7,
+            iconRes = R.drawable.ic_shield_check,
+            bgRes = R.drawable.circle_blue_bg,
+            questionId = R.id.tvFaqQuestion7,
+            questionRes = R.string.patient_faq_q7,
+            answerId = R.id.faqDataPrivacyAnswer,
+            answerRes = R.string.patient_faq_a7
+        )
+    }
+
+    private fun configureFaqRow(
+        iconId: Int,
+        iconRes: Int,
+        bgRes: Int,
+        questionId: Int,
+        questionRes: Int,
+        answerId: Int,
+        answerRes: Int
+    ) {
+        findViewById<ImageView>(iconId).apply {
+            setImageResource(iconRes)
+            setBackgroundResource(bgRes)
+        }
+        findViewById<TextView>(questionId).setText(questionRes)
+        findViewById<TextView>(answerId).setText(answerRes)
+    }
+
+    // ---- FAQ accordion & dynamic JavaScript-style search --------------------
+
+    private fun setupFaqAccordion() {
+        accordionItems.clear()
+        registerAccordionItem(
+            R.id.faqContainer1, R.id.faqDivider1,
+            R.id.faqElectrodePlacement, R.id.faqElectrodePlacementAnswer,
+            R.id.tvFaqQuestion1, R.id.tvFaqAnswer1
+        )
+        registerAccordionItem(
+            R.id.faqContainer2, R.id.faqDivider2,
+            R.id.faqPairing, R.id.faqPairingAnswer,
+            R.id.tvFaqQuestion2, R.id.faqPairingAnswer
+        )
+        registerAccordionItem(
+            R.id.faqContainer3, R.id.faqDivider3,
+            R.id.faqIrregularRhythm, R.id.faqIrregularRhythmAnswer,
+            R.id.tvFaqQuestion3, R.id.faqIrregularRhythmAnswer
+        )
+        registerAccordionItem(
+            R.id.faqContainer4, R.id.faqDivider4,
+            R.id.faqSyncing, R.id.faqSyncingAnswer,
+            R.id.tvFaqQuestion4, R.id.faqSyncingAnswer
+        )
+        registerAccordionItem(
+            R.id.faqContainer5, R.id.faqDivider5,
+            R.id.faqBattery, R.id.faqBatteryAnswer,
+            R.id.tvFaqQuestion5, R.id.faqBatteryAnswer
+        )
+        registerAccordionItem(
+            R.id.faqContainer6, R.id.faqDivider6,
+            R.id.faqConnectivity, R.id.faqConnectivityAnswer,
+            R.id.tvFaqQuestion6, R.id.faqConnectivityAnswer
+        )
+        registerAccordionItem(
+            R.id.faqContainer7, null,
+            R.id.faqDataPrivacy, R.id.faqDataPrivacyAnswer,
+            R.id.tvFaqQuestion7, R.id.faqDataPrivacyAnswer
+        )
+    }
+
+    private fun registerAccordionItem(
+        containerId: Int,
+        dividerId: Int?,
+        headerId: Int,
+        answerPanelId: Int,
+        questionTextId: Int,
+        answerTextId: Int
+    ) {
+        val container = findViewById<View>(containerId)
+        val divider = dividerId?.let { findViewById<View>(it) }
+        val header = findViewById<View>(headerId)
+        val answerPanel = findViewById<View>(answerPanelId)
+        val questionText = findViewById<TextView>(questionTextId).text.toString()
+        val answerText = findViewById<TextView>(answerTextId).text.toString()
+        val item = AccordionItem(container, divider, header, answerPanel, questionText, answerText)
+        accordionItems.add(item)
+
+        header.setOnClickListener {
+            HapticFeedbackManager.lightTick()
+            item.manualExpanded = item.answerPanel.visibility != View.VISIBLE
+            item.answerPanel.visibility = if (item.manualExpanded) View.VISIBLE else View.GONE
         }
     }
 
-    // ---- FAQ accordion -----------------------------------------------------
-
-    private fun setupFaqAccordion() {
-        registerAccordionItem(R.id.faqElectrodePlacement, R.id.faqElectrodePlacementAnswer)
-        registerAccordionItem(R.id.faqPairing, R.id.faqPairingAnswer)
-        registerAccordionItem(R.id.faqIrregularRhythm, R.id.faqIrregularRhythmAnswer)
-        registerAccordionItem(R.id.faqSyncing, R.id.faqSyncingAnswer)
-        registerAccordionItem(R.id.faqBattery, R.id.faqBatteryAnswer)
-        registerAccordionItem(R.id.faqConnectivity, R.id.faqConnectivityAnswer)
-        registerAccordionItem(R.id.faqDataPrivacy, R.id.faqDataPrivacyAnswer)
+    private fun setupDynamicSearch() {
+        etSearchHelp.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
+            override fun afterTextChanged(s: Editable?) {
+                filterFaqItems(s?.toString().orEmpty())
+            }
+        })
     }
 
-    private fun registerAccordionItem(headerId: Int, answerId: Int) {
-        val header = findViewById<View>(headerId)
-        val answerPanel = findViewById<View>(answerId)
-        val item = AccordionItem(header, answerPanel)
-        accordionItems.add(item)
+    private fun filterFaqItems(rawQuery: String) {
+        val query = rawQuery.trim().lowercase(Locale.ROOT)
+        var visibleCount = 0
+        val matchingItems = mutableListOf<AccordionItem>()
 
-        header.setOnClickListener { toggleAccordionItem(item) }
-    }
+        accordionItems.forEach { item ->
+            val matches = query.isEmpty() ||
+                item.questionText.lowercase(Locale.ROOT).contains(query) ||
+                item.answerText.lowercase(Locale.ROOT).contains(query)
 
-    // Expands/collapses a single FAQ row without affecting sibling rows, so a
-    // patient can have several answers open at once while comparing them.
-    private fun toggleAccordionItem(item: AccordionItem) {
-        val isExpanded = item.answerPanel.visibility == View.VISIBLE
-        item.answerPanel.visibility = if (isExpanded) View.GONE else View.VISIBLE
+            item.container.visibility = if (matches) View.VISIBLE else View.GONE
+            item.answerPanel.visibility = when {
+                !matches -> View.GONE
+                query.isNotEmpty() -> View.VISIBLE
+                item.manualExpanded -> View.VISIBLE
+                else -> View.GONE
+            }
+            if (matches) {
+                visibleCount++
+                matchingItems.add(item)
+            }
+            item.dividerAfter?.visibility = View.GONE
+        }
+
+        // Only display dividers between adjacent visible FAQ rows
+        matchingItems.dropLast(1).forEach { it.dividerAfter?.visibility = View.VISIBLE }
+        tvHelpSearchEmpty.visibility = if (visibleCount == 0) View.VISIBLE else View.GONE
     }
 
     // ---- Need more help? buttons --------------------------------------------
 
     private fun setupNeedMoreHelpButtons() {
         findViewById<View?>(R.id.btnUserGuide)?.setOnClickListener {
-            startActivity(Intent(this, ElectrodePlacementGuideActivity::class.java))
+            HapticFeedbackManager.lightTick()
+            val target = if (isPatientMode) {
+                FacilityFinderActivity::class.java
+            } else {
+                ElectrodePlacementGuideActivity::class.java
+            }
+            startActivity(Intent(this, target))
         }
     }
 
     // ---- Contact support -----------------------------------------------------
 
-    // Opens the device's email app via ACTION_SENDTO with the official support address,
-    // a subject, and a body pre-populated with diagnostic metadata that helps
-    // support reproduce issues without asking the patient for details.
     private fun sendSupportEmail(subjectOverride: String? = null) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:ST10435031@myemeris.edu.za")
@@ -138,14 +344,11 @@ class HelpSupportActivity : AppCompatActivity() {
         }
     }
 
-    // Assembles a plain-text diagnostic block: app version, OS version, device
-    // model, signed-in role, and current network state. No health data is
-    // included -- only metadata useful for reproducing a support issue.
     private fun buildDiagnosticEmailBody(): String {
         val appVersion = try {
             val packageInfo = packageManager.getPackageInfo(packageName, 0)
             "${packageInfo.versionName} (${longVersionCode(packageInfo)})"
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             getString(R.string.l10n_diag_unknown)
         }
 

@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.prog7314_poepart23.NurseApproval
 import com.example.prog7314_poepart23.R
 import com.example.prog7314_poepart23.data.local.OfflineEcgDatabase
 import com.example.prog7314_poepart23.data.local.models.CachedSession
@@ -50,6 +51,7 @@ class EcgSessionViewModel(private val ecgRepository: EcgRepository = EcgReposito
     private val _controlError = MutableLiveData<String>()
     val controlError: LiveData<String> = _controlError
     private var finalizing = false
+    private var createdOwnSession = false
     private var sessionStartedAt = ""
     private var sessionPatientId = ""
     private var sessionDeviceId = ""
@@ -99,10 +101,35 @@ class EcgSessionViewModel(private val ecgRepository: EcgRepository = EcgReposito
         _sessionSummary.value = Resource.Loading()
         viewModelScope.launch {
             val appContext = context?.applicationContext
-            val result = ecgRepository.startSession(patientId, deviceId, patientName)
-            isOfflineMode = result !is Resource.Success || result.data == null
-            sessionStartedAt = if (!isOfflineMode) result.data!!.startTimeUtc else utcNow()
-            currentSessionId = if (!isOfflineMode) result.data!!.sessionId else "offline_${UUID.randomUUID()}"
+            val nowMs = System.currentTimeMillis()
+            val existingSessions = ecgRepository.getPatientSessions(patientId)
+            val matchedExisting = (existingSessions as? Resource.Success)?.data
+                ?.filter { s ->
+                    val age = NurseApproval.parseUtcMillis(s.startTimeUtc)?.let { nowMs - it } ?: Long.MAX_VALUE
+                    s.sessionId.isNotBlank() &&
+                        (s.status.equals("Active", ignoreCase = true) ||
+                            (s.status.equals("Finalising", ignoreCase = true) && age in 0..120_000L)) &&
+                        (deviceId.isBlank() || s.deviceId == deviceId)
+                }
+                ?.maxByOrNull { NurseApproval.parseUtcMillis(it.startTimeUtc) ?: 0L }
+
+            if (matchedExisting != null) {
+                isOfflineMode = false
+                createdOwnSession = false
+                sessionStartedAt = matchedExisting.startTimeUtc
+                currentSessionId = matchedExisting.sessionId
+            } else {
+                val result = ecgRepository.startSession(patientId, deviceId, patientName)
+                isOfflineMode = result !is Resource.Success || result.data == null
+                createdOwnSession = !isOfflineMode
+                sessionStartedAt = if (!isOfflineMode) result.data!!.startTimeUtc else utcNow()
+                currentSessionId = if (!isOfflineMode) result.data!!.sessionId else "offline_${UUID.randomUUID()}"
+            }
+
+            if (!isOfflineMode && currentSessionId != null) {
+                ecgRepository.permitSessionUpload(currentSessionId!!)
+            }
+
             if (isOfflineMode && appContext != null) {
                 val activeOwnerUid = runCatching { com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid }.getOrNull() ?: patientId
                 withContext(Dispatchers.IO) {
@@ -179,20 +206,49 @@ class EcgSessionViewModel(private val ecgRepository: EcgRepository = EcgReposito
     private fun startSamplePolling(sessionId: String, deviceId: String) {
         samplePollingJob?.cancel()
         samplePollingJob = viewModelScope.launch {
+            var pollTick = 0
             while (isActive && _isRecording.value == true) {
+                pollTick++
+                var activeId = currentSessionId ?: sessionId
                 val statusResult = ecgRepository.getDeviceStatus(deviceId)
-                if (statusResult is Resource.Success && statusResult.data != null && statusResult.data.isActuallyOnline()) {
-                    updateLeadConnected(statusResult.data.leadConnected)
+                if (statusResult is Resource.Success && statusResult.data != null && statusResult.data.hasRecentHeartbeat()) {
                     val status = statusResult.data
-                    val fresh = status.lastHeartbeatUtc.isNotBlank() && status.lastHeartbeatUtc != lastHardwareHeartbeat
-                    lastHardwareHeartbeat = status.lastHeartbeatUtc
-                    if (fresh && _isPaused.value != true && status.leadConnected && status.estimatedBpm in 1..250) {
-                        lastHardwareBpmAt = SystemClock.elapsedRealtime()
-                        recordBpm(status.estimatedBpm)
+                    val fresh = status.lastHeartbeatUtc != lastHardwareHeartbeat
+                    if (fresh) {
+                        lastHardwareHeartbeat = status.lastHeartbeatUtc
+                        updateLeadConnected(status.leadConnected)
+                        if (_isPaused.value != true && status.leadConnected && status.estimatedBpm in 1..250) {
+                            lastHardwareBpmAt = SystemClock.elapsedRealtime()
+                            recordBpm(status.estimatedBpm)
+                        }
+                    }
+                }
+                if (!isOfflineMode && _incomingSamples.value.isNullOrEmpty() && pollTick % 4 == 1) {
+                    val sessionsRes = ecgRepository.getPatientSessions(sessionPatientId)
+                    val currentStartMs = NurseApproval.parseUtcMillis(sessionStartedAt) ?: 0L
+                    val nowMs = System.currentTimeMillis()
+                    val newerTouchscreenSession = (sessionsRes as? Resource.Success)?.data
+                        ?.filter { s ->
+                            val startMs = NurseApproval.parseUtcMillis(s.startTimeUtc) ?: 0L
+                            s.sessionId.isNotBlank() &&
+                                s.sessionId != activeId &&
+                                (deviceId.isBlank() || s.deviceId == deviceId) &&
+                                (s.status.equals("Active", ignoreCase = true) || s.totalSamplesCount > 0) &&
+                                (startMs > currentStartMs || nowMs - startMs in 0..120_000L)
+                        }
+                        ?.maxByOrNull { NurseApproval.parseUtcMillis(it.startTimeUtc) ?: 0L }
+                    if (newerTouchscreenSession != null) {
+                        val unusedPlaceholder = activeId
+                        val shouldDiscardOld = createdOwnSession && !unusedPlaceholder.startsWith("offline_")
+                        activeId = newerTouchscreenSession.sessionId
+                        currentSessionId = newerTouchscreenSession.sessionId
+                        sessionStartedAt = newerTouchscreenSession.startTimeUtc
+                        createdOwnSession = false
+                        if (shouldDiscardOld) ecgRepository.discardSession(unusedPlaceholder)
                     }
                 }
                 if (!isOfflineMode) {
-                    val result = ecgRepository.getSessionSamples(sessionId)
+                    val result = ecgRepository.getSessionSamples(activeId)
                     if (result is Resource.Success && result.data != null) _incomingSamples.value = result.data.samples
                 }
                 delay(SAMPLE_POLL_INTERVAL_MS)
@@ -242,8 +298,19 @@ class EcgSessionViewModel(private val ecgRepository: EcgRepository = EcgReposito
                 com.example.prog7314_poepart23.sync.SyncScheduler.triggerImmediateSync(appContext)
             }
             recordingStateJob?.join()
-            val result = if (!isOfflineMode) ecgRepository.stopSession(id, duration) else null
-            _sessionSummary.value = if (result is Resource.Success) result else Resource.Success(EcgSessionSummaryDto(
+            var remoteSummary: EcgSessionSummaryDto? = null
+            if (!isOfflineMode) {
+                val listRes = ecgRepository.getPatientSessions(sessionPatientId)
+                remoteSummary = (listRes as? Resource.Success)?.data?.firstOrNull { it.sessionId == id }
+                val totalReceived = _incomingSamples.value?.size ?: 0
+                if (remoteSummary != null && !remoteSummary.status.equals("Completed", ignoreCase = true) && totalReceived > 0) {
+                    val expectedBatches = ((totalReceived + 249) / 250).coerceAtLeast(1)
+                    ecgRepository.completeRecording(id, expectedBatches, totalReceived, duration)
+                    val refreshed = ecgRepository.getPatientSessions(sessionPatientId)
+                    remoteSummary = (refreshed as? Resource.Success)?.data?.firstOrNull { it.sessionId == id } ?: remoteSummary
+                }
+            }
+            _sessionSummary.value = Resource.Success(remoteSummary ?: EcgSessionSummaryDto(
                 sessionId = id, patientId = sessionPatientId, patientName = sessionPatientName, deviceId = sessionDeviceId,
                 averageBpm = bpm, durationSeconds = duration, startTimeUtc = sessionStartedAt, endTimeUtc = endTime,
                 signalQuality = if (_leadConnected.value == true) "Unknown" else "LeadsDisconnected", status = "Completed"

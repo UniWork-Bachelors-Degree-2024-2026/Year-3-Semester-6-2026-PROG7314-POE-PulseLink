@@ -12,12 +12,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
@@ -30,19 +32,20 @@ import com.example.prog7314_poepart23.data.remote.models.PublicFacilityDto
 import com.example.prog7314_poepart23.data.repository.FacilityDirectionsHelper
 import com.example.prog7314_poepart23.data.repository.FacilityDirectoryRepository
 import com.example.prog7314_poepart23.utils.HapticFeedbackManager
+import com.example.prog7314_poepart23.utils.LocaleHelper
 import com.example.prog7314_poepart23.utils.PulseLinkModal
 import com.example.prog7314_poepart23.views.GqeberhaMapView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.chip.ChipGroup
-import kotlinx.coroutines.launch
-import com.example.prog7314_poepart23.utils.LocaleHelper
+import kotlinx.coroutines.launch
 
 class FacilityFinderActivity : AppCompatActivity() {
 
     private lateinit var repository: FacilityDirectoryRepository
 
     // Views
+    private lateinit var layoutTopOverlay: LinearLayout
     private lateinit var btnBack: ImageButton
     private lateinit var etSearchQuery: EditText
     private lateinit var btnClearSearch: ImageButton
@@ -53,6 +56,10 @@ class FacilityFinderActivity : AppCompatActivity() {
     private lateinit var layoutMapContainer: View
     private lateinit var layoutListContainer: View
     private lateinit var mapView: GqeberhaMapView
+    private lateinit var cardZoomControls: MaterialCardView
+    private lateinit var btnZoomIn: ImageButton
+    private lateinit var btnZoomOut: ImageButton
+    private lateinit var btnZoomReset: ImageButton
     private lateinit var btnToggleView: MaterialButton
     private lateinit var rvFacilityList: RecyclerView
     private lateinit var layoutEmptySearch: LinearLayout
@@ -60,6 +67,7 @@ class FacilityFinderActivity : AppCompatActivity() {
 
     // Place Peek Card views
     private lateinit var cardPlacePeek: MaterialCardView
+    private lateinit var layoutPlacePeekContent: LinearLayout
     private lateinit var tvPlaceName: TextView
     private lateinit var tvPlaceTypeBadge: TextView
     private lateinit var tvPlaceArea: TextView
@@ -76,6 +84,7 @@ class FacilityFinderActivity : AppCompatActivity() {
     private var currentFilterType: String? = null
     private var currentSearchQuery: String? = null
     private var isListViewActive = false
+    private var bottomSystemInsetPx = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,19 +94,24 @@ class FacilityFinderActivity : AppCompatActivity() {
         HapticFeedbackManager.initialise(this)
         repository = FacilityDirectoryRepository(this)
 
+        bindViews()
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            bottomSystemInsetPx = systemBars.bottom
+            applyBottomSystemInsets()
+            updateMapOverlayBounds()
             insets
         }
 
-        bindViews()
         setupListeners()
         setupRecyclerView()
         loadDirectory()
     }
 
     private fun bindViews() {
+        layoutTopOverlay = findViewById(R.id.layoutTopOverlay)
         btnBack = findViewById(R.id.btnBack)
         etSearchQuery = findViewById(R.id.etSearchQuery)
         btnClearSearch = findViewById(R.id.btnClearSearch)
@@ -107,12 +121,17 @@ class FacilityFinderActivity : AppCompatActivity() {
         layoutMapContainer = findViewById(R.id.layoutMapContainer)
         layoutListContainer = findViewById(R.id.layoutListContainer)
         mapView = findViewById(R.id.mapView)
+        cardZoomControls = findViewById(R.id.cardZoomControls)
+        btnZoomIn = findViewById(R.id.btnZoomIn)
+        btnZoomOut = findViewById(R.id.btnZoomOut)
+        btnZoomReset = findViewById(R.id.btnZoomReset)
         btnToggleView = findViewById(R.id.btnToggleView)
         rvFacilityList = findViewById(R.id.rvFacilityList)
         layoutEmptySearch = findViewById(R.id.layoutEmptySearch)
         tvEmptySearchMessage = findViewById(R.id.tvEmptySearchMessage)
 
         cardPlacePeek = findViewById(R.id.cardPlacePeek)
+        layoutPlacePeekContent = findViewById(R.id.layoutPlacePeekContent)
         tvPlaceName = findViewById(R.id.tvPlaceName)
         tvPlaceTypeBadge = findViewById(R.id.tvPlaceTypeBadge)
         tvPlaceArea = findViewById(R.id.tvPlaceArea)
@@ -124,10 +143,83 @@ class FacilityFinderActivity : AppCompatActivity() {
         btnCopyCoordinates = findViewById(R.id.btnCopyCoordinates)
     }
 
+    private fun dp(value: Int): Int = (value * resources.displayMetrics.density).toInt()
+
+    private fun applyBottomSystemInsets() {
+        layoutPlacePeekContent.setPadding(
+            layoutPlacePeekContent.paddingLeft,
+            layoutPlacePeekContent.paddingTop,
+            layoutPlacePeekContent.paddingRight,
+            dp(20) + bottomSystemInsetPx
+        )
+        rvFacilityList.setPadding(
+            rvFacilityList.paddingLeft,
+            rvFacilityList.paddingTop,
+            rvFacilityList.paddingRight,
+            dp(76) + bottomSystemInsetPx
+        )
+    }
+
+    private fun updateMapOverlayBounds() {
+        val topOverlayHeight = layoutTopOverlay.height
+        val peekHeight = if (!isListViewActive && cardPlacePeek.visibility == View.VISIBLE) cardPlacePeek.height else 0
+
+        if (topOverlayHeight > 0) {
+            val listLp = layoutListContainer.layoutParams as CoordinatorLayout.LayoutParams
+            if (listLp.topMargin != topOverlayHeight) {
+                listLp.topMargin = topOverlayHeight
+                layoutListContainer.layoutParams = listLp
+            }
+        }
+
+        val toggleBottomMargin = if (peekHeight > 0) {
+            peekHeight + dp(12)
+        } else {
+            bottomSystemInsetPx + dp(16)
+        }
+        val toggleLp = btnToggleView.layoutParams as CoordinatorLayout.LayoutParams
+        if (toggleLp.bottomMargin != toggleBottomMargin) {
+            toggleLp.bottomMargin = toggleBottomMargin
+            btnToggleView.layoutParams = toggleLp
+        }
+
+        val toggleHeight = if (btnToggleView.height > 0) btnToggleView.height else dp(44)
+        val zoomBottomMargin = toggleBottomMargin + toggleHeight + dp(10)
+        val zoomLp = cardZoomControls.layoutParams as FrameLayout.LayoutParams
+        if (zoomLp.bottomMargin != zoomBottomMargin) {
+            zoomLp.bottomMargin = zoomBottomMargin
+            cardZoomControls.layoutParams = zoomLp
+        }
+
+        mapView.setViewportInsets(topOverlayHeight, peekHeight)
+    }
+
     private fun setupListeners() {
+        layoutTopOverlay.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+            updateMapOverlayBounds()
+        }
+        cardPlacePeek.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+            updateMapOverlayBounds()
+        }
+
         btnBack.setOnClickListener {
             HapticFeedbackManager.lightTick()
             finish()
+        }
+
+        btnZoomIn.setOnClickListener {
+            HapticFeedbackManager.lightTick()
+            mapView.zoomIn()
+        }
+
+        btnZoomOut.setOnClickListener {
+            HapticFeedbackManager.lightTick()
+            mapView.zoomOut()
+        }
+
+        btnZoomReset.setOnClickListener {
+            HapticFeedbackManager.lightTick()
+            mapView.resetZoom()
         }
 
         btnClearSearch.setOnClickListener {
@@ -177,6 +269,7 @@ class FacilityFinderActivity : AppCompatActivity() {
                 btnToggleView.text = getString(R.string.facility_toggle_list)
                 btnToggleView.setIconResource(R.drawable.ic_list_bullet)
             }
+            updateMapOverlayBounds()
         }
 
         btnOpenDirections.setOnClickListener {
@@ -252,6 +345,7 @@ class FacilityFinderActivity : AppCompatActivity() {
                 selectFacility(filtered.first())
             }
         }
+        updateMapOverlayBounds()
     }
 
     private fun selectFacility(facility: PublicFacilityDto) {

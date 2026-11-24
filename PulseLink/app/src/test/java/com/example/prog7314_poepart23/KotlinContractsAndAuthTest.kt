@@ -108,6 +108,7 @@ class KotlinContractsAndAuthTest {
         assertTrue(refreshed)
         assertEquals("doctor", role)
         assertEquals(DoctorDashboardActivity::class.java, dashboardFor(role))
+        assertEquals(NurseDashboardActivity::class.java, dashboardFor("nurse"))
         assertEquals("jwt-doc", PulseLinkApiClient.getAuthToken())
         assertEquals("uid-doc", PulseLinkApiClient.getActiveUid())
 

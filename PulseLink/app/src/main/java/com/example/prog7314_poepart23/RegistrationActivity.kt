@@ -60,6 +60,7 @@ class RegistrationActivity : AppCompatActivity() { // (Google Developers, 2024)
 
         val btnRolePatient = findViewById<MaterialButton>(R.id.btnRolePatient)
         val btnRoleDoctor = findViewById<MaterialButton>(R.id.btnRoleDoctor)
+        val btnRoleNurse = findViewById<MaterialButton>(R.id.btnRoleNurse)
         val layoutPatientFields = findViewById<LinearLayout>(R.id.layoutPatientFields)
         val layoutDoctorFields = findViewById<LinearLayout>(R.id.layoutDoctorFields)
 
@@ -124,20 +125,20 @@ class RegistrationActivity : AppCompatActivity() { // (Google Developers, 2024)
             val whiteColor = ContextCompat.getColor(this, R.color.white)
             val secondaryTextColor = ContextCompat.getColor(this, R.color.pulse_text_secondary)
 
-            if (role == "patient") {
-                btnRolePatient.backgroundTintList = ColorStateList.valueOf(primaryColor)
-                btnRolePatient.setTextColor(whiteColor)
-                btnRoleDoctor.backgroundTintList = ColorStateList.valueOf(transparentColor)
-                btnRoleDoctor.setTextColor(secondaryTextColor)
+            listOf(
+                "patient" to btnRolePatient,
+                "doctor" to btnRoleDoctor,
+                "nurse" to btnRoleNurse
+            ).forEach { (tabRole, button) ->
+                val active = tabRole == role
+                button.backgroundTintList = ColorStateList.valueOf(if (active) primaryColor else transparentColor)
+                button.setTextColor(if (active) whiteColor else secondaryTextColor)
+            }
 
+            if (role == "patient") {
                 layoutPatientFields.visibility = View.VISIBLE
                 layoutDoctorFields.visibility = View.GONE
             } else {
-                btnRoleDoctor.backgroundTintList = ColorStateList.valueOf(primaryColor)
-                btnRoleDoctor.setTextColor(whiteColor)
-                btnRolePatient.backgroundTintList = ColorStateList.valueOf(transparentColor)
-                btnRolePatient.setTextColor(secondaryTextColor)
-
                 layoutPatientFields.visibility = View.GONE
                 layoutDoctorFields.visibility = View.VISIBLE
             }
@@ -145,6 +146,7 @@ class RegistrationActivity : AppCompatActivity() { // (Google Developers, 2024)
 
         btnRolePatient.setOnClickListener { updateRoleUI("patient") }
         btnRoleDoctor.setOnClickListener { updateRoleUI("doctor") }
+        btnRoleNurse.setOnClickListener { updateRoleUI("nurse") }
 
         setupRegistrationObservers(btnCreateAccount)
 
@@ -201,7 +203,7 @@ class RegistrationActivity : AppCompatActivity() { // (Google Developers, 2024)
                     email = email,
                     password = password,
                     name = fullName,
-                    role = "doctor",
+                    role = assignedRole,
                     phoneNumber = phone,
                     specialization = spec,
                     practiceNumber = practice,

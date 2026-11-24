@@ -18,25 +18,71 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <!-- Floating view list toggle button -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnToggleView"
-            style="@style/Widget.PulseLink.Button"
+        <!-- Floating Map Zoom Controls (+ / - / Reset) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardZoomControls"
             android:layout_width="wrap_content"
-            android:layout_height="44dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_marginBottom="260dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/facility_toggle_list"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/pulse_primary_fill"
-            app:cornerRadius="22dp"
-            app:elevation="4dp"
-            app:icon="@drawable/ic_list_bullet"
-            app:iconSize="16dp"
-            app:iconTint="@color/white" />
+            android:layout_marginBottom="316dp"
+            app:cardBackgroundColor="@color/pulse_card"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/pulse_border"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnZoomIn"
+                    android:layout_width="44dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/facility_zoom_in"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_zoom_in"
+                    app:tint="@color/pulse_text_primary" />
+
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/pulse_divider" />
+
+                <ImageButton
+                    android:id="@+id/btnZoomOut"
+                    android:layout_width="44dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/facility_zoom_out"
+                    android:padding="11dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_zoom_out"
+                    app:tint="@color/pulse_text_primary" />
+
+                <View
+                    android:layout_width="28dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/pulse_divider" />
+
+                <ImageButton
+                    android:id="@+id/btnZoomReset"
+                    android:layout_width="44dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/facility_zoom_reset"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_fullscreen"
+                    app:tint="@color/pulse_text_primary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </FrameLayout>
 
     <!-- Alternative Full List View (Hidden by default, toggled via btnToggleView) -->
@@ -88,6 +134,7 @@
 
     <!-- Top floating controls overlay: Search bar + Filter chips -->
     <LinearLayout
+        android:id="@+id/layoutTopOverlay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -194,9 +241,14 @@
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="@string/facility_filter_all"
-                    android:textColor="@color/pulse_text_primary"
+                    android:textColor="@color/selector_facility_chip_text"
                     android:textSize="12sp"
-                    app:chipCornerRadius="16dp" />
+                    app:checkedIconTint="@color/white"
+                    app:chipBackgroundColor="@color/selector_facility_chip_bg"
+                    app:chipCornerRadius="16dp"
+                    app:chipStrokeColor="@color/pulse_border_strong"
+                    app:chipStrokeWidth="1dp"
+                    app:chipSurfaceColor="@android:color/transparent" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipFilterHospitals"
@@ -204,9 +256,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/facility_filter_hospitals"
-                    android:textColor="@color/pulse_text_primary"
+                    android:textColor="@color/selector_facility_chip_text"
                     android:textSize="12sp"
-                    app:chipCornerRadius="16dp" />
+                    app:checkedIconTint="@color/white"
+                    app:chipBackgroundColor="@color/selector_facility_chip_bg"
+                    app:chipCornerRadius="16dp"
+                    app:chipStrokeColor="@color/pulse_border_strong"
+                    app:chipStrokeWidth="1dp"
+                    app:chipSurfaceColor="@android:color/transparent" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipFilterClinics"
@@ -214,9 +271,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/facility_filter_clinics"
-                    android:textColor="@color/pulse_text_primary"
+                    android:textColor="@color/selector_facility_chip_text"
                     android:textSize="12sp"
-                    app:chipCornerRadius="16dp" />
+                    app:checkedIconTint="@color/white"
+                    app:chipBackgroundColor="@color/selector_facility_chip_bg"
+                    app:chipCornerRadius="16dp"
+                    app:chipStrokeColor="@color/pulse_border_strong"
+                    app:chipStrokeWidth="1dp"
+                    app:chipSurfaceColor="@android:color/transparent" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipFilterChc"
@@ -224,12 +286,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/facility_filter_chc"
-                    android:textColor="@color/pulse_text_primary"
+                    android:textColor="@color/selector_facility_chip_text"
                     android:textSize="12sp"
-                    app:chipCornerRadius="16dp" />
+                    app:checkedIconTint="@color/white"
+                    app:chipBackgroundColor="@color/selector_facility_chip_bg"
+                    app:chipCornerRadius="16dp"
+                    app:chipStrokeColor="@color/pulse_border_strong"
+                    app:chipStrokeWidth="1dp"
+                    app:chipSurfaceColor="@android:color/transparent" />
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
     </LinearLayout>
+
+    <!-- Floating view list / map toggle button (kept outside containers so both modes stay switchable) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToggleView"
+        style="@style/Widget.PulseLink.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="260dp"
+        android:text="@string/facility_toggle_list"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/pulse_primary_fill"
+        app:cornerRadius="22dp"
+        app:elevation="6dp"
+        app:icon="@drawable/ic_list_bullet"
+        app:iconSize="16dp"
+        app:iconTint="@color/white" />
 
     <!-- Bottom Place Peek Card (Google Maps style) -->
     <com.google.android.material.card.MaterialCardView
@@ -244,6 +331,7 @@
         app:strokeWidth="1dp">
 
         <LinearLayout
+            android:id="@+id/layoutPlacePeekContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

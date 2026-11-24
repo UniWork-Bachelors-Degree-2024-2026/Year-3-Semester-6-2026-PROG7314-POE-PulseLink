@@ -17,6 +17,9 @@
     <string name="facility_toggle_map">Buka Imephu</string>
     <string name="facility_select_pin_prompt">Thepha noma iyiphi iphini kumephu noma khetha ohlwini</string>
     <string name="facility_disclaimer_short">Izindawo zokungena zezempilo zomphakathi eziqinisekisiwe kuphela. Ayisho ukuthunyelwa kwemoto yezimo eziphuthumayo.</string>
+    <string name="facility_zoom_in">Sondeza</string>
+    <string name="facility_zoom_out">Hlehlisa</string>
+    <string name="facility_zoom_reset">Buyisela ukubuka kwemephu</string>
 
     <!-- Touchscreen BLE background transfer strings -->
     <string name="sync_ble_title">Dlulisa kusuka kusikrini Sokuthinta (BLE)</string>

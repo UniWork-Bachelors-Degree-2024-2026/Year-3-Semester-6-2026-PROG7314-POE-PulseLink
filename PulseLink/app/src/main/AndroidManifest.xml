@@ -152,8 +152,19 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Recording is started on the PulseLink touchscreen. The former Android pre-session check and
-             live ECG monitoring screens are intentionally not declared, so they cannot be opened. -->
+        <activity
+            android:name=".EcgPreSessionCheckActivity"
+            android:exported="false"
+            android:parentActivityName=".NurseDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".LiveEcgMonitoringActivity"
+            android:exported="false"
+            android:parentActivityName=".EcgPreSessionCheckActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- Step-by-step AD8232 3-lead electrode placement guide. -->
         <activity
@@ -360,6 +371,33 @@
             android:name=".DoctorSettingsActivity"
             android:exported="false"
             android:parentActivityName=".DoctorProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".NurseDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".NursePatientIntakeActivity"
+            android:exported="false"
+            android:parentActivityName=".NurseDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".NurseSettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".NurseDashboardActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".LiveSupportChatActivity"
+            android:exported="false"
+            android:parentActivityName=".HelpSupportActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 

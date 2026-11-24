@@ -55,6 +55,11 @@ interface PulseLinkApiService {
     suspend fun approveNurseScreen(@Path("id") id: String, @Body request: ScreenApprovalRequestDto): Response<NurseGrantDto>
     @GET("api/access/devices/{id}/authorisation")
     suspend fun getNurseScreenAuthorisation(@Path("id") id: String): Response<NurseGrantDto>
+    @POST("api/access/recordings/{id}/upload-permit")
+    suspend fun permitSessionUpload(
+        @Path("id") sessionId: String,
+        @Body request: Map<String, Int> = mapOf("validHours" to 24)
+    ): Response<Unit>
     @GET("api/access/me") 
     suspend fun getAccessAccount(): Response<AccessAccountDto>
     
@@ -63,6 +68,21 @@ interface PulseLinkApiService {
         @Query("after") after: String? = null,
         @Query("limit") limit: Int = 50
     ): Response<AccessPageDto<DoctorPatientSummaryDto>>
+
+    @GET("api/access/doctors")
+    suspend fun getApprovedClinicDoctors(): Response<List<ApprovedDoctorDto>>
+
+    @GET("api/support-chat/threads")
+    suspend fun getSupportChatThreads(): Response<List<SupportChatThreadDto>>
+
+    @GET("api/support-chat/threads/{threadId}/messages")
+    suspend fun getSupportChatMessages(@Path("threadId") threadId: String): Response<List<SupportChatMessageDto>>
+
+    @POST("api/support-chat/threads/{threadId}/messages")
+    suspend fun sendSupportChatMessage(
+        @Path("threadId") threadId: String,
+        @Body request: SendSupportMessageDto
+    ): Response<SupportChatMessageDto>
 
     @GET("api/access/patients/{id}") 
     suspend fun getClinicalPatient(@Path("id") id: String): Response<ClinicalPatientDto>

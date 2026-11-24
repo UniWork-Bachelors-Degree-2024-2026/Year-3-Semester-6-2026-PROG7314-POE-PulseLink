@@ -31,6 +31,7 @@ struct HealthInfo {
   uint8_t leadFlags, bpmValid, recording;
   // Zero means not configured. Association alone must never imply API availability.
   uint8_t wifi = 0, api = 0;
+  uint16_t raw = 0;
 };
 #pragma pack(pop)
 constexpr size_t MaxPayload = SamplesPerFrame * sizeof(Sample);

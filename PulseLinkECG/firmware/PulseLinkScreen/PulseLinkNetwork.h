@@ -8,8 +8,16 @@
 #include <time.h>
 #include <new>
 #include <memory>
+#if __has_include(<PulseLinkCredentials.h>)
 #include <PulseLinkCredentials.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkCredentials.h"
+#endif
+#if __has_include(<PulseLinkNetworkMemory.h>)
 #include <PulseLinkNetworkMemory.h>
+#else
+#include "../../libraries/PulseLinkCore/src/PulseLinkNetworkMemory.h"
+#endif
 #include "PulseLinkAzureCa.h"
 
 enum class WifiState : uint8_t { NotConfigured, Connecting, Connected, Disconnected };
@@ -17,10 +25,11 @@ enum class ApiState : uint8_t { NotConfigured, WaitingForWifi, WaitingForClock, 
 enum class WifiIssue : uint8_t { None, Credentials, Handshake, NotFound, Security, Signal, Timeout, Lost, Scan };
 enum class NetAction : uint8_t { Configure, Scan, Request };
 enum class NetOwner : uint8_t { Upload, Workflow };
+struct StoredNetworkConfig { char ssid[33] = {}, password[65] = {}; char api[192] = "https://pulselinkv2-drhahreccedabcfk.southafricanorth-01.azurewebsites.net"; char deviceId[65] = {}, token[44] = {}; };
 struct NetworkConfig {
   char ssid[33] = {}, password[65] = {};
   char api[192] = "https://pulselinkv2-drhahreccedabcfk.southafricanorth-01.azurewebsites.net";
-  char deviceId[65] = {}, token[44] = {};
+  char deviceId[65] = {}, token[44] = {}; char identity[65] = {};
 };
 struct NetworkView {
   WifiState wifi = WifiState::NotConfigured;
@@ -103,6 +112,7 @@ class PulseLinkNetwork {
     }
   }
   int request(const char *path, bool post, const char *body, char *reply, size_t capacity, String *textReply = nullptr, bool remove = false, bool background = false, bool upload = false) {
+    (void)upload;
     const uint32_t started = millis();
     if (textReply) textReply->clear();
     if (WiFi.status() != WL_CONNECTED) return -1;
@@ -118,15 +128,16 @@ class PulseLinkNetwork {
     auto &tls = *secureClient; auto &http = *httpClient;
     // Explicit root verification handles Azure's cross-signed chain without the bundle callback.
     if (!tls.connected()) {
+      tls.stop();
       if (String(config.api).endsWith(".azurewebsites.net")) tls.setCACert(PulseLinkAzureRoot);
       else tls.useBuiltinCACertBundle();
       tls.setHandshakeTimeout(15);
     }
-    http.setConnectTimeout(10000); http.setTimeout(25000); http.setReuse(upload);
+    http.setConnectTimeout(10000); http.setTimeout(25000); http.setReuse(false);
     auto finish = [&](int result) {
       char ignored[1]; const int error = tls.lastError(ignored, sizeof(ignored));
       // Retain a validated upload connection so batch buffers do not compete with a new TLS handshake.
-      http.end(); if (!upload || result <= 0) tls.stop();
+      http.end(); tls.stop(); httpClient.reset(); secureClient.reset();
       char diagnostic[120]; snprintf(diagnostic, sizeof(diagnostic), "PL_TLS result=%d error=%d free=%lu block=%lu stack=%u\n", result, error,
         (unsigned long)ESP.getFreeHeap(), (unsigned long)ESP.getMaxAllocHeap(), (unsigned)uxTaskGetStackHighWaterMark(nullptr)); pl::debug(diagnostic);
       const uint32_t elapsed = millis() - started, block = ESP.getMaxAllocHeap();
@@ -160,7 +171,17 @@ class PulseLinkNetwork {
     bool connecting = false, scanning = false, pendingStore = false, clockLogged = false;
     auto storeConfig = [&]() {
       Preferences prefs; bool stored = false;
-      if (prefs.begin("pulselink-net", false)) { stored = prefs.putBytes("config", &config, sizeof(config)) == sizeof(config); prefs.end(); }
+      if (prefs.begin("pulselink-net", false)) {
+        StoredNetworkConfig base{};
+        strlcpy(base.ssid, config.ssid, sizeof(base.ssid));
+        strlcpy(base.password, config.password, sizeof(base.password));
+        strlcpy(base.api, config.api, sizeof(base.api));
+        strlcpy(base.deviceId, config.deviceId, sizeof(base.deviceId));
+        strlcpy(base.token, config.token, sizeof(base.token));
+        stored = prefs.putBytes("config", &base, sizeof(base)) == sizeof(base);
+        prefs.putString("eap_id", config.identity);
+        prefs.end();
+      }
       if (stored) { savedConfig = config; hasSavedConfig = config.ssid[0] != 0; }
       portENTER_CRITICAL(&lock); state.settingsStored = stored; state.saveFailed = !stored; portEXIT_CRITICAL(&lock);
       pendingStore = false;
@@ -169,7 +190,23 @@ class PulseLinkNetwork {
       WiFi.disconnect(false, false);
       if (!config.ssid[0]) { WiFi.mode(WIFI_OFF); setWifi(WifiState::NotConfigured); return; }
       WiFi.mode(WIFI_STA); WiFi.setAutoReconnect(false);
-      WiFi.begin(config.ssid, config.password); setWifi(WifiState::Connecting);
+      const char *sep = strchr(config.password, '|');
+      if (pl::isEnterpriseSsid(config.ssid, config.identity) || sep != nullptr) {
+        char eapUser[65] = {}, eapPass[65] = {};
+        if (config.identity[0]) {
+          strlcpy(eapUser, config.identity, sizeof(eapUser));
+          strlcpy(eapPass, config.password, sizeof(eapPass));
+        } else if (sep != nullptr) {
+          const size_t ulen = min<size_t>(static_cast<size_t>(sep - config.password), sizeof(eapUser) - 1);
+          memcpy(eapUser, config.password, ulen);
+          eapUser[ulen] = 0;
+          strlcpy(eapPass, sep + 1, sizeof(eapPass));
+        }
+        WiFi.begin(config.ssid, WPA2_AUTH_PEAP, eapUser, eapUser, eapPass);
+      } else {
+        WiFi.begin(config.ssid, config.password);
+      }
+      setWifi(WifiState::Connecting);
       connecting = true; connectAt = millis();
     };
     connect();
@@ -245,7 +282,7 @@ class PulseLinkNetwork {
             setApi(ApiState::Ready);
           else if (code != -109 && code != -2 && code != 401 && code != 403) setApi(ApiState::Unavailable);
         }
-        if (!held && view().api == ApiState::Ready && millis() - eventsAt >= 15000) {
+        if (!held && view().api == ApiState::Ready && millis() - eventsAt >= 3000) {
           eventsAt = millis(); String reply;
           {
             String path = "/api/device-transport/events";
@@ -282,7 +319,22 @@ public:
     if (!url.startsWith("https://") || url.length() <= 8 || url.indexOf('/', 8) >= 0 || url.indexOf('@') >= 0 ||
         url.indexOf('?') >= 0 || url.indexOf('#') >= 0 || url.indexOf('\\') >= 0) return "Use an HTTPS address without a path.";
     for (char c : url) if (static_cast<unsigned char>(c) <= 32 || static_cast<unsigned char>(c) > 126) return "Remove spaces from the API address.";
-    if (const char *error = pl::personalPasswordError(value.password)) return error;
+    const char *sep = strchr(value.password, '|');
+    if (pl::isEnterpriseSsid(value.ssid, value.identity) || sep != nullptr) {
+      char eapUser[65] = {}, eapPass[65] = {};
+      if (value.identity[0]) {
+        strlcpy(eapUser, value.identity, sizeof(eapUser));
+        strlcpy(eapPass, value.password, sizeof(eapPass));
+      } else if (sep != nullptr) {
+        const size_t ulen = min<size_t>(static_cast<size_t>(sep - value.password), sizeof(eapUser) - 1);
+        memcpy(eapUser, value.password, ulen);
+        eapUser[ulen] = 0;
+        strlcpy(eapPass, sep + 1, sizeof(eapPass));
+      }
+      if (const char *error = pl::enterprisePasswordError(eapUser, eapPass)) return error;
+    } else {
+      if (const char *error = pl::personalPasswordError(value.password)) return error;
+    }
     if (value.token[0]) for (const char *p = value.token; *p; ++p)
       if (!isalnum(static_cast<unsigned char>(*p)) && *p != '-' && *p != '_') return "Device key contains an invalid character.";
     return value.token[0] && strlen(value.token) != 43 ? "Device key must contain 43 characters." : nullptr;
@@ -292,10 +344,19 @@ public:
     Preferences prefs;
     bool restored = false;
     if (prefs.begin("pulselink-net", true)) {
-      if (prefs.getBytesLength("config") == sizeof(config)) restored = prefs.getBytes("config", &config, sizeof(config)) == sizeof(config);
+      StoredNetworkConfig base{};
+      if (prefs.getBytesLength("config") == sizeof(base)) {
+        restored = prefs.getBytes("config", &base, sizeof(base)) == sizeof(base);
+        if (restored) {
+          strlcpy(config.ssid, base.ssid, sizeof(config.ssid)); strlcpy(config.password, base.password, sizeof(config.password));
+          strlcpy(config.api, base.api, sizeof(config.api)); strlcpy(config.deviceId, base.deviceId, sizeof(config.deviceId));
+          strlcpy(config.token, base.token, sizeof(config.token));
+        }
+      }
+      const String eapId = prefs.getString("eap_id", ""); strlcpy(config.identity, eapId.c_str(), sizeof(config.identity));
       prefs.end();
     }
-    config.ssid[32] = config.password[64] = config.api[191] = config.token[43] = config.deviceId[64] = 0;
+    config.ssid[32] = config.password[64] = config.api[191] = config.token[43] = config.deviceId[64] = config.identity[64] = 0;
     strlcpy(config.deviceId, deviceId, sizeof(config.deviceId));
     if (!validConfig(config)) { restored = false; config = NetworkConfig{}; strlcpy(config.deviceId, deviceId, sizeof(config.deviceId)); }
     desired = config; savedConfig = config; hasSavedConfig = restored && config.ssid[0] != 0; state.settingsStored = restored;

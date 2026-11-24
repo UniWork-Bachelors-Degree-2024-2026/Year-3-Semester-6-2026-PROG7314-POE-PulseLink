@@ -8,9 +8,7 @@
 
 package com.example.prog7314_poepart23
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge             // (Google Developers, 2024)
 import androidx.appcompat.app.AppCompatActivity        // (Google Developers, 2024)
@@ -20,8 +18,7 @@ import com.example.prog7314_poepart23.utils.BottomNavHelper
 import com.example.prog7314_poepart23.utils.enableFadeThroughEntry
 import com.example.prog7314_poepart23.utils.LocaleHelper
 import com.example.prog7314_poepart23.utils.HapticFeedbackManager
-import com.example.prog7314_poepart23.utils.openOnClick
-import com.example.prog7314_poepart23.utils.wireBack
+import com.example.prog7314_poepart23.utils.wireCommonSettingsRows
 
 class DoctorSettingsActivity : AppCompatActivity() { // (Google Developers, 2024)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,18 +32,8 @@ class DoctorSettingsActivity : AppCompatActivity() { // (Google Developers, 2024
             insets
         }
 
-        // Task 12: Language selection (English / isiZulu / Afrikaans)
-        findViewById<View>(R.id.rowLanguage).setOnClickListener {
-            startActivity(Intent(this, LanguageSelectionActivity::class.java))
-        }
-
-        // About, Legal & Medical Privacy portal
-        findViewById<View>(R.id.rowAboutLegal).setOnClickListener {
-            startActivity(Intent(this, AboutActivity::class.java))
-        }
-
         HapticFeedbackManager.initialise(this)
-        wireSettingsRows()
+        wireCommonSettingsRows(personalInfoTarget = DoctorProfileActivity::class.java)
         BottomNavHelper.setUpDoctorNavDetached(this)
     }
 
@@ -56,21 +43,5 @@ class DoctorSettingsActivity : AppCompatActivity() { // (Google Developers, 2024
         BottomNavHelper.setUpDoctorNavDetached(this)
         findViewById<TextView>(R.id.txtCurrentLanguage).text =
             LocaleHelper.displayName(LocaleHelper.getLanguage(this))
-    }
-
-    // Every remaining row in Settings: the ones with a destination navigate, the rest say
-    // plainly that they are not built yet rather than silently doing nothing.
-    private fun wireSettingsRows() {
-        wireBack(R.id.btnBack)
-
-        openOnClick(R.id.rowPersonalInfo, DoctorProfileActivity::class.java)
-        openOnClick(R.id.rowSecurity, SecurityPasswordActivity::class.java)
-        openOnClick(R.id.rowNotifications, NotificationsActivity::class.java)
-        openOnClick(R.id.rowHelpCenter, HelpSupportActivity::class.java)
-        openOnClick(R.id.rowPrivacyPolicy, AboutActivity::class.java)
-
-        findViewById<android.view.View>(R.id.rowAppearance).setOnClickListener {
-            startActivity(Intent(this, AppearanceActivity::class.java))
-        }
     }
 }
